@@ -52,7 +52,7 @@
 											placeholder="NIP"
 										/>
 									</div>
-
+									<p></p>
 									<div class="form-group">
 										<input
 											type="password"
@@ -61,7 +61,7 @@
 											placeholder="Password"
 										/>
 									</div>
-
+									<p></p>
 									<button type="submit" class="btn btn-primary">Masuk</button>
 								</form>
 							</div>

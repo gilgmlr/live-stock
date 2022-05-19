@@ -12,3 +12,8 @@
 	justify-content: center;
 	max-width: 100%;
 }
+
+.btn,
+form {
+	padding: 20px;
+}
