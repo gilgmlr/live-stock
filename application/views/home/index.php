@@ -27,17 +27,15 @@
 		<section class="jumbotron jumbotron-fluid">
 			<div class="text-center">
 				<div class="row">
-					<div class="col-4">
+					<div class="col-4 ">
 						<div class="div">
 							<div class="row">
-								<center>
 									<img
 										class="logo"
-										src="assets/image/logo-cemindo-gemilang.png"
-										alt=""
-										style="border-radius: 15px"
+										src="assets/image/logo-cemindo-gemilang.png" width=400px height=400px
+										alt="logo"
+										
 									/>
-								</center>
 								<h1>Selamat Datang !</h1>
 								<p class="text-muted">Login untuk masuk ke Warehouse.</p>
 							</div>
@@ -62,13 +60,13 @@
 										/>
 									</div>
 									<p></p>
-									<button type="submit" class="btn btn-primary">Masuk</button>
+									<button type="submit" class="btn btn-danger">Masuk</button>
 								</form>
 							</div>
 						</div>
 					</div>
 					<div class="col-8">
-						<img class="bg" src="assets/image/home-banner.jpeg" alt="" />
+						<img class="bg" src="assets/image/home-banner.jpeg" width= 100% height=100% alt="background" />
 					</div>
 				</div>
 			</div>

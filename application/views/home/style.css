@@ -1,19 +1,9 @@
-.col-4 {
-	background-color: white;
-}
-
-.bg {
-	min-width: 100%;
-}
-.logo {
+.row {
 	height: 500px;
 	width: 500px;
-	text-align: center;
-	justify-content: center;
-	max-width: 100%;
+	min-width: 100%;
 }
 
-.btn,
-form {
-	padding: 20px;
+.btn {
+	color: red;
 }
