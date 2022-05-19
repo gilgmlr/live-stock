@@ -21,6 +21,7 @@
 
 		<link rel="stylesheet" href="./style.css" />
 		<title>Live Stock</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
 		<section class="jumbotron jumbotron-fluid">
@@ -37,17 +38,17 @@
 										style="border-radius: 15px"
 									/>
 								</center>
-								<h1>Selamat Datang</h1>
-								<h2 class="text-muted">Login untuk masuk ke Warehouse.</h2>
+								<h1>Selamat Datang !</h1>
+								<p class="text-muted">Login untuk masuk ke Warehouse.</p>
 							</div>
 							<div class="container">
 								<form>
 									<div class="form-group">
 										<input
-											type="email"
+											type="NIP"
 											class="form-control"
-											id="exampleInputEmail1"
-											aria-describedby="emailHelp"
+											id="exampleInputNIP"
+											aria-describedby="NIPHelp"
 											placeholder="NIP"
 										/>
 									</div>
