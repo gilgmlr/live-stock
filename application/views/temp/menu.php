@@ -64,16 +64,9 @@
                         </li>
                     </ul>
                 </div>
-                <div class="button-menu">
-                    <ul>
-                        <li id="keluar" class="">
-                            <a href="<?= base_url(); ?>home/logout" class="out bg-danger text-white">
-                                <i class="bi bi-box-arrow-right"></i>
-                                <div class="position-absolute tooltips bg-danger text-white">Logout</div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                
             </div>
         </div>
     </nav>
+</body>
+</html>
