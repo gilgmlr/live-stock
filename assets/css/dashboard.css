@@ -1,17 +1,8 @@
-.col {
-	display: flex;
-}
-
-.card1 {
-	margin: auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
 .card2 {
-	width: 300px;
+	width: 400px;
 	height: 150px;
+	margin: auto;
+	background-color: green;
 }
 
 .txt1 {
@@ -19,7 +10,21 @@
 }
 .txt2 {
 	text-align: center;
+	font-size: 55px;
 }
 .txt3 {
 	text-align: right;
+}
+
+.container {
+	padding-left: 200px;
+}
+
+.table {
+	margin: 20px auto;
+	text-align: center;
+}
+
+.btn {
+	background-color: #d7a86e;
 }
