@@ -55,60 +55,23 @@
                 <th>ACTION</th>
             </tr>
 
+            <?php
+                $i = 1;
+                foreach ($warehouse as $data) { 
+            ?>
             <tr>
-                <td>1</td>
-                <td>123123</td>
-                <td>Warehouse AAA</td>
-                <td>3030</td>
+                <td><?php echo $i ?></td>
+                <td><?php echo $data->id ?></td>
+                <td><?php echo $data->name ?></td>
+                <td><?php echo $data->total_items ?></td>
                 <td>
                     <button type="button" class="btn btn-warning ">View Details</button>
                 </td>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>123123</td>
-                <td>Warehouse AAA</td>
-                <td>3030</td>
-                <td>
-                    <button type="button" class="btn btn-warning">View Details</button>
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>123123</td>
-                <td>Warehouse AAA</td>
-                <td>3030</td>
-                <td>
-                    <button type="button" class="btn btn-warning">View Details</button>
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>123123</td>
-                <td>Warehouse AAA</td>
-                <td>3030</td>
-                <td>
-                    <button type="button" class="btn btn-warning">View Details</button>
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>123123</td>
-                <td>Warehouse AAA</td>
-                <td>3030</td>
-                <td>
-                    <button type="button" class="btn btn-warning">View Details</button>
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>123123</td>
-                <td>Warehouse AAA</td>
-                <td>3030</td>
-                <td>
-                    <button type="button" class="btn btn-warning">View Details</button>
-                </td>
-            </tr>
+            <?php
+                $i++;
+                }
+            ?>
         </table>
     </div>
 
