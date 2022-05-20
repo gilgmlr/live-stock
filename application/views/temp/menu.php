@@ -17,7 +17,7 @@
             <div class="profile">
                 <img src="<?= base_url() ?>assets/profile/profile1.jpg" alt="profile" style="border-radius: 100px;">
             </div>
-            <div class="menu">
+            <div class="menu borders">
                 <div class="main-menu">
                     <ul>
                         <li data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
