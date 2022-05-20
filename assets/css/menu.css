@@ -10,7 +10,7 @@
 .menu ul li a {
     display: block;
     margin-left: -30px;
-    color: black;
+    color: green;
     border-bottom: 1px solid rgb(0, 0, 0);
 }
 
@@ -31,11 +31,9 @@
 .nav-bar {
     width: 75px;
     height: 88vh;
-    background-color: #eb7236;
-    border-radius: 30px;
-    position: absolute;
-    top: 5%;
-    left: 3%;
+    background-color: rgb(0, 255, 0);
+    border-radius: 0px;
+    position: relative;
     box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
@@ -44,7 +42,7 @@
     margin-top: -2.5rem;
     left: 90px;
     min-width: 18.5vh;
-    background-color: #5DD482;
+    background-color: black;
     padding: 0.8rem 1.5rem;
     border-radius: 10px;
     box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.4);
@@ -98,8 +96,8 @@
 }
 
 .menu ul li a:hover {
-    background-color: #5DD482;
-    border-bottom: 1px solid #5DD482;
+    background-color: green;
+    border-bottom: 1px solid black;
 }
 
 .menu ul li a:hover div.tooltips {
@@ -107,7 +105,7 @@
 }
 
 .menu ul li a.actived {
-    background-color: #5DD482;
+    background-color: black;
     border-bottom: 0px solid rgb(0, 0, 0);
 }
 
@@ -121,7 +119,7 @@
 }
 
 .button-menu ul li a.out {
-    background-color: #F28F8F;
+    background-color: black;
 }
 
 .ml-container {
