@@ -7,54 +7,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= base_url() ?>node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="<?= base_url() ?>node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/css/style.css">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/css/font.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/sds.css">
     <title>Live Stock</title>
 </head>
 
 <body>
-<div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-6 text-black">
-
-        <div class="px-5 ms-xl-4">
-          <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
-          <span class="h1 fw-bold mb-0">Logo</span>
+    <nav class="nav-bar">
+        <div class="menu-bar">
+            <div class="profile">
+                <img src="<?= base_url() ?>assets/profile/profile1.jpg" alt="profile" style="border-radius: 100px;">
+            </div>
+            <div class="menu">
+                <div class="main-menu">
+                    <ul>
+                        <li data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+                            <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'dashboard') echo 'actived' ?>">
+                                <i class="bi bi-house-door-fill"></i>
+                                <div class="position-absolute tooltips">Home</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'mitra') echo 'actived' ?>">
+                                <i class="bi bi-search"></i>
+                                <div class="position-absolute tooltips">Search</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'pengunjung') echo 'actived' ?>">
+                                <i class="bi bi-stack"></i>
+                                <div class="position-absolute tooltips">Data Stock</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'kunjungan') echo 'actived' ?>">
+                                <i class="bi bi-arrow-down-square-fill"></i>
+                                <div class="position-absolute tooltips">Barang Masuk</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'kunjungan') echo 'actived' ?>">
+                                <i class="bi bi-arrow-up-square-fill"></i>
+                                <div class="position-absolute tooltips">Barang Keluar</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'informasi') echo 'actived' ?>">
+                                <i class="bi bi-arrow-left-right"></i>
+                                <div class="position-absolute tooltips">Peminjaman</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'informasi') echo 'actived' ?>">
+                                <i class="bi bi-arrow-counterclockwise"></i>
+                                <div class="position-absolute tooltips">History</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="button-menu">
+                    <ul>
+                        <li id="keluar" class="">
+                            <a href="<?= base_url(); ?>home/logout" class="out bg-danger text-white">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <div class="position-absolute tooltips bg-danger text-white">Logout</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
-        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-
-          <form style="width: 23rem;">
-
-            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
-
-            <div class="form-outline mb-4">
-              <input type="email" id="form2Example18" class="form-control form-control-lg" />
-              <label class="form-label" for="form2Example18">Email address</label>
-            </div>
-
-            <div class="form-outline mb-4">
-              <input type="password" id="form2Example28" class="form-control form-control-lg" />
-              <label class="form-label" for="form2Example28">Password</label>
-            </div>
-
-            <div class="pt-1 mb-4">
-              <button class="btn btn-info btn-lg btn-block" type="button">Login</button>
-            </div>
-
-            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
-            <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p>
-
-          </form>
-
-        </div>
-
-      </div>
-      <div class="col-sm-6 px-0 d-none d-sm-block">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
-          alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+    </nav>
