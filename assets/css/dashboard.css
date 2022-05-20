@@ -1,3 +1,25 @@
 .col {
 	display: flex;
 }
+
+.card1 {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.card2 {
+	width: 300px;
+	height: 150px;
+}
+
+.txt1 {
+	text-align: left;
+}
+.txt2 {
+	text-align: center;
+}
+.txt3 {
+	text-align: right;
+}
