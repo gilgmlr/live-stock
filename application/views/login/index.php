@@ -34,14 +34,15 @@
 								<p class="text-muted">Login untuk masuk ke Warehouse.</p>
 							</div>
 							<div class="container">
-								<form>
+								<form action="login/login" method="POST">
 									<div class="form-group">
 										<input
 											type="NIP"
 											class="form-control"
-											id="exampleInputNIP"
+											id="nip"
+											name="nip"
 											aria-describedby="NIPHelp"
-											placeholder="NIP"
+											placeholder="Input NIP"
 										/>
 									</div>
 									<p></p>
@@ -49,12 +50,13 @@
 										<input
 											type="password"
 											class="form-control"
-											id="exampleInputPassword1"
-											placeholder="Password"
+											id="password"
+											name="password"
+											placeholder="Input Password"
 										/>
 									</div>
 									<p></p>
-									<button type="submit" class="btn btn-danger">Masuk</button>
+									<input type="submit" class="btn btn-danger" value="Login" id="login">
 								</form>
 							</div>
 						</div>
