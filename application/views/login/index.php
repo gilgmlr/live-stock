@@ -37,12 +37,13 @@
 								<form action="login/login" method="POST">
 									<div class="form-group">
 										<input
-											type="NIP"
+											type="text"
 											class="form-control"
 											id="nip"
 											name="nip"
 											aria-describedby="NIPHelp"
-											placeholder="Input NIP"
+											placeholder="NIP"
+											required
 										/>
 									</div>
 									<p></p>
@@ -52,7 +53,8 @@
 											class="form-control"
 											id="password"
 											name="password"
-											placeholder="Input Password"
+											placeholder="Password"
+											required
 										/>
 									</div>
 									<p></p>
