@@ -21,7 +21,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     </ul>
-                    <form class="d-flex">
+                    <form class="d-flex" action="login/logout">
                         <button class="btn btn-outline-success" type="submit">Logout</button>
                     </form>
                 </div>
