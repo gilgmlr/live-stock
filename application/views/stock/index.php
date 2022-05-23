@@ -116,16 +116,16 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" style=max-width:60%>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" style=background-color:#D7A86E>
                 <h5 class="modal-title" id="exampleModalLabel">Form Edit Barang</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form>
                     <div class="mb-3">
-                        <label for="exampleInputno" class="form-label">NO</label>
+                        <label for="exampleInputno" class="form-label">No</label>
                         <input type="Text" class="form-control" id="exampleInputno" aria-describedby="no">
                     </div>
                     <div class="mb-3">
