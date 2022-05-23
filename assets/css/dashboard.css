@@ -1,30 +1,31 @@
 .card2 {
-	width: 400px;
-	height: 150px;
-	margin: auto;
-	background-color: green;
+    width: 400px;
+    height: 150px;
+    margin: auto;
 }
 
 .txt1 {
-	text-align: left;
+    text-align: left;
 }
+
 .txt2 {
-	text-align: center;
-	font-size: 55px;
+    text-align: center;
+    font-size: 55px;
 }
+
 .txt3 {
-	text-align: right;
+    text-align: right;
 }
 
 .container {
-	padding-left: 200px;
+    padding-left: 200px;
 }
 
 .table {
-	margin: 20px auto;
-	text-align: center;
+    margin: 20px auto;
+    text-align: center;
 }
 
 .btn {
-	background-color: #d7a86e;
+    background-color: #d7a86e;
 }

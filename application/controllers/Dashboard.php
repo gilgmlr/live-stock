@@ -15,6 +15,7 @@ class Dashboard extends CI_Controller
         $data['warehouse'] = $this->M_Dashboard->getDataWarehouse()->result();
         $data['judul'] = 'Dashboard';
 
+        $this->load->view('template/header');
         $this->load->view('dashboard/index', $data);
     }
 }
