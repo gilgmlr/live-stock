@@ -71,12 +71,36 @@
             </div>
         </nav> -->
 
-        <div class="col">
-            <!--  ISI DISINI  -->
-            BARANG MASUK
-        </div>
-    </div>
+<div class="col">
+    <!--  ISI DISINI  -->
+    <table id="warehouse" class="table table-striped">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Item Code</th>
+                <th>Item Name</th>
+                <th>Item Spec</th>
+                <th>UoM</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- ISI KONFIG BACKEND DISINI -->
+
+
+
+
+        </tbody>
+    </table>
+</div>
+</div>
 
 </body>
+<script>
+// $(document).ready(function() {
+//     $('#warehouse').DataTable();
+// });
+</script>
 
 </html>
