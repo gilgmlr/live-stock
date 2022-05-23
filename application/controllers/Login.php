@@ -13,28 +13,17 @@ class Login extends CI_Controller {
 	}
 
 	public function login(){
-		$nip = $this->input->post('nip');
+		$username = $this->input->post('user');
 		$password = $this->input->post('password');
 		
-		$query = $this->M_Login->getByNIP($nip);
+		$query = $this->M_Login->login($username, $password);
 		$user = $query->row();
 
-		// if (!$user) return FALSE;
-		// if (!password_verify($password, $user->password)) return FALSE;
-
-		// $userdata = array(
-		// 	'nip' => $user->nip,
-		// 	'name' => $user->name,
-		// 	'status' => 'login',
-		// );
-
-		if ($nip == $user->nip && $password == $user->password) {
+		if (($username == $user->username || $username == $user->nip) && $password == $user->password) {
 			redirect('dashboard');
 		} else {
 			redirect('login');
-		}
-
-		
+		}	
 	}
 
 	public function logout()

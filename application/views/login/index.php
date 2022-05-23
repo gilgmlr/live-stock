@@ -39,10 +39,9 @@
 										<input
 											type="text"
 											class="form-control"
-											id="nip"
-											name="nip"
-											aria-describedby="NIPHelp"
-											placeholder="NIP"
+											id="user"
+											name="user"
+											placeholder="Username / NIP"
 											required
 										/>
 									</div>
