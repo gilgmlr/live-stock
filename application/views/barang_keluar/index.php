@@ -71,7 +71,7 @@
             </div>
         </nav> -->
 
-<div class="col">
+<div class="col container-fluid mt-5">
     <!--  ISI DISINI  -->
     <table id="warehouse" class="table table-striped">
         <thead>
