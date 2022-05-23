@@ -1,19 +1,19 @@
         <div class="col">
-                <div class="container-fluid">
-                    <div style="text-align: right;">
-                        <img src="assets/image/icon.png " />
-                        <span class="ps-2">Warehouse. <br />Last update: Mei 20, 2022</span>
-                    </div>
-                    <div class="card2" style="background-color:#D7A86E; border:none; border-radius: 10px;">
-                        <div class="card-body m-1">
-                            <div class="txt1">Total Items</div>
-                            <div class="txt2"><b>30.000</b></div>
-                            <div class="txt3">
-                                <p>Items</p>
-                            </div>
+            <div class="container-fluid">
+                <div style="text-align: right;">
+                    <img src="assets/image/icon.png " />
+                    <span class="ps-2">Warehouse. <br />Last update: Mei 20, 2022</span>
+                </div>
+                <div class="card2" style="background-color:#D7A86E; border:none; border-radius: 10px;">
+                    <div class="card-body m-1">
+                        <div class="txt1">Total Items All Warehouse</div>
+                        <div class="txt2"><b>30.000</b></div>
+                        <div class="txt3">
+                            <p>Items</p>
                         </div>
                     </div>
                 </div>
+            </div>
             <div class="container-fluid">
                 <table class="table table-striped table-hover center">
                     <tr>
@@ -44,8 +44,8 @@
                 </table>
             </div>
         </div>
-    </div>
+        </div>
 
-</body>
+        </body>
 
-</html>
+        </html>
