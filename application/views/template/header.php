@@ -37,7 +37,7 @@
 <body>
     <header>
         <div>
-            <nav class="navbar navbar-expand-lg" style=background-color:#A64B2A>
+            <nav class="navbar navbar-expand-lg" style=background-color:#48416c>
                 <div class="container-fluid">
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -53,7 +53,7 @@
     </header>
 
     <div class="d-flex">
-        <nav class="nav-bar" style=background-color:#A64B2A>
+        <nav class="nav-bar" style=background-color:#48416c>
             <div class="menu-bar">
                 <div class="menu borders">
                     <div class="main-menu ">

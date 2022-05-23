@@ -1,127 +1,127 @@
 .profil-photo {
-    width: 100px;
-    border-radius: 100%;
+	width: 100px;
+	border-radius: 100%;
 }
 
 .menu ul li {
-    list-style: none;
+	list-style: none;
 }
 
 .menu ul li a {
-    display: block;
-    margin-left: -30px;
-    color: #FF7070;
-    border-bottom: 1px solid rgb(0, 0, 0);
+	display: block;
+	margin-left: -30px;
+	color: #b79bf2;
+	border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 .menu ul li a:hover {
-    background-color: #FF7070;
+	background-color: #b79bf2;
 }
 
 .active {
-    background-color: #FF7070;
+	background-color: #b79bf2;
 }
 
 .button {
-    position: absolute;
-    bottom: 16px;
-    left: 115px;
+	position: absolute;
+	bottom: 16px;
+	left: 115px;
 }
 
 .nav-bar {
-    width: 100px;
-    height: 100vh;
-    background-color: #A64B2A;
-    border-radius: 0px;
-    position: relative;
-    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+	width: 100px;
+	height: 100vh;
+	background-color: #a64b2a;
+	border-radius: 0px;
+	position: relative;
+	box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .tooltips {
-    font-size: 15px;
-    margin-top: -2.5rem;
-    left: 90px;
-    min-width: 18.5vh;
-    background-color: #d7a86e;
-    padding: 0.8rem 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
-    display: none;
-    cursor: auto;
-    z-index: 30;
+	font-size: 15px;
+	margin-top: -2.5rem;
+	left: 90px;
+	min-width: 18.5vh;
+	background-color: #b79bf2;
+	padding: 0.8rem 1.5rem;
+	border-radius: 10px;
+	box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+	display: none;
+	cursor: auto;
+	z-index: 30;
 }
 
 .menu-bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding: 12px;
 }
 
 .menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
 }
 
 .profile {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .profile img {
-    width: 60px;
+	width: 60px;
 }
 
 .menu {
-    margin-top: 34px;
+	margin-top: 34px;
 }
 
 .menu ul li {
-    font-size: 24px;
-    text-align: center;
-    margin-top: 6px;
-    list-style: none;
+	font-size: 24px;
+	text-align: center;
+	margin-top: 6px;
+	list-style: none;
 }
 
 .menu ul li a {
-    padding: 6px;
-    margin-top: 10px;
-    border-radius: 10px;
-    text-align: center;
-    align-items: center;
-    color: #000000;
+	padding: 6px;
+	margin-top: 10px;
+	border-radius: 10px;
+	text-align: center;
+	align-items: center;
+	color: #000000;
 }
 
 .menu ul li a:hover {
-    background-color: #d7a86e;
-    border-bottom: 1px solid #FF7070;
+	background-color: #b79bf2;
+	border-bottom: 1px solid #48416c;
 }
 
 .menu ul li a:hover div.tooltips {
-    display: block;
+	display: block;
 }
 
 .menu ul li a.actived {
-    background-color: #d7a86e;
-    border-bottom: 0px solid #000000;
+	background-color: #b79bf2;
+	border-bottom: 0px solid #48416c;
 }
 
 .button-menu {
-    margin-top: 35.5vh;
+	margin-top: 35.5vh;
 }
 
 .out {
-    border-radius: 100px !important;
-    border-bottom: 0px solid #000000 !important;
+	border-radius: 100px !important;
+	border-bottom: 0px solid #48416c !important;
 }
 
 .button-menu ul li a.out {
-    background-color: #d7a86e;
+	background-color: #48416c;
 }
 
 .ml-container {
-    margin-left: 10vw;
+	margin-left: 10vw;
 }
