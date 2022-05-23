@@ -14,10 +14,14 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/stock.css">
 
     <!-- Data Tables -->
-    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
     <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"> </script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 
     <title>Dashboard</title>
 </head>
@@ -25,7 +29,7 @@
 <body>
     <header>
         <div>
-            <nav class="navbar navbar-expand-lg"style = background-color:#A64B2A>
+            <nav class="navbar navbar-expand-lg" style=background-color:#A64B2A>
                 <div class="container-fluid">
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -41,56 +45,63 @@
     </header>
 
     <div class="d-flex">
-        <nav class="nav-bar"style = background-color:#A64B2A>
+        <nav class="nav-bar" style=background-color:#A64B2A>
             <div class="menu-bar">
                 <div class="menu borders">
                     <div class="main-menu ">
                         <ul>
                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
-                                <a href="<?= base_url(); ?>dashboard" class="<?php if (uri_string() === 'dashboard') echo 'actived' ?>">
+                                <a href="<?= base_url(); ?>dashboard"
+                                    class="<?php if (uri_string() === 'dashboard') echo 'actived' ?>">
                                     <i class="bi bi-house-door-fill"></i>
                                     <div class="position-absolute tooltips">Home</div>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?= base_url(); ?>search" class="<?php if (uri_string() === 'search') echo 'actived' ?>">
+                                <a href="<?= base_url(); ?>search"
+                                    class="<?php if (uri_string() === 'search') echo 'actived' ?>">
                                     <i class="bi bi-search"></i>
                                     <div class="position-absolute tooltips">Search</div>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?= base_url(); ?>stock" class="<?php if (uri_string() === 'stock') echo 'actived' ?>">
+                                <a href="<?= base_url(); ?>stock"
+                                    class="<?php if (uri_string() === 'stock') echo 'actived' ?>">
                                     <i class="bi bi-stack"></i>
                                     <div class="position-absolute tooltips">Data Stock</div>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?= base_url(); ?>barang_masuk" class="<?php if (uri_string() === 'barang_masuk') echo 'actived' ?>">
+                                <a href="<?= base_url(); ?>barang_masuk"
+                                    class="<?php if (uri_string() === 'barang_masuk') echo 'actived' ?>">
                                     <i class="bi bi-arrow-down-square-fill"></i>
                                     <div class="position-absolute tooltips">Barang Masuk</div>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?= base_url(); ?>barang_keluar" class="<?php if (uri_string() === 'barang_keluar') echo 'actived' ?>">
+                                <a href="<?= base_url(); ?>barang_keluar"
+                                    class="<?php if (uri_string() === 'barang_keluar') echo 'actived' ?>">
                                     <i class="bi bi-arrow-up-square-fill"></i>
                                     <div class="position-absolute tooltips">Barang Keluar</div>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?= base_url(); ?>peminjaman" class="<?php if (uri_string() === 'peminjaman') echo 'actived' ?>">
+                                <a href="<?= base_url(); ?>peminjaman"
+                                    class="<?php if (uri_string() === 'peminjaman') echo 'actived' ?>">
                                     <i class="bi bi-arrow-left-right"></i>
                                     <div class="position-absolute tooltips">Peminjaman</div>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?= base_url(); ?>history" class="<?php if (uri_string() === 'history') echo 'actived' ?>">
+                                <a href="<?= base_url(); ?>history"
+                                    class="<?php if (uri_string() === 'history') echo 'actived' ?>">
                                     <i class="bi bi-arrow-counterclockwise"></i>
                                     <div class="position-absolute tooltips">History</div>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    
+
                 </div>
             </div>
         </nav>
