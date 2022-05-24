@@ -15,7 +15,7 @@ class Barang_Keluar extends CI_Controller
         // $data['warehouse'] = $this->M_Dashboard->getDataWarehouse()->result();
         $data['judul'] = 'Barang_Keluar';
 
-        $this->load->view('template/header');
+        $this->load->view('template/header', $data);
         $this->load->view('barang_keluar/index', $data);
     }
 }

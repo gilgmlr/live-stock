@@ -15,7 +15,7 @@ class History extends CI_Controller
         // $data['warehouse'] = $this->M_Dashboard->getDataWarehouse()->result();
         $data['judul'] = 'History';
 
-        $this->load->view('template/header');
+        $this->load->view('template/header', $data);
         $this->load->view('history/index', $data);
     }
 }

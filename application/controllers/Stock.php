@@ -15,7 +15,7 @@ class Stock extends CI_Controller
         $data['stock'] = $this->M_Stock->getDataStock()->result();
         $data['judul'] = 'Stock';
 
-        $this->load->view('template/header');
+        $this->load->view('template/header', $data);
         $this->load->view('stock/index', $data);
     }
 }

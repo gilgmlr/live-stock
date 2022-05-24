@@ -15,7 +15,7 @@ class Search extends CI_Controller
         // $data['warehouse'] = $this->M_Dashboard->getDataWarehouse()->result();
         $data['judul'] = 'Search';
 
-        $this->load->view('template/header');
+        $this->load->view('template/header', $data);
         $this->load->view('search/index', $data);
     }
 }
