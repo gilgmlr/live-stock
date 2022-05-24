@@ -1,5 +1,5 @@
         <div class="col">
-            <div class="container-fluid">
+            <!-- <div class="container-fluid">
                 <div style="text-align: right;">
                     <img src="assets/image/icon.png " />
                     <span class="ps-2">Warehouse. <br />Last update: Mei 20, 2022</span>
@@ -13,8 +13,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container-fluid">
+            </div> -->
+            <!-- <div class="container-fluid">
                 <table class="table table-striped table-hover center">
                     <tr>
                         <th>NO</th>
@@ -44,8 +44,8 @@
                 </table>
             </div>
         </div>
-        </div>
+        </div> -->
 
-        </body>
+            </body>
 
-        </html>
+            </html>

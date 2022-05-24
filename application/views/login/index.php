@@ -24,42 +24,14 @@
 
 <body>
 
-    <div class="text-center">
-        <div class="row">
-            <div class="col-4 ">
-                <div class="div">
-                    <div class="row">
-                        <img class="logo" src="assets/image/logo-cemindo-gemilang.png" width=400px height=400px
-                            alt="logo" />
-                        <h1>Selamat Datang !</h1>
-                        <p class="text-muted">Login untuk masuk ke Warehouse.</p>
-                    </div>
-                    <div class="container">
-                        <!-- <form action="login/login" method="POST">
-									<div class="form-group">
-										<input
-											type="text"
-											class="form-control"
-											id="user"
-											name="user"
-											placeholder="Username / NIP"
-											required
-										/>
-									</div>
-									<p></p>
-									<div class="form-group">
-										<input
-											type="password"
-											class="form-control"
-											id="password"
-											name="password"
-											placeholder="Password"
-											required
-										/>
-									</div>
-									<p></p>
-									<input type="submit" class="btn btn-danger" value="Login" id="login">
-								</form> -->
+
+    <div class="card2" style="background-color:#5C567B; border:none; border-radius: 10px;">
+        <div class="card1">
+            <div class="card-body m-1">
+                <div class="text-center">
+                    <h1>Selamat Datang !</h1>
+                    <p class="text-muted">Login untuk masuk ke Warehouse.</p>
+                    <center>
                         <form action="login/login" method="POST">
                             <div class="input-container">
                                 <input type="text" id="user" class="text-input" name="user" autocomplete="off"
@@ -74,14 +46,14 @@
                             <input type="submit" class="btn btn-danger" value="Login" id="login">
 
                         </form>
-                    </div>
+                    </center>
                 </div>
-            </div>
-            <div class="col-8">
-                <img class="bg" src="assets/image/home-banner.jpeg" alt="background" />
             </div>
         </div>
     </div>
+
+
+
 
     <script src="assets/javascript/login.js"></script>
 
