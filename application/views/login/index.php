@@ -24,33 +24,38 @@
 
 <body>
 
+    <div class="container " style="margin-top: 50px;">
 
-    <div class="card2" style="background-color:#5C567B; border:none; border-radius: 10px;">
-        <div class="card1">
-            <div class="card-body m-1">
-                <div class="text-center">
-                    <h1>Selamat Datang !</h1>
-                    <p class="text-muted">Login untuk masuk ke Warehouse.</p>
-                    <center>
-                        <form action="login/login" method="POST">
-                            <div class="input-container">
-                                <input type="text" id="user" class="text-input" name="user" autocomplete="off"
-                                    placeholder="Enter your username" required />
-                                <label class="label" for="username">NIP</label>
-                            </div>
-                            <div class="input-container">
-                                <input type="text" id="password" name="password" class="text-input" autocomplete="off"
-                                    placeholder="Enter your username" required />
-                                <label class="label" for="username">Password</label>
-                            </div>
-                            <input type="submit" class="btn btn-danger" value="Login" id="login">
-
-                        </form>
-                    </center>
-                </div>
+        <div class="col-md">
+            <div class="text-center">
+                <h1>Selamat Datang !</h1>
+                <p class="text-muted">Login untuk masuk ke Warehouse.</p>
             </div>
+            <hr>
+            <div class="card-body">
+                <center>
+                    <form action="login/login" method="POST">
+                        <div class="input-container">
+                            <input type="text" id="user" class="text-input" name="user" autocomplete="off"
+                                placeholder="Enter your username / NIP" required />
+                            <label class="label" for="username">Username / NIP</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" id="password" name="password" class="text-input" autocomplete="off"
+                                placeholder="Enter your password" required />
+                            <label class="label" for="password">Password</label>
+                        </div>
+                        <input type="submit" class="btn" value="Login" id="login">
+
+                    </form>
+                </center>
+            </div>
+
         </div>
     </div>
+
+    </div>
+
 
 
 
