@@ -63,11 +63,6 @@ body {
 	opacity: 1;
 }
 
-.container {
-	background-color: #3a3558;
-	width: 400px;
-	border-radius: 25px;
-}
 .text-center {
 	margin-top: 1rem;
 	padding-top: 2rem;

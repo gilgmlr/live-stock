@@ -71,49 +71,51 @@
             </div>
         </nav> -->
 
-<div class="col container-fluid mt-5">
-    <!--  ISI DISINI  -->
-    <table id="warehouse" class="table table-striped">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Item Code</th>
-                <th>Item Name</th>
-                <th>Item Spec</th>
-                <th>UoM</th>
-                <th>Location</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- ISI KONFIG BACKEND DISINI -->
-            <?php
+<div class="container">
+    <div class="col container-fluid mt-5">
+        <!--  ISI DISINI  -->
+        <table id="warehouse" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Item Spec</th>
+                    <th>UoM</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ISI KONFIG BACKEND DISINI -->
+                <?php
                                     $i = 1;
                                     foreach ($stock as $data) { 
                                 ?>
 
-            <tr>
-                <td><?php echo $i ?></td>
-                <td><?php echo $data->item_code ?></td>
-                <td><?php echo $data->item_name ?></td>
-                <td><?php echo $data->item_specification ?></td>
-                <td><?php echo $data->uom ?></td>
-                <td><?php echo $data->location ?></td>
-                <td>
-                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">Edit</button>
-                </td>
-            </tr>
+                <tr>
+                    <td><?php echo $i ?></td>
+                    <td><?php echo $data->item_code ?></td>
+                    <td><?php echo $data->item_name ?></td>
+                    <td><?php echo $data->item_specification ?></td>
+                    <td><?php echo $data->uom ?></td>
+                    <td><?php echo $data->location ?></td>
+                    <td>
+                        <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Edit</button>
+                    </td>
+                </tr>
 
-            <?php
+                <?php
                             $i++;
                             }
                         ?>
-        </tbody>
-    </table>
-</div>
+            </tbody>
+        </table>
+    </div>
 </div>
 
+</div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>

@@ -40,14 +40,14 @@
         <div>
             <nav class="navbar navbar-expand-lg" style=background-color:#48416c>
                 <div class="container-fluid">
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        </ul>
-                        <form class="d-flex" action="login/logout">
-                            <button class="btn btn-danger" type="submit">Logout</button>
-                        </form>
-                    </div>
+                    <h5>Dashboard</h1>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            </ul>
+                            <form class="d-flex" action="login/logout">
+                                <button class="btn btn-danger" type="submit">Logout</button>
+                            </form>
+                        </div>
                 </div>
             </nav>
         </div>
