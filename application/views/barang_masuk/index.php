@@ -31,10 +31,19 @@
                             id="floatingTextarea"></textarea>
 
                         <div class="row justify-content-center">
-
-                            <button type="button" class="btn btn-primary">Tambah Items</button>
-                            <button type="button" class="btn btn-primary">Batal</button>
-                            <button type="button" class="btn btn-primary">Simpan</button>
+                        </div>
+                        <div class="container">
+                            <div class="row justify-content-md-center">
+                                <div class="col col-lg-2">
+                                    <button type="button" class="btn btn-primary">Tambah Items</button>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-primary">Batal</button>
+                                </div>
+                                <div class="col col-lg-2">
+                                    <button type="button" class="btn btn-primary">Simpan</button>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
