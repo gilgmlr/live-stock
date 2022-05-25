@@ -26,7 +26,7 @@
 .nav-bar {
 	width: 80px;
 	height: 100vh;
-	background-color: #a64b2a;
+
 	border-radius: 0px;
 	position: relative;
 	box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
@@ -54,16 +54,10 @@
 }
 
 .menu {
+	margin-left: 25px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
-}
-
-.profile {
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .menu {
