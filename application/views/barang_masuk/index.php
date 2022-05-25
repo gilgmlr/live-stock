@@ -143,7 +143,7 @@
                         <label for="inputEmail3" class="col-sm-6 col-form-label">Recived by</label>
                         <input type="email" class="form-control" id="inputText">
                     </div>
-                    <div class="row justify-content-between">
+                    <div class="row justify-content-end">
                         <button type="button" class="btn btn-primary">Tambah Items</button>
                         <button type="button" class="btn btn-primary">Batal</button>
                         <button type="button" class="btn btn-primary">Simpan</button>
