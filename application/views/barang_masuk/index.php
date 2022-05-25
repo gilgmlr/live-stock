@@ -30,22 +30,18 @@
                         <textarea class="form-control" placeholder="Leave a description here"
                             id="floatingTextarea"></textarea>
 
-                        <div class="row justify-content-center">
-                        </div>
-                        <div class="container">
-                            <div class="row justify-content-md-center">
-                                <div class="col col-lg-2">
-                                    <button type="button" class="btn btn-primary">Tambah Items</button>
-                                </div>
-                                <div class="col-md-2">
-                                    <button type="button" class="btn btn-primary">Batal</button>
-                                </div>
-                                <div class="col col-lg-2">
-                                    <button type="button" class="btn btn-primary">Simpan</button>
-                                </div>
-                            </div>
+                        <label for="inputEmail3" class="col-sm-4 col-form-label">Request Qty</label>
+                        <input type="email" class="form-control" id="inputText">
+                        <label for="inputEmail3" class="col-sm-4 col-form-label">Issued Qty</label>
+                        <input type="email" class="form-control" id="inputText">
+                        <label for="inputEmail3" class="col-sm-4 col-form-label">UoM</label>
+                        <input type="email" class="form-control" id="inputText">
+                        <label for="inputEmail3" class="col-sm-4 col-form-label">Reason Code</label>
+                        <input type="email" class="form-control" id="inputText">
+                        <label for="inputEmail3" class="col-sm-4 col-form-label">Cost Center</label>
+                        <input type="email" class="form-control" id="inputText">
 
-                        </div>
+
                     </div>
                     <div class="col-sm-6">
                         <label for="inputEmail3" class="col-sm-6 col-form-label">Request by</label>
@@ -56,7 +52,22 @@
                         <input type="email" class="form-control" id="inputText">
                         <label for="inputEmail3" class="col-sm-6 col-form-label">Recived by</label>
                         <input type="email" class="form-control" id="inputText">
-                        <p></p>
+
+                        <div class="container">
+                            <div class="row align-items-end">
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary">Tambah Items</button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary">Batal</button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary">Simpan</button>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
