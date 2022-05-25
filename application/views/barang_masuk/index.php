@@ -31,11 +31,11 @@
                             id="floatingTextarea"></textarea>
 
                         <div class="row justify-content-center">
-                            <div class="container">
-                                <button type="button" class="btn btn-primary">Tambah Items</button>
-                                <button type="button" class="btn btn-primary">Batal</button>
-                                <button type="button" class="btn btn-primary">Simpan</button>
-                            </div>
+
+                            <button type="button" class="btn btn-primary">Tambah Items</button>
+                            <button type="button" class="btn btn-primary">Batal</button>
+                            <button type="button" class="btn btn-primary">Simpan</button>
+
                         </div>
                     </div>
                     <div class="col-sm-6">
