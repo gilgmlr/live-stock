@@ -39,20 +39,18 @@
 <body>
     <header>
         <div class="fixed-top">
-            <div class="navatas">
-                <nav class="navbar navbar-expand-lg" style=background-color:#48416c>
-                    <div class="container-fluid">
-                        <h5><?php echo $judul ?></h1>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                </ul>
-                                <form class="d-flex" action="login/logout">
-                                    <button class="btn btn-danger" type="submit">Logout</button>
-                                </form>
-                            </div>
-                    </div>
-                </nav>
-            </div>
+            <nav class="navbar navbar-expand-md" style=background-color:#48416c>
+                <div class="container-fluid">
+                    <h5><?php echo $judul ?></h1>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            </ul>
+                            <form class="d-flex" action="login/logout">
+                                <button class="logout btn-danger" type="submit">Logout</button>
+                            </form>
+                        </div>
+                </div>
+            </nav>
         </div>
     </header>
 

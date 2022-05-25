@@ -1,7 +1,5 @@
-<div class="container">
+<div class="container" style="margin-top: 100px;">
     <div class="card">
-
-
         <form>
             <div class="container">
                 <div class="row justify-content-center">
