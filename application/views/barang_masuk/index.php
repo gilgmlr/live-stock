@@ -49,6 +49,7 @@
                         <input type="email" class="form-control" id="inputText">
                         <label for="inputEmail3" class="col-sm-6 col-form-label">Recived by</label>
                         <input type="email" class="form-control" id="inputText">
+                        <p></p>
                     </div>
 
                 </div>

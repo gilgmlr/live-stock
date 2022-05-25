@@ -93,9 +93,11 @@
         </div> -->
 
 <div class="main-content">
-    <div style="text-align: right; color:#fff">
-        <img src="assets/image/icon.png " />
-        <span class="ps-2">Warehouse. <br />Last update: Mei 20, 2022</span>
+    <div class="logo">
+        <div style="text-align: right; color:#fff">
+            <img src="assets/image/icon.png " />
+            <span class="ps-2">Warehouse. <br />Last update: Mei 20, 2022</span>
+        </div>
     </div>
     <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6">
