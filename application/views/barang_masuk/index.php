@@ -132,6 +132,13 @@
                             <textarea class="form-control" placeholder="Leave a description here"
                                 id="floatingTextarea"></textarea>
                         </div>
+                        <div class="row justify-content-center">
+                            <div class="container">
+                                <button type="button" class="btn btn-primary">Tambah Items</button>
+                                <button type="button" class="btn btn-primary">Batal</button>
+                                <button type="button" class="btn btn-primary">Simpan</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-sm-6">
                         <label for="inputEmail3" class="col-sm-6 col-form-label">Request by</label>
@@ -143,11 +150,7 @@
                         <label for="inputEmail3" class="col-sm-6 col-form-label">Recived by</label>
                         <input type="email" class="form-control" id="inputText">
                     </div>
-                    <div class="row justify-content-end">
-                        <button type="button" class="btn btn-primary">Tambah Items</button>
-                        <button type="button" class="btn btn-primary">Batal</button>
-                        <button type="button" class="btn btn-primary">Simpan</button>
-                    </div>
+
                 </div>
             </div>
         </form>

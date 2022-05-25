@@ -69,12 +69,12 @@ body {
 }
 .btn {
 	background-color: #b79bf2;
-	border-radius: 25px;
-	width: 200px;
-	height: 200px;
+	/* border-radius: 25px; */
+	width: 80px;
+	height: 50px;
 	border: none;
 	color: #fff;
-	font-size: 18px;
+	font-size: 12px;
 	outline: none;
 	cursor: pointer;
 	transition: all 0.3s;
