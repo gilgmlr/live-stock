@@ -41,6 +41,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     HISTORY
+                                    isi history
                                 </div>
                             </div>
                         </div>
