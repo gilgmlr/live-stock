@@ -56,13 +56,6 @@
 
     </div>
 
-
-
-
-
-    <script src="assets/javascript/login.js"></script>
-
-
 </body>
 
 
