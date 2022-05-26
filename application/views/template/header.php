@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/login.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/custom.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/barangmasuk.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/search.css">
 
     <!-- Data Tables -->
     <link rel="stylesheet" type="text/css" media="screen"
