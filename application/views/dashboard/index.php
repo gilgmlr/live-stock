@@ -238,7 +238,8 @@
                                 <td><?php echo $data->name ?></td>
                                 <td><?php echo $data->total_items ?></td>
                                 <td>
-                                    <!-- <button class="btn">View Details</button> -->
+                                    <button type="button" class="btnedit btn-warning btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">Edit</button>
                                 </td>
                             </tr>
                             <?php

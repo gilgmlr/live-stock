@@ -27,8 +27,7 @@
                         <input type="text" class="form-control" id="item_code">
 
                         <label for="">Items Description</label>
-                        <textarea class="form-control" placeholder="Leave a description here"
-                            id="item_desc"></textarea>
+                        <textarea class="form-control" placeholder="Leave a description here" id="item_desc"></textarea>
 
                         <label for="" class="col-sm-4 col-form-label">Request Qty</label>
                         <input type="text" class="form-control" id="request_qty">
@@ -56,7 +55,8 @@
                         <div class="container">
                             <div class="row align-items-end">
                                 <div class="col">
-                                    <button id="tambah_items" type="submit" class="btn btn-primary">Tambah Items</button>
+                                    <button id="tambah_items" type="submit" class="btn btn-primary">Tambah
+                                        Items</button>
                                 </div>
                                 <div class="col">
                                     <button id="batal" type="submit" class="btn btn-primary">Batal</button>
