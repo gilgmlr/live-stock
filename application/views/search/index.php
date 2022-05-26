@@ -1,82 +1,70 @@
-<!-- <body>
-    <header>
-        <div class="navatas">
-            <nav class="navbar navbar-expand-lg"style = background-color:#A64B2A>
-                <div class="container-fluid">
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        </ul>
-                        <form class="d-flex" action="login/logout">
-                            <button class="btn btn-danger" type="submit">Logout</button>
-                        </form>
+        <div class="container" style="margin-top: 80px;">
+            <div class=" card">
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-8">
+                            <div class="input-group sm-3">
+                                <input type="text" class="form-control" placeholder="search" aria-label="search"
+                                    aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                                    style="margin:0">Button</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </div>
-    </header>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="margin-top:8px">Kategori</h5>
+                                    <div class="card" style="width:5rem">
+                                        <div class="card-body">
+                                            tas
+                                        </div>
+                                    </div>
+                                    <div class="card" style="width:5rem">
+                                        <div class="card-body">
+                                            tas
+                                        </div>
+                                    </div>
+                                    <div class="card" style="width:5rem">
+                                        <div class="card-body">
+                                            tas
+                                        </div>
+                                    </div>
+                                    <div class="card" style="width:5rem">
+                                        <div class="card-body">
+                                            tas
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    HISTORY
+                                </div>
+                            </div>
+                        </div>
 
-    <div class="d-flex">
-        <nav class="nav-bar"style = background-color:#A64B2A>
-            <div class="menu-bar">
-                <div class="menu borders">
-                    <div class="main-menu ">
-                        <ul>
-                            <li data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
-                                <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'dashboard') echo 'actived' ?>">
-                                    <i class="bi bi-house-door-fill"></i>
-                                    <div class="position-absolute tooltips">Home</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'search') echo 'actived' ?>">
-                                    <i class="bi bi-search"></i>
-                                    <div class="position-absolute tooltips">Search</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'stock') echo 'actived' ?>">
-                                    <i class="bi bi-stack"></i>
-                                    <div class="position-absolute tooltips">Data Stock</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'masuk') echo 'actived' ?>">
-                                    <i class="bi bi-arrow-down-square-fill"></i>
-                                    <div class="position-absolute tooltips">Barang Masuk</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'keluar') echo 'actived' ?>">
-                                    <i class="bi bi-arrow-up-square-fill"></i>
-                                    <div class="position-absolute tooltips">Barang Keluar</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'peminjaman') echo 'actived' ?>">
-                                    <i class="bi bi-arrow-left-right"></i>
-                                    <div class="position-absolute tooltips">Peminjaman</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'history') echo 'actived' ?>">
-                                    <i class="bi bi-arrow-counterclockwise"></i>
-                                    <div class="position-absolute tooltips">History</div>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <img src="http://cdn.shopify.com/s/files/1/1764/2831/products/Pylox-RJ-London-Clear.jpg?v=1621561130"
+                                    class="card-img-top justify-content-center" alt="pilox">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="font-weight:bold">Pilox</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary" style="margin-top:3px">Details Barang</a>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
-                    
                 </div>
             </div>
-        </nav> -->
-
-        <div class="col">
-            <!--  ISI DISINI  -->
-            SEARCH
         </div>
-    </div>
+        </div>
 
-</body>
+        </body>
 
-</html>
+        </html>
