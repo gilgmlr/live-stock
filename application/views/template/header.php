@@ -46,9 +46,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             </ul>
-                            <form class="d-flex" action="login/logout">
-                                <button class="logout btn-danger" type="submit">Logout</button>
-                            </form>
+                            <h5>Welcome Admin, Nama</h1>
                         </div>
                 </div>
             </nav>
@@ -110,6 +108,12 @@
                                         class="<?php if (uri_string() === 'history') echo 'actived' ?>">
                                         <i class="bi bi-arrow-counterclockwise"></i>
                                         <div class="position-absolute tooltips">History</div>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="<?= base_url(); ?>login" class="out bg-danger text-white">
+                                        <i class="bi bi-box-arrow-right"></i>
+                                        <div class="position-absolute tooltips bg-danger text-white">Logout</div>
                                     </a>
                                 </li>
                             </ul>
