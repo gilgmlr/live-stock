@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 80px;">
-    <div class="card">
+    <div class="card shadow p-3 mb-5 bg-white rounded">
         <div class="card-body">
             <div class="container">
                 <!--  ISI DISINI  -->

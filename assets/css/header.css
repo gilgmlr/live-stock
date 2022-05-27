@@ -5,16 +5,16 @@
 .menu ul li a {
 	display: block;
 	margin-left: -30px;
-	color: #b79bf2;
+	color: yellow;
 	border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 .menu ul li a:hover {
-	background-color: #b79bf2;
+	background-color: yellow;
 }
 
 .active {
-	background-color: #b79bf2;
+	background-color: yelow;
 }
 
 .button {
@@ -37,7 +37,7 @@
 	margin-top: -3rem;
 	left: 90px;
 	min-width: 18.5vh;
-	background-color: #b79bf2;
+	background-color: gold;
 	padding: 0.8rem 1.5rem;
 	border-radius: 10px;
 	box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
@@ -77,11 +77,12 @@
 	border-radius: 10px;
 	text-align: center;
 	align-items: center;
+	background-color: #ffffff;
 	color: #000000;
 }
 
 .menu ul li a:hover {
-	background-color: #b79bf2;
+	background-color: gold;
 	border-bottom: 1px solid #48416c;
 }
 
@@ -90,7 +91,7 @@
 }
 
 .menu ul li a.actived {
-	background-color: #b79bf2;
+	background-color: gold;
 	border-bottom: 0px solid #48416c;
 }
 
@@ -104,7 +105,7 @@
 }
 
 .button-menu ul li a.out {
-	background-color: #48416c;
+	background-color: #ffd24c;
 }
 
 .ml-container {

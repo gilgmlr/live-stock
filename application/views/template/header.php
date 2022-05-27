@@ -40,7 +40,7 @@
 <body>
     <header>
         <div class="fixed-top">
-            <nav class="navbar navbar-expand-md" style=background-color:#48416c>
+            <nav class="navbar navbar-expand-md" style=background-color:#563d7c>
                 <div class="container-fluid">
                     <h5><?php echo $judul ?></h1>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -56,7 +56,7 @@
     <div class="d-flex">
 
         <div class="fixed">
-            <nav class="nav-bar" style=background-color:#48416c>
+            <nav class="nav-bar" style=background-color:#563d7c>
                 <div class="menu-bar">
                     <div class="menu borders">
                         <div class="main-menu ">
@@ -110,7 +110,7 @@
                                         <div class="position-absolute tooltips">History</div>
                                     </a>
                                 </li>
-                                <li >
+                                <li>
                                     <a href="<?= base_url(); ?>login" class="out bg-danger text-white">
                                         <i class="bi bi-box-arrow-right"></i>
                                         <div class="position-absolute tooltips bg-danger text-white">Logout</div>

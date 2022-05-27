@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 100px;">
-    <div class="card">
+    <div class="card shadow p-3 mb-5 bg-white rounded">
         <div class="card-body">
             <form action="barang_keluar/tambahBarangKeluar" method="POST">
                 <div class="container">
@@ -70,10 +70,10 @@
                                             Items</button>
                                     </div>
                                     <div class="col">
-                                        <button id="batal" type="submit" class="btn btn-primary">Batal</button>
+                                        <button id="batal" type="submit" class="btn btn-danger">Batal</button>
                                     </div>
                                     <div class="col">
-                                        <button id="simpan" type="submit" class="btn btn-primary">Simpan</button>
+                                        <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
                                     </div>
                                 </div>
                             </div>
