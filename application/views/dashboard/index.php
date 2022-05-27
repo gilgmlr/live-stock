@@ -217,7 +217,7 @@
         </div>
         <!-- Modal -->
         <div class="modal fade" id="closed" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:40%>
                 <div class="card ">
                     <div class="card-body">
                         <div class="modal-content">
@@ -313,7 +313,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="view" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:40%>
         <div class="card ">
             <div class="card-body">
                 <div class="modal-content">
