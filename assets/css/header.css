@@ -5,12 +5,12 @@
 .menu ul li a {
 	display: block;
 	margin-left: -30px;
-	color: yellow;
+	color: gold;
 	border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 .menu ul li a:hover {
-	background-color: yellow;
+	background-color: gold;
 }
 
 .active {
@@ -78,7 +78,7 @@
 	text-align: center;
 	align-items: center;
 	background-color: #ffffff;
-	color: #000000;
+	color: #48416c;
 }
 
 .menu ul li a:hover {
