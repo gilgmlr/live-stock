@@ -70,8 +70,10 @@
                                     <p class="card-text">Some quick example text to build on the card title and make up
                                         the bulk of the card's content.</p>
 
-                                    <a href="#" class="btn btn-primary" style=" margin-left: 9rem">Details
-                                        Barang</a>
+                                    <center>
+                                        <a href="#" class="btn btn-primary">Details
+                                            Barang</a>
+                                    </center>
 
                                 </div>
                             </div>

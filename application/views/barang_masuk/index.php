@@ -30,8 +30,10 @@
                                 GR
                             </div>
                             <div class="card-footer">
-                                <button type="button" class="btn btn-warning btn-sm" style="margin-left:8rem"
-                                    data-bs-toggle="modal" data-bs-target="#GR">Good Recived</button>
+                                <center>
+                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#GR">Good Recived</button>
+                                </center>
                             </div>
                         </div>
                     </div>
@@ -41,8 +43,10 @@
                                 WT
                             </div>
                             <div class="card-footer">
-                                <button type="button" class="btn btn-warning btn-sm" style="margin-left:8rem"
-                                    data-bs-toggle="modal" data-bs-target="#WTin">Warehouse Transfer</button>
+                                <center>
+                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#WTin">Warehouse Transfer</button>
+                                </center>
                             </div>
                         </div>
                     </div>
@@ -52,8 +56,10 @@
                                 MS
                             </div>
                             <div class="card-footer">
-                                <button type="button" class="btn btn-warning btn-sm" style="margin-left:8rem"
-                                    data-bs-toggle="modal" data-bs-target="#MS">Adjusment In Material</button>
+                                <center>
+                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#MS">Adjusment In Material</button>
+                                </center>
                             </div>
                         </div>
                     </div>
