@@ -1,97 +1,3 @@
-<!-- <div class="container-grid">
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <table class="table table-striped table-hover center">
-                        <tr>
-                            <th>NO</th>
-                            <th>STORE ID</th>
-                            <th>STORE NAME</th>
-                            <th>TOTAL ITEMS</th>
-                            <th>ACTION</th>
-                        </tr>
-
-                        <?php
-                        $i = 1;
-                        foreach ($warehouse as $data) { 
-                    ?>
-                        <tr>
-                            <td><?php echo $i ?></td>
-                            <td><?php echo $data->id ?></td>
-                            <td><?php echo $data->name ?></td>
-                            <td><?php echo $data->total_items ?></td>
-                            <td>
-                                <button class="btn">View Details</button>
-                            </td>
-                        </tr>
-                        <?php
-                        $i++;
-                        }
-                    ?>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-auto">
-
-        </div>
-
-        <div class="col-lg-2">
-            <div class="card2"></div>
-        </div>
-    </div>
-</div> -->
-
-<!-- <div class="col"> -->
-<!-- <div class="container-fluid">
-                <div style="text-align: right;">
-                    <img src="assets/image/icon.png " />
-                    <span class="ps-2">Warehouse. <br />Last update: Mei 20, 2022</span>
-                </div>
-                <div class="card2" style="background-color:#D7A86E; border:none; border-radius: 10px;">
-                    <div class="card-body m-1">
-                        <div class="txt1">Total Items All Warehouse</div>
-                        <div class="txt2"><b>30.000</b></div>
-                        <div class="txt3">
-                            <p>Items</p>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-<!-- <div class="container-fluid">
-                <table class="table table-striped table-hover center">
-                    <tr>
-                        <th>NO</th>
-                        <th>STORE ID</th>
-                        <th>STORE NAME</th>
-                        <th>TOTAL ITEMS</th>
-                        <th>ACTION</th>
-                    </tr>
-
-                    <?php
-                        $i = 1;
-                        foreach ($warehouse as $data) { 
-                    ?>
-                    <tr>
-                        <td><?php echo $i ?></td>
-                        <td><?php echo $data->id ?></td>
-                        <td><?php echo $data->name ?></td>
-                        <td><?php echo $data->total_items ?></td>
-                        <td>
-                            <button type="button" class="btn btn-warning ">View Details</button>
-                        </td>
-                    </tr>
-                    <?php
-                        $i++;
-                        }
-                    ?>
-                </table>
-            </div>
-        </div>
-        </div> -->
-
 <div class="main-content">
 
     <div class="logo">
@@ -215,57 +121,67 @@
                 </div>
             </div>
         </div>
-        <!-- Modal -->
+        <!-- MODAL LENDING ACTIVITY -->
         <div class="modal fade" id="closed" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:40%>
-                <div class="card ">
-                    <div class="card-body">
-                        <div class="modal-content">
-                            <div class="modal-header" style=background-color:#ffe484>
-                                <h5 class="modal-title" id="exampleModalLabel">Lending Activity</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Form Lending Activity</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputno" class="form-label">No</label>
+                                <input type="Text" class="form-control" id="exampleInputno" aria-describedby="no">
                             </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="mb-3">
-                                        <label for="exampleInputno" class="form-label">No</label>
-                                        <input type="Text" class="form-control" id="exampleInputno"
-                                            aria-describedby="no">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleItemCode" class="form-label">Item Code</label>
-                                        <input type="Text" class="form-control" id="exampleItemCode">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleItemName" class="form-label">Item Name</label>
-                                        <input type="Text" class="form-control" id="exampleItemName">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleItemSpec" class="form-label">Item Spec</label>
-                                        <input type="Text" class="form-control" id="exampleItemSpec">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleUoM" class="form-label">UoM</label>
-                                        <input type="Text" class="form-control" id="exampleUoM">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleLocation" class="form-label">Location</label>
-                                        <input type="Text" class="form-control" id="exampleLocation">
-                                    </div>
+                            <div class="mb-3">
+                                <label for="exampleItemCode" class="form-label">Item Code</label>
+                                <input type="Text" class="form-control" id="exampleItemCode">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleItemName" class="form-label">Item Name</label>
+                                <input type="Text" class="form-control" id="exampleItemName">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleItemSpec" class="form-label">Item Spec</label>
+                                <input type="Text" class="form-control" id="exampleItemSpec">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleUoM" class="form-label">UoM</label>
+                                <input type="Text" class="form-control" id="exampleUoM">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleLocation" class="form-label">Location</label>
+                                <input type="Text" class="form-control" id="exampleLocation">
+                            </div>
 
-                                </form>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-success">Save changes</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="container">
+                            <div class="row align-items-center">
+
+                                <div class="col">
+                                    <center>
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+
+                                    </center>
                                 </div>
-                            </div>
+                                <div class="col">
+                                    <center>
+                                        <button type="button" class="btn btn-success">Save changes</button>
+                                    </center>
+                                </div>
 
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <div class="col-lg-5 col-md-12">
             <div class="card shadow p-3 mb-5 bg-white rounded" style="min-height: 400px">
@@ -311,50 +227,60 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- MODAL VIEW -->
 <div class="modal fade" id="view" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:40%>
-        <div class="card ">
-            <div class="card-body">
-                <div class="modal-content">
-                    <div class="modal-header" style=background-color:#ffe484>
-                        <h5 class="modal-title" id="exampleModalLabel">Warehouse Detile</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Warehouse Detiles</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputno" class="form-label">No</label>
+                        <input type="Text" class="form-control" id="exampleInputno" aria-describedby="no">
                     </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="exampleInputno" class="form-label">No</label>
-                                <input type="Text" class="form-control" id="exampleInputno" aria-describedby="no">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleItemCode" class="form-label">Item Code</label>
-                                <input type="Text" class="form-control" id="exampleItemCode">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleItemName" class="form-label">Item Name</label>
-                                <input type="Text" class="form-control" id="exampleItemName">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleItemSpec" class="form-label">Item Spec</label>
-                                <input type="Text" class="form-control" id="exampleItemSpec">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleUoM" class="form-label">UoM</label>
-                                <input type="Text" class="form-control" id="exampleUoM">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleLocation" class="form-label">Location</label>
-                                <input type="Text" class="form-control" id="exampleLocation">
-                            </div>
+                    <div class="mb-3">
+                        <label for="exampleItemCode" class="form-label">Item Code</label>
+                        <input type="Text" class="form-control" id="exampleItemCode">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleItemName" class="form-label">Item Name</label>
+                        <input type="Text" class="form-control" id="exampleItemName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleItemSpec" class="form-label">Item Spec</label>
+                        <input type="Text" class="form-control" id="exampleItemSpec">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleUoM" class="form-label">UoM</label>
+                        <input type="Text" class="form-control" id="exampleUoM">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleLocation" class="form-label">Location</label>
+                        <input type="Text" class="form-control" id="exampleLocation">
+                    </div>
 
-                        </form>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-success">Save changes</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <div class="col">
+                            <center>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+                            </center>
                         </div>
-                    </div>
+                        <div class="col">
+                            <center>
+                                <button type="button" class="btn btn-success">Save changes</button>
+                            </center>
+                        </div>
 
+                    </div>
                 </div>
             </div>
         </div>
@@ -368,3 +294,38 @@ $(document).ready(function() {
 </script>
 
 </html>
+
+
+<!-- MODAL TEMPLATE -->
+<!-- <div class="modal fade" id="..." tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Form Lending Activity</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <div class="col">
+                            <center>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+                            </center>
+                        </div>
+                        <div class="col">
+                            <center>
+                                <button type="button" class="btn btn-success">Save changes</button>
+                            </center>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

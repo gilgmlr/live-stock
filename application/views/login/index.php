@@ -49,7 +49,9 @@
                                                     autocomplete="off" placeholder="Enter your password" required />
                                                 <label class="label" for="password">Password</label>
                                             </div>
-                                            <input type="submit" class="btn" value="Login" id="login">
+                                            <input type="submit" class="btn btn-warning btn-sm" value="Login"
+                                                id="login">
+
 
                                         </form>
                                     </center>
