@@ -1,24 +1,3 @@
-<!-- <div class="col container-fluid mt-5">
-     ISI DISINI 
-    <table id="warehouse" class="table table-striped">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Item Code</th>
-                <th>Item Name</th>
-                <th>Item Spec</th>
-                <th>UoM</th>
-                <th>Location</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            ISI KONFIG BACKEND DISINI
-
-        </tbody>
-    </table>
-</div> -->
-
 <div class="container" style="margin-top: 80px;">
     <div class="card shadow p-3 mb-5 bg-white rounded">
         <div class="card-body">
@@ -75,8 +54,8 @@
 <div class="modal fade" id="GR" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Form Good Reciveed</h5>
+            <div class="modal-header" style="background-color: #563d7c">
+                <h5 class="modal-title" style="color: gold" id="exampleModalLabel">Form Good Recived</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -185,8 +164,8 @@
 <div class="modal fade" id="WTin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Form Good Reciveed</h5>
+            <div class="modal-header" style="background-color: #563d7c">
+                <h5 class="modal-title" style="color: gold" id="exampleModalLabel">Form Warehouse Transfer (IN)</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -294,8 +273,8 @@
 <div class="modal fade" id="MS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Form Good Reciveed</h5>
+            <div class="modal-header" style="background-color: #563d7c">
+                <h5 class="modal-title" style="color: gold" id="exampleModalLabel">Form Material Issue</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

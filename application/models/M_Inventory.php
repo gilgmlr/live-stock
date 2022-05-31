@@ -1,6 +1,6 @@
 <?php
 
-class M_Stock extends CI_Model
+class M_Inventory extends CI_Model
 {
 	public function getDataStock()
 	{

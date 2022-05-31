@@ -1,6 +1,6 @@
 <?php
 
-class M_Keluar extends CI_Model
+class M_Issue extends CI_Model
 {
 	public function tambahData($data)
 	{

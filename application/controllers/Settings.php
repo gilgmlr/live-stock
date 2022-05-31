@@ -1,6 +1,6 @@
 <?php
 
-class Peminjaman extends CI_Controller
+class Settings extends CI_Controller
 {
     public function __construct()
     {
@@ -13,9 +13,9 @@ class Peminjaman extends CI_Controller
     {
         // $data['jumlahWarehouse'] = $this->M_Dashboard->countRowsWarehouse();
         // $data['warehouse'] = $this->M_Dashboard->getDataWarehouse()->result();
-        $data['judul'] = 'Peminjaman';
+        $data['judul'] = 'Settings';
 
         $this->load->view('template/header', $data);
-        $this->load->view('peminjaman/index', $data);
+        $this->load->view('settings/index', $data);
     }
 }

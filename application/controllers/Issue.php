@@ -1,22 +1,22 @@
 <?php
 
-class Barang_Keluar extends CI_Controller
+class Issue extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
 
-        $this->load->model('M_Keluar');
+        $this->load->model('M_Issue');
     }
 
     public function index()
     {
         // $data['jumlahWarehouse'] = $this->M_Dashboard->countRowsWarehouse();
         // $data['warehouse'] = $this->M_Dashboard->getDataWarehouse()->result();
-        $data['judul'] = 'Barang Keluar';
+        $data['judul'] = 'Issue';
 
         $this->load->view('template/header', $data);
-        $this->load->view('barang_keluar/index', $data);
+        $this->load->view('Issue/index', $data);
     }
 
     public function tambahBarangKeluar()
@@ -40,6 +40,6 @@ class Barang_Keluar extends CI_Controller
             'received_by' => $this->input->post('receive_by'),
         );
 
-        $this->M_Keluar->tambahData($data);
+        $this->M_Issue->tambahData($data);
     }
 }

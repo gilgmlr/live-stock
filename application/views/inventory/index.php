@@ -32,8 +32,8 @@
                                     <td><?php echo $data->uom ?></td>
                                     <td><?php echo $data->location ?></td>
                                     <td>
-                                        <button type="button" class="btnedit btn-warning btn-sm" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal">Edit</button>
+                                        <button type="button" class="btn btn-warning btn-sm" style="margin:0px"
+                                            data-bs-toggle="modal" data-bs-target="#edit">Edit</button>
                                     </td>
                                 </tr>
 
@@ -54,13 +54,13 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
         <div class="card">
             <div class="card-body">
                 <div class="modal-content">
-                    <div class="modal-header" style=background-color:#D7A86E>
-                        <h5 class="modal-title" id="exampleModalLabel">Form Edit Barang</h5>
+                    <div class="modal-header" style="background-color: #563d7c">
+                        <h5 class="modal-title" style="color:gold" id="exampleModalLabel">Form Edit Barang</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">

@@ -43,12 +43,12 @@
         <div class="fixed-top">
             <nav class="navbar navbar-expand-md" style=background-color:#563d7c>
                 <div class="container-fluid">
-                    <h5><?php echo $judul ?></h1>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            </ul>
-                            <h5>Welcome Admin, Nama</h1>
-                        </div>
+                    <h2 style="color:gold"><?php echo $judul ?></h2>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        </ul>
+                        <h4 style="color:gold">Welcome Admin, Nama</h4>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -66,57 +66,84 @@
                                     <a href="<?= base_url(); ?>dashboard"
                                         class="<?php if (uri_string() === 'dashboard') echo 'actived' ?>">
                                         <i class="bi bi-house-door-fill"></i>
-                                        <div class="position-absolute tooltips">Home</div>
+                                        <div class="position-absolute tooltips">
+                                            <h5>Dashboard</h5>
+                                        </div>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="<?= base_url(); ?>search"
                                         class="<?php if (uri_string() === 'search') echo 'actived' ?>">
                                         <i class="bi bi-search"></i>
-                                        <div class="position-absolute tooltips">Search</div>
+                                        <div class="position-absolute tooltips">
+                                            <h5>Search</h5>
+                                        </div>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url(); ?>stock"
-                                        class="<?php if (uri_string() === 'stock') echo 'actived' ?>">
+                                    <a href="<?= base_url(); ?>inventory"
+                                        class="<?php if (uri_string() === 'inventory') echo 'actived' ?>">
                                         <i class="bi bi-stack"></i>
-                                        <div class="position-absolute tooltips">Data Stock</div>
+                                        <div class="position-absolute tooltips">
+                                            <h5>Inventory</h5>
+                                        </div>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url(); ?>barang_masuk"
-                                        class="<?php if (uri_string() === 'barang_masuk') echo 'actived' ?>">
-                                        <i class="bi bi-arrow-down-square-fill"></i>
-                                        <div class="position-absolute tooltips">Barang Masuk</div>
+                                    <a href="<?= base_url(); ?>received"
+                                        class="<?php if (uri_string() === 'received') echo 'actived' ?>">
+                                        <i class="bi bi-layer-backward"></i>
+                                        <div class="position-absolute tooltips">
+                                            <h5>Received</h5>
+                                        </div>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url(); ?>barang_keluar"
-                                        class="<?php if (uri_string() === 'barang_keluar') echo 'actived' ?>">
-                                        <i class="bi bi-arrow-up-square-fill"></i>
-                                        <div class="position-absolute tooltips">Barang Keluar</div>
+                                    <a href="<?= base_url(); ?>issue"
+                                        class="<?php if (uri_string() === 'issue') echo 'actived' ?>">
+                                        <i class="bi bi-layer-forward"></i>
+                                        <div class="position-absolute tooltips">
+                                            <h5>Issue</h5>
+                                        </div>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url(); ?>peminjaman"
-                                        class="<?php if (uri_string() === 'peminjaman') echo 'actived' ?>">
+                                    <a href="<?= base_url(); ?>lending"
+                                        class="<?php if (uri_string() === 'lending') echo 'actived' ?>">
                                         <i class="bi bi-arrow-left-right"></i>
-                                        <div class="position-absolute tooltips">Peminjaman</div>
+                                        <div class="position-absolute tooltips">
+                                            <h5>Lending</h5>
+                                        </div>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="<?= base_url(); ?>history"
                                         class="<?php if (uri_string() === 'history') echo 'actived' ?>">
                                         <i class="bi bi-arrow-counterclockwise"></i>
-                                        <div class="position-absolute tooltips">History</div>
+                                        <div class="position-absolute tooltips">
+                                            <h5>History</h5>
+                                        </div>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url(); ?>login" class="out bg-danger text-white">
-                                        <i class="bi bi-box-arrow-right"></i>
-                                        <div class="position-absolute tooltips bg-danger text-white">Logout</div>
+                                    <a href="<?= base_url(); ?>settings"
+                                        class="<?php if (uri_string() === 'settings') echo 'actived' ?>">
+                                        <i class="bi bi-nut-fill"></i>
+                                        <div class="position-absolute tooltips">
+                                            <h5>Settings</h5>
+                                        </div>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="<?= base_url(); ?>login"
+                                        class="<?php if (uri_string() === 'login') echo 'actived' ?>">
+                                        <i class="bi bi-arrow-left-square-fill"></i>
+                                        <div class="position-absolute tooltips">
+                                            <h5>Logout</h5>
+                                        </div>
+                                    </a>
+                                </li>
+
                             </ul>
                         </div>
 

@@ -49,8 +49,9 @@
             <div class="modal fade" id="MI" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Form Good Reciveed</h5>
+                        <div class="modal-header" style="background-color: #563d7c">
+                            <h5 class="modal-title" style="color: gold" id="exampleModalLabel">Form Material
+                                Issue</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -162,8 +163,9 @@
             <div class="modal fade" id="WO" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Form Good Reciveed</h5>
+                        <div class="modal-header" style="background-color: #563d7c">
+                            <h5 class="modal-title" style="color: gold" id="exampleModalLabel">Form Work
+                                Order</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -276,8 +278,9 @@
             <div class="modal fade" id="WTout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Form Good Reciveed</h5>
+                        <div class="modal-header" style="background-color: #563d7c">
+                            <h5 class="modal-title" style="color: gold" id="exampleModalLabel">Form Warehouse
+                                Transfer (Out)</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">

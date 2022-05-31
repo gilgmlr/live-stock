@@ -42,7 +42,7 @@
             <div class="card card-stats shadow p-3 mb-5 bg-white rounded">
 
                 <div class="card-content">
-                    <p class="category"><strong>Barang Keluar</strong></p>
+                    <p class="category"><strong>Issue</strong></p>
                     <h3 class="card-title">+124</h3>
                 </div>
                 <div class="card-footer">
@@ -64,12 +64,12 @@
                     </div>
                 </div>
                 <div class="card-content">
-                    <p class="category"><strong>Peminjaman</strong></p>
+                    <p class="category"><strong>Lending</strong></p>
                     <h3 class="card-title">+245</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons"></i> Updated
+                        <a href="#pablo">See detailed report</a>
                     </div>
                 </div>
             </div>
@@ -108,8 +108,8 @@
                                 <td><?php echo $data->total_items ?></td>
                                 <td><?php echo $data->total_items ?></td>
                                 <td>
-                                    <button type="button" class="btnedit btn-danger btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#closed">Closed</button>
+                                    <button type="button" class="btn btn-danger btn-sm" style="margin:0px"
+                                        data-bs-toggle="modal" data-bs-target="#closed">Closed</button>
                                 </td>
                             </tr>
                             <?php
@@ -125,8 +125,8 @@
         <div class="modal fade" id="closed" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Form Lending Activity</h5>
+                    <div class="modal-header" style="background-color: #563d7c">
+                        <h5 class="modal-title" style="color:gold" id="exampleModalLabel">Form Lending Activity</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -210,8 +210,8 @@
                                 <td><?php echo $data->name ?></td>
                                 <td><?php echo $data->total_items ?></td>
                                 <td>
-                                    <button type="button" class="btnedit btn-warning btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#view">View</button>
+                                    <button type="button" class="btn btn-warning btn-sm" style="margin:0px"
+                                        data-bs-toggle="modal" data-bs-target="#view">View</button>
                                 </td>
                             </tr>
                             <?php
@@ -231,8 +231,8 @@
 <div class="modal fade" id="view" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Warehouse Detiles</h5>
+            <div class="modal-header" style="background-color: #563d7c">
+                <h5 class="modal-title" style="color: gold" id="exampleModalLabel">Warehouse Detiles</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
