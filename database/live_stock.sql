@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Bulan Mei 2022 pada 03.20
+-- Waktu pembuatan: 31 Bulan Mei 2022 pada 08.05
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.26
 
@@ -18,34 +18,94 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `live_stock`
+-- Database: `warehouse_database`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_barang`
+-- Struktur dari tabel `department`
 --
 
-CREATE TABLE `data_barang` (
-  `item_code` varchar(20) NOT NULL,
-  `item_name` varchar(200) NOT NULL,
-  `item_specification` varchar(200) NOT NULL,
-  `uom` int(11) NOT NULL,
-  `location` varchar(50) NOT NULL
+CREATE TABLE `department` (
+  `dept_code` varchar(50) NOT NULL,
+  `name` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data untuk tabel `data_barang`
+-- Struktur dari tabel `inventory`
 --
 
-INSERT INTO `data_barang` (`item_code`, `item_name`, `item_specification`, `uom`, `location`) VALUES
-('012-2087-287', 'Thinner TCI', 'Thinner Specification Here', 120, '01-933-485-3'),
-('012-2087-287', 'Thinner TCI', 'Thinner Specification Here', 120, '01-933-485-3'),
-('012-2087-287', 'Thinner TCI', 'Thinner Specification Here', 120, '01-933-485-3'),
-('012-2987-2834', 'ABB DC Drivers', 'ABB DC Specification Here', 394, '02-465-483-1'),
-('012-2987-2834', 'ABB DC Drivers', 'ABB DC Specification Here', 394, '02-465-483-1'),
-('012-2987-2834', 'ABB DC Drivers', 'ABB DC Specification Here', 394, '02-465-483-1');
+CREATE TABLE `inventory` (
+  `item_code` varchar(50) NOT NULL,
+  `location` varchar(200) NOT NULL,
+  `stocks` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `issued`
+--
+
+CREATE TABLE `issued` (
+  `issued_code` varchar(50) NOT NULL,
+  `item_code` varchar(50) NOT NULL,
+  `dept_code` varchar(50) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `items`
+--
+
+CREATE TABLE `items` (
+  `item_code` varchar(50) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `description` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `lending`
+--
+
+CREATE TABLE `lending` (
+  `lending_code` varchar(50) NOT NULL,
+  `item_code` varchar(50) NOT NULL,
+  `dept_code` varchar(50) NOT NULL,
+  `lending_date` date NOT NULL,
+  `return_date` date NOT NULL,
+  `status` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `received`
+--
+
+CREATE TABLE `received` (
+  `received_code` varchar(50) NOT NULL,
+  `item_code` varchar(50) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `uom`
+--
+
+CREATE TABLE `uom` (
+  `uom_code` varchar(50) NOT NULL,
+  `name` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -54,49 +114,40 @@ INSERT INTO `data_barang` (`item_code`, `item_name`, `item_specification`, `uom`
 --
 
 CREATE TABLE `user` (
-  `nip` varchar(50) NOT NULL,
-  `name` varchar(200) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `nip` varchar(20) NOT NULL,
+  `nama` varchar(200) NOT NULL,
+  `username` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `role` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `user`
---
-
-INSERT INTO `user` (`nip`, `name`, `username`, `password`) VALUES
-('1302194089', 'Gilang', 'admin', 'admin');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `warehouse`
---
-
-CREATE TABLE `warehouse` (
-  `id` varchar(20) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  `total_items` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `warehouse`
---
-
-INSERT INTO `warehouse` (`id`, `name`, `address`, `total_items`) VALUES
-('01', 'Warehouse Center', 'Jalan kenangan nomor 5 bayah', 3016),
-('02', 'Warehouse Quary', 'Jalan kenangan nomor 5 bayah', 2123);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `warehouse`
+-- Indeks untuk tabel `department`
 --
-ALTER TABLE `warehouse`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `department`
+  ADD PRIMARY KEY (`dept_code`);
+
+--
+-- Indeks untuk tabel `inventory`
+--
+ALTER TABLE `inventory`
+  ADD PRIMARY KEY (`item_code`);
+
+--
+-- Indeks untuk tabel `items`
+--
+ALTER TABLE `items`
+  ADD PRIMARY KEY (`item_code`);
+
+--
+-- Indeks untuk tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`nip`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
