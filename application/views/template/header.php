@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/barangmasuk.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/barangkeluar.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/search.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" /> -->
 
     <!-- IconGoogle -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
