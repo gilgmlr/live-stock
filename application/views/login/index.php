@@ -39,15 +39,14 @@
                                     <center>
                                         <form action="login/login" method="POST">
                                             <div class="input-container">
-                                                <input type="text" id="user" class="text-input" name="user"
-                                                    autocomplete="off" placeholder="Enter your username / NIP"
-                                                    required />
-                                                <label class="label" for="username">Username / NIP</label>
+                                                <input type="text" id="nip" class="text-input" name="nip"
+                                                    autocomplete="off" placeholder="Enter your NIP" required/>   
+                                                <label class="label" for="nip">NIP</label>
                                             </div>
                                             <div class="input-container">
                                                 <input type="text" id="password" name="password" class="text-input"
-                                                    autocomplete="off" placeholder="Enter your password" required />
-                                                <label class="label" for="password">Password</label>
+                                                    autocomplete="off" placeholder="Enter your password" required/>
+                                                    <label class="label" for="password">Password</label>
                                             </div>
                                             <input type="submit" class="btn btn-warning btn-sm" value="Login"
                                                 id="login">
