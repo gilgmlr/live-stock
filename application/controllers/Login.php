@@ -28,7 +28,7 @@ class Login extends CI_Controller {
 			
 			// jika user ada
 			if ($user) {
-				 // cek password yang terenkripsi
+				    // cek password yang terenkripsi
 				//  if(password_verify($password, $user['password'])) {
 				// 	 $data = [
 				// 		 'name' => $user['name']
@@ -37,7 +37,7 @@ class Login extends CI_Controller {
 
 				// 	 redirect('dashboard');
 				//  }
-				
+
 				if ($user['password'] == $password) {
 					$data = [
 						'name' => $user['name']
@@ -45,13 +45,14 @@ class Login extends CI_Controller {
 					$this->session->set_userdata($data);
 					redirect('dashboard');
 				} else {
-					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Not Corrected!</div>');
 					redirect('login');
+					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Not Corrected!</div>');
+					
 				}
 				
 			} else {
-				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">NIP is not registered!</div>');
 				redirect('login');
+				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">NIP is not registered!</div>');
 			}
 		}
 	}

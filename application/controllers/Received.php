@@ -6,7 +6,7 @@ class Received extends CI_Controller
     {
         parent::__construct();
 
-        //$this->load->model('M_Stock');
+        $this->load->model('M_Received');
     }
 
     public function index()
@@ -17,5 +17,17 @@ class Received extends CI_Controller
 
         $this->load->view('template/header', $data);
         $this->load->view('received/index', $data);
+    }
+
+    public function addItems()
+    {
+        $data = array(
+            'item_code' => $this->input->post('item_code'),
+            'name' => $this->input->post('name'),
+            'qty' => $this->input->post('qty'),
+        );
+
+        $this->M_Received->add($data);
+        redirect('received');
     }
 }
