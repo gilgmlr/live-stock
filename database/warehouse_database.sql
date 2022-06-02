@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Jun 2022 pada 05.23
+-- Waktu pembuatan: 02 Jun 2022 pada 06.20
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.26
 
@@ -100,9 +100,21 @@ CREATE TABLE `lending` (
 
 CREATE TABLE `received` (
   `received_code` varchar(50) NOT NULL,
+  `arrival_date` date NOT NULL,
+  `po_number` varchar(100) NOT NULL,
+  `vendor_name` varchar(255) NOT NULL,
   `item_code` varchar(50) NOT NULL,
-  `date` date NOT NULL
+  `qty` int(11) NOT NULL,
+  `uom` varchar(100) NOT NULL,
+  `location` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `received`
+--
+
+INSERT INTO `received` (`received_code`, `arrival_date`, `po_number`, `vendor_name`, `item_code`, `qty`, `uom`, `location`) VALUES
+('123', '2022-06-02', '1356', 'dsdfgh', '0102-000302', 34, 'PC', 'bjhf6');
 
 -- --------------------------------------------------------
 
@@ -136,6 +148,13 @@ CREATE TABLE `user` (
   `password` varchar(200) NOT NULL,
   `role` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`nip`, `nama`, `username`, `password`, `role`) VALUES
+('1302194089', 'Gilang Gumelar', 'admin', 'admin', '1');
 
 --
 -- Indexes for dumped tables
