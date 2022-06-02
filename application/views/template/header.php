@@ -46,11 +46,11 @@
         <div class="fixed-top">
             <nav class="navbar navbar-expand-md" style=background-color:#563d7c>
                 <div class="container-fluid">
-                    <h2 style="color:gold"><?php echo $judul ?></h2>
+                    <h4 style="color:gold"><?= $judul ?></h4>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         </ul>
-                        <h4 style="color:gold">Welcome Admin, Nama</h4>
+                        <h5 style="color:gold">Welcome Admin, <?= $judul ?></h5>
                     </div>
                 </div>
             </nav>
