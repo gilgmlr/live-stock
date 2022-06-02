@@ -1,4 +1,46 @@
 <div class="container" style="margin-top: 80px;">
+    <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="<?= base_url() ?>settings/add_account.php">
+                <div class="card shadow p-2 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <center>
+                            <i class="material-icons" style="font-size:100px;color:black;">person_add</i>
+                            <h5>Add More Account</h5>
+                        </center>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="<?php echo base_url('settings/view_add_items') ?>">
+                <div class="card shadow p-2 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <center>
+                            <i class="material-icons" style="font-size:100px;color:black;">library_add</i>
+                            <h5>Add Items</h5>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="<?= base_url() ?>settings/import_data.php">
+                <div class="card shadow p-2 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <center>
+                            <i class="material-icons" style="font-size:100px;color:black;">upload_file</i>
+                            <h5>Import data</h5>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container" style="margin-top: 80px;">
     <div class="card shadow p-3 mb-5 bg-white rounded">
         <div class="card-body">
             <div class="col">
@@ -49,11 +91,10 @@
                     </div>
                 </div>
             </center>
-
         </div>
     </div>
 </div>
-</div>
+</div> -->
 
 <!-- Modal Daftar Akun -->
 <div class="modal fade" id="Daftar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

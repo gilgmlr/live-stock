@@ -32,4 +32,10 @@ class Settings extends CI_Controller
 
         // var_dump($data);die;
     }
+
+    public function view_add_items()
+    {
+        $this->load->view('template/header');
+        $this->load->view('settings/index');
+    }
 }
