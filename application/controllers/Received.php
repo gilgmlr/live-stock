@@ -7,6 +7,7 @@ class Received extends CI_Controller
         parent::__construct();
 
         $this->load->model('M_Received');
+        $this->load->library('form_validation');
     }
 
     public function index()
@@ -21,19 +22,33 @@ class Received extends CI_Controller
 
     public function addReceived()
     {
-        $data = array(
-            'received_code' => $this->input->post('received_code'),
-            'arrival_date' => $this->input->post('arrival_date'),
-            'po_number' => $this->input->post('po_number'),
-            'vendor_name' => $this->input->post('vendor_name'),
-            'item_code' => $this->input->post('item_code'),
-            'qty' => $this->input->post('qty'),
-            'uom' => $this->input->post('uom'),
-            'location' => $this->input->post('location'),
-        );
+        $this->form_validation->set_rules('received_code', 'Received_Code', 'required');
+        $this->form_validation->set_rules('arrival_date', 'Arrival_Date', 'required');
+        $this->form_validation->set_rules('po_number', 'PO_Number', 'required');
+        $this->form_validation->set_rules('vendor_name', 'Vendor_Name', 'required');
+        $this->form_validation->set_rules('item_code', 'Item_Code', 'required');
+        $this->form_validation->set_rules('qty', 'Qty', 'required');
+        $this->form_validation->set_rules('uom', 'UoM', 'required');
+        $this->form_validation->set_rules('location', 'Location', 'required');
 
-        $this->M_Received->add($data);
-        redirect('received');
+        if($this->form_validation->run() == false) {
+			redirect('received');
+		} else {
+            $data = array(
+                'received_code' => $this->input->post('received_code'),
+                'arrival_date' => $this->input->post('arrival_date'),
+                'po_number' => $this->input->post('po_number'),
+                'vendor_name' => $this->input->post('vendor_name'),
+                'item_code' => $this->input->post('item_code'),
+                'qty' => $this->input->post('qty'),
+                'uom' => $this->input->post('uom'),
+                'location' => $this->input->post('location'),
+            );
+    
+            $this->M_Received->add($data);
+            redirect('received');
+        }
+        
 
         // var_dump($data);die;
     }
