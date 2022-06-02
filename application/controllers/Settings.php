@@ -6,7 +6,7 @@ class Settings extends CI_Controller
     {
         parent::__construct();
 
-        //$this->load->model('M_Stock');
+        $this->load->model('M_Settings');
     }
 
     public function index()
@@ -17,5 +17,19 @@ class Settings extends CI_Controller
 
         $this->load->view('template/header', $data);
         $this->load->view('settings/index', $data);
+    }
+
+    public function addItem()
+    {
+        $data = array(
+            'item_code' => $this->input->post('item_code'),
+            'name' => $this->input->post('name'),
+            'specification' => $this->input->post('spec'),
+        );
+
+        $this->M_Settings->add($data);
+        redirect('settings');
+
+        // var_dump($data);die;
     }
 }

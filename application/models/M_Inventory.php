@@ -5,7 +5,7 @@ class M_Inventory extends CI_Model
 	public function getDataStock()
 	{
 		$this->db->select('*');
-		$this->db->from('data_barang');
+		$this->db->from('inventory');
 
 		$query = $this->db->get();
 		return $query;
@@ -13,6 +13,6 @@ class M_Inventory extends CI_Model
 
 	public function countRowsStock()
 	{
-		return $this->db->get('data_barang')->num_rows();
+		return $this->db->get('inventory')->num_rows();
 	}
 }
