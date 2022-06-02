@@ -73,23 +73,14 @@
                                 <input type="text" class="form-control" id="vendor" name="vendor">
                             </div>
                             <div class="col-sm-6">
-                                <label for="requestor" class="col-sm-6 col-form-label">Item Code</label>
+                                <label for="" class="col-sm-6 col-form-label">Item Code</label>
                                 <input type="text" class="form-control" id="item_code" name="item_code">
-                                <label for="Dept Requestor" class="col-sm-6 col-form-label">Qty</label>
+                                <label for="" class="col-sm-6 col-form-label">Qty</label>
                                 <input type="text" class="form-control" id="qty" name="qty">
-                                <label for="Section Requestor" class="col-sm-6 col-form-label">UoM</label>
-                                <input type="text" class="form-control" id="uom" name="uom">
-                                <label for="Section Requestor" class="col-sm-6 col-form-label">Location</label>
+                                <label for="" class="col-sm-6 col-form-label">UoM</label>
+                                <input type="dropdown" class="form-control" id="uom" name="uom">
+                                <label for="" class="col-sm-6 col-form-label">Location</label>
                                 <input type="text" class="form-control" id="location" name="location">
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12">
-                            <div class="row">
-                                <div class="col">
-                                    <label for="formFileMultiple" class="form-label" style="margin-top:8px">Foto Barang</label>
-                                    <input class="form-control" type="file" id="formFileMultiple" multiple />
-                                </div>
                             </div>
                         </div>
 
