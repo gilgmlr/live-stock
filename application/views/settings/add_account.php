@@ -2,7 +2,7 @@
     <div class="card shadow p-3 mb-5 bg-white rounded">
         <div class="card-body">
             <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-md-12 col-md-">
+                <div class="col-md-12">
                     <div class="card text-black" style="border-radius: 25px;">
                         <div class="card-body p-md-5">
                             <div class="row justify-content-center">
@@ -44,16 +44,7 @@
                                                     password</label>
                                             </div>
                                         </div>
-
-                                        <div class="form-check d-flex justify-content-center mb-5">
-                                            <input class="form-check-input me-2" type="checkbox" value=""
-                                                id="form2Example3c" />
-                                            <label class="form-check-label" for="form2Example3">
-                                                I agree all statements in <a href="#!">Terms of service</a>
-                                            </label>
-                                        </div>
-
-                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-md-4">
                                             <button type="button" class="btn btn-primary btn-lg">Register</button>
                                         </div>
 
