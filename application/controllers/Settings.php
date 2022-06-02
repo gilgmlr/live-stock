@@ -35,7 +35,25 @@ class Settings extends CI_Controller
 
     public function view_add_items()
     {
-        $this->load->view('template/header');
-        $this->load->view('settings/index');
+        $data['judul'] = 'Settings/add_items';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('settings/add_items');
+    }
+
+    public function view_add_account()
+    {
+        $data['judul'] = 'Settings/add_account';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('settings/add_account');
+    }
+
+    public function view_import_data()
+    {
+        $data['judul'] = 'Settings/import_data';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('settings/import_data');
     }
 }

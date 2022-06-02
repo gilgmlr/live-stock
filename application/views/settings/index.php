@@ -1,7 +1,7 @@
 <div class="container" style="margin-top: 80px;">
     <div class="row justify-content-center">
         <div class="col-lg-3 col-md-6 col-sm-6">
-            <a href="<?= base_url() ?>settings/add_account.php">
+            <a href="<?php echo base_url() . "settings/view_add_account" ?>">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
@@ -14,7 +14,7 @@
 
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-            <a href="<?php echo base_url('settings/view_add_items') ?>">
+            <a href="<?php echo base_url() . "settings/view_add_items" ?>">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
@@ -26,7 +26,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-            <a href="<?= base_url() ?>settings/import_data.php">
+            <a href="<?php echo base_url() . "settings/view_import_data" ?>">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>

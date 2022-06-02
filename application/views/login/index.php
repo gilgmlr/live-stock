@@ -17,13 +17,9 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/login.css">
     <title>Live Stock</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
 </head>
 
 <body>
-
     <div class="container " style="margin-top: 50px ">
         <div class="row align-self-center">
             <div class="col">
@@ -32,43 +28,29 @@
                         <div class="card-body">
                             <div class="col-md">
                                 <div class="text-center">
-                                    <h1 style="color:black">Selamat Datang !</h1>
-                                    <p class="text-muted">Login untuk masuk ke Warehouse.</p>
+                                    <h1 style="color:black">Welcome !</h1>
+                                    <p class="text-muted">Login Live Stock</p>
                                 </div>
                                 <div class="card-body">
                                     <center>
                                         <form action="login/login" method="POST">
                                             <div class="input-container">
-                                                <input type="text" id="nip" class="text-input" name="nip"
-                                                    autocomplete="off" placeholder="Enter your NIP" required />
-                                                <!-- <label class="label" for="nip">NIP</label> -->
+                                                <input type="text" id="nip" class="text-input" name="nip" autocomplete="off" placeholder="Enter your NIP" required />
                                             </div>
                                             <div class="input-container">
-                                                <input type="password" id="password" name="password" class="text-input"
-                                                    autocomplete="off" placeholder="Enter your password" required />
-                                                <!-- <label class="label" for="password">Password</label> -->
+                                                <input type="password" id="password" name="password" class="text-input" autocomplete="off" placeholder="Enter your Password" required />
                                             </div>
-                                            <input type="submit" class="btn btn-warning btn-sm" value="Login"
-                                                id="login">
-
-
+                                            <input type="submit" class="btn btn-warning btn-sm" value="Login" id="login">
                                         </form>
                                     </center>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </center>
             </div>
         </div>
-
     </div>
-
-    </div>
-
 </body>
-
-
 
 </html>
