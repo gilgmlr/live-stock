@@ -6,7 +6,10 @@
                     <div class="col">
                         <div class="card shadow p-2 mb-5 bg-white rounded">
                             <div class="card-body">
-                                MI
+                                <center>
+                                    <i class="material-icons" style="font-size:100px;color:black;">file_upload</i>
+
+                                </center>
                             </div>
                             <div class="card-footer">
                                 <center>
@@ -19,7 +22,9 @@
                     <div class="col">
                         <div class="card shadow p-2 mb-5 bg-white rounded">
                             <div class="card-body">
-                                WO
+                                <center>
+                                    <i class="material-icons" style="font-size:100px;color:black;">file_upload</i>
+                                </center>
                             </div>
                             <div class="card-footer">
                                 <center>
@@ -32,7 +37,9 @@
                     <div class="col">
                         <div class="card shadow p-2 mb-5 bg-white rounded">
                             <div class="card-body">
-                                WT
+                                <center>
+                                    <i class="material-icons" style="font-size:100px;color:black;">file_upload</i>
+                                </center>
                             </div>
                             <div class="card-footer">
                                 <center>

@@ -14,6 +14,7 @@
                 <div class="card-content ">
                     <p class="category"><strong>Total Assets</strong></p>
                     <h3 class="card-title">70,340</h3>
+
                 </div>
                 <div class="card-footer">
                     <div class="stats">

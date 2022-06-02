@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/barangkeluar.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/search.css">
 
+    <!-- IconGoogle -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <!-- Data Tables -->
     <link rel="stylesheet" type="text/css" media="screen"
         href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
