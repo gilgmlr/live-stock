@@ -12,22 +12,29 @@ class Received extends CI_Controller
     public function index()
     {
         // $data['jumlahWarehouse'] = $this->M_Dashboard->countRowsWarehouse();
-        // $data['warehouse'] = $this->M_Dashboard->getDataWarehouse()->result();
+        $data['uom'] = $this->M_Received->getUoM()->result();
         $data['judul'] = 'Received';
 
         $this->load->view('template/header', $data);
         $this->load->view('received/index', $data);
     }
 
-    public function addItems()
+    public function addReceived()
     {
         $data = array(
+            'received_code' => $this->input->post('received_code'),
+            'arrival_date' => $this->input->post('arrival_date'),
+            'po_number' => $this->input->post('po_number'),
+            'vendor_name' => $this->input->post('vendor_name'),
             'item_code' => $this->input->post('item_code'),
-            'name' => $this->input->post('name'),
             'qty' => $this->input->post('qty'),
+            'uom' => $this->input->post('uom'),
+            'location' => $this->input->post('location'),
         );
 
         $this->M_Received->add($data);
         redirect('received');
+
+        // var_dump($data);die;
     }
 }
