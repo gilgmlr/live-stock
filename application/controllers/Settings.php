@@ -7,6 +7,7 @@ class Settings extends CI_Controller
         parent::__construct();
 
         $this->load->model('M_Settings');
+		$this->load->library('form_validation');
     }
 
     public function index()
@@ -27,7 +28,7 @@ class Settings extends CI_Controller
             'specification' => $this->input->post('spec'),
         );
 
-        $this->M_Settings->add($data);
+        $this->M_Settings->add_item($data);
         redirect('settings');
 
         // var_dump($data);die;
@@ -55,5 +56,30 @@ class Settings extends CI_Controller
 
         $this->load->view('template/header', $data);
         $this->load->view('settings/import_data');
+    }
+
+    public function add_account()
+    {
+        $this->form_validation->set_rules('nip', 'Nip', 'required');
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('role', 'Role', 'required');
+
+        $default_password = password_hash($this->input->post('nip'), PASSWORD_DEFAULT);
+
+        if($this->form_validation->run() == false) {
+			redirect('settings/add_account');
+		} else {
+            $data = array(
+                'nip' => $this->input->post('nip'),
+                'name' => $this->input->post('name'),
+                'password' => $default_password,
+                'role' => $this->input->post('role'),
+            );
+    
+            $this->M_Settings->add_user($data);
+            redirect('settings/view_add_account');
+
+            // var_dump($data);die;
+        }
     }
 }
