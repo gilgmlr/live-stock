@@ -27,9 +27,9 @@
                                 <tr>
                                     <td><?php echo $i ?></td>
                                     <td><?php echo $data->item_code ?></td>
-                                    <td><?php echo $data->item_name ?></td>
-                                    <td><?php echo $data->item_specification ?></td>
-                                    <td><?php echo $data->uom ?></td>
+                                    <td><?php echo $data->name ?></td>
+                                    <td><?php echo $data->specification ?></td>
+                                    <td><?php echo $data->uom_code ?></td>
                                     <td><?php echo $data->location ?></td>
                                     <td>
                                         <button type="button" class="btn btn-warning btn-sm" style="margin:0px"
