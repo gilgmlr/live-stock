@@ -1,49 +1,82 @@
 <div class="container" style="margin-top: 80px;">
-    <div class="card shadow p-3 mb-5 bg-white rounded">
-        <div class="card-body">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col">
-                        <div class="card shadow p-1 mb-5 bg-white rounded">
-                            <div class="card-body">
-                                GR
-                            </div>
-                            <div class="card-footer">
-                                <center>
-                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#GR">Good Recived</button>
-                                </center>
-                            </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="<?php echo base_url() . "settings/view_add_account" ?>">
+                    <div class="card shadow p-2 mb-5 bg-white rounded">
+                        <div class="card-body">
+                            <center>
+                                <img src="https://img.icons8.com/ios/100/undefined/reading-confirmation.png" />
+                                <h5>Good Recived</h5>
+                            </center>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card shadow p-1 mb-5 bg-white rounded">
-                            <div class="card-body">
-                                WT
-                            </div>
-                            <div class="card-footer">
-                                <center>
-                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#WTin">Warehouse Transfer</button>
-                                </center>
-                            </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="<?php echo base_url() . "settings/view_add_account" ?>">
+                    <div class="card shadow p-2 mb-5 bg-white rounded">
+                        <div class="card-body">
+                            <center>
+                                <img src="https://img.icons8.com/ios/100/undefined/multiple-inputs.png" />
+                                <h5>Warehouse Transfer (Input)</h5>
+                            </center>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card shadow p-1 mb-5 bg-white rounded">
-                            <div class="card-body">
-                                MS
-                            </div>
-                            <div class="card-footer">
-                                <center>
-                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#MS">Adjusment In Material</button>
-                                </center>
-                            </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="<?php echo base_url() . "settings/view_add_account" ?>">
+                    <div class="card shadow p-2 mb-5 bg-white rounded">
+                        <div class="card-body">
+                            <center>
+                                <img src="https://img.icons8.com/ios/100/undefined/customize-view.png" />
+                                <h5>Adjusment In Material</h5>
+                            </center>
                         </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col">
+                <div class="card shadow p-1 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        GR
+                    </div>
+                    <div class="card-footer">
+                        <center>
+                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#GR">Good Recived</button>
+                        </center>
                     </div>
                 </div>
             </div>
+            <!-- <div class="col">
+                <div class="card shadow p-1 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        WT
+                    </div>
+                    <div class="card-footer">
+                        <center>
+                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#WTin">Warehouse Transfer</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow p-1 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        MS
+                    </div>
+                    <div class="card-footer">
+                        <center>
+                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#MS">Adjusment In Material</button>
+                        </center>
+                    </div>
+                </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -56,14 +89,15 @@
                 <h5 class="modal-title" style="color: gold" id="exampleModalLabel">Form Good Recived</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            
+
             <form action="<?= base_url() ?>received/addReceived" method="POST">
                 <div class="modal-body">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-sm-6">
                                 <label for="" class="col-sm-6 col-form-label">GR Number</label>
-                                <input type="text" class="form-control" id="received_code" name="received_code" required>
+                                <input type="text" class="form-control" id="received_code" name="received_code"
+                                    required>
                                 <label for="" class="col-sm-6 col-form-label">Arrival Date</label>
                                 <input type="date" class="form-control" id="arrival_date" name="arrival_date" required>
                                 <label for="" class="col-sm-6 col-form-label">PO Number</label>
@@ -77,10 +111,11 @@
                                 <label for="" class="col-sm-6 col-form-label">Qty</label>
                                 <input type="text" class="form-control" id="qty" name="qty" required>
                                 <label for="" class="col-sm-6 col-form-label">UoM</label>
-                                <select class="form-select form-control" aria-label=".form-select-lg example" id="uom" name="uom" required>
+                                <select class="form-select form-control" aria-label=".form-select-lg example" id="uom"
+                                    name="uom" required>
                                     <option selected>-- Select --</option>
                                     <?php foreach ($uom as $data) { ?>
-                                        <option value="<?= $data->uom_code ?>"><?= $data->name ?></option>
+                                    <option value="<?= $data->uom_code ?>"><?= $data->name ?></option>
                                     <?php $i++; } ?>
                                 </select>
 
@@ -95,7 +130,7 @@
                     <button id="batal" type="submit" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
                     <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
                 </div>
-            </form>        
+            </form>
         </div>
     </div>
 </div>
