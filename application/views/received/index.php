@@ -1,47 +1,13 @@
 <div class="container" style="margin-top: 80px;">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <a href="<?php echo base_url() . "settings/view_add_account" ?>">
-                    <div class="card shadow p-2 mb-5 bg-white rounded">
-                        <div class="card-body">
-                            <center>
-                                <img src="https://img.icons8.com/ios/100/undefined/reading-confirmation.png" />
-                                <h5>Good Recived</h5>
-                            </center>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <a href="<?php echo base_url() . "settings/view_add_account" ?>">
-                    <div class="card shadow p-2 mb-5 bg-white rounded">
-                        <div class="card-body">
-                            <center>
-                                <img src="https://img.icons8.com/ios/100/undefined/multiple-inputs.png" />
-                                <h5>Warehouse Transfer (Input)</h5>
-                            </center>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <a href="<?php echo base_url() . "settings/view_add_account" ?>">
-                    <div class="card shadow p-2 mb-5 bg-white rounded">
-                        <div class="card-body">
-                            <center>
-                                <img src="https://img.icons8.com/ios/100/undefined/customize-view.png" />
-                                <h5>Adjusment In Material</h5>
-                            </center>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
             <div class="col">
                 <div class="card shadow p-1 mb-5 bg-white rounded">
                     <div class="card-body">
-                        GR
+                        <center>
+                            <img src="https://img.icons8.com/ios/100/undefined/reading-confirmation.png" />
+                            <h5>Good Recived</h5>
+                        </center>
                     </div>
                     <div class="card-footer">
                         <center>
@@ -51,10 +17,13 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="col">
+            <div class="col">
                 <div class="card shadow p-1 mb-5 bg-white rounded">
                     <div class="card-body">
-                        WT
+                        <center>
+                            <img src="https://img.icons8.com/ios/100/undefined/multiple-inputs.png" />
+                            <h5>Warehouse Transfer (Input)</h5>
+                        </center>
                     </div>
                     <div class="card-footer">
                         <center>
@@ -67,7 +36,10 @@
             <div class="col">
                 <div class="card shadow p-1 mb-5 bg-white rounded">
                     <div class="card-body">
-                        MS
+                        <center>
+                            <img src="https://img.icons8.com/ios/100/undefined/customize-view.png" />
+                            <h5>Adjusment In Material</h5>
+                        </center>
                     </div>
                     <div class="card-footer">
                         <center>
@@ -76,7 +48,7 @@
                         </center>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </div>
