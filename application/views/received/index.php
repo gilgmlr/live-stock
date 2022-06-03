@@ -1,58 +1,43 @@
 <div class="container" style="margin-top: 80px;">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col">
-                <div class="card shadow p-1 mb-5 bg-white rounded">
+    <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="<?php echo base_url() . "received/view_good_received" ?>">
+                <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
                             <img src="https://img.icons8.com/ios/100/undefined/reading-confirmation.png" />
                             <h5>Good Recived</h5>
                         </center>
                     </div>
-                    <div class="card-footer">
-                        <center>
-                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#GR">Good Recived</button>
-                        </center>
-                    </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card shadow p-1 mb-5 bg-white rounded">
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="<?php echo base_url() . "received/view_warehouse_transfer_in" ?>">
+                <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
                             <img src="https://img.icons8.com/ios/100/undefined/multiple-inputs.png" />
                             <h5>Warehouse Transfer (Input)</h5>
                         </center>
                     </div>
-                    <div class="card-footer">
-                        <center>
-                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#WTin">Warehouse Transfer</button>
-                        </center>
-                    </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card shadow p-1 mb-5 bg-white rounded">
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="<?php echo base_url() . "received/view_adjusment" ?>">
+                <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
                             <img src="https://img.icons8.com/ios/100/undefined/customize-view.png" />
                             <h5>Adjusment In Material</h5>
                         </center>
                     </div>
-                    <div class="card-footer">
-                        <center>
-                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#MS">Adjusment In Material</button>
-                        </center>
-                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>
-
 <!-- Modal GR -->
 <div class="modal fade" id="GR" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>

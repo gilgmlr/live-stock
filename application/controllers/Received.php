@@ -47,9 +47,32 @@ class Received extends CI_Controller
     
             $this->M_Received->add($data);
             redirect('received');
-        }
-        
-
-        // var_dump($data);die;
+        } // var_dump($data);die;
     }
+
+    public function view_good_received()
+    {
+        $data['judul'] = 'Received/GR';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('received/good_received');
+    }
+    public function view_warehouse_transfer_in()
+    {
+        $data['judul'] = 'Received/WT';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('received/warehouse_transfer_in');
+    }
+    public function view_adjusment()
+    {
+        $data['judul'] = 'Received/Adjusment';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('received/adjusment');
+    }
+
+
+
+
 }

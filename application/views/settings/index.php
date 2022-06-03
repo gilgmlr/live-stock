@@ -11,7 +11,6 @@
                     </div>
                 </div>
             </a>
-
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="<?php echo base_url() . "settings/view_add_items" ?>">
