@@ -26,16 +26,16 @@
                                 ?>
 
                                 <tr>
-                                    <td><?php echo $i ?></td>
-                                    <td><?php echo $data->item_code ?></td>
-                                    <td><?php echo $data->name ?></td>
-                                    <td><?php echo $data->specification ?></td>
-                                    <td><?php echo $data->uom_code ?></td>
-                                    <td><?php echo $data->stocks ?></td>
-                                    <td><?php echo $data->location ?></td>
+                                    <td><?= $i ?></td>
+                                    <td><?= $data->item_code ?></td>
+                                    <td><?= $data->name ?></td>
+                                    <td><?= $data->specification ?></td>
+                                    <td><?= $data->uom_name ?></td>
+                                    <td><?= $data->stocks ?></td>
+                                    <td><?= $data->location ?></td>
                                     <td>
                                         <button type="button" class="btn btn-warning btn-sm" style="margin:0px"
-                                            data-bs-toggle="modal" data-bs-target="#edit">Edit</button>
+                                            data-bs-toggle="modal" data-bs-target="#edit<?=$i ?>">Edit</button>
                                     </td>
                                 </tr>
 

@@ -8,38 +8,39 @@
                     <div class="row justify-content-center">
                         <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Form Add Items
+                            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                                Form Add Items
                             </p>
 
-                            <form class="mx-1 mx-md-4">
+                            <form class="mx-1 mx-md-4" action="<?= base_url() ?>settings/add_item" method="POST">
                                 <div class="container px-4">
                                     <div class="col gx-5">
                                         <div class="col">
                                             <label class="form-label" for="form3Example1c">Item Code</label>
-                                            <input type="text" id="nip" class="text-input" name="nip" autocomplete="off"
+                                            <input type="text" id="item_code" class="text-input" name="item_code" autocomplete="off"
                                                 placeholder="Enter item code" required />
                                         </div>
                                         <div class="col">
                                             <label class="form-label" for="form3Example1c">Name</label>
-                                            <input type="text" id="nip" class="text-input" name="nip" autocomplete="off"
+                                            <input type="text" id="name" class="text-input" name="name" autocomplete="off"
                                                 placeholder="Enter name" required />
                                         </div>
                                         <div class="col">
                                             <label class="form-label" for="form3Example1c">Spesification</label>
-                                            <input type="text" id="nip" class="text-input" name="nip" autocomplete="off"
+                                            <input type="text" id="spec" class="text-input" name="spec" autocomplete="off"
                                                 placeholder="Enter spesification" required />
                                         </div>
                                         <div class="col">
                                             <label for="formFileMultiple" class="form-label"
                                                 style="margin-top:8px">Upload Image</label>
-                                            <input class="form-control" type="file" id="formFileMultiple" multiple />
+                                            <input class="form-control" type="file" id="image" name="image" multiple />
                                         </div>
                                     </div>
 
 
                                 </div>
                                 <div class="d-flex justify-content-center mx-4 mb-3 mb-md-4">
-                                    <button type="button" class="btn btn-warning btn-lg">Add</button>
+                                    <button type="submit" class="btn btn-warning btn-lg">Add</button>
                                 </div>
                             </form>
                         </div>

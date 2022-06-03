@@ -15,4 +15,14 @@ class M_Received extends CI_Model
 		$query = $this->db->get();
 		return $query;
 	}
+
+	public function getItems()
+	{
+		$this->db->select('*');
+		$this->db->from('items');
+		$this->db->order_by('item_code', 'asc');
+
+		$query = $this->db->get();
+		return $query;
+	}
 }

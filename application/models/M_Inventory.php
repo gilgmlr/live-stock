@@ -21,6 +21,7 @@ class M_Inventory extends CI_Model
 		$this->db->select('*');
 		$this->db->from('inventory');
 		$this->db->join('items', 'items.item_code = inventory.item_code');
+		$this->db->join('uom', 'uom.uom_code = inventory.uom_code');
 		$query = $this->db->get();
 
 		return $query;

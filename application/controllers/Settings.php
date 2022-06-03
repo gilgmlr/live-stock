@@ -33,13 +33,13 @@ class Settings extends CI_Controller
         }
 
         if($this->form_validation->run() == false) {
-			redirect('settings/add_items');
+			redirect('settings/view_add_items');
 		} else {
             $data = array(
                 'item_code' => $this->input->post('item_code'),
                 'name' => $this->input->post('name'),
                 'specification' => $this->input->post('spec'),
-                'specification' => $image,
+                'image' => $image,
             );
     
             $this->M_Settings->add_item($data);

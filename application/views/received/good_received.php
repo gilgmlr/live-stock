@@ -17,7 +17,13 @@
                         </div>
                         <div class="col-sm-6">
                             <label for="" class="col-sm-6 col-form-label">Item Code</label>
-                            <input type="text" class="form-control" id="item_code" name="item_code" required>
+                            <select class="form-select form-control" aria-label=".form-select-lg example" id="item_code"
+                                name="item_code" required>
+                                <option selected>-- Select --</option>
+                                <?php foreach ($items as $data) { ?>
+                                <option value="<?= $data->item_code ?>"><?= $data->item_code ?> | <?= $data->name ?></option>
+                                <?php $i++; } ?>
+                            </select>
                             <label for="" class="col-sm-6 col-form-label">Qty</label>
                             <input type="text" class="form-control" id="qty" name="qty" required>
                             <label for="" class="col-sm-6 col-form-label">UoM</label>
@@ -25,7 +31,7 @@
                                 name="uom" required>
                                 <option selected>-- Select --</option>
                                 <?php foreach ($uom as $data) { ?>
-                                <option value="<?= $data->uom_code ?>"><?= $data->name ?></option>
+                                    <option value="<?= $data->uom_code ?>"><?= $data->uom_code ?> - <?= $data->uom_name ?></option>
                                 <?php $i++; } ?>
                             </select>
 

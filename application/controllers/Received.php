@@ -13,7 +13,6 @@ class Received extends CI_Controller
     public function index()
     {
         // $data['jumlahWarehouse'] = $this->M_Dashboard->countRowsWarehouse();
-        $data['uom'] = $this->M_Received->getUoM()->result();
         $data['judul'] = 'Received';
 
         $this->load->view('template/header', $data);
@@ -53,6 +52,8 @@ class Received extends CI_Controller
     public function view_good_received()
     {
         $data['judul'] = 'Received/GR';
+        $data['uom'] = $this->M_Received->getUoM()->result();
+        $data['items'] = $this->M_Received->getItems()->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('received/good_received');
@@ -60,6 +61,8 @@ class Received extends CI_Controller
     public function view_warehouse_transfer_in()
     {
         $data['judul'] = 'Received/WT';
+        $data['uom'] = $this->M_Received->getUoM()->result();
+        $data['items'] = $this->M_Received->getItems()->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('received/warehouse_transfer_in');
@@ -67,6 +70,8 @@ class Received extends CI_Controller
     public function view_adjusment()
     {
         $data['judul'] = 'Received/Adjusment';
+        $data['uom'] = $this->M_Received->getUoM()->result();
+        $data['items'] = $this->M_Received->getItems()->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('received/adjusment');
