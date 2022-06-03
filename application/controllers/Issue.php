@@ -42,4 +42,25 @@ class Issue extends CI_Controller
 
         $this->M_Issue->tambahData($data);
     }
+    public function view_material_issue()
+    {
+        $data['judul'] = 'Issue/MI';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('Issue/material_issue');
+    }
+    public function view_warehouse_transfer_out()
+    {
+        $data['judul'] = 'Issue/WT out';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('Issue/warehouse_transfer_out');
+    }
+    public function view_work_order()
+    {
+        $data['judul'] = 'Issue/WO';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('Issue/work_order');
+    }
 }

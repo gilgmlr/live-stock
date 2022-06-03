@@ -1,59 +1,46 @@
 <div class="container" style="margin-top: 80px;">
-    <div class="card shadow p-3 mb-5 bg-white rounded">
-        <div class="card-body">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col">
-                        <div class="card shadow p-2 mb-5 bg-white rounded">
-                            <div class="card-body">
-                                <center>
-                                    <i class="material-icons" style="font-size:100px;color:black;">file_upload</i>
-
-                                </center>
-                            </div>
-                            <div class="card-footer">
-                                <center>
-                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#MI">Material Issue</button>
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow p-2 mb-5 bg-white rounded">
-                            <div class="card-body">
-                                <center>
-                                    <i class="material-icons" style="font-size:100px;color:black;">file_upload</i>
-                                </center>
-                            </div>
-                            <div class="card-footer">
-                                <center>
-                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#WO">Work Order</button>
-                                </center>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow p-2 mb-5 bg-white rounded">
-                            <div class="card-body">
-                                <center>
-                                    <i class="material-icons" style="font-size:100px;color:black;">file_upload</i>
-                                </center>
-                            </div>
-                            <div class="card-footer">
-                                <center>
-                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#WTout">Warehouse Transfer</button>
-                                </center>
-                            </div>
-                        </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="<?php echo base_url() . "Issue/view_material_issue" ?>">
+                <div class="card shadow p-2 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <center>
+                            <img src="https://img.icons8.com/ios/100/undefined/reading-confirmation.png" />
+                            <h5>Material Issue</h5>
+                        </center>
                     </div>
                 </div>
-            </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="<?php echo base_url() . "Issue/view_warehouse_transfer_out" ?>">
+                <div class="card shadow p-2 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <center>
+                            <img src="https://img.icons8.com/ios/100/undefined/multiple-inputs.png" />
+                            <h5>Warehouse Transfer (Out)</h5>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="<?php echo base_url() . "Issue/view_work_order" ?>">
+                <div class="card shadow p-2 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <center>
+                            <img src="https://img.icons8.com/ios/100/undefined/customize-view.png" />
+                            <h5>Work Order</h5>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
 
-            <!-- Modal MI -->
-            <form>
+<!-- Modal MI -->
+<!-- <form>
                 <div class="modal fade" id="MI" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
                         <div class="modal-content">
@@ -124,11 +111,11 @@
                         </div>
                     </div>
                 </div>
-            </form>
-            <!-- AKHIR MODAL  -->
+            </form> -->
+<!-- AKHIR MODAL  -->
 
-        </div>
-    </div>
+</div>
+</div>
 </div>
 
 </body>

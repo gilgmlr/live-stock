@@ -39,7 +39,7 @@
     </div>
 </div>
 <!-- Modal GR -->
-<div class="modal fade" id="GR" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="GR" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
         <div class="modal-content">
             <div class="modal-header" style="background-color: #563d7c">
@@ -90,7 +90,7 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->
 <!-- End Modal GR  -->
 
 
