@@ -13,7 +13,7 @@
 
                 <div class="card-content ">
                     <p class="category"><strong>Total Items</strong></p>
-                    <h3 class="card-title"><?= $judul ?></h3>
+                    <h3 class="card-title"><?=  ?></h3>
 
                 </div>
                 <div class="card-footer">
