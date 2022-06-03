@@ -29,21 +29,13 @@ class Login extends CI_Controller {
 			// jika user ada
 			if ($user) {
 				    // cek password yang terenkripsi
-				//  if(password_verify($password, $user['password'])) {
-				// 	 $data = [
-				// 		 'name' => $user['name']
-				// 	 ];
-				// 	 $this->session->set_userdata($data);
+				 if(password_verify($password, $user['password'])) {
+					 $data = [
+						 'name' => $user['name']
+					 ];
+					 $this->session->set_userdata($data);
 
-				// 	 redirect('dashboard');
-				//  }
-
-				if ($user['password'] == $password) {
-					$data = [
-						'name' => $user['name']
-					];
-					$this->session->set_userdata($data);
-					redirect('dashboard');
+					 redirect('dashboard');
 				} else {
 					redirect('login');
 					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Not Corrected!</div>');
