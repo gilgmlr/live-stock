@@ -22,7 +22,7 @@
                                                 </div>
 
                                                 <div class="input">
-                                                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                                    <i class="fas fa-id-badge fa-lg me-3 fa-fw"></i>
                                                     <label class="form-label" style="margin-top: 8px;"
                                                         for="form3Example1c">Username</label>
                                                     <input type="text" id="nip" class="text-input" name="nip"
@@ -46,7 +46,7 @@
                                                 </div>
 
                                                 <div class="input">
-                                                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                                    <i class="fas fa-users fa-lg me-3 fa-fw"></i>
                                                     <label class="form-label" style="margin-top: 8px;"
                                                         for="form3Example1c">Role</label>
                                                     <input type="text" id="nip" class="text-input" name="nip"
