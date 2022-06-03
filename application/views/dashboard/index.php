@@ -12,12 +12,17 @@
             <div class="card card-stats shadow p-3 mb-5 bg-white rounded">
 
                 <div class="card-content ">
+                    <div class="card-header">
+                        <img
+                            src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/undefined/external-stock-delivery-xnimrodx-lineal-xnimrodx.png" />
+                    </div>
                     <p class="category"><strong>Total Items</strong></p>
                     <h3 class="card-title">123</h3>
 
                 </div>
                 <div class="card-footer">
                     <div class="stats">
+
                         <i class="material-icons text-info"></i>
                         <a href="#pablo">See detailed report</a>
                     </div>
@@ -28,6 +33,10 @@
             <div class="card card-stats shadow p-3 mb-5 bg-white rounded">
 
                 <div class="card-content">
+                    <div class="card-header">
+                        <img
+                            src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/undefined/external-stock-delivery-xnimrodx-lineal-xnimrodx.png" />
+                    </div>
                     <p class="category"><strong>Orders</strong></p>
                     <h3 class="card-title">102</h3>
                 </div>
@@ -43,12 +52,16 @@
             <div class="card card-stats shadow p-3 mb-5 bg-white rounded">
 
                 <div class="card-content">
+                    <div class="card-header">
+                        <img
+                            src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/undefined/external-stock-delivery-xnimrodx-lineal-xnimrodx.png" />
+                    </div>
                     <p class="category"><strong>Issue</strong></p>
                     <h3 class="card-title">+124</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons text-info"></i>
+                        <i class="material-icons text-info"> </i>
                         <a href="#pablo">See detailed report</a>
                     </div>
                 </div>
@@ -65,6 +78,10 @@
                     </div>
                 </div>
                 <div class="card-content">
+                    <div class="card-header">
+                        <img
+                            src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/undefined/external-stock-delivery-xnimrodx-lineal-xnimrodx.png" />
+                    </div>
                     <p class="category"><strong>Lending</strong></p>
                     <h3 class="card-title">+245</h3>
                 </div>

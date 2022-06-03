@@ -18,4 +18,19 @@ class Search extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('search/index', $data);
     }
+
+    public function view_result()
+    {
+        $data['judul'] = 'Search/Result';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('search/result');
+    }
+    public function view_detile()
+    {
+        $data['judul'] = 'Search/Detile';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('search/detile');
+    }
 }
