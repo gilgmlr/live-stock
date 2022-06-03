@@ -15,4 +15,14 @@ class M_Inventory extends CI_Model
 	{
 		return $this->db->get('inventory')->num_rows();
 	}
+
+	public function getAll()
+	{
+		$this->db->select('*');
+		$this->db->from('inventory');
+		$this->db->join('items', 'items.item_code = inventory.item_code');
+		$query = $this->db->get();
+
+		return $query;
+	}
 }

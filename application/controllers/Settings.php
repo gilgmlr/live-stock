@@ -20,18 +20,33 @@ class Settings extends CI_Controller
         $this->load->view('settings/index', $data);
     }
 
-    public function addItem()
+    public function add_item()
     {
-        $data = array(
-            'item_code' => $this->input->post('item_code'),
-            'name' => $this->input->post('name'),
-            'specification' => $this->input->post('spec'),
-        );
+        $this->form_validation->set_rules('item_code', 'Item_Code', 'required');
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('spec', 'Spec', 'required');
 
-        $this->M_Settings->add_item($data);
-        redirect('settings');
+        $image = $this->input->post('image');
 
-        // var_dump($data);die;
+        if ($image == "") {
+            $image = "default.jpg";
+        }
+
+        if($this->form_validation->run() == false) {
+			redirect('settings/add_items');
+		} else {
+            $data = array(
+                'item_code' => $this->input->post('item_code'),
+                'name' => $this->input->post('name'),
+                'specification' => $this->input->post('spec'),
+                'specification' => $image,
+            );
+    
+            $this->M_Settings->add_item($data);
+            redirect('settings/view_add_items');
+
+            // var_dump($data);die;
+        }
     }
 
     public function view_add_items()

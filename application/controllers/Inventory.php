@@ -11,11 +11,13 @@ class Inventory extends CI_Controller
 
     public function index()
     {
-        $data['jumlahstock'] = $this->M_Inventory->countRowsStock();
-        $data['stock'] = $this->M_Inventory->getDataStock()->result();
+        // $data['jumlahstock'] = $this->M_Inventory->countRowsStock();
+        $data['stock'] = $this->M_Inventory->getAll()->result();
         $data['judul'] = 'Inventory';
 
         $this->load->view('template/header', $data);
         $this->load->view('inventory/index', $data);
+
+        // var_dump($data);die;
     }
 }
