@@ -13,6 +13,7 @@
                                     <th>Item Name</th>
                                     <th>Item Spec</th>
                                     <th>UoM</th>
+                                    <th>Stocks</th>
                                     <th>Location</th>
                                     <th>Action</th>
                                 </tr>
@@ -30,6 +31,7 @@
                                     <td><?php echo $data->name ?></td>
                                     <td><?php echo $data->specification ?></td>
                                     <td><?php echo $data->uom_code ?></td>
+                                    <td><?php echo $data->stocks ?></td>
                                     <td><?php echo $data->location ?></td>
                                     <td>
                                         <button type="button" class="btn btn-warning btn-sm" style="margin:0px"

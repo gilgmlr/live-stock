@@ -13,7 +13,7 @@
 
                 <div class="card-content ">
                     <p class="category"><strong>Total Items</strong></p>
-                    <h3 class="card-title"><?=  ?></h3>
+                    <h3 class="card-title">123</h3>
 
                 </div>
                 <div class="card-footer">
@@ -104,10 +104,10 @@
                 ?>
                             <tr>
                                 <td><?php echo $i ?></td>
-                                <td><?php echo $data->id ?></td>
+                                <td><?php echo $data->warehouse_code ?></td>
                                 <td><?php echo $data->name ?></td>
-                                <td><?php echo $data->total_items ?></td>
-                                <td><?php echo $data->total_items ?></td>
+                                <td>-</td>
+                                <td>-</td>
                                 <td>
                                     <button type="button" class="btn btn-danger btn-sm" style="margin:0px"
                                         data-bs-toggle="modal" data-bs-target="#closed">Closed</button>
@@ -207,9 +207,9 @@
                 ?>
                             <tr>
                                 <td><?php echo $i ?></td>
-                                <td><?php echo $data->id ?></td>
+                                <td><?php echo $data->warehouse_code ?></td>
                                 <td><?php echo $data->name ?></td>
-                                <td><?php echo $data->total_items ?></td>
+                                <td>-</td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm" style="margin:0px"
                                         data-bs-toggle="modal" data-bs-target="#view">View</button>
