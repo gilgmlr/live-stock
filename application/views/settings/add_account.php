@@ -69,7 +69,13 @@
                                             <button type="button" class="btn btn-primary btn-lg">Register</button>
                                         </div>
 
-                                        <div class="col-sm-12">
+                                        <center>
+                                            <div class="stats">
+                                                <a href="#pablo">See registered accounts?</a>
+                                            </div>
+                                        </center>
+
+                                        <!-- <div class="col-sm-12">
                                             <table id="warehouse" class="table table-hover">
                                                 <thead class="text-primary">
                                                     <tr>
@@ -82,10 +88,10 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <!-- konfig -->
+                                                    
                                                 </tbody>
                                             </table>
-                                        </div>
+                                        </div> -->
 
                                     </form>
 
