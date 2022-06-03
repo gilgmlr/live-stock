@@ -12,8 +12,8 @@
             <div class="card card-stats shadow p-3 mb-5 bg-white rounded">
 
                 <div class="card-content ">
-                    <p class="category"><strong>Total Assets</strong></p>
-                    <h3 class="card-title">70,340</h3>
+                    <p class="category"><strong>Total Items</strong></p>
+                    <h3 class="card-title"><?= $judul ?></h3>
 
                 </div>
                 <div class="card-footer">
