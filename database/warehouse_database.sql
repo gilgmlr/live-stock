@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Jun 2022 pada 06.20
+-- Waktu pembuatan: 03 Jun 2022 pada 04.51
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.26
 
@@ -75,7 +75,8 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`item_code`, `name`, `specification`, `image`) VALUES
-('0102-000302', 'PALLET WOODEN', 'Pallet 110 X 120 CM', '0102-000302.jpg');
+('0102-000302', 'PALLET WOODEN', 'Pallet 110 X 120 CM', 'default.jpg'),
+('0103-000721', 'OIL BECHEM', 'BECHEM BERUSYNTH EP 1000', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -114,7 +115,7 @@ CREATE TABLE `received` (
 --
 
 INSERT INTO `received` (`received_code`, `arrival_date`, `po_number`, `vendor_name`, `item_code`, `qty`, `uom`, `location`) VALUES
-('123', '2022-06-02', '1356', 'dsdfgh', '0102-000302', 34, 'PC', 'bjhf6');
+('123', '2022-06-02', '1212', 'name', '0102-000302', 100, 'PC', 'bjhf6');
 
 -- --------------------------------------------------------
 
@@ -143,8 +144,7 @@ INSERT INTO `uom` (`uom_code`, `name`) VALUES
 
 CREATE TABLE `user` (
   `nip` varchar(20) NOT NULL,
-  `nama` varchar(200) NOT NULL,
-  `username` varchar(200) NOT NULL,
+  `name` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
   `role` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -153,8 +153,9 @@ CREATE TABLE `user` (
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`nip`, `nama`, `username`, `password`, `role`) VALUES
-('1302194089', 'Gilang Gumelar', 'admin', 'admin', '1');
+INSERT INTO `user` (`nip`, `name`, `password`, `role`) VALUES
+('1302190002', 'Rizal Maidan', '$2y$10$yItqT1TsXY1VQeo6iWeraOUyo5BXo3TYxjmiZJec4Ai.Vd8G/f3vu', '1'),
+('1302194089', 'Gilang Gumelar', '$2y$10$kfXCTmWJ7s53dxou/APi4epAgmTarh9sB1Qp/WtHJj0ndqCwDQ1Xi', '1');
 
 --
 -- Indexes for dumped tables
