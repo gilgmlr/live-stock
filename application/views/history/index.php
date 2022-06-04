@@ -27,7 +27,7 @@
                                     <td><?= $data->doc_num ?></td>
                                     <td><?= $data->description ?></td>
                                     <td>
-                                        <button type="button" class="btn btn-warning btn-sm" style="margin:0px"
+                                        <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px;"
                                             data-bs-toggle="modal" data-bs-target="#edit<?=$i ?>">View</button>
                                     </td>
                                 </tr>
