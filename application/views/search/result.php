@@ -24,7 +24,7 @@
                 <p class="card-text">Name : Pylox</p>
 
                 <center>
-                    <a href="<?php echo base_url() . "search/view_detile" ?>" class="btn btn-warning" style=margin:0;>
+                    <a href="<?php echo base_url() . "search/view_detail" ?>" class="btn btn-warning" style=margin:0;>
                         Details
                     </a>
                 </center>

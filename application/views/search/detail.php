@@ -4,7 +4,10 @@
             <div class="input-group sm-3">
                 <input type="text" class="form-control" placeholder="search" aria-label="search"
                     aria-describedby="button-addon2">
-                <button type="button" class="btn btn-warning btn-sm" style="margin:0px">Search</button>
+                    <a href="<?php echo base_url() . "search/view_result" ?>" class="btn btn-warning"
+                        style=margin:0;>
+                        Search
+                    </a>
             </div>
         </div>
 
