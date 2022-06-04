@@ -19,21 +19,17 @@
             foreach ($items as $data) { 
         ?>
                 
-        <div class="col-sm-2">
+        <div class="col-md-3 px-2">
             <div class="card shadow p-3 mb-5 bg-white rounded">
-                    <img src="<?= base_url() . 'assets/catalog/' . $data->image ?>"
-                    class="card-img-top justify-content-center" alt="pilox">
+                <img src="<?= base_url() . 'assets/catalog/' . $data->image ?>"
+                    class="card-img-top justify-content-center" alt="image">
                 <div class="card-body">
-                    <h5 class="card-title" style="font-weight:bold">Pilox</h5>
-                    <p class="card-text">Item Code : <?= $data->item_code ?></p>
-                    <p class="card-text">Name : <?= $data->name ?></p>
-
-                    <center>
-                        <a href="<?php echo base_url() . "search/view_detail" ?>" class="btn btn-warning" style=margin:0;>
-                              Details
-                        </a>
-                    </center>
-
+                    <div class="card-text"><b>Code : <?= $data->item_code ?></b></div>
+                    <div class="card-text">Name : <?= $data->name ?></div>
+                    <p></p>
+                    <a href="<?php echo base_url() . "search/view_detail" ?>" class="btn btn-primary" style=margin:0;>
+                        Details
+                    </a>
                 </div>
             </div>
         </div>
