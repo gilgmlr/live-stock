@@ -122,7 +122,7 @@
                             <tr>
                                 <td><?php echo $i ?></td>
                                 <td><?php echo $data->warehouse_code ?></td>
-                                <td><?php echo $data->name ?></td>
+                                <td><?php echo $data->warehouse_name ?></td>
                                 <td>-</td>
                                 <td>-</td>
                                 <td>
@@ -225,7 +225,7 @@
                             <tr>
                                 <td><?php echo $i ?></td>
                                 <td><?php echo $data->warehouse_code ?></td>
-                                <td><?php echo $data->name ?></td>
+                                <td><?php echo $data->warehouse_name ?></td>
                                 <td>-</td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm" style="margin:0px"
