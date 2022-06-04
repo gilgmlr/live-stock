@@ -9,16 +9,33 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Item Code</th>
-                                    <th>Item Name</th>
-                                    <th>Item Spec</th>
-                                    <th>UoM</th>
-                                    <th>Location</th>
+                                    <th>Date</th>
+                                    <th>Document Number</th>
+                                    <th>Description</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- ISI KONFIG BACKEND DISINI -->
+                            <?php
+                                    $i = 1;
+                                    foreach ($history as $data) { 
+                                ?>
+
+                                <tr>
+                                    <td><?= $i ?></td>
+                                    <td><?= $data->date ?></td>
+                                    <td><?= $data->doc_num ?></td>
+                                    <td><?= $data->description ?></td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning btn-sm" style="margin:0px"
+                                            data-bs-toggle="modal" data-bs-target="#edit<?=$i ?>">View</button>
+                                    </td>
+                                </tr>
+
+                                <?php
+                            $i++;
+                            }
+                        ?>
                             </tbody>
                         </table>
                     </div>
