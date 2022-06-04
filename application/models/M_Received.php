@@ -25,4 +25,14 @@ class M_Received extends CI_Model
 		$query = $this->db->get();
 		return $query;
 	}
+
+	public function getWarehouse()
+	{
+		$this->db->select('*');
+		$this->db->from('warehouse');
+		$this->db->order_by('warehouse_code', 'asc');
+
+		$query = $this->db->get();
+		return $query;
+	}
 }
