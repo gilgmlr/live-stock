@@ -126,7 +126,7 @@
                                 <td>-</td>
                                 <td>-</td>
                                 <td>
-                                    <button type="button" class="btn btn-danger btn-sm" style="margin:0px"
+                                    <button type="button" class="btn btn-danger btn-sm" style="margin:0px; height:35px;"
                                         data-bs-toggle="modal" data-bs-target="#closed">Closed</button>
                                 </td>
                             </tr>
@@ -228,7 +228,7 @@
                                 <td><?php echo $data->warehouse_name ?></td>
                                 <td>-</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning btn-sm" style="margin:0px"
+                                    <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px;"
                                         data-bs-toggle="modal" data-bs-target="#view">View</button>
                                 </td>
                             </tr>
