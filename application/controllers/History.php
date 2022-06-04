@@ -6,13 +6,13 @@ class History extends CI_Controller
     {
         parent::__construct();
 
-        //$this->load->model('M_Stock');
+        $this->load->model('M_History');
     }
 
     public function index()
     {
         // $data['jumlahWarehouse'] = $this->M_Dashboard->countRowsWarehouse();
-        // $data['warehouse'] = $this->M_Dashboard->getDataWarehouse()->result();
+        $data['history'] = $this->M_History->getHistory()->result();
         $data['judul'] = 'History';
 
         $this->load->view('template/header', $data);
