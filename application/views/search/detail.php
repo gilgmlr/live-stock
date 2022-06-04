@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col">
                 <div class="card shadow p-3 mb-5 bg-white rounded">
-                    <img src="<?= base_url()?>assets/catalog/default.jpg"
+                    <img src="<?= base_url() . 'assets/catalog/' . $items[0]->image ?>"
                         class="card-img-top justify-content-center" alt="pilox">
 
                 </div>
