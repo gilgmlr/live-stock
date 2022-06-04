@@ -6,14 +6,13 @@ class Search extends CI_Controller
     {
         parent::__construct();
 
-        //$this->load->model('M_Stock');
+        $this->load->model('M_Search');
     }
 
     public function index()
     {
-        // $data['jumlahWarehouse'] = $this->M_Dashboard->countRowsWarehouse();
-        // $data['warehouse'] = $this->M_Dashboard->getDataWarehouse()->result();
         $data['judul'] = 'Search';
+        $data['warehouse'] = $this->M_Search->getDataItems()->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('search/index', $data);
@@ -22,6 +21,7 @@ class Search extends CI_Controller
     public function view_result()
     {
         $data['judul'] = 'Search/Result';
+        $data['warehouse'] = $this->M_Search->getDataItems()->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('search/result');
@@ -29,6 +29,7 @@ class Search extends CI_Controller
     public function view_detail()
     {
         $data['judul'] = 'Search/Detile';
+        $data['warehouse'] = $this->M_Search->getDataItems()->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('search/detail');
