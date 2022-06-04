@@ -14,23 +14,31 @@
         </div>
 
     </div>
-    <div class="col-sm-2">
-        <div class="card shadow p-3 mb-5 bg-white rounded">
-            <img src="<?= base_url() . 'assets/catalog/' . $items[0]->image ?> "
-                class="card-img-top justify-content-center" alt="pilox">
-            <div class="card-body">
-                <h5 class="card-title" style="font-weight:bold">Pilox</h5>
-                <p class="card-text">Item Code : 1212</p>
-                <p class="card-text">Name : Pylox</p>
+    <div class="d-flex align-content-start flex-wrap">
+        <?php
+            foreach ($items as $data) { 
+        ?>
+                
+        <div class="col-sm-2">
+            <div class="card shadow p-3 mb-5 bg-white rounded">
+                    <img src="<?= base_url() . 'assets/catalog/' . $data->image ?>"
+                    class="card-img-top justify-content-center" alt="pilox">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight:bold">Pilox</h5>
+                    <p class="card-text">Item Code : <?= $data->item_code ?></p>
+                    <p class="card-text">Name : <?= $data->name ?></p>
 
-                <center>
-                    <a href="<?php echo base_url() . "search/view_detail" ?>" class="btn btn-warning" style=margin:0;>
-                        Details
-                    </a>
-                </center>
+                    <center>
+                        <a href="<?php echo base_url() . "search/view_detail" ?>" class="btn btn-warning" style=margin:0;>
+                              Details
+                        </a>
+                    </center>
 
+                </div>
             </div>
         </div>
+
+        <?php } ?>
     </div>
 </div>
 
