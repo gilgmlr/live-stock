@@ -18,6 +18,6 @@ class Inventory extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('inventory/index', $data);
 
-        // var_dump($data);die;
+        // var_dump($data['stock']);die;
     }
 }
