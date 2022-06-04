@@ -7,6 +7,7 @@ class Received extends CI_Controller
         parent::__construct();
 
         $this->load->model('M_Received');
+        $this->load->model('M_History');
         $this->load->library('form_validation');
     }
 
@@ -28,10 +29,12 @@ class Received extends CI_Controller
         $this->form_validation->set_rules('item_code', 'Item_Code', 'required');
         $this->form_validation->set_rules('qty', 'Qty', 'required');
         $this->form_validation->set_rules('uom', 'UoM', 'required');
+        $this->form_validation->set_rules('warehouse_code', 'Warehouse_Code', 'required');
         $this->form_validation->set_rules('location', 'Location', 'required');
+        // $this->form_validation->set_rules('desc', 'Desc', 'required');
 
         if($this->form_validation->run() == false) {
-			redirect('received');
+			redirect('dashboard');
 		} else {
             $data = array(
                 'received_code' => $this->input->post('received_code'),
@@ -41,10 +44,18 @@ class Received extends CI_Controller
                 'item_code' => $this->input->post('item_code'),
                 'qty' => $this->input->post('qty'),
                 'uom' => $this->input->post('uom'),
+                'warehouse_code' => $this->input->post('warehouse_code'),
                 'location' => $this->input->post('location'),
+            );
+
+            $history = array(
+                'date' => date("Y-m-d"),
+                'doc_num' => $this->input->post('received_code'),
+                'description' => $this->input->post('desc'),
             );
     
             $this->M_Received->add($data);
+            $this->M_History->add($history);
             redirect('received');
         } // var_dump($data);die;
     }
@@ -54,6 +65,7 @@ class Received extends CI_Controller
         $data['judul'] = 'Received/GR';
         $data['uom'] = $this->M_Received->getUoM()->result();
         $data['items'] = $this->M_Received->getItems()->result();
+        $data['warehouse'] = $this->M_Received->getWarehouse()->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('received/good_received');
@@ -63,6 +75,7 @@ class Received extends CI_Controller
         $data['judul'] = 'Received/WT';
         $data['uom'] = $this->M_Received->getUoM()->result();
         $data['items'] = $this->M_Received->getItems()->result();
+        $data['warehouse'] = $this->M_Received->getWarehouse()->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('received/warehouse_transfer_in');
@@ -72,6 +85,7 @@ class Received extends CI_Controller
         $data['judul'] = 'Received/Adjusment';
         $data['uom'] = $this->M_Received->getUoM()->result();
         $data['items'] = $this->M_Received->getItems()->result();
+        $data['warehouse'] = $this->M_Received->getWarehouse()->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('received/adjusment');
