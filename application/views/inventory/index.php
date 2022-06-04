@@ -14,6 +14,7 @@
                                     <th>Item Spec</th>
                                     <th>UoM</th>
                                     <th>Stocks</th>
+                                    <th>Warehouse</th>
                                     <th>Location</th>
                                     <th>Action</th>
                                 </tr>
@@ -32,6 +33,7 @@
                                     <td><?= $data->specification ?></td>
                                     <td><?= $data->uom_name ?></td>
                                     <td><?= $data->stocks ?></td>
+                                    <td><?= $data->warehouse_code ?></td>
                                     <td><?= $data->location ?></td>
                                     <td>
                                         <button type="button" class="btn btn-warning btn-sm" style="margin:0px"
