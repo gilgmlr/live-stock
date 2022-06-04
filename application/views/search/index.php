@@ -11,75 +11,33 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="row">
-                <div class="col-sm-8">
-                    <div class="card shadow p-3 mb-5 bg-white rounded">
-                        <div class="card-body">
-                            <h5 class="card-title" style="margin-top:8px">Kategori</h5>
-                            <div class="card shadow p-1 sm-5 bg-white rounded" style="width:5rem">
-                                <div class="card-body">
-                                    <i class="bi bi-arrow-counterclockwise"></i>
-                                </div>
-                            </div>
-                            <div class="card shadow p-1 sm-5 bg-white rounded" style="width:5rem">
-                                <div class="card-body">
-                                    tas
-                                </div>
-                            </div>
-                            <div class="card shadow p-1 sm-5 bg-white rounded" style="width:5rem">
-                                <div class="card-body">
-                                    tas
-                                </div>
-                            </div>
-                            <div class="card shadow p-1 sm-5 bg-white rounded" style="width:5rem">
-                                <div class="card-body">
-                                    tas
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card shadow p-1 mb-5 bg-white rounded">
-                        <div class="card-body">
-                            <h5 class="card-title" style="margin-top:8px">History</h5>
-                            <div class="card shadow p-1 sm-5 bg-white rounded" style="width:7rem">
-                                <div class="card-body">
-                                    History Pencarian
-                                </div>
-                            </div>
-                            <div class="card shadow p-1 sm-5 bg-white rounded" style="width:7rem">
-                                <div class="card-body">
-                                    History Pencarian
-                                </div>
-                            </div>
-                            <div class="card shadow p-1 sm-5 bg-white rounded" style="width:7rem">
-                                <div class="card-body">
-                                    History Pencarian
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-sm-4">
+            <div class="d-flex align-content-start flex-wrap">
+                <?php
+                    foreach ($items as $data) { 
+                ?>
+                
+                <div class="col-sm-2">
                     <div class="card shadow p-3 mb-5 bg-white rounded">
-                        <img src="http://cdn.shopify.com/s/files/1/1764/2831/products/Pylox-RJ-London-Clear.jpg?v=1621561130"
+                        <img src="<?= base_url() . 'assets/catalog/' . $data->image ?>"
                             class="card-img-top justify-content-center" alt="pilox">
                         <div class="card-body">
                             <h5 class="card-title" style="font-weight:bold">Pilox</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up
-                                the bulk of the card's content.</p>
+                            <p class="card-text">Item Code : <?= $data->item_code ?></p>
+                            <p class="card-text">Name : <?= $data->name ?></p>
 
                             <center>
-                                <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                    data-bs-target="#detile_barang">Warehouse Transfer</button>
+                                <a href="<?php echo base_url() . "search/view_detail" ?>" class="btn btn-warning" style=margin:0;>
+                                    Details
+                                </a>
                             </center>
 
                         </div>
                     </div>
                 </div>
 
-
-            </div> -->
+                <?php } ?>
+            </div>
 
             <!-- Modal Detile Search -->
             <div class="modal fade" id="detile_barang" tabindex="-1" aria-labelledby="exampleModalLabel"
