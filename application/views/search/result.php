@@ -16,7 +16,7 @@
     </div>
     <div class="col-sm-2">
         <div class="card shadow p-3 mb-5 bg-white rounded">
-            <img src="http://cdn.shopify.com/s/files/1/1764/2831/products/Pylox-RJ-London-Clear.jpg?v=1621561130"
+            <img src="<?= base_url()?>assets/catalog/default.jpg"
                 class="card-img-top justify-content-center" alt="pilox">
             <div class="card-body">
                 <h5 class="card-title" style="font-weight:bold">Pilox</h5>
