@@ -5,7 +5,7 @@
                         <input type="text" class="form-control" placeholder="search" aria-label="search"
                             aria-describedby="button-addon2">
                         <a href="<?php echo base_url() . "search/view_result" ?>" class="btn btn-warning"
-                            style=margin:0;>
+                            style="margin:0; height:45px;">
                             Search
                         </a>
                     </div>
@@ -25,7 +25,7 @@
                             <div class="card-text"><b>Code : <?= $data->item_code ?></b></div>
                             <div class="card-text">Name : <?= $data->name ?></div>
                             <p></p>
-                            <a href="<?php echo base_url() . "search/view_detail" ?>" class="btn btn-primary" style=margin:0;>
+                            <a href="<?php echo base_url() . "search/view_detail" ?>" class="btn btn-primary" style="height: 35px;">
                                 Details
                             </a>
 
