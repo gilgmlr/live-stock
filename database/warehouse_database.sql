@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jun 2022 pada 04.51
+-- Waktu pembuatan: 04 Jun 2022 pada 13.30
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.26
 
@@ -35,14 +35,45 @@ CREATE TABLE `department` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `history`
+--
+
+CREATE TABLE `history` (
+  `id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `doc_num` varchar(100) NOT NULL,
+  `description` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `history`
+--
+
+INSERT INTO `history` (`id`, `date`, `doc_num`, `description`) VALUES
+(1, '2022-06-04', 'WT01', 'Warehouse Transfer'),
+(2, '2022-06-04', 'AD02', 'Adjustment');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `inventory`
 --
 
 CREATE TABLE `inventory` (
   `item_code` varchar(50) NOT NULL,
   `location` varchar(200) NOT NULL,
-  `stocks` int(11) NOT NULL
+  `stocks` int(11) NOT NULL,
+  `uom_code` varchar(100) NOT NULL,
+  `warehouse_code` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `inventory`
+--
+
+INSERT INTO `inventory` (`item_code`, `location`, `stocks`, `uom_code`, `warehouse_code`) VALUES
+('0102-000302', '01-01-01', 100, 'PC', 'BYP0-3-01'),
+('0103-000721', '01-02-02', 225, 'PK', 'BYP0-3-01');
 
 -- --------------------------------------------------------
 
@@ -75,8 +106,28 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`item_code`, `name`, `specification`, `image`) VALUES
-('0102-000302', 'PALLET WOODEN', 'Pallet 110 X 120 CM', 'default.jpg'),
-('0103-000721', 'OIL BECHEM', 'BECHEM BERUSYNTH EP 1000', 'default.jpg');
+('0100-000060', 'BRICK REFRATECHNIK TOPMAG A1 P B425', 'DENSE HIGHLY BURNT MAGNESIA SPINEL BRICK (CHROME ORE FREE), ELASTIC, WITH PRE-ATTACHED CARDBOARD SPACER', 'default.jpg'),
+('0100-000061', 'BRICK REFRATECHNIK TOPMAG A1 P B825', 'DENSE HIGHLY BURNT MAGNESIA SPINEL BRICK (CHROME ORE FREE), ELASTIC, WITH PRE-ATTACHED CARDBOARD SPACER', 'default.jpg'),
+('0100-000062', 'BRICK REFRATECHNIK TOPMAG A1 P BP25', 'DENSE HIGHLY BURNT MAGNESIA SPINEL BRICK (CHROME ORE FREE), ELASTIC, WITH PRE-ATTACHED CARDBOARD SPACER', 'default.jpg'),
+('0100-000063', 'BRICK REFRATECHNIK TOPMAG A1 P BP+25', 'DENSE HIGHLY BURNT MAGNESIA SPINEL BRICK (CHROME ORE FREE), ELASTIC, WITH PRE-ATTACHED CARDBOARD SPACER', 'default.jpg'),
+('0100-000064', 'MORTAR BRICK REFRATECHNIK AGRS60', 'DENSE HIGHLY BURNT MAGNESIA SPINEL BRICK (CHROME ORE FREE), ELASTIC, WITH PRE-ATTACHED CARDBOARD SPACER', 'default.jpg'),
+('0100-000065', 'BRICK REFRATECHNIK TOPMAG A1 B425 (K17)', 'DENSE HIGHLY BURNT MAGNESIA SPINEL BRICK (CHROME ORE FREE), ELASTIC', 'default.jpg'),
+('0102-000302', 'PALLET WOODEN', 'Pallet 110 X 120 CM', '0102-000302.jpg'),
+('0103-000721', 'OIL BECHEM', 'BECHEM BERUSYNTH EP 1000', 'default.jpg'),
+('0103-000753', 'GREASE', 'GADUS S5 V100 2; PAIL @18 KG; SHELL', 'default.jpg'),
+('0103-000923', 'ADAPTER UNION', '66883, 1/2 INCH NPSM(F) SWIVEL X 1/2 INCH NPT(M); LINCOLN OR EQUAL', 'default.jpg'),
+('0103-000924', 'BUTTON HEAD GREASE COUPLER', 'DIA. 16 MM', 'default.jpg'),
+('0103-000927', 'NIPPLES MODEL THREAD', '10198, 1/4 INCH NPT(M) X 1/2 INCH - 27(M); LINCOLN OR EQUAL', 'default.jpg'),
+('0103-000931', 'REDUCING BUSHINGS', '10200, 1/8 INCH NPT (F) X 1/2 INCH - 27(M); LINCOLN OR EQUAL', 'default.jpg'),
+('0103-000937', 'SWIVELS', '81728, STRAIGHT 1/2 INCH NPT(M) X 3/8 INCH NPT(M); LINCOLN OR EQUAL', 'default.jpg'),
+('0103-000938', 'OIL TRANSFORMER', 'DIALA S4 ZX; SHELL OR EQUAL', 'default.jpg'),
+('0105-000293', 'NIST', '114Q', 'default.jpg'),
+('0105-000294', 'PLASTIC CLIP', 'SIZE 5 X 8 CM, CLEAR', 'default.jpg'),
+('0105-000380', 'BENZOIC ACID', 'GBW (E) 130035, E 26460 J/G', 'default.jpg'),
+('0105-000418', 'STANDAR COAL HGI', 'ACIRS-H5-2016', 'default.jpg'),
+('0105-000421', 'POTASSIUM CHROMATE', 'CAT. NO. 1.04952.0250; MERCK', 'default.jpg'),
+('0105-000463', 'STANDARD SAMPLE', 'RAW V02A, FLUXANA RAW CALIBRATION STANDARD', 'default.jpg'),
+('0105-000509', 'ANHYDRONE', '501-171-HAZ; LECO', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -107,6 +158,7 @@ CREATE TABLE `received` (
   `item_code` varchar(50) NOT NULL,
   `qty` int(11) NOT NULL,
   `uom` varchar(100) NOT NULL,
+  `warehouse_code` varchar(100) NOT NULL,
   `location` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -114,8 +166,9 @@ CREATE TABLE `received` (
 -- Dumping data untuk tabel `received`
 --
 
-INSERT INTO `received` (`received_code`, `arrival_date`, `po_number`, `vendor_name`, `item_code`, `qty`, `uom`, `location`) VALUES
-('123', '2022-06-02', '1212', 'name', '0102-000302', 100, 'PC', 'bjhf6');
+INSERT INTO `received` (`received_code`, `arrival_date`, `po_number`, `vendor_name`, `item_code`, `qty`, `uom`, `warehouse_code`, `location`) VALUES
+('AD02', '2022-06-30', '1356', 'dsdfgh', '-- Select --', 1213, 'PC', 'BYP0-3-02', '0101010101'),
+('WT01', '2022-06-07', '1356', 'Ven Nam', '0100-000064', 1213, 'PC', 'BYP0-3-04', '05-05-05');
 
 -- --------------------------------------------------------
 
@@ -125,14 +178,14 @@ INSERT INTO `received` (`received_code`, `arrival_date`, `po_number`, `vendor_na
 
 CREATE TABLE `uom` (
   `uom_code` varchar(50) NOT NULL,
-  `name` varchar(200) NOT NULL
+  `uom_name` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `uom`
 --
 
-INSERT INTO `uom` (`uom_code`, `name`) VALUES
+INSERT INTO `uom` (`uom_code`, `uom_name`) VALUES
 ('PC', 'Piece'),
 ('PK', 'Pack');
 
@@ -157,6 +210,34 @@ INSERT INTO `user` (`nip`, `name`, `password`, `role`) VALUES
 ('1302190002', 'Rizal Maidan', '$2y$10$yItqT1TsXY1VQeo6iWeraOUyo5BXo3TYxjmiZJec4Ai.Vd8G/f3vu', '1'),
 ('1302194089', 'Gilang Gumelar', '$2y$10$kfXCTmWJ7s53dxou/APi4epAgmTarh9sB1Qp/WtHJj0ndqCwDQ1Xi', '1');
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `warehouse`
+--
+
+CREATE TABLE `warehouse` (
+  `warehouse_code` varchar(100) NOT NULL,
+  `warehouse_name` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `warehouse`
+--
+
+INSERT INTO `warehouse` (`warehouse_code`, `warehouse_name`) VALUES
+('BYP0-3-01', 'MAIN WAREHOUSE'),
+('BYP0-3-02', 'LUBRICANT'),
+('BYP0-3-03', 'BATU BRICK / CASTABLE\r\n'),
+('BYP0-3-04', 'QUALITY CONTROL WHS\r\n'),
+('BYP0-3-05\r\n', 'SHE WHS\r\n'),
+('BYP0-3-06\r\n', 'HRGA WHS\r\n'),
+('BYP0-3-07\r\n', 'POWER PLANT WHOUSE\r\n'),
+('BYP0-3-08\r\n', 'QUARY WAREHOUSE\r\n'),
+('BYP0-3-09\r\n', 'PROJECT WAREHOUSE\r\n'),
+('BYP0-3-10\r\n', 'CEMENT MILL CHEMICAL WH\r\n'),
+('BYP0-3-11\r\n', 'EX PROJECT WH\r\n');
+
 --
 -- Indexes for dumped tables
 --
@@ -168,10 +249,22 @@ ALTER TABLE `department`
   ADD PRIMARY KEY (`dept_code`);
 
 --
+-- Indeks untuk tabel `history`
+--
+ALTER TABLE `history`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `inventory`
 --
 ALTER TABLE `inventory`
   ADD PRIMARY KEY (`item_code`);
+
+--
+-- Indeks untuk tabel `issued`
+--
+ALTER TABLE `issued`
+  ADD PRIMARY KEY (`issued_code`);
 
 --
 -- Indeks untuk tabel `items`
@@ -180,10 +273,44 @@ ALTER TABLE `items`
   ADD PRIMARY KEY (`item_code`);
 
 --
+-- Indeks untuk tabel `lending`
+--
+ALTER TABLE `lending`
+  ADD PRIMARY KEY (`lending_code`);
+
+--
+-- Indeks untuk tabel `received`
+--
+ALTER TABLE `received`
+  ADD PRIMARY KEY (`received_code`);
+
+--
+-- Indeks untuk tabel `uom`
+--
+ALTER TABLE `uom`
+  ADD PRIMARY KEY (`uom_code`);
+
+--
 -- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`nip`);
+
+--
+-- Indeks untuk tabel `warehouse`
+--
+ALTER TABLE `warehouse`
+  ADD PRIMARY KEY (`warehouse_code`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `history`
+--
+ALTER TABLE `history`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
