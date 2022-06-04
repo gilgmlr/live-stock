@@ -26,13 +26,4 @@ class Search extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('search/result');
     }
-    
-    public function view_detail()
-    {
-        $data['judul'] = 'Search/Detile';
-        $data['items'] = $this->M_Search->getDataItems()->result();
-
-        $this->load->view('template/header', $data);
-        $this->load->view('search/detail');
-    }
 }
