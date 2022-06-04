@@ -1,16 +1,15 @@
 .btn {
-	background-color: #563d7c;
-	border: none;
-	color: gold;
-	padding-top: 10px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 12px;
-	cursor: pointer;
-	height: 45px;
-	width: 100px;
+    background-color: #563d7c;
+    border: none;
+    color: gold;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    width: 100px;
 }
+
 
 /* .btn {
 	background-color: #563d7c;
