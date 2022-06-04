@@ -2,7 +2,6 @@
     <div class="card shadow p-1 mb-5 bg-white rounded">
         <div class=" card-body">
             <form action="<?= base_url() ?>received/addReceived" method="POST">
-
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-sm-6">
@@ -35,16 +34,32 @@
                                 <?php $i++; } ?>
                             </select>
 
-                            <label for="" class="col-sm-6 col-form-label">Location</label>
-                            <input type="text" class="form-control" id="location" name="location" required>
+                            <div class="row">
+                            <div class="col-sm-6">
+                                <label for="" class="col-sm-6 col-form-label">WH</label>
+                                <select class="form-select form-control" aria-label=".form-select-lg example" id="warehouse_code" name="warehouse_code" required>
+                                    <option selected>-- Select --</option>
+                                    <?php foreach ($warehouse as $data) { ?>
+                                    <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?></option>
+                                    <?php $i++; } ?>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="" class="col-sm-6 col-form-label">Location</label>
+                                <input type="text" class="form-control" id="location" name="location" required>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <input type="text" class="form-control" id="desc" name="desc" value="Good Receive" hidden>
 
 
                 <div class="card-footer">
                     <center>
-                        <button id="batal" type="submit" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                        <a href="<?= base_url(); ?>received" class="btn btn-warning">
+                            Batal
+                        </a>
                         <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
                     </center>
                 </div>
