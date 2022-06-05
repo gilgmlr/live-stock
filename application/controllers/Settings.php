@@ -8,6 +8,8 @@ class Settings extends CI_Controller
 
         $this->load->model('M_Settings');
 		$this->load->library('form_validation');
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('upload');
     }
 
     public function index()
@@ -18,35 +20,6 @@ class Settings extends CI_Controller
 
         $this->load->view('template/header', $data);
         $this->load->view('settings/index', $data);
-    }
-
-    public function add_item()
-    {
-        $this->form_validation->set_rules('item_code', 'Item_Code', 'required');
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('spec', 'Spec', 'required');
-
-        $image = $this->input->post('image');
-
-        if ($image == "") {
-            $image = "default.jpg";
-        }
-
-        if($this->form_validation->run() == false) {
-			redirect('settings/view_add_items');
-		} else {
-            $data = array(
-                'item_code' => $this->input->post('item_code'),
-                'name' => $this->input->post('name'),
-                'specification' => $this->input->post('spec'),
-                'image' => $image,
-            );
-    
-            $this->M_Settings->add_item($data);
-            redirect('settings/view_add_items');
-
-            // var_dump($data);die;
-        }
     }
 
     public function view_add_items()
@@ -95,6 +68,42 @@ class Settings extends CI_Controller
             redirect('settings/view_add_account');
 
             // var_dump($data);die;
+        }
+    }
+
+    public function add_item()
+    {
+        $this->form_validation->set_rules('item_code', 'Item_Code', 'required');
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('spec', 'Spec', 'required');
+
+        if($this->form_validation->run() == false) {
+			redirect('settings/view_add_itemss');
+		} else {
+            $config = $this->upload->initialize(array(
+				"upload_path" => 'assets/catalog/',
+				"allowed_types" => 'jpg|png',
+				"file_name" => $this->input->post('item_code') . '.jpg'
+			));
+
+			$this->load->library('upload', $config);
+			$data = $this->upload->data();
+
+            $image = $data['file_name'];
+            // if ($image == "") {
+            //     $image = "default.jpg";
+            // } 
+
+			$data = array(
+                'item_code' => $this->input->post('item_code'),
+                'name' => $this->input->post('name'),
+                'specification' => $this->input->post('spec'),
+                'image' => $image,
+            );
+            var_dump($config);die;
+
+			$this->M_Settings->add_item($data);
+            // redirect('settings/view_add_items');
         }
     }
 }

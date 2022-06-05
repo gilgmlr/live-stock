@@ -12,7 +12,7 @@
                                 Form Add Items
                             </p>
 
-                            <form class="mx-1 mx-md-4" action="<?= base_url() ?>settings/add_item" method="POST">
+                            <form class="mx-1 mx-md-4" action="<?= base_url() ?>settings/add_item" method="POST" enctype='multipart/form-data'>
                                 <div class="container px-4">
                                     <div class="col gx-5">
                                         <div class="col">
@@ -33,7 +33,7 @@
                                         <div class="col">
                                             <label for="formFileMultiple" class="form-label"
                                                 style="margin-top:8px">Upload Image</label>
-                                            <input class="form-control" type="file" id="image" name="image" multiple />
+                                            <input class="custom-file-input form-control" type="file" id="image" name="image" accept='image/*'/>
                                         </div>
                                     </div>
 

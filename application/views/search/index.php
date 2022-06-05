@@ -20,7 +20,7 @@
                 <div class="col-md-2 px-2">
                     <a href="<?= base_url() . "search/view_detail" ?>" data-bs-toggle="modal" data-bs-target="#detail<?= $data->item_code ?>">
                         <div class="card shadow p-2 mb-2 bg-white rounded">
-                            <img src="<?= base_url() . 'assets/catalog/' . $data->image ?>" class="card-img-top justify-content-center" alt="Not Found!">
+                            <img src="<?= 'assets/catalog/' . $data->image  . '.jpg'?> " class="card-img-top justify-content-center" alt="Not Found!">
                             <div class="card-body">
                                 <p class="card-text" style="font-size:16px;"><b><?= $data->item_code ?></b></p>
                                 <p class="card-text" style="font-size:12px;"><?= $data->name ?></p>
@@ -42,7 +42,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="card shadow p-3 mb-5 bg-white rounded">
-                                <img src="<?= base_url() . 'assets/catalog/' . $data->image ?>"
+                                <img src="<?= base_url() . 'assets/catalog/' . $data->image . '.jpg' ?>"
                                     class="card-img-top justify-content-center" alt="Not Found!">
                             </div>
                         </div>
