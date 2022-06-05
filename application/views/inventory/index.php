@@ -36,7 +36,7 @@
                                     <td><?= $data->warehouse_code ?></td>
                                     <td><?= $data->location ?></td>
                                     <td>
-                                        <button type="button" class="btn btn-warning btn-sm" style="margin:0px"
+                                        <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px;"
                                             data-bs-toggle="modal" data-bs-target="#edit<?=$i ?>">Edit</button>
                                     </td>
                                 </tr>
