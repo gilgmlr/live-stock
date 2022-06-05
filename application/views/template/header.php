@@ -48,7 +48,7 @@
 <body>
     <header>
         <div class="fixed-top">
-            <nav class="navbar navbar-expand-md" style=background-color:#563d7c>
+            <nav class="navbar navbar-expand-lg" style=background-color:#563d7c>
                 <div class="container-fluid">
                     <h4 style="color:gold"><?= $judul ?></h4>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -63,7 +63,7 @@
 
     <div class="d-flex">
 
-        <div class="fixed">
+        <div class="position-fixed">
             <nav class="nav-bar" style=background-color:#563d7c>
                 <div class="menu-bar">
                     <div class="menu borders">

@@ -1,4 +1,4 @@
-<div class="main-content">
+<div class="container">
 
     <div class="logo">
         <div style="text-align: right; color:#000">

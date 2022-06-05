@@ -12,7 +12,7 @@
                 </div>
             </div>
 
-            <div class="d-flex align-content-start flex-wrap">
+            <div class="d-flex align-content-start flex-wrap" style="margin-top: 0;">
                 <?php
                     foreach ($items as $data) { 
                 ?>
