@@ -17,7 +17,7 @@
                             src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/undefined/external-stock-delivery-xnimrodx-lineal-xnimrodx.png" />
                     </div>
                     <p class="category"><strong>Total Items</strong></p>
-                    <h3 class="card-title">123</h3>
+                    <h3 class="card-title">30000</h3>
 
                 </div>
                 <div class="card-footer">
@@ -38,7 +38,7 @@
                             src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/undefined/external-stock-delivery-xnimrodx-lineal-xnimrodx.png" />
                     </div>
                     <p class="category"><strong>Orders</strong></p>
-                    <h3 class="card-title">102</h3>
+                    <h3 class="card-title">30000</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
@@ -69,14 +69,7 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="card card-stats shadow p-3 mb-5 bg-white rounded">
-                <div class="card-header">
-                    <div class="icon icon-info">
 
-                        <span class="material-icons">
-
-                        </span>
-                    </div>
-                </div>
                 <div class="card-content">
                     <div class="card-header">
                         <img
@@ -103,15 +96,15 @@
                     <!-- <p class="category">All Warehouse</p> -->
                 </div>
                 <div class="card-content table-responsive">
-                    <table id="warehouse" class="table table-hover">
+                    <table id="lending" class="table table-hover">
                         <thead class="text-primary">
                             <tr>
-                                <th>NO</th>
+                                <th>No</th>
                                 <th>Item Code</th>
                                 <th>Item Name</th>
                                 <th>Qty</th>
                                 <th>Date</th>
-                                <th>ACTION</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -126,7 +119,7 @@
                                 <td>-</td>
                                 <td>-</td>
                                 <td>
-                                    <button type="button" class="btn btn-danger btn-sm" style="margin:0px; height:35px;"
+                                    <button type="button" class="btn btn-danger btn-sm" style="margin:0px; height:35px; width:auto"
                                         data-bs-toggle="modal" data-bs-target="#closed">Closed</button>
                                 </td>
                             </tr>
@@ -210,11 +203,10 @@
                     <table id="warehouse" class="table table-hover">
                         <thead class="text-primary">
                             <tr>
-                                <th>NO</th>
-                                <th>STORE ID</th>
-                                <th>STORE NAME</th>
-                                <th>TOTAL ITEMS</th>
-                                <th>ACTION</th>
+                                <th><b>No</b></th>
+                                <th><b>ID</b></th>
+                                <th><b>Name</b></th>
+                                <th><b>Action</b></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -226,9 +218,8 @@
                                 <td><?php echo $i ?></td>
                                 <td><?php echo $data->warehouse_code ?></td>
                                 <td><?php echo $data->warehouse_name ?></td>
-                                <td>-</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px;"
+                                    <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px; width:auto"
                                         data-bs-toggle="modal" data-bs-target="#view">View</button>
                                 </td>
                             </tr>
@@ -307,48 +298,10 @@
 </body>
 <script>
 $(document).ready(function() {
-    $('#warehouse').DataTable();
-    LengthMenu: [
-        [5, 10, 25, 50, 100, -1],
-        [5, 10, 25, 50, 100, "All"]
-
-    ]
+    //$('#warehouse').DataTable();
+    $('#lending').DataTable();
+    
 });
 </script>
 
 </html>
-
-
-<!-- MODAL TEMPLATE -->
-<!-- <div class="modal fade" id="..." tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Form Lending Activity</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <div class="container">
-                    <div class="row align-items-center">
-
-                        <div class="col">
-                            <center>
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-
-                            </center>
-                        </div>
-                        <div class="col">
-                            <center>
-                                <button type="button" class="btn btn-success">Save changes</button>
-                            </center>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
