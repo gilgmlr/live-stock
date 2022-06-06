@@ -24,7 +24,7 @@
                     <div class="stats">
 
                         <i class="material-icons text-info"></i>
-                        <a href="#pablo">See detailed report</a>
+                        <a href="<?= base_url()?>inventory">See details</a>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <a href="#pablo">See detailed report</a>
+                        <a href="<?= base_url() ?>lending">See details</a>
                     </div>
                 </div>
             </div>
