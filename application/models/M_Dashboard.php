@@ -31,6 +31,16 @@ class M_Dashboard extends CI_Model
 		return $this->db->get('lending')->num_rows();
 	}
 
+	public function get_Last_Update()
+	{
+		$this->db->select('*');
+		$this->db->from('history');
+		$this->db->order_by('id', 'desc');
+
+		$query = $this->db->get();
+		return $query;
+	}
+
 	function get_total_biaya()
 	{
 		return $this->db->query("SELECT SUM(biaya_rad) as total FROM pemeriksaan_radiologi");

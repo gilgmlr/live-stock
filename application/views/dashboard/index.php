@@ -3,7 +3,7 @@
     <div class="logo">
         <div style="text-align: right; color:#000">
             <img src="assets/image/icon.png " />
-            <span class="ps-2">Warehouse. <br />Last update: Mei 20, 2022</span>
+            <span class="ps-2">Warehouse. <br />Last update: <?= date('F, d Y', strtotime($last_update[0]->date)); ?></span>
         </div>
     </div>
 

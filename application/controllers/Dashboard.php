@@ -7,6 +7,7 @@ class Dashboard extends CI_Controller
         parent::__construct();
 
         $this->load->model('M_Dashboard');
+        $this->load->helper('date');
     }
 
     public function index()
@@ -16,6 +17,7 @@ class Dashboard extends CI_Controller
         $data['total_received'] = $this->M_Dashboard->get_total_received();
         $data['total_issue'] = $this->M_Dashboard->get_total_issue();
         $data['total_lending'] = $this->M_Dashboard->get_total_lending();
+        $data['last_update'] = $this->M_Dashboard->get_Last_Update()->result();
         $data['judul'] = 'Dashboard';
 
         $this->load->view('template/header', $data);
