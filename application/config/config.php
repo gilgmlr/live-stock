@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/live-stock/';
-// $config['base_url'] = 'http://192.168.168.242/live-stock/';
+// $config['base_url'] = 'http://192.168.57.242/live-stock/';
 
 /*
 |--------------------------------------------------------------------------
