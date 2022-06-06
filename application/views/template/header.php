@@ -79,11 +79,11 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="<?= base_url(); ?>search"
-                                                class="<?php if (uri_string() === 'search') echo 'actived' ?>">
-                                                <i class="bi bi-search"></i>
+                                            <a href="<?= base_url(); ?>catalog"
+                                                class="<?php if (uri_string() === 'catalog') echo 'actived' ?>">
+                                                <i class="bi bi-microsoft"></i>
                                                 <div class="position-absolute tooltips">
-                                                    <h5>Search</h5>
+                                                    <h5>Catalog</h5>
                                                 </div>
                                             </a>
                                         </li>
