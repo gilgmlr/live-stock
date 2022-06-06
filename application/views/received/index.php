@@ -5,7 +5,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="https://img.icons8.com/ios/100/undefined/reading-confirmation.png" />
+                            <img src="<?= 'assets/image/GR.png'?>" />
                             <h5>Good Recived</h5>
                         </center>
                     </div>
@@ -17,7 +17,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="https://img.icons8.com/ios/100/undefined/multiple-inputs.png" />
+                            <img src="<?= 'assets/image/WT.png'?>" />
                             <h5>Warehouse Transfer (Input)</h5>
                         </center>
                     </div>
@@ -29,7 +29,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="https://img.icons8.com/ios/100/undefined/customize-view.png" />
+                            <img src="<?= 'assets/image/Adjustment.png'?>" />
                             <h5>Adjusment In Material</h5>
                         </center>
                     </div>
