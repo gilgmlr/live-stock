@@ -1,82 +1,78 @@
-<!-- <body>
-    <header>
-        <div class="navatas">
-            <nav class="navbar navbar-expand-lg"style = background-color:#A64B2A>
-                <div class="container-fluid">
+<div class="container" style="margin-top: 80px;">
+    <div class="card shadow p-1 mb-5 bg-white rounded">
+        <center>
+            <h4> Form Lending</h4>
+        </center>
+        <div class=" card-body">
+            <form action="<?= base_url() ?>received/addReceived" method="POST">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-6">
+                            <label for="" class="col-sm-6 col-form-label">Lending Number</label>
+                            <input type="text" class="form-control" id="received_code" name="received_code" required>
+                            <label for="" class="col-sm-6 col-form-label">Loan Date</label>
+                            <input type="date" class="form-control" id="arrival_date" name="arrival_date" required>
+                            <label for="" class="col-sm-6 col-form-label">Date of Return</label>
+                            <input type="date" class="form-control" id="arrival_date" name="arrival_date" required>
+                            <label for="" class="col-sm-6 col-form-label">Item Name</label>
+                            <input type="text" class="form-control" id="po_number" name="po_number" required>
+                            <label for="" class="col-sm-6 col-form-label">Vendor Name</label>
+                            <input type="text" class="form-control" id="vendor_name" name="vendor_name" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="" class="col-sm-6 col-form-label">Item Code</label>
+                            <select class="form-select form-control" aria-label=".form-select-lg example" id="item_code"
+                                name="item_code" required>
+                                <option selected>-- Select --</option>
+                                <?php foreach ($items as $data) { ?>
+                                <option value="<?= $data->item_code ?>"><?= $data->item_code ?> | <?= $data->name ?>
+                                </option>
+                                <?php $i++; } ?>
+                            </select>
+                            <label for="" class="col-sm-6 col-form-label">Qty</label>
+                            <input type="text" class="form-control" id="qty" name="qty" required>
+                            <label for="" class="col-sm-6 col-form-label">UoM</label>
+                            <select class="form-select form-control" aria-label=".form-select-lg example" id="uom"
+                                name="uom" required>
+                                <option selected>-- Select --</option>
+                                <?php foreach ($uom as $data) { ?>
+                                <option value="<?= $data->uom_code ?>"><?= $data->uom_code ?> - <?= $data->uom_name ?>
+                                </option>
+                                <?php $i++; } ?>
+                            </select>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        </ul>
-                        <form class="d-flex" action="login/logout">
-                            <button class="btn btn-danger" type="submit">Logout</button>
-                        </form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">WH</label>
+                                    <select class="form-select form-control" aria-label=".form-select-lg example"
+                                        id="warehouse_code" name="warehouse_code" required>
+                                        <option selected>-- Select --</option>
+                                        <?php foreach ($warehouse as $data) { ?>
+                                        <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?>
+                                        </option>
+                                        <?php $i++; } ?>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Location</label>
+                                    <input type="text" class="form-control" id="location" name="location" required>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </nav>
-        </div>
-    </header>
+                <input type="text" class="form-control" id="desc" name="desc" value="Good Receive" hidden>
 
-    <div class="d-flex">
-        <nav class="nav-bar"style = background-color:#A64B2A>
-            <div class="menu-bar">
-                <div class="menu borders">
-                    <div class="main-menu ">
-                        <ul>
-                            <li data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
-                                <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'dashboard') echo 'actived' ?>">
-                                    <i class="bi bi-house-door-fill"></i>
-                                    <div class="position-absolute tooltips">Home</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'search') echo 'actived' ?>">
-                                    <i class="bi bi-search"></i>
-                                    <div class="position-absolute tooltips">Search</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'stock') echo 'actived' ?>">
-                                    <i class="bi bi-stack"></i>
-                                    <div class="position-absolute tooltips">Data Stock</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'masuk') echo 'actived' ?>">
-                                    <i class="bi bi-arrow-down-square-fill"></i>
-                                    <div class="position-absolute tooltips">Barang Masuk</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'keluar') echo 'actived' ?>">
-                                    <i class="bi bi-arrow-up-square-fill"></i>
-                                    <div class="position-absolute tooltips">Barang Keluar</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'peminjaman') echo 'actived' ?>">
-                                    <i class="bi bi-arrow-left-right"></i>
-                                    <div class="position-absolute tooltips">Peminjaman</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url(); ?>" class="<?php if (uri_string() === 'history') echo 'actived' ?>">
-                                    <i class="bi bi-arrow-counterclockwise"></i>
-                                    <div class="position-absolute tooltips">History</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    
+
+                <div class="card-footer">
+                    <center>
+                        <a href="<?= base_url(); ?>received" class="btn btn-warning">
+                            Batal
+                        </a>
+                        <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
+                    </center>
                 </div>
-            </div>
-        </nav> -->
-
-        <div class="col">
-            <!--  ISI DISINI  -->
-            PEMINJAMAN
+            </form>
         </div>
     </div>
-
-</body>
-
-</html>
+</div>
