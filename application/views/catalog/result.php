@@ -5,7 +5,7 @@
                 <input type="text" class="form-control" placeholder="search" aria-label="search"
                     aria-describedby="button-addon2">
 
-                <a href="<?php echo base_url() . "search/view_result" ?>" class="btn btn-warning btn-sm"
+                <a href="<?php echo base_url() . "catalog/view_result" ?>" class="btn btn-warning btn-sm"
                     style=margin:auto;>
                     Search
                 </a>
@@ -20,7 +20,7 @@
         <div class="col-md-2 px-2">
             <a href="" data-bs-toggle="modal" data-bs-target="#detail<?= $data->item_code ?>">
                 <div class="card shadow p-2 mb-2 bg-white rounded">
-                    <img src=""<?= 'assets/catalog/' . $data->image  . '.jpg'?> " class="card-img-top justify-content-center" alt="">
+                    <img src="<?= base_url() . 'assets/catalog/' . $data->image ?> " class="card-img-top justify-content-center" alt="">
                     <div class="card-body">
                         <p class="card-text" style="font-size:16px;"><b><?= $data->item_code ?></b></p>
                         <p class="card-text" style="font-size:12px;"><?= $data->name ?></p>

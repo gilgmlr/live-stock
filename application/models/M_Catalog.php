@@ -1,6 +1,6 @@
 <?php
 
-class M_Search extends CI_Model
+class M_Catalog extends CI_Model
 {
 	public function getDataItems()
 	{

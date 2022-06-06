@@ -8,7 +8,6 @@ class Settings extends CI_Controller
 
         $this->load->model('M_Settings');
 		$this->load->library('form_validation');
-        $this->load->helper(array('form', 'url'));
         $this->load->library('upload');
     }
 
@@ -81,29 +80,32 @@ class Settings extends CI_Controller
 			redirect('settings/view_add_itemss');
 		} else {
             $config = $this->upload->initialize(array(
-				"upload_path" => 'assets/catalog/',
-				"allowed_types" => 'jpg|png',
-				"file_name" => $this->input->post('item_code') . '.jpg'
+				"upload_path" => './assets/catalog/',
+				"allowed_types" => 'gif|jpg|png',
+				"remove_spaces" => TRUE,
+				"file_name" => $this->input->post('item_code') . '-' . $_FILES["image"]['name']
 			));
 
 			$this->load->library('upload', $config);
-			$data = $this->upload->data();
+            
+            if (!$this->upload->do_upload('image')) {
+                redirect('settings/view_add_items');
+            } else {
+                $data = $this->upload->data();
 
-            $image = $data['file_name'];
-            // if ($image == "") {
-            //     $image = "default.jpg";
-            // } 
-
-			$data = array(
-                'item_code' => $this->input->post('item_code'),
-                'name' => $this->input->post('name'),
-                'specification' => $this->input->post('spec'),
-                'image' => $image,
-            );
-            var_dump($config);die;
-
-			$this->M_Settings->add_item($data);
-            // redirect('settings/view_add_items');
+                $image = $data['file_name'];
+    
+                $data = array(
+                    'item_code' => $this->input->post('item_code'),
+                    'name' => $this->input->post('name'),
+                    'specification' => $this->input->post('spec'),
+                    'image' => $image,
+                );
+                // var_dump($config);die;
+    
+                $this->M_Settings->add_item($data);
+                redirect('settings/view_add_items');
+            }
         }
     }
 }
