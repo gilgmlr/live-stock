@@ -161,8 +161,6 @@
                                 </td>
                             </tr>
 
-                             
-
                             <?php 
                                 $i++; 
                                 } 
@@ -190,7 +188,7 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <table id="" class="table">
+                                            <table id="" class="table table-hover">
                                                         <thead>
                                                             <tr>
                                                                 <th>No</th>
