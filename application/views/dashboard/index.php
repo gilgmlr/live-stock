@@ -17,7 +17,7 @@
                             src="<?= 'assets/image/stock.png'?>" />
                     </div>
                     <p class="category"><strong>Total Items</strong></p>
-                    <h3 class="card-title">30000</h3>
+                    <h3 class="card-title"><?= $total_items ?></h3>
 
                 </div>
                 <div class="card-footer">
@@ -37,8 +37,8 @@
                         <img
                             src="<?= 'assets/image/stock.png'?>" />
                     </div>
-                    <p class="category"><strong>Orders</strong></p>
-                    <h3 class="card-title">30000</h3>
+                    <p class="category"><strong>Received</strong></p>
+                    <h3 class="card-title"><?= $total_received ?></h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
@@ -57,7 +57,7 @@
                             src="<?= 'assets/image/stock.png'?>" />
                     </div>
                     <p class="category"><strong>Issue</strong></p>
-                    <h3 class="card-title">+124</h3>
+                    <h3 class="card-title"><?= $total_issue ?></h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
@@ -76,7 +76,7 @@
                             src="<?= 'assets/image/stock.png'?>" />
                     </div>
                     <p class="category"><strong>Lending</strong></p>
-                    <h3 class="card-title">+245</h3>
+                    <h3 class="card-title"><?= $total_lending ?></h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
