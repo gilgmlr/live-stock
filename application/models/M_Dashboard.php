@@ -11,18 +11,24 @@ class M_Dashboard extends CI_Model
 		return $query;
 	}
 
-	public function countRowsWarehouse()
-	{
-		return $this->db->get('inventory')->num_rows();
-	}
-
 	public function get_total_items()
 	{
-		$this->db->select('*');
-		$this->db->from('items');
+		return $this->db->get('items')->num_rows();
+	}
 
-		$query = $this->db->get();
-		return $query;
+	public function get_total_received()
+	{
+		return $this->db->get('received')->num_rows();
+	}
+
+	public function get_total_issue()
+	{
+		return $this->db->get('issued')->num_rows();
+	}
+
+	public function get_total_lending()
+	{
+		return $this->db->get('lending')->num_rows();
 	}
 
 	function get_total_biaya()
