@@ -81,7 +81,7 @@ class Settings extends CI_Controller
 		} else {
             $config = $this->upload->initialize(array(
 				"upload_path" => './assets/catalog/',
-				"allowed_types" => 'gif|jpg|png',
+				"allowed_types" => 'gif|jpg|jpeg|png',
 				"remove_spaces" => TRUE,
 				"file_name" => $this->input->post('item_code') . '-' . $_FILES["image"]['name']
 			));
