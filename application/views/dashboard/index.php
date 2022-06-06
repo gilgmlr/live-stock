@@ -109,10 +109,10 @@
                         </thead>
                         <tbody>
                             <?php
-                    $i = 1;
-                    foreach ($warehouse as $data) { 
-                ?>
-                            <tr>
+                                $i = 1;
+                                foreach ($warehouse as $data) { 
+                            ?>
+                            <!-- <tr>
                                 <td><?php echo $i ?></td>
                                 <td><?php echo $data->warehouse_code ?></td>
                                 <td><?php echo $data->warehouse_name ?></td>
@@ -122,77 +122,14 @@
                                     <button type="button" class="btn btn-danger btn-sm" style="margin:0px; height:35px; width:auto"
                                         data-bs-toggle="modal" data-bs-target="#closed">Closed</button>
                                 </td>
-                            </tr>
-                            <?php
-                    $i++;
-                    }
-                ?>
+                            </tr> -->
+
+                            <?php $i++; } ?>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-        <!-- MODAL LENDING ACTIVITY -->
-        <div class="modal fade" id="closed" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: #563d7c">
-                        <h5 class="modal-title" style="color:gold" id="exampleModalLabel">Form Lending Activity</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="exampleInputno" class="form-label">No</label>
-                                <input type="Text" class="form-control" id="exampleInputno" aria-describedby="no">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleItemCode" class="form-label">Item Code</label>
-                                <input type="Text" class="form-control" id="exampleItemCode">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleItemName" class="form-label">Item Name</label>
-                                <input type="Text" class="form-control" id="exampleItemName">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleItemSpec" class="form-label">Item Spec</label>
-                                <input type="Text" class="form-control" id="exampleItemSpec">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleUoM" class="form-label">UoM</label>
-                                <input type="Text" class="form-control" id="exampleUoM">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleLocation" class="form-label">Location</label>
-                                <input type="Text" class="form-control" id="exampleLocation">
-                            </div>
-
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="container">
-                            <div class="row align-items-center">
-
-                                <div class="col">
-                                    <center>
-                                        <button type="button" class="btn btn-danger"
-                                            data-bs-dismiss="modal">Close</button>
-
-                                    </center>
-                                </div>
-                                <div class="col">
-                                    <center>
-                                        <button type="button" class="btn btn-success">Save changes</button>
-                                    </center>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
         <div class="col-lg-5 col-md-12">
             <div class="card shadow p-3 mb-5 bg-white rounded" style="min-height: 400px">
@@ -211,22 +148,25 @@
                         </thead>
                         <tbody>
                             <?php
-                    $i = 1;
-                    foreach ($warehouse as $data) { 
-                ?>
+                                $i = 1;
+                                foreach ($warehouse as $data) { 
+                            ?>
                             <tr>
-                                <td><?php echo $i ?></td>
-                                <td><?php echo $data->warehouse_code ?></td>
-                                <td><?php echo $data->warehouse_name ?></td>
+                                <td><?= $i ?></td>
+                                <td><?= $data->warehouse_code ?></td>
+                                <td><?= $data->warehouse_name ?></td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px; width:auto"
-                                        data-bs-toggle="modal" data-bs-target="#view">View</button>
+                                        data-bs-toggle="modal" data-bs-target="#view-<?= $data->warehouse_code ?>">View</button>
                                 </td>
                             </tr>
-                            <?php
-                    $i++;
-                    }
-                ?>
+
+                             
+
+                            <?php 
+                                $i++; 
+                                } 
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -236,65 +176,60 @@
     </div>
 </div>
 
-<!-- MODAL VIEW -->
-<div class="modal fade" id="view" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
-        <div class="modal-content">
-            <div class="modal-header" style="background-color: #563d7c">
-                <h5 class="modal-title" style="color: gold" id="exampleModalLabel">Warehouse Detiles</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="exampleInputno" class="form-label">No</label>
-                        <input type="Text" class="form-control" id="exampleInputno" aria-describedby="no">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleItemCode" class="form-label">Item Code</label>
-                        <input type="Text" class="form-control" id="exampleItemCode">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleItemName" class="form-label">Item Name</label>
-                        <input type="Text" class="form-control" id="exampleItemName">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleItemSpec" class="form-label">Item Spec</label>
-                        <input type="Text" class="form-control" id="exampleItemSpec">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleUoM" class="form-label">UoM</label>
-                        <input type="Text" class="form-control" id="exampleUoM">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleLocation" class="form-label">Location</label>
-                        <input type="Text" class="form-control" id="exampleLocation">
-                    </div>
+                            <?php
+                                $i = 1;
+                                foreach ($warehouse as $detail ) { 
+                            ?>
 
-                </form>
-            </div>
-            <div class="modal-footer">
-                <div class="container">
-                    <div class="row align-items-center">
+                            <!-- MODAL VIEW -->
+                            <div class="modal fade" id="view-<?= $detail->warehouse_code ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:80%>
+                                    <div class="modal-content">
+                                        <div class="modal-header" style="background-color: #563d7c">
+                                            <h5 class="modal-title" style="color: gold" id="exampleModalLabel"><?= $detail->warehouse_name ?> DETAIL</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table id="" class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>No</th>
+                                                                <th>Item Code</th>
+                                                                <th>Item Name</th>
+                                                                <th>Item Spec</th>
+                                                                <th>UoM</th>
+                                                                <th>Stocks</th>
+                                                                <th>Warehouse</th>
+                                                                <th>Location</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                            </tr>
+                                                        </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Modal -->
 
-                        <div class="col">
-                            <center>
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <?php 
+                                $i++; 
+                                } 
+                            ?>
 
-                            </center>
-                        </div>
-                        <div class="col">
-                            <center>
-                                <button type="button" class="btn btn-success">Save changes</button>
-                            </center>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 </body>
 <script>
 $(document).ready(function() {

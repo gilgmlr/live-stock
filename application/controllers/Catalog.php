@@ -20,7 +20,7 @@ class Catalog extends CI_Controller
 
     public function view_result()
     {
-        $data['judul'] = 'Search/Result';
+        $data['judul'] = 'Catalog';
         $data['items'] = $this->M_Catalog->getDataItems()->result();
 
         $this->load->view('template/header', $data);

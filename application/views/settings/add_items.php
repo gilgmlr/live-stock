@@ -27,8 +27,8 @@
                                         </div>
                                         <div class="col">
                                             <label class="form-label" for="form3Example1c">Spesification</label>
-                                            <input type="text" id="spec" class="text-input" name="spec" autocomplete="off"
-                                                placeholder="Enter spesification" required />
+                                            <textarea id="spec" class="text-input" name="spec" autocomplete="off"
+                                                placeholder="Enter spesification" rows="3" required></textarea>
                                         </div>
                                         <div class="col">
                                             <label for="formFileMultiple" class="form-label"
