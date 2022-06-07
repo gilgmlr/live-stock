@@ -36,6 +36,18 @@
                 </div>
             </a>
         </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="<?php echo base_url() . "Issue/view_lending" ?>">
+                <div class="card shadow p-2 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <center>
+                            <img src="<?= 'assets/image/Lending.png'?>" />
+                            <h5>Lending (Submission)</h5>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
 
