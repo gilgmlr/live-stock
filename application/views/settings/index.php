@@ -5,7 +5,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <i class="material-icons" style="font-size:100px;color:black;">person_add</i>
+                            <img src="<?= 'assets/image/account.png'?>" style="width:100px" />
                             <h5>Add More Account</h5>
                         </center>
                     </div>
@@ -17,7 +17,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <i class="material-icons" style="font-size:100px;color:black;">library_add</i>
+                            <img src="<?= 'assets/image/add_data.png'?>" style="width:100px" />
                             <h5>Add Items</h5>
                         </center>
                     </div>
@@ -29,7 +29,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <i class="material-icons" style="font-size:100px;color:black;">upload_file</i>
+                            <img src="<?= 'assets/image/import_data.png'?>" style="width:100px" />
                             <h5>Import data</h5>
                         </center>
                     </div>
@@ -42,7 +42,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <i class="material-icons" style="font-size:100px;color:black;">key</i>
+                            <img src="<?= 'assets/image/pass.png'?>" style="width:100px" />
                             <h5>Change Password</h5>
                         </center>
                     </div>
