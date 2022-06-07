@@ -6,13 +6,13 @@ class Inventory extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('M_Inventory');
+        $this->load->model('M_CRUD');
     }
 
     public function index()
     {
-        // $data['jumlahstock'] = $this->M_Inventory->countRowsStock();
-        $data['stock'] = $this->M_Inventory->getAll()->result();
+        $data['stock'] = $this->M_CRUD->get_join3('inventory', 'items', 'items.item_code = inventory.item_code',
+        'uom', 'uom.uom_code = inventory.uom_code', 'warehouse', 'warehouse.warehouse_code = inventory.warehouse_code')->result();
         $data['judul'] = 'Inventory';
 
         $this->load->view('template/header', $data);
