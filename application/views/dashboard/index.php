@@ -87,8 +87,8 @@
 
     <div class="row ">
         <div class="col-lg-7 col-md-12">
-            <div class="card shadow p-3 mb-5 bg-white rounded" style="min-height: 400px">
-                <div class="card-header card-header-text">
+            <div class="cards shadow p-3 mb-5 bg-white rounded" style="min-height: 400px;">
+                <div class="card-header card-header-text" style="background-color:#fff">
                     <h4 class="card-title">Lending Activity</h4>
                     <!-- <p class="category">All Warehouse</p> -->
                 </div>
@@ -129,8 +129,8 @@
         </div>
 
         <div class="col-lg-5 col-md-12">
-            <div class="card shadow p-3 mb-5 bg-white rounded" style="min-height: 400px">
-                <div class="card-header card-header-text">
+            <div class="cards shadow p-3 mb-5 bg-white rounded" style="min-height: 400px">
+                <div class="card-header card-header-text" style="background-color:#fff">
                     <h4 class="card-title">All Warehouse</h4>
                 </div>
                 <div class="card-content">

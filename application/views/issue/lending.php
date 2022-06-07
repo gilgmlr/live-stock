@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 80px;">
-    <div class="card shadow p-3 mb-5 bg-white rounded" style="min-height: 400px">
+    <div class="cards shadow p-3 mb-5 bg-white rounded" style="min-height: 400px">
 
         <div class="card-content">
 
@@ -72,9 +72,9 @@
                     <input type="text" class="form-control" id="desc" name="desc" value="Good Receive" hidden>
 
 
-                    <div class="card-footer">
+                    <div class="cards-footer">
                         <center>
-                            <a href="<?= base_url(); ?>received" class="btn btn-warning" style="padding:18px">
+                            <a href="<?= base_url(); ?>issue" class="btn btn-warning" style="padding:18px">
                                 Batal
                             </a>
                             <button id="simpan" type="submit" class="btn btn-success">Simpan</button>

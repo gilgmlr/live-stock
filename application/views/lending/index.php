@@ -1,8 +1,8 @@
 <div class="container" style="margin-top: 80px;">
     <a href="<?= base_url(); ?>Issue/view_lending" id="Add" type="submit" class="btn btn-success"
         style="margin:0; padding:15px">Add</a>
-    <div class="card shadow p-3 mb-5 bg-white rounded" style="min-height: 400px">
-        <div class="card-header card-header-text">
+    <div class="cards shadow p-3 mb-5 bg-white rounded" style="min-height: 400px">
+        <div class="cards-header card-header-text">
             <h4 class="card-title">Lending Activity</h4>
             <!-- <p class="category">All Warehouse</p> -->
         </div>

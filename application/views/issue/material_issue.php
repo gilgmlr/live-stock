@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 80px;">
-    <div class="card shadow p-1 mb-5 bg-white rounded">
+    <div class="cards shadow p-1 mb-5 bg-white rounded">
         <div class=" card-body">
             <form action="<?= base_url() ?>received/addReceived" method="POST">
 
@@ -36,10 +36,11 @@
                 </div>
 
 
-                <div class="card-footer">
+                <div class="cards-footer">
                     <center>
-                        <button id="batal" type="submit" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
-                        <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
+                        <a href="<?= base_url(); ?>issue" class="btn btn-warning" style="padding:18px">
+                            Batal
+                        </a> <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
                     </center>
                 </div>
             </form>
