@@ -20,6 +20,14 @@ class Received extends CI_Controller
         $this->load->view('received/index', $data);
     }
 
+    private function addHistory($data) {
+        $history = array(
+            'date' => date("Y-m-d"),
+            'doc_num' => $this->input->post('received_code'),
+            'description' => $this->input->post('desc'),
+        );
+    }
+
     public function addReceived()
     {
         $this->form_validation->set_rules('received_code', 'Received_Code', 'required');
@@ -56,6 +64,20 @@ class Received extends CI_Controller
     
             $this->M_Received->add($data);
             $this->M_History->add($history);
+
+            // if ($this->input->post('desc') == "Lending") {
+            //     $lending = array(
+            //         'lending_code' => $this->input->post('received_code'),
+            //         'item_code' => $this->input->post('item_code'),
+            //         'dept_code' => $this->input->post('dept_code'),
+            //         'lending_date' => $this->input->post('lending_date'),
+            //         'return_date' => "",
+            //         'status' => "close"
+            //     );
+            //     $this->M_Lending->add($lending);
+            // }
+
+
             redirect('received');
         } // var_dump($data);die;
     }
@@ -70,6 +92,7 @@ class Received extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('received/good_received');
     }
+
     public function view_warehouse_transfer_in()
     {
         $data['judul'] = 'Received/WT';
@@ -80,6 +103,7 @@ class Received extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('received/warehouse_transfer_in');
     }
+
     public function view_adjusment()
     {
         $data['judul'] = 'Received/Adjusment';
@@ -91,7 +115,16 @@ class Received extends CI_Controller
         $this->load->view('received/adjusment');
     }
 
+    public function view_lending()
+    {
+        $data['judul'] = 'Received/Lending';
+        $data['uom'] = $this->M_Received->getUoM()->result();
+        $data['items'] = $this->M_Received->getItems()->result();
+        $data['warehouse'] = $this->M_Received->getWarehouse()->result();
 
+        $this->load->view('template/header', $data);
+        $this->load->view('received/lending');
+    }
 
 
 }
