@@ -6,7 +6,7 @@ class Issue extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('M_Issue');
+        $this->load->model('M_CRUD');
     }
 
     public function index()
@@ -40,7 +40,7 @@ class Issue extends CI_Controller
             'received_by' => $this->input->post('receive_by'),
         );
 
-        $this->M_Issue->tambahData($data);
+        $this->M_CRUD->input_data('issued', $data);
     }
     public function view_material_issue()
     {
