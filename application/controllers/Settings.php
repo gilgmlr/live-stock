@@ -6,8 +6,8 @@ class Settings extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('M_CRUD');
-		$this->load->library(array('form_validation', 'upload'));
+        $this->load->model(array('M_CRUD', 'M_Settings'));
+		$this->load->library(array('form_validation', 'upload', 'excel'));
     }
 
     public function index()
@@ -108,60 +108,56 @@ class Settings extends CI_Controller
         }
     }
     
-    public function importFile()
-    {
-        if ($this->input->post('submit')) {
-            $path = './assets/catalog/';
-            require_once APPPATH . "/third_party/PHPExcel.php";
-            $config['upload_path'] = $path;
-            $config['allowed_types'] = 'xlsx|xls|csv';
-            $config['remove_spaces'] = TRUE;
-            $this->load->library('upload', $config);
-            $this->upload->initialize($config);            
-            if (!$this->upload->do_upload('uploadFile')) {
-                $error = array('error' => $this->upload->display_errors());
-            } else {
-                $data = array('upload_data' => $this->upload->data());
+    public function excel()
+        {
+            if(isset($_FILES["file"]["name"])){
+                  // upload
+                $file_tmp = $_FILES['file']['tmp_name'];
+                $file_name = $_FILES['file']['name'];
+                $file_size =$_FILES['file']['size'];
+                $file_type=$_FILES['file']['type'];
+                // move_uploaded_file($file_tmp,"uploads/".$file_name); // simpan filenya di folder uploads
+                
+                $object = PHPExcel_IOFactory::load($file_tmp);
+        
+                foreach($object->getWorksheetIterator() as $worksheet){
+        
+                    $highestRow = $worksheet->getHighestRow();
+                    $highestColumn = $worksheet->getHighestColumn();
+        
+                    for($row=4; $row<=$highestRow; $row++){
+        
+                        $nim = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
+                        $nama = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
+                        $angkatan = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
+
+                        $data[] = array(
+                            'nim'          => $nim,
+                            'nama'          =>$nama,
+                            'angkatan'         =>$angkatan,
+                        );
+        
+                    } 
+        
+                }
+        
+                $this->db->insert_batch('import', $data);
+        
+                $message = array(
+                    'message'=>'<div class="alert alert-success">Import file excel berhasil disimpan di database</div>',
+                );
+                
+                $this->session->set_flashdata($message);
+                redirect('dashboard');
             }
-            if(empty($error)){
-                if (!empty($data['upload_data']['file_name'])) {
-                    $import_xls_file = $data['upload_data']['file_name'];
-                } else {
-                    $import_xls_file = 0;
-                }
-                $inputFileName = $path . $import_xls_file;
-                try {
-                    $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-                    $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-                    $objPHPExcel = $objReader->load($inputFileName);
-                    $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-                    $flag = true;
-                    $i=0;
-                    foreach ($allDataInSheet as $value) {
-                        if($flag){
-                            $flag =false;
-                            continue;
-                        }
-                        $inserdata[$i]['first_name'] = $value['A'];
-                        $inserdata[$i]['last_name'] = $value['B'];
-                        $inserdata[$i]['email'] = $value['C'];
-                        $inserdata[$i]['contact_no'] = $value['D'];
-                        $i++;
-                    }               
-                    $result = $this->import->insert($inserdata);   
-                    if($result){
-                    echo "Imported successfully";
-                    }else{
-                    echo "ERROR !";
-                    }             
-                } catch (Exception $e) {
-                    die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
-                    . '": ' .$e->getMessage());
-                }
-            } else {
-                echo $error['error'];
+            else
+            {
+                 $message = array(
+                    'message'=>'<div class="alert alert-danger">Import file gagal, coba lagi</div>',
+                );
+                
+                $this->session->set_flashdata($message);
+                redirect('dashboard');
             }
         }
-        $this->load->view('import');
-    }
 }
