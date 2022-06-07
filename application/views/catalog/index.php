@@ -34,7 +34,7 @@
                 <div class="modal fade modal-dialog-scrollable" id="detail<?= $data->item_code ?>" tabindex="-1"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered " style=max-width:60%>
-                        <div class="card-body">
+                        <div class="cards-body">
                             <div class="modal-content">
                                 <div class="modal-header" style="background-color: #563d7c">
                                     <h5 class="modal-title" style="color:gold" id="exampleModalLabel">Item Detail</h5>
@@ -44,14 +44,14 @@
                                 <div class="modal-body">
                                     <div class="row">
                                         <div class="col">
-                                            <div class="card shadow p-3 mb-5 bg-white rounded">
+                                            <div class="cards shadow p-3 mb-5 bg-white rounded">
                                                 <img src="<?= base_url() . 'assets/catalog/' . $data->image ?>"
                                                     class="card-img-top justify-content-center" alt="Not Found!">
                                             </div>
                                         </div>
                                         <div class="col">
-                                            <div class="card shadow p-3 mb-5 bg-white rounded">
-                                                <div class="card-body">
+                                            <div class="cards shadow p-3 mb-5 bg-white rounded">
+                                                <div class="card-bodys">
                                                     Code : <?= $data->item_code ?><br>
                                                     Name : <?= $data->name ?><br>
                                                     Specification: <?= $data->specification ?><br>
