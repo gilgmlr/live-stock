@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 80px;">
-    <div class="card shadow p-3 mb-5 bg-white rounded">
+    <div class="cards shadow p-3 mb-5 bg-white rounded">
         <div class="card-body">
             <div class="container">
                 <!--  ISI DISINI  -->
@@ -16,7 +16,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php
+                                <?php
                                     $i = 1;
                                     foreach ($history as $data) { 
                                 ?>
@@ -27,8 +27,9 @@
                                     <td><?= $data->doc_num ?></td>
                                     <td><?= $data->description ?></td>
                                     <td>
-                                        <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px;"
-                                            data-bs-toggle="modal" data-bs-target="#edit<?=$i ?>">View</button>
+                                        <button type="button" class="btn btn-warning btn-sm"
+                                            style="margin:0px; height:35px;" data-bs-toggle="modal"
+                                            data-bs-target="#edit<?=$i ?>">View</button>
                                     </td>
                                 </tr>
 

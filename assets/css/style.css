@@ -71,6 +71,7 @@
 	font-weight: 500;
 	color: #443f46;
 }
-.card:hover {
-	transform: scale(1.1);
+
+.cards {
+	background-color: #fff;
 }

@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 80px;">
-    <div class="card shadow p-3 mb-5 bg-white rounded">
+    <div class="cards shadow p-3 mb-5 bg-white rounded">
         <div class="card-body">
             <div class="container">
                 <!--  ISI DISINI  -->
@@ -36,90 +36,116 @@
                                     <td><?= $data->warehouse_code ?></td>
                                     <td><?= $data->location ?></td>
                                     <td>
-                                        <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px;"
-                                            data-bs-toggle="modal" data-bs-target="#edit<?= $data->item_code ?>">Edit</button>
+                                        <button type="button" class="btn btn-warning btn-sm"
+                                            style="margin:0px; height:35px;" data-bs-toggle="modal"
+                                            data-bs-target="#edit<?= $data->item_code ?>">Edit</button>
                                     </td>
                                 </tr>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="edit<?= $data->item_code ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="modal-content">
-                                                    <div class="modal-header" style="background-color: #563d7c">
-                                                        <h5 class="modal-title" style="color:gold" id="exampleModalLabel">Form Edit Barang</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form action="" method="POST">
-                                                            <div class="container">
-                                                                <div class="row justify-content-center">
-                                                                    <div class="col-sm-6">
-                                                                        <label for="" class="col-sm-6 col-form-label">Item Code</label>
-                                                                        <input type="text" class="form-control" id="item_code" name="item_code" value="<?= $data->item_code ?>" readonly>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
-                                                                        <label for="" class="col-sm-6 col-form-label">Item Name</label>
-                                                                        <input type="text" class="form-control" id="item_code" name="item_code" value="<?= $data->name ?>" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-center">
-                                                                    <div class="col-sm-12">
-                                                                        <label for="" class="col-sm-6 col-form-label">Item Specification</label>
-                                                                        <textarea class="form-control" id="spec" name="spec" rows="2"><?=$data->specification ?></textarea>
-                                                                        
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-center">
-                                                                    <div class="col-sm-6">
-                                                                        <label for="" class="col-sm-6 col-form-label">Stoks</label>
-                                                                        <input type="text" class="form-control" id="item_code" name="item_code" value="<?=$data->stocks ?>" readonly>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
-                                                                        <label for="" class="col-sm-6 col-form-label">Warehouse</label>
-                                                                        <input type="text" class="form-control" id="item_code" name="item_code" value="<?=$data->warehouse_code ?>" readonly>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row justify-content-center">
-                                                                    <div class="col-sm-6">
-                                                                        <label for="" class="col-sm-6 col-form-label">UoM</label>
-                                                                        <input type="text" class="form-control" id="item_code" name="item_code" value="<?=$data->uom_name?>" readonly>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
-                                                                        <label for="" class="col-sm-6 col-form-label">Location</label>
-                                                                        <input type="text" class="form-control" id="item_code" name="item_code" value="<?=$data->location?>" required>
-                                                                    </div>
-                                                                </div>
-                                                                
-                                                            <div class="modal-footer">
-                                                                <button id="close" type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
-                                                                <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
+                                <div class="modal fade" id="edit<?= $data->item_code ?>" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                                        style=max-width:60%>
 
-                                                </div>
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="background-color: #563d7c">
+                                                <h5 class="modal-title" style="color:gold" id="exampleModalLabel">Form
+                                                    Edit Barang</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
                                             </div>
-                                        </div>
-                                    </div> 
-                                </div>
-                                <!-- End Modal -->
+                                            <div class="modal-body">
+                                                <form action="" method="POST">
+                                                    <div class="container">
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-sm-6">
+                                                                <label for="" class="col-sm-6 col-form-label">Item
+                                                                    Code</label>
+                                                                <input type="text" class="form-control" id="item_code"
+                                                                    name="item_code" value="<?= $data->item_code ?>"
+                                                                    readonly>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <label for="" class="col-sm-6 col-form-label">Item
+                                                                    Name</label>
+                                                                <input type="text" class="form-control" id="item_code"
+                                                                    name="item_code" value="<?= $data->name ?>"
+                                                                    required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-sm-12">
+                                                                <label for="" class="col-sm-6 col-form-label">Item
+                                                                    Specification</label>
+                                                                <textarea class="form-control" id="spec" name="spec"
+                                                                    rows="2"><?=$data->specification ?></textarea>
 
-                                <?php
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-sm-6">
+                                                                <label for=""
+                                                                    class="col-sm-6 col-form-label">Stoks</label>
+                                                                <input type="text" class="form-control" id="item_code"
+                                                                    name="item_code" value="<?=$data->stocks ?>"
+                                                                    readonly>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <label for=""
+                                                                    class="col-sm-6 col-form-label">Warehouse</label>
+                                                                <input type="text" class="form-control" id="item_code"
+                                                                    name="item_code" value="<?=$data->warehouse_code ?>"
+                                                                    readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-sm-6">
+                                                                <label for=""
+                                                                    class="col-sm-6 col-form-label">UoM</label>
+                                                                <input type="text" class="form-control" id="item_code"
+                                                                    name="item_code" value="<?=$data->uom_name?>"
+                                                                    readonly>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <label for=""
+                                                                    class="col-sm-6 col-form-label">Location</label>
+                                                                <input type="text" class="form-control" id="item_code"
+                                                                    name="item_code" value="<?=$data->location?>"
+                                                                    required>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button id="close" type="button" class="btn btn-warning"
+                                                                data-bs-dismiss="modal">Cancel</button>
+                                                            <button id="simpan" type="submit"
+                                                                class="btn btn-success">Simpan</button>
+                                                        </div>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+                <!-- End Modal -->
+
+                <?php
                             $i++;
                             }
                         ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                </tbody>
+                </table>
             </div>
         </div>
-
-
-
     </div>
+</div>
+
+
+
+</div>
 </div>
 
 </body>
