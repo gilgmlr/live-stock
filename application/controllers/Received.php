@@ -6,8 +6,9 @@ class Received extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('M_Received');
-        $this->load->model('M_History');
+        // $this->load->model('M_Received');
+        // $this->load->model('M_History');
+        $this->load->model('M_CRUD');
         $this->load->library('form_validation');
     }
 
@@ -44,7 +45,7 @@ class Received extends CI_Controller
         if($this->form_validation->run() == false) {
 			redirect('dashboard');
 		} else {
-            $data = array(
+            $received = array(
                 'received_code' => $this->input->post('received_code'),
                 'arrival_date' => $this->input->post('arrival_date'),
                 'po_number' => $this->input->post('po_number'),
@@ -62,8 +63,8 @@ class Received extends CI_Controller
                 'description' => $this->input->post('desc'),
             );
     
-            $this->M_Received->add($data);
-            $this->M_History->add($history);
+            $this->M_CRUD->input_data('received', $received);
+            $this->M_CRUD->input_data('history', $history);
 
             // if ($this->input->post('desc') == "Lending") {
             //     $lending = array(
@@ -85,9 +86,9 @@ class Received extends CI_Controller
     public function view_good_received()
     {
         $data['judul'] = 'Received/GR';
-        $data['uom'] = $this->M_Received->getUoM()->result();
-        $data['items'] = $this->M_Received->getItems()->result();
-        $data['warehouse'] = $this->M_Received->getWarehouse()->result();
+        $data['uom'] = $this->M_CRUD->get_data('uom')->result();
+        $data['items'] = $this->M_CRUD->get_data('items')->result();
+        $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('received/good_received');
@@ -96,9 +97,9 @@ class Received extends CI_Controller
     public function view_warehouse_transfer_in()
     {
         $data['judul'] = 'Received/WT';
-        $data['uom'] = $this->M_Received->getUoM()->result();
-        $data['items'] = $this->M_Received->getItems()->result();
-        $data['warehouse'] = $this->M_Received->getWarehouse()->result();
+        $data['uom'] = $this->M_CRUD->get_data('uom')->result();
+        $data['items'] = $this->M_CRUD->get_data('items')->result();
+        $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('received/warehouse_transfer_in');
@@ -107,9 +108,9 @@ class Received extends CI_Controller
     public function view_adjusment()
     {
         $data['judul'] = 'Received/Adjusment';
-        $data['uom'] = $this->M_Received->getUoM()->result();
-        $data['items'] = $this->M_Received->getItems()->result();
-        $data['warehouse'] = $this->M_Received->getWarehouse()->result();
+        $data['uom'] = $this->M_CRUD->get_data('uom')->result();
+        $data['items'] = $this->M_CRUD->get_data('items')->result();
+        $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('received/adjusment');
@@ -118,9 +119,9 @@ class Received extends CI_Controller
     public function view_lending()
     {
         $data['judul'] = 'Received/Lending';
-        $data['uom'] = $this->M_Received->getUoM()->result();
-        $data['items'] = $this->M_Received->getItems()->result();
-        $data['warehouse'] = $this->M_Received->getWarehouse()->result();
+        $data['uom'] = $this->M_CRUD->get_data('uom')->result();
+        $data['items'] = $this->M_CRUD->get_data('items')->result();
+        $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('received/lending');
