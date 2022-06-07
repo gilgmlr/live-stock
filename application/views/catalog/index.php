@@ -20,7 +20,6 @@
                 <div class="col-md-2 px-2">
                     <a href="" data-bs-toggle="modal" data-bs-target="#detail<?= $data->item_code ?>">
                         <div class="card shadow p-2 mb-2 bg-white rounded">
-
                             <img src="<?= 'assets/catalog/' . $data->image ?> " class="img-fluid" alt="Not Found!"
                                 style="height: 194px; width:259px">
                             <div class="card-body">

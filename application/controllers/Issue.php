@@ -63,4 +63,12 @@ class Issue extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('Issue/work_order');
     }
+
+    public function view_lending()
+    {
+        $data['judul'] = 'Issue/Lending';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('Issue/lending');
+    }
 }

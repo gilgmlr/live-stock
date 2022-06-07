@@ -16,11 +16,12 @@
     </div>
     <div class="d-flex align-content-start flex-wrap">
         <?php foreach ($items as $data) { ?>
-                
+
         <div class="col-md-2 px-2">
             <a href="" data-bs-toggle="modal" data-bs-target="#detail<?= $data->item_code ?>">
                 <div class="card shadow p-2 mb-2 bg-white rounded">
-                    <img src="<?= base_url() . 'assets/catalog/' . $data->image ?> " class="card-img-top justify-content-center" alt="">
+                    <img src="<?= base_url() . 'assets/catalog/' . $data->image ?> " class="img-fluid"
+                        style="height: 194px; width:259px" alt="">
                     <div class="card-body">
                         <p class="card-text" style="font-size:16px;"><b><?= $data->item_code ?></b></p>
                         <p class="card-text" style="font-size:12px;"><?= $data->name ?></p>
@@ -30,7 +31,8 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="detail<?= $data->item_code ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="detail<?= $data->item_code ?>" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
                 <div class="card-body">
                     <div class="modal-content">
@@ -49,20 +51,20 @@
                                 <div class="col">
                                     <div class="card shadow p-3 mb-5 bg-white rounded">
                                         <div class="card-body">
-                                            Code         : <?= $data->item_code ?><br>
-                                            Name         : <?= $data->name ?><br>
+                                            Code : <?= $data->item_code ?><br>
+                                            Name : <?= $data->name ?><br>
                                             Specification: <?= $data->specification ?><br>
                                             <!-- location: <?= $data->name ?><br> -->
                                         </div>
                                     </div>
                                 </div>
-                            </div>        
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
-                </div>        
+                </div>
             </div>
         </div>
         <!-- End Modal  -->
