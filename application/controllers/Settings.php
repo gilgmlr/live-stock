@@ -7,8 +7,7 @@ class Settings extends CI_Controller
         parent::__construct();
 
         $this->load->model('M_Settings');
-		$this->load->library('form_validation');
-        $this->load->library('upload');
+		$this->load->library(array('form_validation', 'upload'));
     }
 
     public function index()
@@ -83,7 +82,7 @@ class Settings extends CI_Controller
 				"upload_path" => './assets/catalog/',
 				"allowed_types" => 'gif|jpg|jpeg|png',
 				"remove_spaces" => TRUE,
-				"file_name" => $this->input->post('item_code') . '-' . $_FILES["image"]['name']
+				"file_name" => $this->input->post('item_code')
 			));
 
 			$this->load->library('upload', $config);
@@ -107,5 +106,62 @@ class Settings extends CI_Controller
                 redirect('settings/view_add_items');
             }
         }
+    }
+    
+    public function importFile()
+    {
+        if ($this->input->post('submit')) {
+            $path = './assets/catalog/';
+            require_once APPPATH . "/third_party/PHPExcel.php";
+            $config['upload_path'] = $path;
+            $config['allowed_types'] = 'xlsx|xls|csv';
+            $config['remove_spaces'] = TRUE;
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);            
+            if (!$this->upload->do_upload('uploadFile')) {
+                $error = array('error' => $this->upload->display_errors());
+            } else {
+                $data = array('upload_data' => $this->upload->data());
+            }
+            if(empty($error)){
+                if (!empty($data['upload_data']['file_name'])) {
+                    $import_xls_file = $data['upload_data']['file_name'];
+                } else {
+                    $import_xls_file = 0;
+                }
+                $inputFileName = $path . $import_xls_file;
+                try {
+                    $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+                    $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+                    $objPHPExcel = $objReader->load($inputFileName);
+                    $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+                    $flag = true;
+                    $i=0;
+                    foreach ($allDataInSheet as $value) {
+                        if($flag){
+                            $flag =false;
+                            continue;
+                        }
+                        $inserdata[$i]['first_name'] = $value['A'];
+                        $inserdata[$i]['last_name'] = $value['B'];
+                        $inserdata[$i]['email'] = $value['C'];
+                        $inserdata[$i]['contact_no'] = $value['D'];
+                        $i++;
+                    }               
+                    $result = $this->import->insert($inserdata);   
+                    if($result){
+                    echo "Imported successfully";
+                    }else{
+                    echo "ERROR !";
+                    }             
+                } catch (Exception $e) {
+                    die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
+                    . '": ' .$e->getMessage());
+                }
+            } else {
+                echo $error['error'];
+            }
+        }
+        $this->load->view('import');
     }
 }
