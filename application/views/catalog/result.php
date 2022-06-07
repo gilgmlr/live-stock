@@ -1,16 +1,16 @@
 <div class="container" style="margin-top: 80px;">
-    <div class="row justify-content-center">
-        <div class="col-sm-8">
-            <div class="input-group sm-3">
-                <input type="text" class="form-control" placeholder="search" aria-label="search"
-                    aria-describedby="button-addon2">
-                <button class="btn btn-warning" type="submit"
-                    style="padding-top:17px; margin:0px; height:45px;">Search</button>
+    <form action="<?=base_url() ?>catalog/view_result" method="POST">
+        <div class="row justify-content-center">
+            <div class="col-sm-8">
+                <div class="input-group sm-3">
+                    <input type="text" class="form-control" placeholder="search" aria-label="search"
+                        aria-describedby="button-addon2" id="key" name="key">
+                    <button class="btn btn-warning" type="submit" style="padding-top:17px; margin:0px; height:45px;">Search</button>        
+                </div>
             </div>
-
         </div>
+    </form>
 
-    </div>
     <div class="d-flex align-content-start flex-wrap">
         <?php foreach ($items as $data) { ?>
 

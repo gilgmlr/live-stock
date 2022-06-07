@@ -18,8 +18,8 @@ class M_CRUD extends CI_Model
 		return $query;
 	}
 
-	function get_data_orwhere($table, $where1, $where2){		
-		$this->db->where($where1)->or_where($where2);
+	function get_data_orwhere($table, $col1, $cond1, $col2, $cond2){		
+		$this->db->where($col1, $cond1)->or_where($col2, $cond2);
 		return $this->db->get($table);
 	}
 

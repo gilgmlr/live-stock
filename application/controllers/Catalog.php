@@ -21,9 +21,12 @@ class Catalog extends CI_Controller
     public function view_result()
     {
         $data['judul'] = 'Catalog';
-        $data['items'] = $this->M_CRUD->get_data('items')->result();
+        $key = $this->input->post('key');
+        $data['items'] = $this->M_CRUD->get_data_where('items', 'item_code', $key)->result();
 
-        $this->load->view('template/header', $data);
-        $this->load->view('catalog/result');
+        // $this->load->view('template/header', $data);
+        // $this->load->view('catalog/result');
+
+        var_dump($data);die;
     }
 }
