@@ -1,18 +1,17 @@
-        <div class="container" style="margin-top: 80px;">
+        <div class="container" style="margin-top: 100px;">
             <form action="<?=base_url() ?>catalog/view_result" method="POST">
                 <div class="row justify-content-center">
                     <div class="col-sm-8">
                         <div class="input-group sm-3">
                             <input type="text" class="form-control" placeholder="search" aria-label="search"
-                                aria-describedby="button-addon2" id="key" name="key">
-                            <button class="btn btn-warning" type="submit"
-                                style="padding-top:17px; margin:0px; height:45px;">Search</button>
+                            aria-describedby="button-addon2" id="key" name="key">
+                            <button class="btn btn-warning" type="submit" style="padding-top:17px; margin:0px; height:45px;">Search</button>        
                         </div>
                     </div>
                 </div>
             </form>
 
-            <div class="d-flex align-content-center flex-wrap" style="margin-top: 0;">
+            <div class="d-flex align-content-start flex-wrap" style="margin-top: 0;">
                 <?php
                     foreach ($items as $data) { 
                 ?>
@@ -20,7 +19,7 @@
                 <div class="col-md-2 px-2">
                     <a href="" data-bs-toggle="modal" data-bs-target="#detail<?= $data->item_code ?>">
                         <div class="card shadow p-2 mb-2 bg-white rounded">
-                            <img src="<?= 'assets/catalog/' . $data->image ?> " class="img-fluid" alt="Not Found!"
+                            <img src="<?= base_url() . 'assets/catalog/' . $data->image ?>" class="img-fluid" alt="Not Found!"
                                 style="height: 194px; width:259px">
                             <div class="card-body">
                                 <p class="card-text" style="font-size:16px;"><b><?= $data->item_code ?></b></p>
