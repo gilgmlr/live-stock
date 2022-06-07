@@ -338,6 +338,7 @@ class PHPExcel_Reader_Excel2007 extends PHPExcel_Reader_Abstract implements PHPE
 	 * Loads PHPExcel from file
 	 *
 	 * @param 	string 		$pFilename
+	 * @param 	string 		$_readDataOnly
      * @return  PHPExcel
 	 * @throws 	PHPExcel_Reader_Exception
 	 */
