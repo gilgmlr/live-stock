@@ -17,9 +17,8 @@
 
         <div class="col-md-2 px-2">
             <a href="" data-bs-toggle="modal" data-bs-target="#detail<?= $data->item_code ?>">
-                <div class="card shadow p-2 mb-2 bg-white rounded">
-                    <img src="<?= base_url() . 'assets/catalog/' . $data->image ?> " class="img-fluid"
-                        style="height: 538px; width:538px" alt="">
+                <div class="cards shadow p-2 mb-2 bg-white rounded">
+                    <img src="<?= base_url() . 'assets/catalog/' . $data->image ?> " class="img-fluid" alt="">
                     <div class="card-body">
                         <p class="card-text" style="font-size:16px;"><b><?= $data->item_code ?></b></p>
                         <p class="card-text" style="font-size:12px;"><?= $data->name ?></p>
@@ -28,52 +27,54 @@
             </a>
         </div>
 
-        <center>
-            <!-- Modal -->
-            <div class="modal fade" id="detail<?= $data->item_code ?>" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
-                    <div class="card-body">
-                        <div class="modal-content">
-                            <div class="modal-header" style="background-color: #563d7c">
-                                <h5 class="modal-title" style="color:gold" id="exampleModalLabel">Item Detail</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="card shadow p-3 mb-5 bg-white rounded">
-                                            <img src="<?= base_url() . 'assets/catalog/' . $data->image ?>"
-                                                class="img-fluid" style="height: 194px; width:259px" alt="Not Found!">
-                                        </div>
+
+
+        <?php } ?>
+    </div>
+
+</div>
+<div class="container">
+    <center>
+        <!-- Modal -->
+        <div class="modal fade" id="detail<?= $data->item_code ?>" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
+                <div class="cards-body">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #563d7c">
+                            <h5 class="modal-title" style="color:gold" id="exampleModalLabel">Item Detail</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="cards shadow p-3 mb-5 bg-white rounded">
+                                        <img src="<?= base_url() . 'assets/catalog/' . $data->image ?>"
+                                            class="img-fluid" alt="Not Found!">
                                     </div>
-                                    <div class="col">
-                                        <div class="card shadow p-3 mb-5 bg-white rounded">
-                                            <div class="card-body">
-                                                Code : <?= $data->item_code ?><br>
-                                                Name : <?= $data->name ?><br>
-                                                Specification: <?= $data->specification ?><br>
-                                                <!-- location: <?= $data->name ?><br> -->
-                                            </div>
+                                </div>
+                                <div class="col">
+                                    <div class="cards shadow p-3 mb-5 bg-white rounded">
+                                        <div class="card-body">
+                                            Code : <?= $data->item_code ?><br>
+                                            Name : <?= $data->name ?><br>
+                                            Specification: <?= $data->specification ?><br>
+                                            <!-- location: <?= $data->name ?><br> -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- End Modal  -->
-        </center>
-
-        <?php } ?>
-    </div>
+        </div>
+        <!-- End Modal  -->
+    </center>
 </div>
-
 </body>
 
 </html>
