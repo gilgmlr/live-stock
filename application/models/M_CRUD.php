@@ -10,6 +10,16 @@ class M_CRUD extends CI_Model
 		return $this->db->get_where($table, $where);
 	}
 
+	function get_data_where2($table, $where1, $where2){		
+		$this->db->where($where1)->or_where($where2);
+		return $this->db->get($table);
+	}
+
+	function get_data_where3($table, $where1, $where2, $where3){		
+		$this->db->where($where1)->or_where($where2)->or_where($where3);
+		return $this->db->get($table);
+	}
+
 	public function get_join($table, $join, $matching)
 	{
 		$this->db->select('*');
