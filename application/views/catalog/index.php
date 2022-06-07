@@ -2,15 +2,10 @@
             <div class="row justify-content-center">
                 <div class="col-sm-8">
                     <div class="input-group sm-3">
-                        <form action="" method="POST">
                         <input type="text" class="form-control" placeholder="search" aria-label="search"
-                            aria-describedby="button-addon2" id="key" name="key">
-                        <a href="<?php echo base_url() . "catalog/view_result" ?>" class="btn btn-warning"
-                            style="padding-top:17px; margin:0px; height:45px;">
-                            Search
-                        </a>
-                        <!-- <button type="submit" class="btn" style="padding-top:17px; margin:0px; height:45px;" id="search" name="search">Search</button> -->
-                        </form>
+                            aria-describedby="button-addon2">
+                        <button class="btn btn-warning" type="submit"
+                            style="padding-top:17px; margin:0px; height:45px;">Search</button>
                     </div>
                 </div>
             </div>
