@@ -6,7 +6,7 @@ class Settings extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('M_Settings');
+        $this->load->model('M_CRUD');
 		$this->load->library(array('form_validation', 'upload'));
     }
 
@@ -62,7 +62,7 @@ class Settings extends CI_Controller
                 'role' => $this->input->post('role'),
             );
     
-            $this->M_Settings->add_user($data);
+            $this->M_CRUD->input_data('user', $data);
             redirect('settings/view_add_account');
 
             // var_dump($data);die;
@@ -102,7 +102,7 @@ class Settings extends CI_Controller
                 );
                 // var_dump($config);die;
     
-                $this->M_Settings->add_item($data);
+                $this->M_CRUD->input_data('items', $data);
                 redirect('settings/view_add_items');
             }
         }
