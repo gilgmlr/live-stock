@@ -5,7 +5,7 @@
                         <input type="text" class="form-control" placeholder="search" aria-label="search"
                             aria-describedby="button-addon2">
                         <a href="<?php echo base_url() . "catalog/view_result" ?>" class="btn btn-warning"
-                            style="margin:0; height:45px;">
+                            style="padding-top:17px; margin:0px; height:45px;">
                             Search
                         </a>
                     </div>

@@ -74,7 +74,7 @@
 
                     <div class="cards-footer">
                         <center>
-                            <a href="<?= base_url(); ?>issue" class="btn btn-warning" style="padding:18px">
+                            <a href="<?= base_url(); ?>issue" class="btn btn-warning" style="padding:17px">
                                 Batal
                             </a>
                             <button id="simpan" type="submit" class="btn btn-success">Simpan</button>

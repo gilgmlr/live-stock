@@ -6,7 +6,7 @@
                     aria-describedby="button-addon2">
 
                 <a href="<?php echo base_url() . "catalog/view_result" ?>" class="btn btn-warning btn-sm"
-                    style=margin:auto;>
+                    style="padding-top:17px; margin:0px; height:45px;">
                     Search
                 </a>
             </div>
