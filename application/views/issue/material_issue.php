@@ -90,14 +90,17 @@
                             </h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <label for="" class="col-sm-6 col-form-label">Add MI Number</label>
-                            <input type="text" class="form-control" id="applicant" name="applicant" required>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            </a> <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
-                        </div>
+                        <form action="<?= base_url()?>issue/addMiCode" method="POST">
+                            <div class="modal-body">
+                                <label for="" class="col-sm-6 col-form-label">Add MI Number</label>
+                                <input type="text" class="form-control" id="mi_code" name="mi_code" required>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
