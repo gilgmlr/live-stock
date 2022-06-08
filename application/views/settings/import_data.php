@@ -84,6 +84,18 @@
                 </div>
             </a>
         </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="" data-bs-toggle="modal" data-bs-target="#ImpDept">
+                <div class="card shadow p-2 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <center>
+                            <img src="<?= base_url().'assets/image/import_data.png'?>" style="width:100px" />
+                            <h5>Import Department</h5>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
 
         <!-- <form action="<?php echo base_url();?>settings/excel" method="post" enctype="multipart/form-data">
             Upload excel file :
@@ -246,7 +258,7 @@
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:30%>
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: #563d7c">
-                        <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Import Data Inventory
+                        <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Import Data UoM
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -254,6 +266,31 @@
                         <div class="modal-body">
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="uom" hidden>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button id="submit" type="submit" name="submit" class="btn btn-success">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal -->
+
+        <!-- MODAL Department -->
+        <div class="modal fade" id="ImpDept" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:30%>
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #563d7c">
+                        <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Import Data Department
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
+                        <div class="modal-body">
+                            <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
+                            <input type="text" name="table_name" value="department" hidden>
                         </div>
 
                         <div class="modal-footer">
