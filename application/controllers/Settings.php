@@ -108,7 +108,7 @@ class Settings extends CI_Controller
         }
     }
     
-    public function importWarehouse()
+    public function import()
         {
             $table = $this->input->post('table_name');
             if(isset($_FILES["file"]["name"])){
@@ -127,12 +127,37 @@ class Settings extends CI_Controller
                     $highestColumn = $worksheet->getHighestColumn();
         
                     for($row=3; $row<=$highestRow; $row++){
-                        
                         if ($worksheet->getCellByColumnAndRow(0, $row)->getValue() != null) {
-                            $data[] = array(
-                                'warehouse_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
-                                'warehouse_name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
-                            );
+                            if ($table == 'warehouse') {
+                                $data[] = array(
+                                    'warehouse_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
+                                    'warehouse_name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                                );
+                            } else if ($table == 'user') {
+                                $data[] = array(
+                                    'nip' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
+                                    'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                                    'password' => password_hash($worksheet->getCellByColumnAndRow(2, $row)->getValue(), PASSWORD_DEFAULT),
+                                    'role' => $worksheet->getCellByColumnAndRow(3, $row)->getValue(),
+                                );
+                            } else if ($table == 'uom') {
+                                $data[] = array(
+                                    'uom_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
+                                    'uom_name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                                );
+                            } else if ($table == 'department') {
+                                $data[] = array(
+                                    'dept_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
+                                    'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                                );
+                            } else if ($table == 'items') {
+                                $data[] = array(
+                                    'item_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
+                                    'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                                    'specification' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                                    'image' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                                );
+                            }
                         }
                     } 
                 }
