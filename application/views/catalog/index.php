@@ -33,7 +33,7 @@
                 <!-- Modal -->
                 <div class="modal fade modal-dialog-scrollable" id="detail<?= $data->item_code ?>" tabindex="-1"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered " style=max-width:60%>
+                    <div class="modal-dialog modal-dialog-centered " style=max-width:30%>
                         <div class="cards-body">
                             <div class="modal-content">
                                 <div class="modal-header" style="background-color: #563d7c">

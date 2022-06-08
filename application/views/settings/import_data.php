@@ -86,18 +86,19 @@
             <input type="submit" name="submit" value="Upload" />
         </form> -->
 
-        <!-- MODAL Add MI NO -->
+        <!-- MODAL Accounts -->
         <div class="modal fade" id="ImpAcc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:50%>
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:30%>
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: #563d7c">
                         <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Import Akun
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url()?>issue/addMiCode" method="POST">
+                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
+                            <input type="text" name="table_name" value="user" hidden>
                         </div>
 
                         <div class="modal-footer">
@@ -109,18 +110,20 @@
             </div>
         </div>
         <!-- End Modal -->
-        <!-- MODAL Add MI NO -->
+
+        <!-- MODAL Items -->
         <div class="modal fade" id="ImpItems" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:50%>
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:30%>
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: #563d7c">
                         <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Import Items
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url()?>issue/addMiCode" method="POST">
+                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
+                            <input type="text" name="table_name" value="items" hidden>
                         </div>
 
                         <div class="modal-footer">
@@ -132,18 +135,20 @@
             </div>
         </div>
         <!-- End Modal -->
-        <!-- MODAL Add MI NO -->
+
+        <!-- MODAL Warehouse -->
         <div class="modal fade" id="ImpWarehouse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:50%>
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:30%>
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: #563d7c">
                         <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Import Data Warehouse
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url()?>issue/addMiCode" method="POST">
+                    <form action="<?= base_url()?>settings/importWarehouse" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
+                            <input type="text" name="table_name" value="warehouse" hidden>
                         </div>
 
                         <div class="modal-footer">
@@ -155,18 +160,20 @@
             </div>
         </div>
         <!-- End Modal -->
-        <!-- MODAL Add MI NO -->
+
+        <!-- MODAL Issue -->
         <div class="modal fade" id="ImpIssue" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:50%>
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:30%>
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: #563d7c">
                         <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Import Data Issue
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url()?>issue/addMiCode" method="POST">
+                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
+                            <input type="text" name="table_name" value="issue" hidden>
                         </div>
 
                         <div class="modal-footer">
@@ -178,18 +185,20 @@
             </div>
         </div>
         <!-- End Modal -->
-        <!-- MODAL Add MI NO -->
+
+        <!-- MODAL Receive -->
         <div class="modal fade" id="ImpReceived" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:50%>
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:30%>
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: #563d7c">
                         <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Import Data Received
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url()?>issue/addMiCode" method="POST">
+                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
+                            <input type="text" name="table_name" value="receive" hidden>
                         </div>
 
                         <div class="modal-footer">
@@ -201,18 +210,20 @@
             </div>
         </div>
         <!-- End Modal -->
-        <!-- MODAL Add MI NO -->
+
+        <!-- MODAL Inventory -->
         <div class="modal fade" id="ImpInventory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:50%>
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:30%>
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: #563d7c">
                         <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Import Data Inventory
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url()?>issue/addMiCode" method="POST">
+                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
+                            <input type="text" name="table_name" value="inventory" hidden>
                         </div>
 
                         <div class="modal-footer">
@@ -224,5 +235,6 @@
             </div>
         </div>
         <!-- End Modal -->
+
     </div>
 </div>

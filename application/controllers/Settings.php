@@ -108,8 +108,9 @@ class Settings extends CI_Controller
         }
     }
     
-    public function excel()
+    public function importWarehouse()
         {
+            $table = $this->input->post('table_name');
             if(isset($_FILES["file"]["name"])){
                   // upload
                 $file_tmp = $_FILES['file']['tmp_name'];
@@ -119,29 +120,24 @@ class Settings extends CI_Controller
                 // move_uploaded_file($file_tmp,"uploads/".$file_name); // simpan filenya di folder uploads
                 
                 $object = PHPExcel_IOFactory::load($file_tmp);
+                
         
                 foreach($object->getWorksheetIterator() as $worksheet){
-        
                     $highestRow = $worksheet->getHighestRow();
                     $highestColumn = $worksheet->getHighestColumn();
         
-                    for($row=4; $row<=$highestRow; $row++){
-        
-                        $nim = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
-                        $nama = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
-                        $angkatan = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
-
-                        $data[] = array(
-                            'nim'          => $nim,
-                            'nama'          =>$nama,
-                            'angkatan'         =>$angkatan,
-                        );
-        
+                    for($row=3; $row<=$highestRow; $row++){
+                        
+                        if ($worksheet->getCellByColumnAndRow(0, $row)->getValue() != null) {
+                            $data[] = array(
+                                'warehouse_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
+                                'warehouse_name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                            );
+                        }
                     } 
-        
                 }
         
-                $this->db->insert_batch('import', $data);
+                $this->db->insert_batch($table, $data);
         
                 $message = array(
                     'message'=>'<div class="alert alert-success">Import file excel berhasil disimpan di database</div>',
@@ -157,7 +153,7 @@ class Settings extends CI_Controller
                 );
                 
                 $this->session->set_flashdata($message);
-                redirect('settings');
+                redirect('settings/view_add_items');
             }
         }
 }
