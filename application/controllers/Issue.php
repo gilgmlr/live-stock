@@ -19,32 +19,47 @@ class Issue extends CI_Controller
         $this->load->view('Issue/index', $data);
     }
 
-    public function tambahBarangKeluar()
+    public function addMiCode()
     {
         $data = array(
-            'item_code' => $this->input->post('item_code'),
-            'name' => $this->input->post('item_desc'),
-            'date' => $this->input->post('date'),
-            'requestor' => $this->input->post('requestor'),
-            'dept_requestor' => $this->input->post('dept_requestor'),
-            'section_requestor' => $this->input->post('section_requestor'),
-            'activities_desc' => $this->input->post('activities_desc'),
-            'request_qty' => $this->input->post('request_qty'),
-            'issued_qty' => $this->input->post('issued_qty'),
-            'uom' => $this->input->post('uom'),
-            'reason_code' => $this->input->post('reason_code'),
-            'cost_center' => $this->input->post('cost_center'),
-            'request_by' => $this->input->post('request_by'),
-            'approved_by' => $this->input->post('approved_by'),
-            'issued_by' => $this->input->post('issued_by'),
-            'received_by' => $this->input->post('receive_by'),
+            'doc_no' => $this->input->post('mi_code')
         );
 
-        $this->M_CRUD->input_data('issued', $data);
+        $this->M_CRUD->input_data('mi_no', $data);
+        redirect("issue/view_material_issue");
     }
+
+    public function addMI()
+    {
+        $data = array(
+            'doc_no' => $this->input->post('mi_code'),
+            'entri_date' => $this->input->post('entri_date'),
+            'posting_date' => $this->input->post('post_date'),
+            'applicant' => $this->input->post('applicant'),
+            'dept_no' => $this->input->post('dept_no'),
+            'project_no' => $this->input->post('project_no'),
+            'memo' => $this->input->post('memo'),
+            'item_code' => $this->input->post('item_code'),
+            'warehouse_code' => $this->input->post('warehouse_code'),
+            'uom_code' => $this->input->post('uom_code'),
+            'transaction_qty' => $this->input->post('transaction_qty'),
+            'reference' => $this->input->post('reference'),
+            'reason_code' => $this->input->post('reason_code'),
+            'description' => $this->input->post('description'),
+            'created_by' => $this->input->post('create_by'),
+        );
+
+        $this->M_CRUD->input_data('material_issue', $data);
+        redirect("issue/view_material_issue");
+    }
+    
     public function view_material_issue()
     {
         $data['judul'] = 'Issue/MI';
+        $data['mi_code'] = $this->M_CRUD->get_data('mi_no')->result();
+        $data['items'] = $this->M_CRUD->get_data('items')->result();
+        $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
+        $data['uom'] = $this->M_CRUD->get_data('uom')->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('Issue/material_issue');
