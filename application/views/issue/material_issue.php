@@ -4,6 +4,8 @@
             <h4 style="font-weight:bold;"> Form Material Issue</h4>
         </center>
         <div class=" card-body">
+            <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px;" data-bs-toggle="modal"
+                data-bs-target="#addMI">Add MI No</button>
             <form action="<?= base_url() ?>issue/addMI" method="POST">
 
                 <div class="container">
@@ -39,8 +41,8 @@
                                 <?php $i++; } ?>
                             </select>
                             <label for="" class="col-sm-6 col-form-label">Warehouse Code</label>
-                            <select class="form-select form-control" aria-label=".form-select-lg example" id="warehouse_code"
-                                name="warehouse_code" required>
+                            <select class="form-select form-control" aria-label=".form-select-lg example"
+                                id="warehouse_code" name="warehouse_code" required>
                                 <option selected>-- Select --</option>
                                 <?php foreach ($warehouse as $data) { ?>
                                 <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?></option>
@@ -55,7 +57,8 @@
                                 <?php $i++; } ?>
                             </select>
                             <label for="" class="col-sm-6 col-form-label">Transaction Qty</label>
-                            <input type="text" class="form-control" id="transaction_qty" name="transaction_qty" required>
+                            <input type="text" class="form-control" id="transaction_qty" name="transaction_qty"
+                                required>
                             <label for="" class="col-sm-6 col-form-label">Reference</label>
                             <input type="text" class="form-control" id="reference" name="reference" required>
 
@@ -78,6 +81,27 @@
                     </center>
                 </div>
             </form>
+            <!-- MODAL Add MI NO -->
+            <div class="modal fade" id="addMI" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:50%>
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #563d7c">
+                            <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Add MI No
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="" class="col-sm-6 col-form-label">Add MI Number</label>
+                            <input type="text" class="form-control" id="applicant" name="applicant" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </a> <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Modal -->
         </div>
     </div>
 </div>
