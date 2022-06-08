@@ -1,6 +1,10 @@
-<div class="container" style="margin-top: 80px;">
+<div class="container" style="margin-top: 120px;">
     <div class="cards shadow p-1 mb-5 bg-white rounded">
         <div class=" card-body">
+            <center>
+                <h4 style="font-weight:bold;"> Form Lending</h4>
+
+            </center>
             <form action="<?= base_url() ?>received/addReceived" method="POST">
                 <div class="container">
                     <div class="row justify-content-center">

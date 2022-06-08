@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 80px;">
+<div class="container" style="margin-top: 120px;">
     <div class="row justify-content-center">
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="<?php echo base_url() . "Issue/view_material_issue" ?>">

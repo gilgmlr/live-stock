@@ -1,5 +1,9 @@
-<div class="container" style="margin-top: 80px;">
+<div class="container" style="margin-top: 120px;">
     <div class="cards shadow p-1 mb-5 bg-white rounded">
+        <center>
+            <h4 style="font-weight:bold;"> Form Warehouse Transfer</h4>
+
+        </center>
         <div class=" card-body">
             <form action="<?= base_url() ?>received/addReceived" method="POST">
 
