@@ -50,9 +50,16 @@ class Issue extends CI_Controller
         );
 
         $this->M_CRUD->input_data('material_issue', $data);
-        redirect("issue/view_material_issue");
+
+
+        //cari items
+        $item_code = $this->db->get_where('items', ['item_code' => $this->input->post('item_code')])->result_array();
+        $this->M_CRUD->update_data();
+
+        // var_dump($item_code); die;
+        //redirect("issue/view_material_issue");
     }
-    
+
     public function view_material_issue()
     {
         $data['judul'] = 'Issue/MI';

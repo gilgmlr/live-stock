@@ -74,9 +74,9 @@
             </a>
         </div>
 
-        <form action="<?php echo base_url();?>settings/importFile" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url();?>settings/excel" method="post" enctype="multipart/form-data">
             Upload excel file :
-            <input type="file" name="uploadFile" value="" /><br><br>
+            <input type="file"  class="form-control" name="file" accept=".xls, .xlsx" required>
             <input type="submit" name="submit" value="Upload" />
         </form>
 

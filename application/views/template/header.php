@@ -63,7 +63,7 @@
             <div class="d-flex">
 
 
-                <div class="position-fixed">
+                <!-- <div class="position-fixed">
                     <nav class="nav-bar" style=background-color:#563d7c>
                         <div class="menu-bar">
                             <div class="menu borders">
@@ -157,7 +157,7 @@
                             </div>
                         </div>
                     </nav>
-                </div>
+                </div> -->
             </div>
         </div>
     </header>
