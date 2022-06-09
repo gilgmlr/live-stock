@@ -37,7 +37,7 @@
                 <div class="d-flex justify-content-center mx-4 mb-3 mb-md-4">
                     <button type="submit" class="btn btn-primary btn-lg">Register</button>
                 </div>
-                <center><a href="<?= base_url()?>setings/view_table_user">See registered accounts?</a></center>
+                <center><a href="<?= base_url()?>settings/view_table_user">See registered accounts?</a></center>
             </form>
         </div>
     </div>

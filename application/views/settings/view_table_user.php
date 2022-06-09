@@ -1,25 +1,39 @@
 <div class="container" style="margin-top: 120px;">
-    <a href="<?= base_url(); ?>Issue/view_lending" id="Add" type="submit" class="btn btn-success"
-        style="margin:0; padding:15px">Add</a>
-    <div class="cards shadow p-3 mb-5 bg-white rounded" style="min-height: 400px; margin-top:3px">
-        <div class="cards-header card-header-text">
-            <h4 class="card-title">Lending Activity</h4>
+    <div class="cards shadow p-3 mb-3 bg-white rounded" style="min-height: 400px; margin-top:3px;">
+        <div class=" cards-header card-header-text">
+            <h4 class="card-title">registered Account</h4>
             <!-- <p class="category">All Warehouse</p> -->
         </div>
         <div class="card-content table-responsive">
-            <table id="lending" class="table table-hover">
+            <table id="regisacc" class="table table-hover">
                 <thead class="text-primary">
                     <tr>
-                        <th>No</th>
-                        <th>Item Code</th>
-                        <th>Item Name</th>
-                        <th>Qty</th>
-                        <th>Date</th>
+                        <th>NIP</th>
+                        <th>Name</th>
+                        <th>Role</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="container px-1">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-warning btn-sm"
+                                        style="margin:0px; height:35px; width:auto" data-bs-toggle="modal"
+                                        data-bs-target="#editacc">Edit</button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-danger btn-sm"
+                                        style="margin:0px; height:35px; width:auto" data-bs-toggle="modal"
+                                        data-bs-target="#deleteacc">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                 </tbody>
             </table>
         </div>
@@ -31,7 +45,7 @@
 <script>
 $(document).ready(function() {
     //$('#warehouse').DataTable();
-    $('#lending').DataTable();
+    $('#regisacc').DataTable();
 
 });
 </script>
