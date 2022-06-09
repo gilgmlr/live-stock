@@ -198,8 +198,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <table id="" class="table table-hover">
-                    <thead>
+                <table id="allwh" class="table table-hover">
+                    <thead class="text-primary">
                         <tr>
                             <th>No</th>
                             <th>Item Code</th>
@@ -243,6 +243,13 @@
 $(document).ready(function() {
     //$('#warehouse').DataTable();
     $('#lending').DataTable();
+
+});
+</script>
+<script>
+$(document).ready(function() {
+    //$('#warehouse').DataTable();
+    $('#allwh').DataTable();
 
 });
 </script>
