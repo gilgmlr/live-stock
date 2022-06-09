@@ -67,18 +67,18 @@ class Received extends CI_Controller
             $this->M_CRUD->input_data('received', $received);
             $this->M_CRUD->input_data('history', $history);
 
-            $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code')])->row_array();
-            $wh = $this->db->get_where('inventory', ['warehouse_code' => $this->input->post('warehouse_code')])->row_array();
+            $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
+            // $wh = $this->db->get_where('inventory', ['warehouse_code' => $this->input->post('warehouse_code')])->row_array();
 
-            if ($item != null && $wh != null){ //jika sudah ada di inventory
+            if ($item != null){ //jika sudah ada di inventory
                 $data = array(
                     'item_code' => $item['item_code'],
                     'location' => $item['location'],
                     'stocks' => $item['stocks'] + $this->input->post('qty'),
                     'uom_code' => $item['uom_code'],
-                    'warehouse_code' => $wh['warehouse_code'],
+                    'warehouse_code' => $item['warehouse_code'],
                 );
-                $this->M_CRUD->update_data2('inventory', $data, ['item_code' => $item['item_code']],  ['warehouse_code' => $wh['warehouse_code']]);
+                $this->M_CRUD->update_data2('inventory', $data, ['item_code' => $item['item_code']],  ['warehouse_code' => $item['warehouse_code']]);
             } else {
                 $inventory = array(
                     'item_code' => $this->input->post('item_code'),
