@@ -66,18 +66,15 @@ class Received extends CI_Controller
             $this->M_CRUD->input_data('received', $received);
             $this->M_CRUD->input_data('history', $history);
 
-            // if ($this->input->post('desc') == "Lending") {
-            //     $lending = array(
-            //         'lending_code' => $this->input->post('received_code'),
-            //         'item_code' => $this->input->post('item_code'),
-            //         'dept_code' => $this->input->post('dept_code'),
-            //         'lending_date' => $this->input->post('lending_date'),
-            //         'return_date' => "",
-            //         'status' => "close"
-            //     );
-            //     $this->M_Lending->add($lending);
-            // }
-
+            $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code')])->row_array();
+            $data = array(
+                'item_code' => $item['item_code'],
+                'location' => $item['location'],
+                'stocks' => $item['stocks'] + $this->input->post('qty'),
+                'uom_code' => $item['uom_code'],
+                'warehouse_code' => $item['warehouse_code'],
+            );
+            $this->M_CRUD->update_data('inventory', $data, ['item_code' => $this->input->post('item_code')]);
 
             redirect('received');
         } // var_dump($data);die;
