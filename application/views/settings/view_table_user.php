@@ -22,14 +22,10 @@
                         <div class="container px-1">
                             <div class="row">
                                 <div class="col-sm-2">
-                                    <button type="button" class="btn btn-warning btn-sm"
-                                        style="margin:0px; height:35px; width:auto" data-bs-toggle="modal"
-                                        data-bs-target="#editacc">Edit</button>
+                                    <a href="#"><i class="fa-solid fa-trash"></i></a>
                                 </div>
                                 <div class="col-sm-2">
-                                    <button type="button" class="btn btn-danger btn-sm"
-                                        style="margin:0px; height:35px; width:auto" data-bs-toggle="modal"
-                                        data-bs-target="#deleteacc">Delete</button>
+                                    <a href="#"><i class="fa-solid fa-pencil"></i></a>
                                 </div>
                             </div>
                         </div>
