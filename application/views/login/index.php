@@ -33,6 +33,12 @@
                                 </div>
                                 <div class="card-body">
                                     <center>
+                                    <?php if ($this->session->flashdata('flash')) : ?>
+                                        <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+                                            <?= $this->session->flashdata('flash') ?>
+                                        </div>
+                                        <?php $this->session->unset_userdata('flash');
+                                    endif; ?>
                                         <form action="login/login" method="POST">
                                             <div class="input-container">
                                                 <input type="text" id="nip" class="text-input" name="nip" autocomplete="off" placeholder="Enter your NIP" required />

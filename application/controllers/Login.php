@@ -35,16 +35,17 @@ class Login extends CI_Controller {
 					 ];
 					 $this->session->set_userdata($data);
 
+					 $this->session->set_flashdata('flash', 'Welcome ' . $user['name']);
 					 redirect('dashboard');
 				} else {
+					$this->session->set_flashdata('flash', 'NIP or Password not correct!');
 					redirect('login');
-					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Not Corrected!</div>');
-					
 				}
 				
 			} else {
+				
+				$this->session->set_flashdata('flash', 'NIP not registered!');
 				redirect('login');
-				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">NIP is not registered!</div>');
 			}
 		}
 	}
