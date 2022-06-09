@@ -43,6 +43,13 @@ class Settings extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('settings/import_data');
     }
+    public function view_table_user()
+    {
+        $data['judul'] = 'Settings/view_table_user';
+
+        $this->load->view('template/header', $data);
+        $this->load->view('settings/view_table_user');
+    }
 
     public function add_account()
     {
