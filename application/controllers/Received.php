@@ -67,9 +67,9 @@ class Received extends CI_Controller
             $this->M_CRUD->input_data('received', $received);
             $this->M_CRUD->input_data('history', $history);
 
-            $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code')])->row_array();
+            $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code')], ['warehouse_code' => $this->input->post('warehouse_code')])->row_array();
 
-            if ($item != null){ //jika sudah ada di inventory
+            if ($item != null){ //jika item sudah ada di inventory
                 $data = array(
                     'item_code' => $item['item_code'],
                     'location' => $item['location'],
