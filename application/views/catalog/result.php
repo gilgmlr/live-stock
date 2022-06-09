@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 80px;">
+<div class="container" style="margin-top: 120px;">
     <form action="<?=base_url() ?>catalog/view_result" method="POST">
         <div class="row justify-content-center">
             <div class="col-sm-8">
