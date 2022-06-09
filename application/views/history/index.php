@@ -30,7 +30,7 @@
                                         <!-- <button type="button" class="btn btn-warning btn-sm"
                                             style="margin:0px; height:35px;" data-bs-toggle="modal"
                                             data-bs-target="#edit<?=$i ?>">View</button> -->
-                                        <a href="" data-bs-toggle="modal" data-bs-target="#edit<?=$i ?>"><i
+                                        <a href="" data-bs-toggle="modal" data-bs-target="#history<?=$i ?>"><i
                                                 class="fa-solid fa-eye"></i></a>
                                     </td>
                                 </tr>
@@ -52,7 +52,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="history" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:60%>
         <div class="card">
             <div class="card-body">
