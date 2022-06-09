@@ -10,7 +10,7 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-sm-6">
-                            <label for="" class="col-sm-6 col-form-label">GR Number</label>
+                            <label for="" class="col-sm-6 col-form-label">WO Number</label>
                             <input type="text" class="form-control" id="received_code" name="received_code" required>
                             <label for="" class="col-sm-6 col-form-label">Arrival Date</label>
                             <input type="date" class="form-control" id="arrival_date" name="arrival_date" required>
@@ -42,7 +42,7 @@
 
                 <div class="cards-footer">
                     <center>
-                        <a href="<?= base_url(); ?>issue" class="btn btn-warning" style="padding:17px">
+                        <a href="<?= base_url(); ?>issue" class="btn btn-danger" style="padding:17px">
                             Batal
                         </a> <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
                     </center>

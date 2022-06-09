@@ -33,7 +33,7 @@
 
                 <div class="cards-footer">
                     <center>
-                        <a href="<?= base_url(); ?>received" class="btn btn-warning" style="padding-top:17px">
+                        <a href="<?= base_url(); ?>received" class="btn btn-danger" style="padding-top:17px">
                             Batal
                         </a>
                         <button id="simpan" type="submit" class="btn btn-success">Simpan</button>

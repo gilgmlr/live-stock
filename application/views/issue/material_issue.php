@@ -44,7 +44,8 @@
                                 name="item_code" required>
                                 <option selected>-- Select --</option>
                                 <?php foreach ($items as $data) { ?>
-                                <option value="<?= $data->item_code ?>"><?= $data->item_code ?> - <?= $data->name ?></option>
+                                <option value="<?= $data->item_code ?>"><?= $data->item_code ?> - <?= $data->name ?>
+                                </option>
                                 <?php $i++; } ?>
                             </select>
                             <label for="" class="col-sm-6 col-form-label">Warehouse Code</label>
@@ -82,7 +83,7 @@
 
                 <div class="cards-footer">
                     <center>
-                        <a href="<?= base_url(); ?>issue" class="btn btn-warning" style="padding:17px">
+                        <a href="<?= base_url(); ?>issue" class="btn btn-danger" style="padding:17px">
                             Batal
                         </a> <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
                     </center>
