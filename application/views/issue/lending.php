@@ -12,17 +12,19 @@
                         <div class="row justify-content-center">
                             <div class="col-sm-6">
                                 <label for="" class="col-sm-6 col-form-label">Lending No</label>
-                                <input type="text" class="form-control" id="received_code" name="received_code"
-                                    required>
+                                <input type="text" class="form-control" id="received_code" name="received_code" required
+                                    autocomplete="off">
                                 <label for="" class="col-sm-6 col-form-label">Loan Date</label>
                                 <input type="date" class="form-control" id="arrival_date" name="arrival_date" required>
                                 <label for="" class="col-sm-6 col-form-label">Return Date</label>
                                 <input type="date" class="form-control" id="arrival_date" name="arrival_date" required>
                                 <label for="" class="col-sm-6 col-form-label">Item Name</label>
-                                <input type="text" class="form-control" id="po_number" name="po_number" required>
+                                <input type="text" class="form-control" id="po_number" name="po_number" required
+                                    autocomplete="off">
                                 <label for="" class="col-sm-6 col-form-label" style="width: 100px;">Vendor
                                     Name</label>
-                                <input type="text" class="form-control" id="vendor_name" name="vendor_name" required>
+                                <input type="text" class="form-control" id="vendor_name" name="vendor_name" required
+                                    autocomplete="off">
                             </div>
                             <div class="col-sm-6">
                                 <label for="" class="col-sm-6 col-form-label">Item Code</label>
@@ -36,7 +38,7 @@
                                     <?php $i++; } ?>
                                 </select>
                                 <label for="" class="col-sm-6 col-form-label">Qty</label>
-                                <input type="text" class="form-control" id="qty" name="qty" required>
+                                <input type="text" class="form-control" id="qty" name="qty" required autocomplete="off">
                                 <label for="" class="col-sm-6 col-form-label">UoM</label>
                                 <select class="form-select form-control" aria-label=".form-select-lg example" id="uom"
                                     name="uom" required>
@@ -63,7 +65,8 @@
 
 
                                     <label for="" class="col-sm-6 col-form-label">Location</label>
-                                    <input type="text" class="form-control" id="location" name="location" required>
+                                    <input type="text" class="form-control" id="location" name="location" required
+                                        autocomplete="off">
 
                                 </div>
                             </div>

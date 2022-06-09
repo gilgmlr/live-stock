@@ -30,11 +30,14 @@
                             </select> <label for="" class="col-sm-6 col-form-label">Posting Date</label>
                             <input type="date" class="form-control" id="post_date" name="post_date" required>
                             <label for="" class="col-sm-6 col-form-label">Applicant</label>
-                            <input type="text" class="form-control" id="applicant" name="applicant" required>
+                            <input type="text" class="form-control" id="applicant" name="applicant" required
+                                autocomplete="off">
                             <label for="" class="col-sm-6 col-form-label">Dept No</label>
-                            <input type="text" class="form-control" id="dept_no" name="dept_no" required>
+                            <input type="text" class="form-control" id="dept_no" name="dept_no" required
+                                autocomplete="off">
                             <label for="" class="col-sm-6 col-form-label">Project No</label>
-                            <input type="text" class="form-control" id="project_no" name="project_no" required>
+                            <input type="text" class="form-control" id="project_no" name="project_no" required
+                                autocomplete="off">
                             <label for="" class="col-sm-6 col-form-label">Memo</label>
                             <textarea class="form-control" id="memo" name="memo" rows="3"></textarea>
                         </div>
@@ -65,17 +68,21 @@
                                 <?php $i++; } ?>
                             </select>
                             <label for="" class="col-sm-6 col-form-label">Transaction Qty</label>
-                            <input type="text" class="form-control" id="transaction_qty" name="transaction_qty"
-                                required>
+                            <input type="text" class="form-control" id="transaction_qty" name="transaction_qty" required
+                                autocomplete="off">
                             <label for="" class="col-sm-6 col-form-label">Reference</label>
-                            <input type="text" class="form-control" id="reference" name="reference" required>
+                            <input type="text" class="form-control" id="reference" name="reference" required
+                                autocomplete="off">
 
                             <label for="" class="col-sm-6 col-form-label">Reason</label>
-                            <input type="text" class="form-control" id="reason_code" name="reason_code" required>
+                            <input type="text" class="form-control" id="reason_code" name="reason_code" required
+                                autocomplete="off">
                             <label for="" class="col-sm-6 col-form-label">Desc</label>
-                            <input type="text" class="form-control" id="description" name="description" required>
+                            <input type="text" class="form-control" id="description" name="description" required
+                                autocomplete="off">
                             <label for="" class="col-sm-6 col-form-label">Create by</label>
-                            <input type="text" class="form-control" id="create_by" name="create_by" required>
+                            <input type="text" class="form-control" id="create_by" name="create_by" required
+                                autocomplete="off">
                         </div>
                     </div>
                 </div>
