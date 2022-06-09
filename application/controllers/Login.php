@@ -41,9 +41,7 @@ class Login extends CI_Controller {
 					$this->session->set_flashdata('flash', 'NIP or Password not correct!');
 					redirect('login');
 				}
-				
 			} else {
-				
 				$this->session->set_flashdata('flash', 'NIP not registered!');
 				redirect('login');
 			}
