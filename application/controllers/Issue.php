@@ -54,7 +54,15 @@ class Issue extends CI_Controller
 
 
         //cari items
-        $item_code = $this->db->get_where('items', ['item_code' => $this->input->post('item_code')])->result_array();
+        $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code')])->row_array();
+        $data = array(
+            'item_code' => $item['item_code'],
+            'location' => $item['location'],
+            'stocks' => $item['stocks'] - $this->input->post('transaction_qty'),
+            'uom_code' => $item['uom_code'],
+            'warehouse_code' => $item['warehouse_code'],
+        );
+        $this->M_CRUD->update_data2('inventory', $data, ['item_code' => $this->input->post('item_code')],  ['warehouse_code' => $this->input->post('warehouse_code')]);
 
         $this->session->set_flashdata('flash', 'Data Material Issue Saved!');
 

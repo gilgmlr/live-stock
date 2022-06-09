@@ -44,7 +44,7 @@
                                 name="item_code" required>
                                 <option selected>-- Select --</option>
                                 <?php foreach ($items as $data) { ?>
-                                <option value="<?= $data->item_code ?>"><?= $data->item_code ?></option>
+                                <option value="<?= $data->item_code ?>"><?= $data->item_code ?> - <?= $data->name ?></option>
                                 <?php $i++; } ?>
                             </select>
                             <label for="" class="col-sm-6 col-form-label">Warehouse Code</label>
