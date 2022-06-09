@@ -1,10 +1,10 @@
 <div class="container" style="margin-top: 100px;">
     <?php if ($this->session->flashdata('flash')) : ?>
-		<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-			<?= $this->session->flashdata('flash') ?>
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		</div>
-		<?php $this->session->unset_userdata('flash');
+    <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= $this->session->flashdata('flash') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php $this->session->unset_userdata('flash');
 	endif; ?>
 
     <div class="logo">
@@ -160,9 +160,12 @@
                                 <td><?= $data->warehouse_code ?></td>
                                 <td><?= $data->warehouse_name ?></td>
                                 <td>
-                                    <button type="button" class="btn btn-warning btn-sm"
+                                    <!-- <button type="button" class="btn btn-warning btn-sm"
                                         style="margin:0px; height:35px; width:auto" data-bs-toggle="modal"
-                                        data-bs-target="#view-<?= $data->warehouse_code ?>">View</button>
+                                        data-bs-target="#view-<?= $data->warehouse_code ?>">View</button> -->
+                                    <a href="" data-bs-toggle="modal"
+                                        data-bs-target="#view-<?= $data->warehouse_code ?>"><i
+                                            class="fa-solid fa-eye"></i></a>
                                 </td>
                             </tr>
 
