@@ -26,6 +26,7 @@ class Issue extends CI_Controller
         );
 
         $this->M_CRUD->input_data('mi_no', $data);
+        $this->session->set_flashdata('flash', 'Number '.$this->input->post('mi_code').' Saved!');
         redirect("issue/view_material_issue");
     }
 
@@ -54,10 +55,11 @@ class Issue extends CI_Controller
 
         //cari items
         $item_code = $this->db->get_where('items', ['item_code' => $this->input->post('item_code')])->result_array();
-        $this->M_CRUD->update_data();
+
+        $this->session->set_flashdata('flash', 'Data Material Issue Saved!');
 
         // var_dump($item_code); die;
-        //redirect("issue/view_material_issue");
+        redirect("issue");
     }
 
     public function view_material_issue()
