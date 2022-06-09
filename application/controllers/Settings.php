@@ -163,14 +163,9 @@ class Settings extends CI_Controller
                 }
         
                 $this->db->insert_batch($table, $data);
-        
-                // $message = array(
-                //     'message'=>'<div class="alert alert-success" >Import file excel berhasil disimpan di database ' . $table . '</div>
-                //     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-                // );
+
                 $this->session->set_flashdata('flash', 'Import file excel berhasil disimpan di database ' . $table);
-                
-                // $this->session->set_flashdata($message);
+
                 redirect('settings/view_import_data');
             }
             else

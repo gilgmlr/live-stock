@@ -43,7 +43,8 @@ class Received extends CI_Controller
         // $this->form_validation->set_rules('desc', 'Desc', 'required');
 
         if($this->form_validation->run() == false) {
-			redirect('dashboard');
+            $this->session->set_flashdata('flash', 'Data Input Not Valid in ' . $this->input->post('desc'));
+			redirect('received');
 		} else {
             $received = array(
                 'received_code' => $this->input->post('received_code'),
@@ -76,6 +77,7 @@ class Received extends CI_Controller
             );
             $this->M_CRUD->update_data2('inventory', $data, ['item_code' => $this->input->post('item_code')],  ['warehouse_code' => $this->input->post('warehouse_code')]);
 
+            $this->session->set_flashdata('flash', 'Data ' . $this->input->post('desc') . ' Saved!');
             redirect('received');
         } // var_dump($data);die;
     }

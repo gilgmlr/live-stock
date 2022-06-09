@@ -1,4 +1,11 @@
 <div class="container" style="margin-top: 120px;">
+<?php if ($this->session->flashdata('flash')) : ?>
+		<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+			<?= $this->session->flashdata('flash') ?>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		<?php $this->session->unset_userdata('flash');
+	endif; ?>
     <div class="row justify-content-center">
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="<?php echo base_url() . "received/view_good_received" ?>">
