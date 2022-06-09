@@ -74,7 +74,7 @@ class Received extends CI_Controller
                 'uom_code' => $item['uom_code'],
                 'warehouse_code' => $item['warehouse_code'],
             );
-            $this->M_CRUD->update_data('inventory', $data, ['item_code' => $this->input->post('item_code')]);
+            $this->M_CRUD->update_data2('inventory', $data, ['item_code' => $this->input->post('item_code')],  ['warehouse_code' => $this->input->post('warehouse_code')]);
 
             redirect('received');
         } // var_dump($data);die;

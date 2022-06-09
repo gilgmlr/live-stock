@@ -79,6 +79,12 @@ class M_CRUD extends CI_Model
 		$this->db->update($table,$data);
 	}
 
+	function update_data2($table, $data, $where1, $where2){
+		$this->db->where($where1);
+		$this->db->where($where2);
+		$this->db->update($table,$data);
+	}
+
 	function get_total($table) {
 		return $this->db->get($table)->num_rows();
 	}
