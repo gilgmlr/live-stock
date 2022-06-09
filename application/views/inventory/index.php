@@ -5,7 +5,7 @@
                 <!--  ISI DISINI  -->
                 <div class="row">
                     <div class="col">
-                        <table id="warehouse" class="table table-hover-responsive">
+                        <table id="warehouse" class="table table-hover">
                             <thead class="text-primary">
                                 <tr>
                                     <th>No</th>
