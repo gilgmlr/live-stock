@@ -54,7 +54,7 @@ class Issue extends CI_Controller
 
 
         //cari items
-        $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code')])->row_array();
+        $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
         $data = array(
             'item_code' => $item['item_code'],
             'location' => $item['location'],
@@ -62,11 +62,11 @@ class Issue extends CI_Controller
             'uom_code' => $item['uom_code'],
             'warehouse_code' => $item['warehouse_code'],
         );
-        $this->M_CRUD->update_data2('inventory', $data, ['item_code' => $this->input->post('item_code')],  ['warehouse_code' => $this->input->post('warehouse_code')]);
+        $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
 
         $this->session->set_flashdata('flash', 'Data Material Issue Saved!');
 
-        // var_dump($item_code); die;
+        // var_dump($item); die;
         redirect("issue");
     }
 
