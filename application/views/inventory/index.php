@@ -36,9 +36,12 @@
                                     <td><?= $data->warehouse_code ?></td>
                                     <td><?= $data->location ?></td>
                                     <td>
-                                        <button type="button" class="btn btn-warning btn-sm"
+                                        <!-- <button type="button" class="btn btn-warning btn-sm"
                                             style="margin:0px; height:35px;" data-bs-toggle="modal"
-                                            data-bs-target="#edit<?= $data->item_code ?>">Edit</button>
+                                            data-bs-target="#edit<?= $data->item_code ?>">Edit</button> -->
+                                        <a href="" data-bs-toggle="modal"
+                                            data-bs-target="#edit<?= $data->item_code ?>"><i
+                                                class="fa-solid fa-pencil"></i></a>
                                     </td>
                                 </tr>
 
