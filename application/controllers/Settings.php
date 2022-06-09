@@ -46,6 +46,7 @@ class Settings extends CI_Controller
     public function view_table_user()
     {
         $data['judul'] = 'Settings/view_table_user';
+        $data['users'] = $this->M_CRUD->get_data('user')->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('settings/view_table_user');

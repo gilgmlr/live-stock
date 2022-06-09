@@ -90,34 +90,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <center>
-                                <button id="batal" type="submit" class="btn btn-danger"
-                                    data-bs-dismiss="modal">Batal</button>
-                            </center>
-                        </div>
-
-                        <div class="col">
-                            <center>
-                                <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
-                            </center>
-
-                            <div class="alert alert-success d-flex align-items-center" role="alert">
-                                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
-                                    aria-label="Success:">
-                                    <use xlink:href="#check-circle-fill" />
-                                </svg>
-                                <div>
-                                    An example success alert with an icon
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
+                <button id="batal" type="submit" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
             </div>
         </div>
     </div>
