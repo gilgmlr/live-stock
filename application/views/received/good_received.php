@@ -10,13 +10,17 @@
                     <div class="row justify-content-center">
                         <div class="col-sm-6">
                             <label for="" class="col-sm-6 col-form-label">GR Number</label>
-                            <input type="text" class="form-control" id="received_code" name="received_code" required>
+                            <input type="text" class="form-control" id="received_code" name="received_code" required
+                                autocomplete="off">
                             <label for="" class="col-sm-6 col-form-label">Arrival Date</label>
-                            <input type="date" class="form-control" id="arrival_date" name="arrival_date" required>
+                            <input type="date" class="form-control" id="arrival_date" name="arrival_date" required
+                                autocomplete="off">
                             <label for="" class="col-sm-6 col-form-label">PO Number</label>
-                            <input type="text" class="form-control" id="po_number" name="po_number" required>
+                            <input type="text" class="form-control" id="po_number" name="po_number" required
+                                autocomplete="off">
                             <label for="" class="col-sm-6 col-form-label">Vendor Name</label>
-                            <input type="text" class="form-control" id="vendor_name" name="vendor_name" required>
+                            <input type="text" class="form-control" id="vendor_name" name="vendor_name" required
+                                autocomplete="off">
                         </div>
                         <div class="col-sm-6">
                             <label for="" class="col-sm-6 col-form-label">Item Code</label>
@@ -29,7 +33,7 @@
                                 <?php $i++; } ?>
                             </select>
                             <label for="" class="col-sm-6 col-form-label">Qty</label>
-                            <input type="text" class="form-control" id="qty" name="qty" required>
+                            <input type="text" class="form-control" id="qty" name="qty" required autocomplete="off">
                             <label for="" class="col-sm-6 col-form-label">UoM</label>
                             <select class="form-select form-control" aria-label=".form-select-lg example" id="uom"
                                 name="uom" required>
@@ -54,7 +58,8 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="" class="col-sm-6 col-form-label">Location</label>
-                                    <input type="text" class="form-control" id="location" name="location" required>
+                                    <input type="text" class="form-control" id="location" name="location" required
+                                        autocomplete="off">
                                 </div>
                             </div>
                         </div>
