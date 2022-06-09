@@ -1,5 +1,6 @@
 <div class="container" style="margin-top: 120px;">
     <div class="cards shadow p-3 mb-5 bg-white rounded">
+        <h4 class="card-title">Inventory</h4>
         <div class="card-body">
             <div class="container">
                 <!--  ISI DISINI  -->
