@@ -19,7 +19,17 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px;"
+                                data-bs-toggle="modal" data-bs-target="#cllending">Closed</button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
