@@ -1,5 +1,12 @@
-<div class="container" style="margin-top: 80px;">
+<div class="container" style="margin-top: 100px;">
     <div class="row justify-content-center">
+    <?php if ($this->session->flashdata('flash')) : ?>
+		<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+			<?= $this->session->flashdata('flash') ?>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		<?php $this->session->unset_userdata('flash');
+	endif; ?>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal" data-bs-target="#ImpAcc">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
