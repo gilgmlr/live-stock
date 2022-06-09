@@ -81,12 +81,8 @@
                                 <input type="password" id="name" class="text-input" name="name" autocomplete="off"
                                     placeholder="Enter your password now" required />
                             </div>
-
                         </div>
-
-
                     </div>
-
                 </form>
             </div>
             <div class="modal-footer">
