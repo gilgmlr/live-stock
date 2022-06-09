@@ -27,9 +27,11 @@
                                     <td><?= $data->doc_num ?></td>
                                     <td><?= $data->description ?></td>
                                     <td>
-                                        <button type="button" class="btn btn-warning btn-sm"
+                                        <!-- <button type="button" class="btn btn-warning btn-sm"
                                             style="margin:0px; height:35px;" data-bs-toggle="modal"
-                                            data-bs-target="#edit<?=$i ?>">View</button>
+                                            data-bs-target="#edit<?=$i ?>">View</button> -->
+                                        <a href="" data-bs-toggle="modal" data-bs-target="#edit<?=$i ?>"><i
+                                                class="fa-solid fa-eye"></i></a>
                                     </td>
                                 </tr>
 
