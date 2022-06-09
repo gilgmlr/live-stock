@@ -1,4 +1,11 @@
 <div class="container" style="margin-top: 120px;">
+<?php if ($this->session->flashdata('flash')) : ?>
+		<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+			<?= $this->session->flashdata('flash') ?>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		<?php $this->session->unset_userdata('flash');
+	endif; ?>
     <div class="cards shadow p-3 mb-5 bg-white rounded">
         <h4 class="card-title">Inventory</h4>
         <div class="card-body">
@@ -60,7 +67,7 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="" method="POST">
+                                                <form action="<?= base_url() ?>inventory/UpdateInventory" method="POST">
                                                     <div class="container">
                                                         <div class="row justify-content-center">
                                                             <div class="col-sm-6">
@@ -73,8 +80,8 @@
                                                             <div class="col-sm-6">
                                                                 <label for="" class="col-sm-6 col-form-label">Item
                                                                     Name</label>
-                                                                <input type="text" class="form-control" id="item_code"
-                                                                    name="item_code" value="<?= $data->name ?>"
+                                                                <input type="text" class="form-control" id="name"
+                                                                    name="name" value="<?= $data->name ?>"
                                                                     required>
                                                             </div>
                                                         </div>
@@ -91,15 +98,15 @@
                                                             <div class="col-sm-6">
                                                                 <label for=""
                                                                     class="col-sm-6 col-form-label">Stoks</label>
-                                                                <input type="text" class="form-control" id="item_code"
-                                                                    name="item_code" value="<?=$data->stocks ?>"
+                                                                <input type="text" class="form-control" id="stocks"
+                                                                    name="stocks" value="<?=$data->stocks ?>"
                                                                     readonly>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <label for=""
                                                                     class="col-sm-6 col-form-label">Warehouse</label>
-                                                                <input type="text" class="form-control" id="item_code"
-                                                                    name="item_code" value="<?=$data->warehouse_code ?>"
+                                                                <input type="text" class="form-control" id="warehouse_code"
+                                                                    name="warehouse_code" value="<?=$data->warehouse_code ?>"
                                                                     readonly>
                                                             </div>
                                                         </div>
@@ -107,15 +114,15 @@
                                                             <div class="col-sm-6">
                                                                 <label for=""
                                                                     class="col-sm-6 col-form-label">UoM</label>
-                                                                <input type="text" class="form-control" id="item_code"
-                                                                    name="item_code" value="<?=$data->uom_name?>"
+                                                                <input type="text" class="form-control" id="uom_name"
+                                                                    name="uom_name" value="<?=$data->uom_name?>"
                                                                     readonly>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <label for=""
                                                                     class="col-sm-6 col-form-label">Location</label>
-                                                                <input type="text" class="form-control" id="item_code"
-                                                                    name="item_code" value="<?=$data->location?>"
+                                                                <input type="text" class="form-control" id="location"
+                                                                    name="location" value="<?=$data->location?>"
                                                                     required>
                                                             </div>
                                                         </div>

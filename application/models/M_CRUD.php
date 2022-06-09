@@ -10,14 +10,6 @@ class M_CRUD extends CI_Model
 		return $this->db->get_where($table, $where);
 	}
 
-	function get_data_where2($table, $col1, $cond1, $col2, $cond2){		
-		$this->db->where($col1, $cond1);
-		$this->db->where($col2, $cond2);
-		$query = $this->db->get();
-
-		return $query;
-	}
-
 	function get_data_orwhere($table, $col1, $cond1, $col2, $cond2){		
 		$this->db->where($col1, $cond1)->or_where($col2, $cond2);
 		return $this->db->get($table);
@@ -76,12 +68,6 @@ class M_CRUD extends CI_Model
  
 	function update_data($table, $data, $where){
 		$this->db->where($where);
-		$this->db->update($table,$data);
-	}
-
-	function update_data2($table, $data, $where1, $where2){
-		$this->db->where($where1);
-		$this->db->where($where2);
 		$this->db->update($table,$data);
 	}
 
