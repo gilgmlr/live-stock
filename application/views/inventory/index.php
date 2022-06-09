@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col">
                         <table id="warehouse" class="table table-hover-responsive">
-                            <thead>
+                            <thead class="text-primary">
                                 <tr>
                                     <th>No</th>
                                     <th>Item Code</th>
