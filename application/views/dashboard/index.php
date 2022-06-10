@@ -112,7 +112,7 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <!-- <tbody>
+                        <tbody>
                             <?php
                                 $i = 1;
                                 foreach ($warehouse as $data) { 
@@ -125,13 +125,16 @@
                                 <td>-</td>
                                 <td>-</td>
                                 <td>
-                                    <button type="button" class="btn btn-danger">Return</button>
+                                    <a href="<?=base_url() . 'received/view_lending'?>" type="button"
+                                        class="btn btn-danger"
+                                        style="padding-top:15px; margin:0px; height:45px;">Return</a>
+
 
                                 </td>
                             </tr>
 
                             <?php $i++; } ?>
-                        </tbody> -->
+                        </tbody>
                     </table>
                 </div>
             </div>
