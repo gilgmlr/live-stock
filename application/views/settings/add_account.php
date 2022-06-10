@@ -1,4 +1,11 @@
 <div class="container" style="margin-top: 120px;">
+<?php if ($this->session->flashdata('flash')) : ?>
+    <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= $this->session->flashdata('flash') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php $this->session->unset_userdata('flash');
+	endif; ?>
     <div class="row justify-content-center">
         <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
             <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">

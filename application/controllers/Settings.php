@@ -60,8 +60,9 @@ class Settings extends CI_Controller
 
         $default_password = password_hash($this->input->post('nip'), PASSWORD_DEFAULT);
 
-        if($this->form_validation->run() == false) {
-			redirect('settings/add_account');
+        if($this->form_validation->run() == false) { 
+            $this->session->set_flashdata('flash', 'Add Account Failed, Please Try Again!');
+			redirect('settings/view_add_account');
 		} else {
             $data = array(
                 'nip' => $this->input->post('nip'),
@@ -71,6 +72,7 @@ class Settings extends CI_Controller
             );
     
             $this->M_CRUD->input_data('user', $data);
+            $this->session->set_flashdata('flash', 'Add Account ' . $this->input->post('nip') . ' Success!');
             redirect('settings/view_add_account');
 
             // var_dump($data);die;
@@ -84,7 +86,8 @@ class Settings extends CI_Controller
         $this->form_validation->set_rules('spec', 'Spec', 'required');
 
         if($this->form_validation->run() == false) {
-			redirect('settings/view_add_itemss');
+            $this->session->set_flashdata('flash', 'Add Item Failed, Please Try Again!');
+			redirect('settings/view_add_items');
 		} else {
             $config = $this->upload->initialize(array(
 				"upload_path" => './assets/catalog/',
@@ -111,6 +114,7 @@ class Settings extends CI_Controller
                 // var_dump($config);die;
     
                 $this->M_CRUD->input_data('items', $data);
+                $this->session->set_flashdata('flash', 'Add Account ' . $this->input->post('name') . ' Success!');
                 redirect('settings/view_add_items');
             }
         }
