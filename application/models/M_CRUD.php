@@ -15,6 +15,13 @@ class M_CRUD extends CI_Model
 		return $this->db->get($table);
 	}
 
+	function get_or_like($table, $col1, $col2, $match){
+		$this->db->select('*');
+		$this->db->from('items');
+		$this->db->like('item_code','0100-');
+		$query = $this->db->get();
+	}
+
 	public function get_join($table, $join, $matching)
 	{
 		$this->db->select('*');
