@@ -34,9 +34,9 @@
                             <select class="form-select form-control text-input" aria-label=".form-select-lg example"
                                 id="role" name="role" required>
                                 <option selected>-- select --</option>
-                                <option value="1">1</option>
-                                <option value="1">2</option>
-                                <option value="1">3</option>
+                                <option value="1">1 - All Access</option>
+                                <option value="1">2 - Admin Received</option>
+                                <option value="1">3 - Admin Issued</option>
                             </select>
                         </div>
                     </div>
