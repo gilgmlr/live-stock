@@ -69,7 +69,7 @@
                 <h5 class="modal-title" style="color: gold;" id="exampleModalLabel">Change Password</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url() ?>settings/changePassword" method="POST" class="mx-1 mx-md-4" autocomplete="off">
+            <form action="<?= base_url() ?>settings/change_password" method="POST" class="mx-1 mx-md-4" autocomplete="off">
                 <div class="modal-body">
                     <div class="container px-4">
                         <div class="col gx-5">

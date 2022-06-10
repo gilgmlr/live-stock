@@ -61,7 +61,7 @@ class M_CRUD extends CI_Model
 		$this->db->insert($table, $data);
 	}
  
-	function hapus_data($table, $where){
+	function delete_data($table, $where){
 		$this->db->where($where);
 		$this->db->delete($table);
 	}

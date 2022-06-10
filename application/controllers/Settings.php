@@ -49,7 +49,7 @@ class Settings extends CI_Controller
         $data['users'] = $this->M_CRUD->get_data('user')->result();
 
         $this->load->view('template/header', $data);
-        $this->load->view('settings/view_table_user');
+        $this->load->view('settings/table_user');
     }
 
     public function add_account()
@@ -170,19 +170,15 @@ class Settings extends CI_Controller
             }
  
             $this->db->insert_batch($table, $data);
-            $this->session->set_flashdata('flash', 'Import file excel berhasil disimpan di database ' . $table);
+            $this->session->set_flashdata('flash', 'Import File Excel Saved in database ' . $table);
             redirect('settings/view_import_data');
         } else {
-            $message = array(
-                'message'=>'<div class="alert alert-danger">Import file gagal, coba lagi</div>',
-            );
-                
-            $this->session->set_flashdata($message);
+            $this->session->set_flashdata('flash', 'Import File is Failed, Please Try Again!');
             redirect('settings/view_import_data');
         }
     }
 
-    public function changePassword()
+    public function change_password()
     {
         $this->form_validation->set_rules('password', 'Password', 'required');
         $this->form_validation->set_rules('newpassword', 'Newpassword', 'required');
@@ -205,12 +201,21 @@ class Settings extends CI_Controller
                 );
 
                 $this->M_CRUD->update_data('user', $data, ['nip' => $nip]);
-                $this->session->set_flashdata('flash', 'Change Passwors Success!');
+                $this->session->set_flashdata('flash', 'Change Password Success!');
                 redirect('settings');
             } else {
                 $this->session->set_flashdata('flash', 'Password Now Incorrect, Please Try Again!');
                 redirect('settings');
             }
         }
+    }
+
+    public function delete_account()
+    {
+        $nip = $this->input->get('nip');
+
+		$this->M_CRUD->delete_data('user', ['nip' => $nip]);
+        $this->session->set_flashdata('flash', 'Account ' . $nip . ' Deleted!');
+		redirect('settings/view_table_user');
     }
 }

@@ -1,4 +1,12 @@
 <div class="container" style="margin-top: 120px;">
+<?php if ($this->session->flashdata('flash')) : ?>
+    <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= $this->session->flashdata('flash') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php $this->session->unset_userdata('flash');
+	endif; ?>
+    
     <div class="cards shadow p-3 mb-3 bg-white rounded" style="min-height: 400px; margin-top:3px;">
         <div class=" cards-header card-header-text">
             <h4 class="card-title">registered Account</h4>
@@ -26,12 +34,13 @@
                         <td>
                             <div class="container px-1">
                                 <div class="row">
-                                    <div class="col-sm-2">
+                                    <!-- icon edit -->
+                                    <!-- <div class="col-sm-2">
                                         <a href="#" data-bs-toggle="modal" data-bs-target="#change<?= $data->nip ?>"><i
                                                 class="fa-solid fa-pencil"></i></a>
-                                    </div>
+                                    </div> -->
                                     <div class="col-sm-2">
-                                        <a href="#"><i class="fa-solid fa-trash"></i></a>
+                                        <a href="<?= base_url() ?>settings/delete_account?nip=<?= $data->nip ?>"><i class="fa-solid fa-trash"></i></a>
                                     </div>
                                 </div>
                             </div>
