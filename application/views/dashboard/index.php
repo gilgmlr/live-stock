@@ -104,6 +104,7 @@
                         <thead class="text-primary">
                             <tr>
                                 <th>No</th>
+                                <th>Vendor Name</th>
                                 <th>Item Code</th>
                                 <th>Item Name</th>
                                 <th>Qty</th>
@@ -111,13 +112,14 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <!-- <tbody>
                             <?php
                                 $i = 1;
                                 foreach ($warehouse as $data) { 
                             ?>
                             <tr>
                                 <td><?php echo $i ?></td>
+                                <td></td>
                                 <td><?php echo $data->warehouse_code ?></td>
                                 <td><?php echo $data->warehouse_name ?></td>
                                 <td>-</td>
@@ -129,7 +131,7 @@
                             </tr>
 
                             <?php $i++; } ?>
-                        </tbody>
+                        </tbody> -->
                     </table>
                 </div>
             </div>
