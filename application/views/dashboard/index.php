@@ -104,6 +104,7 @@
                         <thead class="text-primary">
                             <tr>
                                 <th>No</th>
+                                <th>Vendor Name</th>
                                 <th>Item Code</th>
                                 <th>Item Name</th>
                                 <th>Qty</th>
@@ -111,25 +112,26 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <!-- <tbody>
                             <?php
                                 $i = 1;
                                 foreach ($warehouse as $data) { 
                             ?>
-                            <!-- <tr>
+                            <tr>
                                 <td><?php echo $i ?></td>
+                                <td></td>
                                 <td><?php echo $data->warehouse_code ?></td>
                                 <td><?php echo $data->warehouse_name ?></td>
                                 <td>-</td>
                                 <td>-</td>
                                 <td>
-                                    <button type="button" class="btn btn-danger btn-sm" style="margin:0px; height:35px; width:auto"
-                                        data-bs-toggle="modal" data-bs-target="#closed">Closed</button>
+                                    <button type="button" class="btn btn-danger">Return</button>
+
                                 </td>
-                            </tr> -->
+                            </tr>
 
                             <?php $i++; } ?>
-                        </tbody>
+                        </tbody> -->
                     </table>
                 </div>
             </div>

@@ -18,8 +18,7 @@
         <div class="col-md-2 px-2">
             <a href="" data-bs-toggle="modal" data-bs-target="#detail<?= $data->item_code ?>">
                 <div class="card shadow p-2 mb-2 bg-white rounded">
-                    <img src="<?= base_url() . 'assets/catalog/' . $data->image ?> " class="img-fluid"
-                        style="height: 538px; width:538px" alt="">
+                    <img src="<?= base_url() . 'assets/catalog/' . $data->image ?> " class="img-fluid" alt="">
                     <div class="card-body">
                         <p class="card-text" style="font-size:16px;"><b><?= $data->item_code ?></b></p>
                         <p class="card-text" style="font-size:12px;"><?= $data->name ?></p>
@@ -45,7 +44,7 @@
                                     <div class="col">
                                         <div class="card shadow p-3 mb-5 bg-white rounded">
                                             <img src="<?= base_url() . 'assets/catalog/' . $data->image ?>"
-                                                class="img-fluid" style="height: 194px; width:259px" alt="Not Found!">
+                                                class="img-fluid" alt="Not Found!">
                                         </div>
                                     </div>
                                     <div class="col">
