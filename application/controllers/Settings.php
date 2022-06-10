@@ -117,73 +117,100 @@ class Settings extends CI_Controller
     }
     
     public function import()
-        {
-            $table = $this->input->post('table_name');
-            if(isset($_FILES["file"]["name"])){
-                  // upload
-                $file_tmp = $_FILES['file']['tmp_name'];
-                $file_name = $_FILES['file']['name'];
-                $file_size =$_FILES['file']['size'];
-                $file_type=$_FILES['file']['type'];
-                // move_uploaded_file($file_tmp,"uploads/".$file_name); // simpan filenya di folder uploads
-                
-                $object = PHPExcel_IOFactory::load($file_tmp);
-                
+    {
+        $table = $this->input->post('table_name');
+        if(isset($_FILES["file"]["name"])){
+              // upload
+            $file_tmp = $_FILES['file']['tmp_name'];
+            $file_name = $_FILES['file']['name'];
+            $file_size =$_FILES['file']['size'];
+            $file_type=$_FILES['file']['type'];
+            // move_uploaded_file($file_tmp,"uploads/".$file_name); // simpan filenya di folder uploads
+              
+            $object = PHPExcel_IOFactory::load($file_tmp);            
         
-                foreach($object->getWorksheetIterator() as $worksheet){
-                    $highestRow = $worksheet->getHighestRow();
-                    $highestColumn = $worksheet->getHighestColumn();
+            foreach($object->getWorksheetIterator() as $worksheet){
+                $highestRow = $worksheet->getHighestRow();
+                $highestColumn = $worksheet->getHighestColumn();
         
-                    for($row=3; $row<=$highestRow; $row++){
-                        if ($worksheet->getCellByColumnAndRow(0, $row)->getValue() != null) {
-                            if ($table == 'warehouse') {
-                                $data[] = array(
-                                    'warehouse_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
-                                    'warehouse_name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
-                                );
-                            } else if ($table == 'user') {
-                                $data[] = array(
-                                    'nip' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
-                                    'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
-                                    'password' => password_hash($worksheet->getCellByColumnAndRow(2, $row)->getValue(), PASSWORD_DEFAULT),
-                                    'role' => $worksheet->getCellByColumnAndRow(3, $row)->getValue(),
-                                );
-                            } else if ($table == 'uom') {
-                                $data[] = array(
-                                    'uom_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
-                                    'uom_name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
-                                );
-                            } else if ($table == 'department') {
-                                $data[] = array(
-                                    'dept_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
-                                    'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
-                                );
-                            } else if ($table == 'items') {
-                                $data[] = array(
-                                    'item_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
-                                    'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
-                                    'specification' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
-                                    'image' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
-                                );
-                            }
+                for($row=3; $row<=$highestRow; $row++){
+                    if ($worksheet->getCellByColumnAndRow(0, $row)->getValue() != null) {
+                        if ($table == 'warehouse') {
+                            $data[] = array(
+                                'warehouse_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
+                                'warehouse_name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                            );
+                        } else if ($table == 'user') {
+                            $data[] = array(
+                                'nip' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
+                                'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                                'password' => password_hash($worksheet->getCellByColumnAndRow(2, $row)->getValue(), PASSWORD_DEFAULT),
+                                'role' => $worksheet->getCellByColumnAndRow(3, $row)->getValue(),
+                            );
+                        } else if ($table == 'uom') {
+                            $data[] = array(
+                                'uom_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
+                                'uom_name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                            );
+                        } else if ($table == 'department') {
+                            $data[] = array(
+                                'dept_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
+                                'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                            );
+                        } else if ($table == 'items') {
+                            $data[] = array(
+                                'item_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
+                                'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                                'specification' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                                'image' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                            );
                         }
-                    } 
-                }
-        
-                $this->db->insert_batch($table, $data);
-
-                $this->session->set_flashdata('flash', 'Import file excel berhasil disimpan di database ' . $table);
-
-                redirect('settings/view_import_data');
+                    }
+                } 
             }
-            else
-            {
-                 $message = array(
-                    'message'=>'<div class="alert alert-danger">Import file gagal, coba lagi</div>',
-                );
+ 
+            $this->db->insert_batch($table, $data);
+            $this->session->set_flashdata('flash', 'Import file excel berhasil disimpan di database ' . $table);
+            redirect('settings/view_import_data');
+        } else {
+            $message = array(
+                'message'=>'<div class="alert alert-danger">Import file gagal, coba lagi</div>',
+            );
                 
-                $this->session->set_flashdata($message);
-                redirect('settings/view_import_data');
+            $this->session->set_flashdata($message);
+            redirect('settings/view_import_data');
+        }
+    }
+
+    public function changePassword()
+    {
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('newpassword', 'Newpassword', 'required');
+
+        $nip = $this->session->userdata('nip');
+        $password = $this->input->post('password');
+        $new_password = password_hash($this->input->post('newpassword'), PASSWORD_DEFAULT);
+
+        $user = $this->db->get_where('user', ['nip' => $nip])->row_array();
+
+        if($this->form_validation->run() == false) {
+			redirect('settings');
+		} else {
+            if(password_verify($password, $user['password'])) {
+                $data = array(
+                    'nip' => $nip,
+                    'name' => $this->session->userdata('name'),
+                    'password' => $new_password,
+                    'role' => $this->session->userdata('role'),
+                );
+
+                $this->M_CRUD->update_data('user', $data, ['nip' => $nip]);
+                $this->session->set_flashdata('flash', 'Change Passwors Success!');
+                redirect('settings');
+            } else {
+                $this->session->set_flashdata('flash', 'Password Now Incorrect, Please Try Again!');
+                redirect('settings');
             }
         }
+    }
 }

@@ -4,7 +4,7 @@ class Login extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-		$this->load->library('form_validation');
+		$this->load->library(array('form_validation', 'session'));
 		$this->load->model('M_CRUD');
     }
 
@@ -29,14 +29,16 @@ class Login extends CI_Controller {
 			// jika user ada
 			if ($user) {
 				    // cek password yang terenkripsi
-				 if(password_verify($password, $user['password'])) {
-					 $data = [
-						 'name' => $user['name']
-					 ];
-					 $this->session->set_userdata($data);
+				if(password_verify($password, $user['password'])) {
+					$data = array (
+						'nip' => $user['nip'],
+						'name' => $user['name'],
+						'role' => $user['role']
+					);
+					$this->session->set_userdata($data);
 
-					 $this->session->set_flashdata('flash', 'Welcome ' . $user['name']);
-					 redirect('dashboard');
+					$this->session->set_flashdata('flash', 'Welcome ' . $user['name']);
+					redirect('dashboard');
 				} else {
 					$this->session->set_flashdata('flash', 'NIP or Password not correct!');
 					redirect('login');
@@ -50,7 +52,7 @@ class Login extends CI_Controller {
 
 	public function logout()
 	{
-        // /$this->session->sess_destroy();
+        $this->session->sess_destroy();
         redirect('login');
 	}
 }

@@ -54,7 +54,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         </ul>
-                        <h5 style="color:gold">Welcome Admin, <?= $this->session->userdata(""); ?></h5>
+                        <h5 style="color:gold">Welcome Admin, <?= $this->session->userdata('name') ?></h5>
                     </div>
                 </div>
             </nav>

@@ -6,8 +6,9 @@ class Dashboard extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('M_CRUD');
+        $this->load->model(array('M_CRUD', 'M_Settings'));
         $this->load->helper('date');
+        $this->load->library('session');
     }
 
     public function index()

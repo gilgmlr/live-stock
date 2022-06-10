@@ -1,4 +1,11 @@
 <div class="container" style="margin-top: 120px;">
+    <?php if ($this->session->flashdata('flash')) : ?>
+    <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= $this->session->flashdata('flash') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php $this->session->unset_userdata('flash');
+	endif; ?>
     <div class="row justify-content-center">
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="<?php echo base_url() . "settings/view_add_account" ?>">
@@ -54,7 +61,7 @@
 
 
 
-<!-- Modal Daftar Akun -->
+<!-- Modal Change Password -->
 <div class="modal fade" id="changepassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:40%>
         <div class="modal-content">
@@ -62,33 +69,33 @@
                 <h5 class="modal-title" style="color: gold;" id="exampleModalLabel">Change Password</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <form class="mx-1 mx-md-4">
+            <form action="<?= base_url() ?>settings/changePassword" method="POST" class="mx-1 mx-md-4" autocomplete="off">
+                <div class="modal-body">
                     <div class="container px-4">
                         <div class="col gx-5">
                             <div class="col">
                                 <label class="form-label" for="form3Example1c">NIP</label>
-                                <input type="text" id="item_code" class="text-input" name="item_code" autocomplete="off"
-                                    placeholder="Enter item code" required />
-                            </div>
-                            <div class="col">
-                                <label class="form-label" for="form3Example1c">Password</label>
-                                <input type="password" id="name" class="text-input" name="name" autocomplete="off"
-                                    placeholder="Enter your password" required />
+                                <input type="text" id="nip" class="text-input" name="nip"
+                                    placeholder="" readonly value="<?= $this->session->userdata('nip') ?>" />
                             </div>
                             <div class="col">
                                 <label class="form-label" for="form3Example1c">Password Now</label>
-                                <input type="password" id="name" class="text-input" name="name" autocomplete="off"
-                                    placeholder="Enter your password now" required />
+                                <input type="password" id="password" class="text-input" name="password"
+                                    placeholder="Enter your password" required />
+                            </div>
+                            <div class="col">
+                                <label class="form-label" for="form3Example1c">New Password</label>
+                                <input type="password" id="newpassword" class="text-input" name="newpassword"
+                                    placeholder="Enter New Password" required />
                             </div>
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button id="batal" type="submit" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
-                <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="batal" type="submit" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                    <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
