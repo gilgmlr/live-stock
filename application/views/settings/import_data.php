@@ -1,11 +1,11 @@
 <div class="container" style="margin-top: 100px;">
     <div class="row justify-content-center">
-    <?php if ($this->session->flashdata('flash')) : ?>
-		<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-			<?= $this->session->flashdata('flash') ?>
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		</div>
-		<?php $this->session->unset_userdata('flash');
+        <?php if ($this->session->flashdata('flash')) : ?>
+        <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= $this->session->flashdata('flash') ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <?php $this->session->unset_userdata('flash');
 	endif; ?>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal" data-bs-target="#ImpAcc">
@@ -121,8 +121,17 @@
                     </div>
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
-                            <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
-                            <input type="text" name="table_name" value="user" hidden>
+
+                            <div class="col">
+                                <a href="#" class="link-primary">Download Template</a>
+                            </div>
+                            <div class="col">
+                                <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
+                                <input type="text" name="table_name" value="user" hidden>
+                            </div>
+
+
+
                         </div>
 
                         <div class="modal-footer">
@@ -144,8 +153,12 @@
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
+                            <div class="col">
+                                <a href="#" class="link-primary">Download Template</a>
+                            </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="items" hidden>
                         </div>
@@ -171,6 +184,9 @@
                     </div>
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
+                            <div class="col">
+                                <a href="#" class="link-primary">Download Template</a>
+                            </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="warehouse" hidden>
                         </div>
@@ -196,6 +212,9 @@
                     </div>
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
+                            <div class="col">
+                                <a href="#" class="link-primary">Download Template</a>
+                            </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="issued" hidden>
                         </div>
@@ -221,6 +240,9 @@
                     </div>
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
+                            <div class="col">
+                                <a href="#" class="link-primary">Download Template</a>
+                            </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="received" hidden>
                         </div>
@@ -246,6 +268,9 @@
                     </div>
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
+                            <div class="col">
+                                <a href="#" class="link-primary">Download Template</a>
+                            </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="inventory" hidden>
                         </div>
@@ -271,6 +296,9 @@
                     </div>
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
+                            <div class="col">
+                                <a href="#" class="link-primary">Download Template</a>
+                            </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="uom" hidden>
                         </div>
@@ -296,6 +324,9 @@
                     </div>
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
+                            <div class="col">
+                                <a href="#" class="link-primary">Download Template</a>
+                            </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="department" hidden>
                         </div>

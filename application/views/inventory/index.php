@@ -6,10 +6,10 @@
     </div>
     <?php $this->session->unset_userdata('flash');
 	endif; ?>
-    <div class="cards shadow p-3 mb-5 bg-white rounded">
+    <div class="cards shadow p-3 mb-5 bg-white rounded" style="max-width:100%">
         <h4 class="card-title">Inventory</h4>
         <div class="card-body">
-            <div class="container">
+            <div class="">
                 <!--  ISI DISINI  -->
                 <div class="row">
                     <div class="col">
