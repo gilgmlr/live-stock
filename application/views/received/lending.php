@@ -26,6 +26,21 @@
                             </select>
                             <label for="" class="col-sm-6 col-form-label">Qty</label>
                             <input type="text" class="form-control" id="qty" name="qty" required>
+                            <label for="" class="col-sm-6 col-form-label">Location</label>
+                            <input type="text" class="form-control" id="location" name="location" required
+                                autocomplete="off">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Equipment</label>
+                                    <input type="text" class="form-control" id="equipment" name="location" required
+                                        autocomplete="off">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Status</label>
+                                    <input type="text" class="form-control" id="status" name="location" required
+                                        autocomplete="off">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

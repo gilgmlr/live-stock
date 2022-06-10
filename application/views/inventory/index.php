@@ -1,10 +1,10 @@
 <div class="container" style="margin-top: 120px;">
-<?php if ($this->session->flashdata('flash')) : ?>
-		<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-			<?= $this->session->flashdata('flash') ?>
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		</div>
-		<?php $this->session->unset_userdata('flash');
+    <?php if ($this->session->flashdata('flash')) : ?>
+    <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= $this->session->flashdata('flash') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php $this->session->unset_userdata('flash');
 	endif; ?>
     <div class="cards shadow p-3 mb-5 bg-white rounded">
         <h4 class="card-title">Inventory</h4>
@@ -24,6 +24,8 @@
                                     <th>Stocks</th>
                                     <th>Warehouse</th>
                                     <th>Location</th>
+                                    <th>Equipment</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -43,6 +45,8 @@
                                     <td><?= $data->stocks ?></td>
                                     <td><?= $data->warehouse_code ?></td>
                                     <td><?= $data->location ?></td>
+                                    <td></td>
+                                    <td></td>
                                     <td>
                                         <!-- <button type="button" class="btn btn-warning btn-sm"
                                             style="margin:0px; height:35px;" data-bs-toggle="modal"
@@ -81,8 +85,7 @@
                                                                 <label for="" class="col-sm-6 col-form-label">Item
                                                                     Name</label>
                                                                 <input type="text" class="form-control" id="name"
-                                                                    name="name" value="<?= $data->name ?>"
-                                                                    required>
+                                                                    name="name" value="<?= $data->name ?>" required>
                                                             </div>
                                                         </div>
                                                         <div class="row justify-content-center">
@@ -99,15 +102,14 @@
                                                                 <label for=""
                                                                     class="col-sm-6 col-form-label">Stoks</label>
                                                                 <input type="text" class="form-control" id="stocks"
-                                                                    name="stocks" value="<?=$data->stocks ?>"
-                                                                    readonly>
+                                                                    name="stocks" value="<?=$data->stocks ?>" readonly>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <label for=""
                                                                     class="col-sm-6 col-form-label">Warehouse</label>
-                                                                <input type="text" class="form-control" id="warehouse_code"
-                                                                    name="warehouse_code" value="<?=$data->warehouse_code ?>"
-                                                                    readonly>
+                                                                <input type="text" class="form-control"
+                                                                    id="warehouse_code" name="warehouse_code"
+                                                                    value="<?=$data->warehouse_code ?>" readonly>
                                                             </div>
                                                         </div>
                                                         <div class="row justify-content-center">

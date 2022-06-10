@@ -55,9 +55,20 @@
                                         </option>
                                         <?php $i++; } ?>
                                     </select>
+
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="" class="col-sm-6 col-form-label">Location</label>
+                                    <input type="text" class="form-control" id="location" name="location" required
+                                        autocomplete="off">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Equipment</label>
+                                    <input type="text" class="form-control" id="location" name="location" required
+                                        autocomplete="off">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Status</label>
                                     <input type="text" class="form-control" id="location" name="location" required
                                         autocomplete="off">
                                 </div>
