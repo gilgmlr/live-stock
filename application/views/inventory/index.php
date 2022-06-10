@@ -36,8 +36,8 @@
                                     foreach ($stock as $data) { 
                                 ?>
 
-                                <tr>
-                                    <td><?= $i ?></td>
+                                <tr id="id-<?= $i ?>">
+                                    <td> <?= $i ?></td>
                                     <td><?= $data->item_code ?></td>
                                     <td><?= $data->name ?></td>
                                     <td><?= $data->specification ?></td>
@@ -46,7 +46,11 @@
                                     <td><?= $data->warehouse_code ?></td>
                                     <td><?= $data->location ?></td>
                                     <td></td>
-                                    <td></td>
+                                    <td>
+                                        <span onclick="myFunction(<?= $i ?>)" class="material-symbols-outlined">
+                                            report
+                                        </span>
+                                    </td>
                                     <td>
                                         <!-- <button type="button" class="btn btn-warning btn-sm"
                                             style="margin:0px; height:35px;" data-bs-toggle="modal"
@@ -166,6 +170,11 @@
 $(document).ready(function() {
     $('#warehouse').DataTable();
 });
+</script>
+<script>
+function myFunction(i) {
+    document.getElementById("id-" + i).style.backgroundColor = "red";
+}
 </script>
 
 </html>
