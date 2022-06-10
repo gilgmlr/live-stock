@@ -17,7 +17,7 @@
                         <th>Loan Date</th>
                         <th> Return Date</th>
                         <th> Vendor Name</th>
-                        <th>Action</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,8 +30,8 @@
                         <td></td>
                         <td></td>
                         <td>
-                            <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px;"
-                                data-bs-toggle="modal" data-bs-target="#cllending">Closed</button>
+                            <!-- <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px;"
+                                data-bs-toggle="modal" data-bs-target="#cllending">Closed</button> -->
                         </td>
                     </tr>
                 </tbody>
@@ -41,7 +41,7 @@
 </div>
 
 <!-- MODAL Closed Lending -->
-<div class="modal fade" id="cllending" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="cllending" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:80%>
         <div class="modal-content">
             <div class="modal-header" style="background-color: #563d7c">
@@ -116,7 +116,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- End Modal -->
 </div>
 
