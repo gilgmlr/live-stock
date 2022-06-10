@@ -14,12 +14,16 @@
                         <th>Item Code</th>
                         <th>Item Name</th>
                         <th>Qty</th>
-                        <th>Date</th>
+                        <th>Loan Date</th>
+                        <th> Return Date</th>
+                        <th> Vendor Name</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <td></td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -35,6 +39,85 @@
         </div>
     </div>
 </div>
+
+<!-- MODAL Closed Lending -->
+<div class="modal fade" id="cllending" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:80%>
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #563d7c">
+                <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Lending Return
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="" class="col-sm-6 col-form-label">Lending No</label>
+                        <input type="text" class="form-control" id="received_code" name="received_code" required
+                            autocomplete="off">
+                        <label for="" class="col-sm-6 col-form-label">Return Date</label>
+                        <input type="date" class="form-control" id="arrival_date" name="arrival_date" required>
+                        <label for="" class="col-sm-6 col-form-label">Item Name</label>
+                        <input type="text" class="form-control" id="po_number" name="po_number" required
+                            autocomplete="off">
+                        <label for="" class="col-sm-6 col-form-label" style="width: 100px;">Vendor
+                            Name</label>
+                        <input type="text" class="form-control" id="vendor_name" name="vendor_name" required
+                            autocomplete="off">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="" class="col-sm-6 col-form-label">Item Code</label>
+                        <select class="form-select form-control" aria-label=".form-select-lg example" id="item_code"
+                            name="item_code" required>
+                            <option selected>-- Select --</option>
+                            <?php foreach ($items as $data) { ?>
+                            <option value="<?= $data->item_code ?>"><?= $data->item_code ?> |
+                                <?= $data->name ?>
+                            </option>
+                            <?php $i++; } ?>
+                        </select>
+                        <label for="" class="col-sm-6 col-form-label">Qty</label>
+                        <input type="text" class="form-control" id="qty" name="qty" required autocomplete="off">
+                        <label for="" class="col-sm-6 col-form-label">UoM</label>
+                        <select class="form-select form-control" aria-label=".form-select-lg example" id="uom"
+                            name="uom" required>
+                            <option selected>-- Select --</option>
+                            <?php foreach ($uom as $data) { ?>
+                            <option value="<?= $data->uom_code ?>"><?= $data->uom_code ?> -
+                                <?= $data->uom_name ?>
+                            </option>
+                            <?php $i++; } ?>
+                        </select>
+
+                        <div class="row">
+
+                            <label for="" class="col-sm-6 col-form-label">WH</label>
+                            <select class="form-select form-control" aria-label=".form-select-lg example"
+                                id="warehouse_code" name="warehouse_code" required>
+                                <option selected>-- Select --</option>
+                                <?php foreach ($warehouse as $data) { ?>
+                                <option value="<?= $data->warehouse_code ?>">
+                                    <?= $data->warehouse_code ?>
+                                </option>
+                                <?php $i++; } ?>
+                            </select>
+
+
+                            <label for="" class="col-sm-6 col-form-label">Location</label>
+                            <input type="text" class="form-control" id="location" name="location" required
+                                autocomplete="off">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
 </div>
 
 
