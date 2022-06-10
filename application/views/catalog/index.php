@@ -12,7 +12,7 @@
                 </div>
             </form>
 
-            <div class="d-flex align-content-start flex-wrap" style="margin-top: 0;">
+            <div class="container d-flex align-content-start flex-wrap" style="margin-top: 0;">
                 <?php
                     foreach ($items as $data) { 
                 ?>
@@ -51,7 +51,7 @@
                                         </div>
                                         <div class="col">
                                             <div class="cards shadow p-3 mb-5 bg-white rounded">
-                                                <div class="card-bodys">
+                                                <div class="card-body">
                                                     Code : <?= $data->item_code ?><br>
                                                     Name : <?= $data->name ?><br>
                                                     Specification: <?= $data->specification ?><br>
