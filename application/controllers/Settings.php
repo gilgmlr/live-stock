@@ -7,6 +7,7 @@ class Settings extends CI_Controller
         parent::__construct();
 
         $this->load->model('M_CRUD');
+        $this->load->helper('download');
 		$this->load->library(array('form_validation', 'upload', 'excel'));
     }
 
@@ -222,4 +223,9 @@ class Settings extends CI_Controller
         $this->session->set_flashdata('flash', 'Account ' . $nip . ' Deleted!');
 		redirect('settings/view_table_user');
     }
+
+    public function download(){	
+        $name = $this->input->get('name');
+		force_download('assets/excel/'. $name . '.xlsx',NULL);
+	}	
 }

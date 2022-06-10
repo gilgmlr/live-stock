@@ -123,7 +123,7 @@
                         <div class="modal-body">
 
                             <div class="col">
-                                <a href="#" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=User_Template" class="link-primary">Download Template</a>
                             </div>
                             <div class="col">
                                 <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
@@ -157,7 +157,7 @@
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
-                                <a href="#" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=Items_Template" class="link-primary">Download Template</a>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="items" hidden>
@@ -185,7 +185,7 @@
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
-                                <a href="#" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=Warehouse_Template" class="link-primary">Download Template</a>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="warehouse" hidden>
@@ -213,7 +213,7 @@
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
-                                <a href="#" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=Issue_Template" class="link-primary">Download Template</a>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="issued" hidden>
@@ -241,7 +241,7 @@
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
-                                <a href="#" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=Receive_Template" class="link-primary">Download Template</a>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="received" hidden>
@@ -269,7 +269,7 @@
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
-                                <a href="#" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=Inventory_Template" class="link-primary">Download Template</a>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="inventory" hidden>
@@ -297,7 +297,7 @@
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
-                                <a href="#" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=UoM_Template" class="link-primary">Download Template</a>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="uom" hidden>
@@ -325,7 +325,7 @@
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
-                                <a href="#" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=Department_Template" class="link-primary">Download Template</a>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="department" hidden>
