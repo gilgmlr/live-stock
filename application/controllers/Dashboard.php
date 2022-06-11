@@ -14,10 +14,10 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
-        $data['total_items'] = $this->M_CRUD->get_total('items');
-        $data['total_received'] = $this->M_CRUD->get_total('received');
-        $data['total_issue'] = $this->M_CRUD->get_total('issued');
-        $data['total_lending'] = $this->M_CRUD->get_total('lending');
+        $data['total_items'] = $this->M_CRUD->count_row('items');
+        $data['total_received'] = $this->M_CRUD->count_row('received');
+        $data['total_issue'] = $this->M_CRUD->count_row('issued');
+        $data['total_lending'] = $this->M_CRUD->count_row('lending');
         $data['last_update'] = $this->M_CRUD->get_data_sort('history', 'id', 'desc')->result();
         $data['judul'] = 'Dashboard';
 

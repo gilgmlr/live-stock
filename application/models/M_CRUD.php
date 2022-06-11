@@ -6,6 +6,11 @@ class M_CRUD extends CI_Model
 		return $this->db->get($table);
 	}
 
+	function get_data_limit($table, $limit, $start)
+	{
+		return $this->db->get($table, $limit, $start);
+	}
+
 	function get_data_where($table, $where){		
 		return $this->db->get_where($table, $where);
 	}
@@ -78,7 +83,7 @@ class M_CRUD extends CI_Model
 		$this->db->update($table,$data);
 	}
 
-	function get_total($table) {
+	function count_row($table) {
 		return $this->db->get($table)->num_rows();
 	}
 }
