@@ -12,42 +12,27 @@ class Catalog extends CI_Controller
 
     public function index()
     {
-        // Pagination
-        $config['base_url'] = base_url().'catalog/index';
-        $config['total_rows'] = $this->M_CRUD->count_row('items');
-        $config['per_page'] = 18;
+        // Ambil data keyword search
+        if ($this->input->post('submit')) {
+            $data['keyword'] = $this->input->post('keyword');
+            $this->session->set_userdata('keyword', $data['keyword']);
+        } else {
+            $data['keyword'] = $this->session->userdata('keyword');;
+        }
 
-        // Styling
-        $config['full_tag_open'] = '<nav><ul class="pagination justify-content-center">';
-        $config['full_tag_close'] = '</ul></nav>';
-
-        $config['first_tag_open'] = '<li class="page-item">';
-        $config['first_tag_close'] = '</li>';
-
-        $config['last_tag_open'] = '<li class="page-item">';
-        $config['last_tag_close'] = '</li>';
-
-        $config['next_tag_open'] = '<li class="page-item">';
-        $config['next_tag_close'] = '</li>';
-        
-        $config['prev_tag_open'] = '<li class="page-item">';
-        $config['prev_tag_close'] = '</li>';
-
-        $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
-        $config['cur_tag_close'] = '</a></li>';
-        
-        $config['num_tag_open'] = '<li class="page-item">';
-        $config['num_tag_close'] = '</li>';
-
-        $config['attributes'] = array('class' => 'page-link');
+        // config
+        $this->db->like('name', $data['keyword'])->or_like('item_code', $data['keyword'])->or_like('specification', $data['keyword']);
+        $this->db->from('items');
+        $config['total_rows'] = $this->db->count_all_results();
+        $data['total_rows'] = $config['total_rows'];
+        $config['per_page'] = 12;
 
         // Initialize
         $this->pagination->initialize($config);
 
-
         $data['judul'] = 'Catalog';
         $data['start'] = $this->uri->segment(3);
-        $data['items'] = $this->M_CRUD->get_data_limit('items', $config['per_page'], $data['start'])->result();
+        $data['items'] = $this->M_CRUD->get_data_limit('items', $config['per_page'], $data['start'], $data['keyword'])->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('catalog/index', $data);

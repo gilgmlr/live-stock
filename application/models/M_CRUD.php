@@ -6,8 +6,11 @@ class M_CRUD extends CI_Model
 		return $this->db->get($table);
 	}
 
-	function get_data_limit($table, $limit, $start)
+	function get_data_limit($table, $limit, $start, $keyword = null)
 	{
+		if ($keyword) {
+			$this->db->like('name', $keyword)->or_like('item_code', $keyword)->or_like('specification', $keyword);
+		}
 		return $this->db->get($table, $limit, $start);
 	}
 

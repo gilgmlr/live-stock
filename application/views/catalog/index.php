@@ -1,12 +1,14 @@
         <div class="container" style="margin-top: 80px;">
-            <form action="<?=base_url() ?>catalog/view_result" method="POST">
+            <form action="<?=base_url('catalog') ?>" method="POST" autocomplete="off">
                 <div class="row justify-content-center">
                     <div class="col-sm-8" style="margin-top: 50px;">
                         <div class="input-group sm-3">
-                            <input type="text" class="form-control" placeholder="search" aria-label="search"
-                                aria-describedby="button-addon2" id="key" name="key">
-                            <button class="btn btn-warning" type="submit"
-                                style="padding-top:17px; margin:0px; height:45px;">Search</button>
+                            <input type="text" class="form-control" placeholder="search" id="keyword" name="keyword">
+                            <input class="btn btn-warning" type="submit"
+                                style="padding-top:17px; margin:0px; height:45px;" name="submit">
+                        </div>
+                        <div>
+                        <b> Result: <?= $total_rows ?> Items </b>
                         </div>
                     </div>
                 </div>

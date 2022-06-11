@@ -163,12 +163,15 @@ class Settings extends CI_Controller
                                 'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
                             );
                         } else if ($table == 'items') {
-                            $data[] = array(
-                                'item_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
-                                'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
-                                'specification' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
-                                'image' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
-                            );
+                            //$item = $this->db->get_where('items', ['item_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue()])->row_array();
+                            //if ($item == null) {
+                                $data[] = array(
+                                    'item_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
+                                    'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                                    'specification' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                                    'image' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                                );
+                            // }
                         }
                     }
                 } 
@@ -224,7 +227,8 @@ class Settings extends CI_Controller
 		redirect('settings/view_table_user');
     }
 
-    public function download(){	
+    public function download()
+    {	
         $name = $this->input->get('name');
 		force_download('assets/excel/'. $name . '.xlsx',NULL);
 	}	
