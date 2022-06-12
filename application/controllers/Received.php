@@ -132,6 +132,11 @@ class Received extends CI_Controller
 
     public function view_lending()
     {
+        $lending_no = $this->input->get('lending_no');
+        
+        //cari lending
+        $data['lending'] = $this->db->get_where('lending', ['lending_no' => $lending_no])->row_array();
+
         $data['judul'] = 'Received/Lending';
         $data['uom'] = $this->M_CRUD->get_data('uom')->result();
         $data['items'] = $this->M_CRUD->get_data('items')->result();
@@ -141,5 +146,39 @@ class Received extends CI_Controller
         $this->load->view('received/lending');
     }
 
+    public function returnLending()
+    {        
+        $data = array(
+            'lending_no' => $this->input->post('lending_no'),
+            'lending_date' => $this->input->post('lending_date'),
+            'item_code' => $this->input->post('item_code'),
+            'lending_qty' => $this->input->post('lending_qty'),
+            'uom_code' => $this->input->post('uom_code'),
+            'borrower_name' => $this->input->post('borrower_name'),
+            'dept_code' => $this->input->post('dept_code'),
+            'lending_note' => $this->input->post('lending_date'),
+            'return_note' => $this->input->post('return_note'),
+            'return_qty' => $this->input->post('return_qty'),
+            'return_date' => $this->input->post('return_date'),
+            'entered_nip' => $this->input->post('entered_nip'),
+            'warehouse_code' => $this->input->post('warehouse_code'),
+            'status' => 'close',
+        );
+
+        $this->M_CRUD->update_data('lending', $data, ['lending_no' => $this->input->post('lending_no')]);
+
+        //update inventory
+        $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
+        $data = array(
+            'item_code' => $item['item_code'],
+            'location' => $item['location'],
+            'stocks' => $item['stocks'] + $this->input->post('return_qty'),
+            'uom_code' => $item['uom_code'],
+            'warehouse_code' => $item['warehouse_code'],
+        );
+        $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
+        
+        redirect('lending');
+    }
 
 }

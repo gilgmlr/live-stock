@@ -38,8 +38,13 @@
                         <td><?= $data->dept_code ?></td>
                         <td><?= $data->status ?></td>
                         <td>
-                            <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px;"
-                                data-bs-toggle="modal" data-bs-target="#cllending">Closed</button>
+                            <?php if ($data->status == "open") { ?>
+                            <a href="<?= base_url() ?>received/view_lending?lending_no=<?= $data->lending_no ?>" >
+                            <button type="submit" class="btn btn-warning btn-sm" style="margin:0px; height:35px;" >Closed</button>
+                            </a>
+                            <?php ;} else { ?>
+                                -
+                            <?php ;} ?>
                         </td>
                     </tr>
                     <?php
