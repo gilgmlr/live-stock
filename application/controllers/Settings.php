@@ -32,9 +32,10 @@ class Settings extends CI_Controller
     public function view_add_account()
     {
         $data['judul'] = 'Settings/add_account';
+        $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
 
         $this->load->view('template/header', $data);
-        $this->load->view('settings/add_account');
+        $this->load->view('settings/add_account', $data);
     }
 
     public function view_import_data()
@@ -69,6 +70,7 @@ class Settings extends CI_Controller
                 'nip' => $this->input->post('nip'),
                 'name' => $this->input->post('name'),
                 'password' => $default_password,
+                'warehouse_code' => $this->input->post('warehouse_code'),
                 'role' => $this->input->post('role'),
             );
     
@@ -149,7 +151,8 @@ class Settings extends CI_Controller
                             $data[] = array(
                                 'nip' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
                                 'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
-                                'password' => password_hash($worksheet->getCellByColumnAndRow(2, $row)->getValue(), PASSWORD_DEFAULT),
+                                'password' => password_hash($worksheet->getCellByColumnAndRow(0, $row)->getValue(), PASSWORD_DEFAULT),
+                                'warehouse_code' => $worksheet->getCellByColumnAndRow(2, $row)->getValue(),
                                 'role' => $worksheet->getCellByColumnAndRow(3, $row)->getValue(),
                             );
                         } else if ($table == 'uom') {

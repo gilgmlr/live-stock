@@ -13,7 +13,7 @@
                 <!--  ISI DISINI  -->
                 <div class="row">
                     <div class="col">
-                        <table id="warehouse" class="table table-hover">
+                        <table id="warehouse" class="table table-striped table-hover">
                             <thead class="text-primary">
                                 <tr>
                                     <th>No</th>

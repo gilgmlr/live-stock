@@ -43,7 +43,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
+        <!-- <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="<?php echo base_url() . "received/view_lending" ?>">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
@@ -54,7 +54,7 @@
                     </div>
                 </div>
             </a>
-        </div>
+        </div> -->
     </div>
 </div>
 

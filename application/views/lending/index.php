@@ -9,33 +9,42 @@
             <!-- <p class="category">All Warehouse</p> -->
         </div>
         <div class="card-content table-responsive">
-            <table id="lending" class="table table-hover">
+            <table id="lending" class="table table-striped table-hover">
                 <thead class="text-primary">
                     <tr>
                         <th>No</th>
+                        <th>Lending No</th>
                         <th>Item Code</th>
-                        <th>Item Name</th>
                         <th>Qty</th>
-                        <th>Loan Date</th>
-                        <th> Return Date</th>
-                        <th> Vendor Name</th>
+                        <th>UoM</th>
+                        <th>Borrower</th>
+                        <th>Dept</th>
                         <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                <?php
+                                    $i = 1;
+                                    foreach ($lending as $data) { 
+                                ?>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><?= $i ?></td>
+                        <td><?= $data->lending_no ?></td>
+                        <td><?= $data->item_code ?></td>
+                        <td><?= $data->lending_qty ?></td>
+                        <td><?= $data->uom_code ?></td>
+                        <td><?= $data->borrower_name ?></td>
+                        <td><?= $data->dept_code ?></td>
+                        <td><?= $data->status ?></td>
                         <td>
-                            <!-- <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px;"
-                                data-bs-toggle="modal" data-bs-target="#cllending">Closed</button> -->
+                            <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px;"
+                                data-bs-toggle="modal" data-bs-target="#cllending">Closed</button>
                         </td>
                     </tr>
+                    <?php
+                            $i++;
+                            } ?>
                 </tbody>
             </table>
         </div>

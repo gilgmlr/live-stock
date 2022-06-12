@@ -6,13 +6,13 @@ class Lending extends CI_Controller
     {
         parent::__construct();
 
-        //$this->load->model('M_Stock');
+        $this->load->model('M_CRUD');
     }
 
     public function index()
     {
         // $data['jumlahWarehouse'] = $this->M_Dashboard->countRowsWarehouse();
-        // $data['warehouse'] = $this->M_Dashboard->getDataWarehouse()->result();
+        $data['lending'] = $this->M_CRUD->get_data('lending')->result();
         $data['judul'] = 'Lending';
 
         $this->load->view('template/header', $data);

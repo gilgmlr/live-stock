@@ -18,7 +18,8 @@
                     <tr>
                         <th>NIP</th>
                         <th>Name</th>
-                        <th>Role</th>
+                        <th>Warehouse Location</th>
+                        <th>Role</th>                        
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -30,6 +31,7 @@
                     <tr>
                         <td><?= $data->nip ?></td>
                         <td><?= $data->name ?></td>
+                        <td><?= $data->warehouse_code ?></td>
                         <td><?= $data->role ?></td>
                         <td>
                             <div class="container px-1">

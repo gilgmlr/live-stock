@@ -99,8 +99,60 @@ class Issue extends CI_Controller
     public function view_lending()
     {
         $data['judul'] = 'Issue/Lending';
+        $data['items'] = $this->M_CRUD->get_data('items')->result();
+        $data['uom'] = $this->M_CRUD->get_data('uom')->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('Issue/lending');
+    }
+
+    public function addLending()
+    {
+        $data = array(
+            'lending_no' => $this->input->post('lending_no'),
+            'lending_date' => $this->input->post('lending_date'),
+            'item_code' => $this->input->post('item_code'),
+            'lending_qty' => $this->input->post('lending_qty'),
+            'uom_code' => $this->input->post('uom_code'),
+            'borrower_name' => $this->input->post('borrower_name'),
+            'dept_code' => $this->input->post('dept_code'),
+            'lending_note' => $this->input->post('lending_date'),
+            'return_note' => "",
+            'return_qty' => "",
+            'return_date' => "",
+            'entered_nip' => $this->input->post('entered_nip'),
+            'warehouse_code' => $this->input->post('warehouse_code'),
+            'status' => 'open',
+            
+        );
+
+        $this->M_CRUD->input_data('lending', $data);
+
+
+        //cari items
+        $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
+        $data = array(
+            'item_code' => $item['item_code'],
+            'location' => $item['location'],
+            'stocks' => $item['stocks'] - $this->input->post('lending_qty'),
+            'uom_code' => $item['uom_code'],
+            'warehouse_code' => $item['warehouse_code'],
+        );
+        $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
+
+        //add history
+        date_default_timezone_set('Asia/Jakarta');
+        $history = array(
+            'date' => date("Y-m-d h:m:s A"),
+            'doc_num' => $this->input->post('lending_no'),
+            'description' => $this->input->post('desc'),
+        );
+
+        $this->M_CRUD->input_data('history', $history);
+
+        $this->session->set_flashdata('flash', 'Data Lending Saved!');
+
+        // var_dump($item); die;
+        redirect("issue");
     }
 }

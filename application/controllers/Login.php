@@ -33,6 +33,7 @@ class Login extends CI_Controller {
 					$data = array (
 						'nip' => $user['nip'],
 						'name' => $user['name'],
+						'warehouse' => $user['warehouse_code'],
 						'role' => $user['role']
 					);
 					$this->session->set_userdata($data);

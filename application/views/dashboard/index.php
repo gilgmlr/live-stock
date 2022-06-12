@@ -104,7 +104,7 @@
                     <!-- <p class="category">All Warehouse</p> -->
                 </div>
                 <div class="card-content table-responsive">
-                    <table id="lending" class="table table-hover">
+                    <table id="lending" class="table table-striped table-hover">
                         <thead class="text-primary">
                             <tr>
                                 <th>No</th>
@@ -132,9 +132,9 @@
                                     <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "2") { ?>
                                     <a href="<?=base_url() . 'received/view_lending'?>" type="button"
                                         class="btn btn-danger"
-                                        style="padding-top:15px; margin:0px; height:45px;">Return</a>
+                                        style="margin:0px; height:35px; width:55px">Return</a>
                                     <?php ;} else { ?>
-                                        <a href="#" type="button" class="btn btn-danger" style="padding-top:15px; margin:0px; height:45px;" aria-disabled="true">Return</a>
+                                        <a href="#" type="button" class="btn btn-danger" style="margin:0px; height:35px; width:55px" aria-disabled="true">Return</a>
                                     <?php ;} ?>
 
                                 </td>

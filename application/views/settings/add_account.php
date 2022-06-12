@@ -30,6 +30,18 @@
 
                         <div class="input mt-2">
                             <i class="fas fa-users fa-lg me-3 fa-fw"></i>
+                            <label class="form-label" style="margin-top: 8px;" for="form3Example1c">Warehouse Location</label>
+                            <select class="form-select form-control text-input" aria-label=".form-select-lg example"
+                                id="role" name="warehouse_code" required>
+                                <option selected>-- select --</option>
+                                <?php foreach ($warehouse as $data) { ?>
+                                <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code . " " . $data->warehouse_name  ?></option>
+                                <?php $i++; } ?>
+                            </select>
+                        </div>
+
+                        <div class="input mt-2">
+                            <i class="fas fa-users fa-lg me-3 fa-fw"></i>
                             <label class="form-label" style="margin-top: 8px;" for="form3Example1c">Role</label>
                             <select class="form-select form-control text-input" aria-label=".form-select-lg example"
                                 id="role" name="role" required>
