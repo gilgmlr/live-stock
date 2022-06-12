@@ -108,31 +108,31 @@
                         <thead class="text-primary">
                             <tr>
                                 <th>No</th>
-                                <th>Vendor Name</th>
-                                <th>Item Code</th>
-                                <th>Item Name</th>
-                                <th>Qty</th>
+                                <th>Lending No</th>
                                 <th>Date</th>
+                                <th>Item Code</th>
+                                <th>Qty</th>
+                                <th>Dept</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                                 $i = 1;
-                                foreach ($warehouse as $data) { 
+                                foreach ($lending as $data) { 
                             ?>
                             <tr>
-                                <td><?php echo $i ?></td>
-                                <td></td>
-                                <td><?php echo $data->warehouse_code ?></td>
-                                <td><?php echo $data->warehouse_name ?></td>
-                                <td>-</td>
-                                <td>-</td>
+                            <td><?= $i ?></td>
+                            <td><?= $data->lending_no ?></td>
+                            <td><?= $data->lending_date ?></td>
+                            <td><?= $data->item_code ?></td>
+                            <td><?= $data->lending_qty ?></td>
+                            <td><?= $data->dept_code ?></td>
                                 <td>
                                     <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "2") { ?>
-                                    <a href="<?=base_url() . 'received/view_lending'?>" type="button"
-                                        class="btn btn-danger"
-                                        style="margin:0px; height:35px; width:55px">Return</a>
+                                        <a href="<?= base_url() ?>received/view_lending?lending_no=<?= $data->lending_no ?>" >
+                                        <button type="submit" class="btn btn-warning btn-sm" style="margin:0px; height:35px;" >Closed</button>
+                                        </a>
                                     <?php ;} else { ?>
                                         <a href="#" type="button" class="btn btn-danger" style="margin:0px; height:35px; width:55px" aria-disabled="true">Return</a>
                                     <?php ;} ?>

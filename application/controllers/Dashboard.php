@@ -14,6 +14,7 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
+        $data['lending'] = $this->M_CRUD->get_data_where('lending', ['status' => 'open'], 'lending_date', 'asc')->result();
         $data['total_items'] = $this->M_CRUD->count_row('items');
         $data['total_received'] = $this->M_CRUD->count_row('received');
         $data['total_issue'] = $this->M_CRUD->count_row('issued');

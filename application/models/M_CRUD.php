@@ -14,7 +14,10 @@ class M_CRUD extends CI_Model
 		return $this->db->get($table, $limit, $start);
 	}
 
-	function get_data_where($table, $where){		
+	function get_data_where($table, $where, $orderby = null, $sortKeys = null){		
+		if ($orderby) {
+			$this->db->order_by($orderby, $sortKeys);
+		}
 		return $this->db->get_where($table, $where);
 	}
 
