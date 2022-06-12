@@ -22,11 +22,14 @@
                 <div class="col-md-2 px-2">
                     <a href="" data-bs-toggle="modal" data-bs-target="#detail<?= $data->item_code ?>">
                         <div class="card shadow p-2 mb-2 bg-white rounded">
-                            <img src="<?= base_url() . 'assets/catalog/' . $data->image ?>" class="img-fluid" alt="Not Found!"
-                                style="height: 194px; width:259px">
+                            <img src="<?= base_url() . 'assets/catalog/'. $data->image?>" class="img-fluid" style="height: 170px; width:175px; object-fit: contain">
                             <div class="card-body">
                                 <p class="card-text" style="font-size:16px;"><b><?= $data->item_code ?></b></p>
-                                <p class="card-text" style="font-size:12px;"><?= $data->name ?></p>
+                                <?php if (strlen($data->name) >= 18) { ?>
+                                <p class="card-text" style="font-size:12px;"><?= substr($data->name, 0, 16) . ' ...' ?></p>
+                                <?php ;} else { ?> 
+                                    <p class="card-text" style="font-size:12px;"><?= $data->name ?></p>
+                                <?php ;}?>
                             </div>
                         </div>
                     </a>
