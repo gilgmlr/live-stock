@@ -37,6 +37,7 @@ class Login extends CI_Controller {
 					);
 					$this->session->set_userdata($data);
 
+					$this->session->set_userdata('login', true);
 					$this->session->set_flashdata('flash', 'Welcome ' . $user['name']);
 					redirect('dashboard');
 				} else {

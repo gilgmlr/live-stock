@@ -13,7 +13,7 @@ class Catalog extends CI_Controller
     public function index()
     {
         // Ambil data keyword search
-        if ($this->input->post('submit')) {
+        if ($this->input->post('search')) {
             $data['keyword'] = $this->input->post('keyword');
             $this->session->set_userdata('keyword', $data['keyword']);
         } else {

@@ -35,8 +35,8 @@
                                 id="role" name="role" required>
                                 <option selected>-- select --</option>
                                 <option value="1">1 - All Access</option>
-                                <option value="1">2 - Admin Received</option>
-                                <option value="1">3 - Admin Issued</option>
+                                <option value="2">2 - Admin Received</option>
+                                <option value="3">3 - Admin Issued</option>
                             </select>
                         </div>
                     </div>

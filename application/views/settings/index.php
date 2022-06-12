@@ -8,6 +8,7 @@
 	endif; ?>
 
     <div class="row justify-content-center">
+        <?php if($this->session->userdata('role') == "1") { ?>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="<?php echo base_url() . "settings/view_add_account" ?>">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
@@ -32,6 +33,8 @@
                 </div>
             </a>
         </div>
+        <?php ;} ?>
+        
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="<?php echo base_url() . "settings/view_import_data" ?>">
                 <div class="card shadow p-2 mb-5 bg-white rounded">

@@ -7,6 +7,8 @@
         </div>
         <?php $this->session->unset_userdata('flash');
 	endif; ?>
+
+    <?php if($this->session->userdata('role') == "1") { ?>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal" data-bs-target="#ImpAcc">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
@@ -43,6 +45,9 @@
                 </div>
             </a>
         </div>
+        <?php ;} ?>
+
+        <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "3") { ?>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal" data-bs-target="#ImpIssue">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
@@ -55,6 +60,9 @@
                 </div>
             </a>
         </div>
+        <?php ;} ?>
+
+        <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "2") { ?>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal" data-bs-target="#ImpReceived">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
@@ -67,6 +75,8 @@
                 </div>
             </a>
         </div>
+        <?php ;} ?>
+
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal" data-bs-target="#ImpInventory">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
@@ -79,6 +89,8 @@
                 </div>
             </a>
         </div>
+
+        <?php if($this->session->userdata('role') == "1") { ?>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal" data-bs-target="#ImpUom">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
@@ -103,12 +115,8 @@
                 </div>
             </a>
         </div>
+        <?php ;} ?>
 
-        <!-- <form action="<?php echo base_url();?>settings/excel" method="post" enctype="multipart/form-data">
-            Upload excel file :
-            <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
-            <input type="submit" name="submit" value="Upload" />
-        </form> -->
 
         <!-- MODAL Accounts -->
         <div class="modal fade" id="ImpAcc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

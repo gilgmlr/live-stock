@@ -18,7 +18,7 @@
  $config['prev_tag_open'] = '<li class="page-item">';
  $config['prev_tag_close'] = '</li>';
 
- $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
+ $config['cur_tag_open'] = '<li class="page-item active" aria-current="page" style="border:0"><a class="page-link" href="#">';
  $config['cur_tag_close'] = '</a></li>';
  
  $config['num_tag_open'] = '<li class="page-item">';

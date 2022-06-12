@@ -3,9 +3,8 @@
                 <div class="row justify-content-center">
                     <div class="col-sm-8" style="margin-top: 50px;">
                         <div class="input-group sm-3">
-                            <input type="text" class="form-control" placeholder="search" id="keyword" name="keyword">
-                            <input class="btn btn-warning" type="submit"
-                                style="padding-top:17px; margin:0px; height:45px;" name="submit">
+                            <input type="text submit" class="form-control" placeholder="search" id="keyword" name="keyword">
+                            <input type="submit" class="btn btn-warning" style="padding-top:17px; margin:0px; height:45px;" name="search">
                         </div>
                         <div>
                         <b> Result: <?= $total_rows ?> Items </b>
