@@ -137,6 +137,8 @@ class Issue extends CI_Controller
             'stocks' => $item['stocks'] - $this->input->post('lending_qty'),
             'uom_code' => $item['uom_code'],
             'warehouse_code' => $item['warehouse_code'],
+            'equipment' => $item['equipment'],
+            'status' => $item['status'],
         );
         $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
 

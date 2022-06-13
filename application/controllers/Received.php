@@ -152,11 +152,11 @@ class Received extends CI_Controller
 
     public function returnLending()
     {        
-        $data = array(
+        $lending = array(
             'lending_no' => $this->input->post('lending_no'),
             'lending_date' => $this->input->post('lending_date'),
             'item_code' => $this->input->post('item_code'),
-            'lending_qty' => $this->input->post('lending_qty'),
+            'lending_qty' => $this->input->post('lending_qty') - $this->input->post('return_qty'),
             'uom_code' => $this->input->post('uom_code'),
             'borrower_name' => $this->input->post('borrower_name'),
             'dept_code' => $this->input->post('dept_code'),
@@ -166,10 +166,10 @@ class Received extends CI_Controller
             'return_date' => $this->input->post('return_date'),
             'entered_nip' => $this->input->post('entered_nip'),
             'warehouse_code' => $this->input->post('warehouse_code'),
-            'status' => 'close',
+            'status' => $this->input->post('status'),
         );
 
-        $this->M_CRUD->update_data('lending', $data, ['lending_no' => $this->input->post('lending_no')]);
+        $this->M_CRUD->update_data('lending', $lending, ['lending_no' => $this->input->post('lending_no')]);
 
         //update inventory
         $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
@@ -179,6 +179,8 @@ class Received extends CI_Controller
             'stocks' => $item['stocks'] + $this->input->post('return_qty'),
             'uom_code' => $item['uom_code'],
             'warehouse_code' => $item['warehouse_code'],
+            'equipment' => $item['equipment'],
+            'status' => $item['status'],
         );
         $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
         

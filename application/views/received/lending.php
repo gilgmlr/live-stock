@@ -21,8 +21,21 @@
                                 <textarea class="form-control" id="lending_tote" name="lending_note" rows="1" value="<?= $lending['lending_note'] ?>" readonly></textarea>
                                 <label for="" class="col-sm-6 col-form-label">Return Note</label>
                                 <textarea class="form-control" id="return_tote" name="return_note" rows="1"></textarea>
-                                <label for="" class="col-sm-6 col-form-label">Return Date</label>
-                                <input type="date" class="form-control" id="return_date" name="return_date" required>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label for="" class="col-sm-6 col-form-label">Return Date</label>
+                                        <input type="date" class="form-control" id="return_date" name="return_date" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="" class="col-sm-6 col-form-label">Status</label>
+                                        <select class="form-select form-control" aria-label=".form-select-lg example"
+                                            id="status" name="status" required>
+                                            <option value="open">Open</option>
+                                            <option value="close">Close</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-sm-6">
                                 <label for="" class="col-sm-6 col-form-label">Item Code</label>
