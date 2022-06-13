@@ -7,7 +7,7 @@
                 <h4 style="font-weight:bold;"> Form Lending</h4>
             </center>
             <div class=" card-body">
-                <form action="<?= base_url() ?>issue/addLending" method="POST"  autocomplete="off">
+                <form action="<?= base_url() ?>issue/addLending" method="POST" autocomplete="off">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-sm-6">
@@ -16,26 +16,26 @@
                                 <label for="" class="col-sm-6 col-form-label">Lending Date</label>
                                 <input type="date" class="form-control" id="lending_date" name="lending_date" required>
                                 <label for="" class="col-sm-6 col-form-label">Borrower Name</label>
-                                <input type="text" class="form-control" id="borrower_name" name="borrower_name" required>
+                                <input type="text" class="form-control" id="borrower_name" name="borrower_name"
+                                    required>
                                 <label for="" class="col-sm-6 col-form-label">Lending Note</label>
-                                <textarea class="form-control" id="lending_note" name="lending_note" rows="4"></textarea>
+                                <textarea class="form-control" id="lending_note" name="lending_note"
+                                    rows="4"></textarea>
                             </div>
                             <div class="col-sm-6">
                                 <label for="" class="col-sm-6 col-form-label">Item Code</label>
                                 <!-- <input type="text" class="form-control" id="item_code" name="item_code" required> -->
-                                <select class="form-select form-control" aria-label=".form-select-lg example" id="item_code"
-                                    name="item_code" required>
+                                <select class="form-select form-control" aria-label=".form-select-lg example"
+                                    id="item_code" name="item_code" required>
                                     <option selected>-- Select --</option>
                                     <?php foreach ($items as $data) { ?>
                                     <option value="<?= $data->item_code ?>"><?= $data->item_code ?> | <?= $data->name ?>
                                     </option>
                                     <?php $i++; } ?>
                                 </select>
-                                <label for="" class="col-sm-6 col-form-label">Lending Qty</label>
-                                <input type="text" class="form-control" id="lending_qty" name="lending_qty" required>
                                 <label for="" class="col-sm-6 col-form-label">UoM</label>
-                                <select class="form-select form-control" aria-label=".form-select-lg example" id="uom_code"
-                                    name="uom_code" required>
+                                <select class="form-select form-control" aria-label=".form-select-lg example"
+                                    id="uom_code" name="uom_code" required>
                                     <option selected>-- Select --</option>
                                     <?php foreach ($uom as $data) { ?>
                                     <option value="<?= $data->uom_code ?>"><?= $data->uom_code ?> -
@@ -43,20 +43,25 @@
                                     </option>
                                     <?php $i++; } ?>
                                 </select>
+                                <label for="" class="col-sm-6 col-form-label">Lending Qty</label>
+                                <input type="text" class="form-control" id="lending_qty" name="lending_qty" required>
                                 <label for="" class="col-sm-6 col-form-label">Department Code</label>
                                 <input type="text" class="form-control" id="dept_code" name="dept_code" required>
 
                                 <label for="" class="col-sm-6 col-form-label">Entered by</label>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="entered_nip" name="entered_nip" readonly value="<?= $this->session->userdata('nip'); ?>">
+                                        <input type="text" class="form-control" id="entered_nip" name="entered_nip"
+                                            readonly value="<?= $this->session->userdata('nip'); ?>">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="warehouse_code" name="warehouse_code" readonly value="<?= $this->session->userdata('warehouse'); ?>">
+                                        <input type="text" class="form-control" id="warehouse_code"
+                                            name="warehouse_code" readonly
+                                            value="<?= $this->session->userdata('warehouse'); ?>">
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                     <input type="text" class="form-control" id="desc" name="desc" value="Lending" hidden>

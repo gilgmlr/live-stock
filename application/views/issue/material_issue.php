@@ -51,20 +51,20 @@
                                 </option>
                                 <?php $i++; } ?>
                             </select>
-                            <label for="" class="col-sm-6 col-form-label">Warehouse Code</label>
-                            <select class="form-select form-control" aria-label=".form-select-lg example"
-                                id="warehouse_code" name="warehouse_code" required>
-                                <option selected>-- Select --</option>
-                                <?php foreach ($warehouse as $data) { ?>
-                                <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?></option>
-                                <?php $i++; } ?>
-                            </select>
                             <label for="" class="col-sm-6 col-form-label">UoM Code</label>
                             <select class="form-select form-control" aria-label=".form-select-lg example" id="uom_code"
                                 name="uom_code" required>
                                 <option selected>-- Select --</option>
                                 <?php foreach ($uom as $data) { ?>
                                 <option value="<?= $data->uom_code ?>"><?= $data->uom_name ?></option>
+                                <?php $i++; } ?>
+                            </select>
+                            <label for="" class="col-sm-6 col-form-label">Warehouse Code</label>
+                            <select class="form-select form-control" aria-label=".form-select-lg example"
+                                id="warehouse_code" name="warehouse_code" required>
+                                <option selected>-- Select --</option>
+                                <?php foreach ($warehouse as $data) { ?>
+                                <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?></option>
                                 <?php $i++; } ?>
                             </select>
                             <label for="" class="col-sm-6 col-form-label">Transaction Qty</label>
@@ -76,9 +76,6 @@
 
                             <label for="" class="col-sm-6 col-form-label">Reason</label>
                             <input type="text" class="form-control" id="reason_code" name="reason_code" required
-                                autocomplete="off">
-                            <label for="" class="col-sm-6 col-form-label">Desc</label>
-                            <input type="text" class="form-control" id="description" name="description" required
                                 autocomplete="off">
                             <label for="" class="col-sm-6 col-form-label">Create by</label>
                             <input type="text" class="form-control" id="create_by" name="create_by" required

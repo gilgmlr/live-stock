@@ -28,8 +28,6 @@
                                 </option>
                                 <?php $i++; } ?>
                             </select>
-                            <label for="" class="col-sm-6 col-form-label">Qty</label>
-                            <input type="text" class="form-control" id="qty" name="qty" required>
                             <label for="" class="col-sm-6 col-form-label">UoM</label>
                             <select class="form-select form-control" aria-label=".form-select-lg example" id="uom"
                                 name="uom" required>
@@ -39,7 +37,8 @@
                                 </option>
                                 <?php $i++; } ?>
                             </select>
-
+                            <label for="" class="col-sm-6 col-form-label">Qty</label>
+                            <input type="text" class="form-control" id="qty" name="qty" required>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="" class="col-sm-6 col-form-label">WH</label>
@@ -62,7 +61,8 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="" class="col-sm-6 col-form-label">Status</label>
-                                    <input type="text" class="form-control" id="status" name="status" value="Can Use" readonly>
+                                    <input type="text" class="form-control" id="status" name="status" value="Can Use"
+                                        readonly>
                                 </div>
                             </div>
                         </div>
