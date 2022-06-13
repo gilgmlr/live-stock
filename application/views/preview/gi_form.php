@@ -50,10 +50,17 @@
 
     <div class="container" style="margin-top: 10px;">
         <div class="row ">
+            <div class="col">
+                <button type="button" class="btn btn-outline-success">Save</button>
+            </div>
             <div class="col-lg-12 col-md-12">
                 <div class="cards shadow p-3 mb-5 bg-white rounded" style="min-height: 400px;">
                     <div class="card-header card-header-text" style="background-color:#fff">
                         <h4 class="card-title">Preview</h4>
+                        <div class="row">
+                            <button type="button" class="btn btn-outline-success">Save</button>
+
+                        </div>
                         <!-- <p class="category">All Warehouse</p> -->
                     </div>
                     <div class="card-content table-responsive">
@@ -105,7 +112,7 @@
                     <h4 class="alert-heading">Confirmation Alert!</h4>
                     <p>Are you sure want to save this?.</p>
                     <hr>
-                    <button type="button" class="btn btn-outline-success">.Save</button>
+                    <button type="button" class="btn btn-outline-success">Save</button>
                     <button type="button" class="btn btn-outline-danger">Cancel</button>
 
                 </div>
