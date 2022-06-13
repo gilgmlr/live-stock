@@ -74,7 +74,7 @@ class Issue extends CI_Controller
     {
         $data['judul'] = 'Issue/MI';
         $data['mi_code'] = $this->M_CRUD->get_data('mi_no')->result();
-        $data['items'] = $this->M_CRUD->get_data('items')->result();
+        $data['items'] = $this->M_CRUD->get_join('inventory', 'items', 'items.item_code = inventory.item_code')->result();
         $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
         $data['uom'] = $this->M_CRUD->get_data('uom')->result();
 
@@ -99,7 +99,7 @@ class Issue extends CI_Controller
     public function view_lending()
     {
         $data['judul'] = 'Issue/Lending';
-        $data['items'] = $this->M_CRUD->get_data('items')->result();
+        $data['items'] = $this->M_CRUD->get_join('inventory', 'items', 'items.item_code = inventory.item_code')->result();
         $data['uom'] = $this->M_CRUD->get_data('uom')->result();
 
         $this->load->view('template/header', $data);
