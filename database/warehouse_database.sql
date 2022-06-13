@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Jun 2022 pada 08.57
+-- Waktu pembuatan: 13 Jun 2022 pada 03.53
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.26
 
@@ -53,7 +53,8 @@ INSERT INTO `history` (`id`, `date`, `doc_num`, `description`) VALUES
 (1, '2022-06-12 01:06:49', '3534', 'Good Receive'),
 (2, '2022-06-12 01:06:26', '34534', 'Lending'),
 (3, '2022-06-12 01:06:35', '364365', 'Lending'),
-(4, '2022-06-12 01:06:50', '87907908', 'Lending');
+(4, '2022-06-12 01:06:50', '87907908', 'Lending'),
+(5, '2022-06-13 08:06:04', '65657', 'Good Receive');
 
 -- --------------------------------------------------------
 
@@ -79,15 +80,18 @@ CREATE TABLE `inventory` (
   `location` varchar(200) NOT NULL,
   `stocks` int(11) NOT NULL,
   `uom_code` varchar(100) NOT NULL,
-  `warehouse_code` varchar(50) NOT NULL
+  `warehouse_code` varchar(50) NOT NULL,
+  `equipment` varchar(200) NOT NULL,
+  `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `inventory`
 --
 
-INSERT INTO `inventory` (`item_code`, `location`, `stocks`, `uom_code`, `warehouse_code`) VALUES
-('0000-000005', '8', 333, 'PK', 'BYP0-3-01');
+INSERT INTO `inventory` (`item_code`, `location`, `stocks`, `uom_code`, `warehouse_code`, `equipment`, `status`) VALUES
+('0000-000005', '8', 333, 'PK', 'BYP0-3-01', '-', 'Can Use'),
+('0000-000007', '1820297', 1000, 'PC', 'BYP0-3-01', '', 'not Use');
 
 -- --------------------------------------------------------
 
@@ -26600,7 +26604,7 @@ CREATE TABLE `lending` (
 
 INSERT INTO `lending` (`lending_no`, `lending_date`, `item_code`, `lending_qty`, `uom_code`, `borrower_name`, `dept_code`, `lending_note`, `return_note`, `return_qty`, `return_date`, `entered_nip`, `warehouse_code`, `status`) VALUES
 ('364365', '2022-06-14', '0000-000005', 500, 'PC', '435', '85', '2022-06-14', '', 33, '2022-06-12', '', 'BYP0-3-01', 'open'),
-('476456765786', '2022-06-15', '0103-000753', 5765, 'PC', '6567', '585', '0055-05-06', '', 35, '2022-06-12', '', 'BYP0-3-01', 'open'),
+('476456765786', '2022-06-15', '0103-000753', 5765, 'PC', '6567', '585', '2022-06-15', '', 765, '2022-06-12', '', 'BYP0-3-01', 'close'),
 ('65645', '2022-07-05', '0103-00072', 43, 'PC', '56467', '768', '0064-04-05', '', 0, '0000-00-00', '1302194089', 'BYP0-3-01', 'open'),
 ('87907908', '2022-06-12', '0000-000005', 200, 'PC', '575', '7869', '2022-06-12', '', 150, '2022-06-12', '', 'BYP0-3-01', 'close');
 
@@ -26754,7 +26758,8 @@ INSERT INTO `received` (`received_code`, `arrival_date`, `po_number`, `vendor_na
 ('23', '2022-06-10', '12', '12', '0100-000069', 121, 'PK', 'BYP0-3-02', '12'),
 ('45', '0005-04-05', '454', '454', '0100-000284', 55, '-- Select --', '-- Select --', '23'),
 ('2323', '0004-04-05', '445', '454', '0103-000761', 100, 'PC', 'BYP0-3-02', '0'),
-('3534', '0005-04-06', '4546', '564', '0000-000005', 1000, 'PK', 'BYP0-3-01', '8');
+('3534', '0005-04-06', '4546', '564', '0000-000005', 1000, 'PK', 'BYP0-3-01', '8'),
+('65657', '2022-06-13', '44653', '643643', '0000-000007', 1000, 'PC', 'BYP0-3-01', '1820297');
 
 -- --------------------------------------------------------
 
@@ -26894,7 +26899,7 @@ ALTER TABLE `warehouse`
 -- AUTO_INCREMENT untuk tabel `history`
 --
 ALTER TABLE `history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `import`
