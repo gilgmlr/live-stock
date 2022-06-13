@@ -8,7 +8,7 @@
         <?php $this->session->unset_userdata('flash');
 	endif; ?>
 
-    <?php if($this->session->userdata('role') == "1") { ?>
+        <?php if($this->session->userdata('role') == "1") { ?>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal" data-bs-target="#ImpAcc">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
@@ -26,8 +26,8 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= base_url().'assets/image/import_data.png'?>" style="width:100px" />
-                            <h5>Import Items</h5>
+                            <img src="<?= base_url().'assets/image/item.png'?>" style="width:100px" />
+                            <h5>Import Data Items</h5>
                         </center>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= base_url().'assets/image/import_data.png'?>" style="width:100px" />
+                            <img src="<?= base_url().'assets/image/import_warehouse.png'?>" style="width:100px" />
                             <h5>Import Data Warehouse</h5>
                         </center>
                     </div>
@@ -53,8 +53,8 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= base_url().'assets/image/import_data.png'?>" style="width:100px" />
-                            <h5>Import Issue</h5>
+                            <img src="<?= base_url().'assets/image/import_issue.png'?>" style="width:100px" />
+                            <h5>Import Data Issue</h5>
                         </center>
                     </div>
                 </div>
@@ -68,8 +68,8 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= base_url().'assets/image/import_data.png'?>" style="width:100px" />
-                            <h5>Import Received</h5>
+                            <img src="<?= base_url().'assets/image/import_masuk.png'?>" style="width:100px" />
+                            <h5>Import Data Received</h5>
                         </center>
                     </div>
                 </div>
@@ -82,8 +82,8 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= base_url().'assets/image/import_data.png'?>" style="width:100px" />
-                            <h5>Import Inventory</h5>
+                            <img src="<?= base_url().'assets/image/box.png'?>" style="width:100px" />
+                            <h5>Import Data Inventory</h5>
                         </center>
                     </div>
                 </div>
@@ -96,8 +96,8 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= base_url().'assets/image/import_data.png'?>" style="width:100px" />
-                            <h5>Import UoM</h5>
+                            <img src="<?= base_url().'assets/image/uom.png'?>" style="width:100px" />
+                            <h5>Import Data UoM</h5>
                         </center>
                     </div>
                 </div>
@@ -108,8 +108,8 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= base_url().'assets/image/import_data.png'?>" style="width:100px" />
-                            <h5>Import Department</h5>
+                            <img src="<?= base_url().'assets/image/department.png'?>" style="width:100px" />
+                            <h5>Import Data Department</h5>
                         </center>
                     </div>
                 </div>
@@ -131,7 +131,8 @@
                         <div class="modal-body">
 
                             <div class="col">
-                                <a href="<?= base_url() ?>settings/download?name=User_Template" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=User_Template"
+                                    class="link-primary">Download Template</a>
                             </div>
                             <div class="col">
                                 <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
@@ -165,7 +166,8 @@
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
-                                <a href="<?= base_url() ?>settings/download?name=Items_Template" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=Items_Template"
+                                    class="link-primary">Download Template</a>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="items" hidden>
@@ -193,7 +195,8 @@
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
-                                <a href="<?= base_url() ?>settings/download?name=Warehouse_Template" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=Warehouse_Template"
+                                    class="link-primary">Download Template</a>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="warehouse" hidden>
@@ -221,7 +224,8 @@
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
-                                <a href="<?= base_url() ?>settings/download?name=Issue_Template" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=Issue_Template"
+                                    class="link-primary">Download Template</a>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="issued" hidden>
@@ -249,7 +253,8 @@
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
-                                <a href="<?= base_url() ?>settings/download?name=Receive_Template" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=Receive_Template"
+                                    class="link-primary">Download Template</a>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="received" hidden>
@@ -277,7 +282,8 @@
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
-                                <a href="<?= base_url() ?>settings/download?name=Inventory_Template" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=Inventory_Template"
+                                    class="link-primary">Download Template</a>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="inventory" hidden>
@@ -305,7 +311,8 @@
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
-                                <a href="<?= base_url() ?>settings/download?name=UoM_Template" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=UoM_Template"
+                                    class="link-primary">Download Template</a>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="uom" hidden>
@@ -333,7 +340,8 @@
                     <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
-                                <a href="<?= base_url() ?>settings/download?name=Department_Template" class="link-primary">Download Template</a>
+                                <a href="<?= base_url() ?>settings/download?name=Department_Template"
+                                    class="link-primary">Download Template</a>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="department" hidden>

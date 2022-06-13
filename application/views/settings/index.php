@@ -34,13 +34,13 @@
             </a>
         </div>
         <?php ;} ?>
-        
+
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="<?php echo base_url() . "settings/view_import_data" ?>">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= 'assets/image/import_data.png'?>" style="width:100px" />
+                            <img src="<?= 'assets/image/importdata.png'?>" style="width:100px" />
                             <h5>Import data</h5>
                         </center>
                     </div>
@@ -73,14 +73,15 @@
                 <h5 class="modal-title" style="color: gold;" id="exampleModalLabel">Change Password</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url() ?>settings/change_password" method="POST" class="mx-1 mx-md-4" autocomplete="off">
+            <form action="<?= base_url() ?>settings/change_password" method="POST" class="mx-1 mx-md-4"
+                autocomplete="off">
                 <div class="modal-body">
                     <div class="container px-4">
                         <div class="col gx-5">
                             <div class="col">
                                 <label class="form-label" for="form3Example1c">NIP</label>
-                                <input type="text" id="nip" class="text-input" name="nip"
-                                    placeholder="" readonly value="<?= $this->session->userdata('nip') ?>" />
+                                <input type="text" id="nip" class="text-input" name="nip" placeholder="" readonly
+                                    value="<?= $this->session->userdata('nip') ?>" />
                             </div>
                             <div class="col">
                                 <label class="form-label" for="form3Example1c">Password Now</label>
