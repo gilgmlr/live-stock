@@ -13,7 +13,7 @@
                                     <th>Date</th>
                                     <th>Document Number</th>
                                     <th>Description</th>
-                                    <th>Action</th>
+                                    <!-- <th>Action</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -27,13 +27,11 @@
                                     <td><?= $data->date ?></td>
                                     <td><?= $data->doc_num ?></td>
                                     <td><?= $data->description ?></td>
-                                    <td>
-                                        <!-- <button type="button" class="btn btn-warning btn-sm"
-                                            style="margin:0px; height:35px;" data-bs-toggle="modal"
-                                            data-bs-target="#edit<?=$i ?>">View</button> -->
+                                    <!-- <td>
+                                    
                                         <a href="" data-bs-toggle="modal" data-bs-target="#history"><i
                                                 class="fa-solid fa-eye"></i></a>
-                                    </td>
+                                    </td> -->
                                 </tr>
 
                                 <?php
