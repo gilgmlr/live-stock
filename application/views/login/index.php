@@ -48,6 +48,8 @@
                                             </div>
                                             <input type="submit" class="btn btn-warning btn-sm" value="Login" id="login">
                                         </form>
+
+                                        <a href="<?= base_url().'login/preview' ?>" >cek</a>
                                     </center>
                                 </div>
                             </div>
