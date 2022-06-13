@@ -14,8 +14,8 @@
                 <?php if ($last_update != null) { ?>
                 <?= date('F d, Y  H:i:s A', strtotime($last_update[0]->date)); ?>
                 <?php ;} else { ?>
-                    0 Month, 0000 00:00:00 Xx
-                    <?php ;} ?>
+                0 Month, 0000 00:00:00 Xx
+                <?php ;} ?>
             </span>
         </div>
     </div>
@@ -54,7 +54,7 @@
                 <div class="card-footer">
                     <div class="stats">
                         <i class="material-icons text-info"></i>
-                        <a href="#pablo">See detailed report</a>
+                        <!-- <a href="#pablo">See detailed report</a> -->
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                 <div class="card-footer">
                     <div class="stats">
                         <i class="material-icons text-info"> </i>
-                        <a href="#pablo">See detailed report</a>
+                        <!-- <a href="#pablo">See detailed report</a> -->
                     </div>
                 </div>
             </div>
@@ -123,19 +123,22 @@
                                 foreach ($lending as $data) { 
                             ?>
                             <tr>
-                            <td><?= $i ?></td>
-                            <td><?= $data->lending_no ?></td>
-                            <td><?= $data->lending_date ?></td>
-                            <td><?= $data->item_code ?></td>
-                            <td><?= $data->lending_qty ?></td>
-                            <td><?= $data->dept_code ?></td>
+                                <td><?= $i ?></td>
+                                <td><?= $data->lending_no ?></td>
+                                <td><?= $data->lending_date ?></td>
+                                <td><?= $data->item_code ?></td>
+                                <td><?= $data->lending_qty ?></td>
+                                <td><?= $data->dept_code ?></td>
                                 <td>
                                     <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "2") { ?>
-                                        <a href="<?= base_url() ?>received/view_lending?lending_no=<?= $data->lending_no ?>" >
-                                        <button type="submit" class="btn btn-warning btn-sm" style="margin:0px; height:35px;" >Closed</button>
-                                        </a>
+                                    <a
+                                        href="<?= base_url() ?>received/view_lending?lending_no=<?= $data->lending_no ?>">
+                                        <button type="submit" class="btn btn-warning btn-sm"
+                                            style="margin:0px; height:35px;">Closed</button>
+                                    </a>
                                     <?php ;} else { ?>
-                                        <a href="#" type="button" class="btn btn-danger" style="margin:0px; height:35px; width:55px" aria-disabled="true">Return</a>
+                                    <a href="#" type="button" class="btn btn-danger"
+                                        style="margin:0px; height:35px; width:55px" aria-disabled="true">Return</a>
                                     <?php ;} ?>
 
                                 </td>
