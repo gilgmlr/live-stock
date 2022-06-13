@@ -107,9 +107,9 @@
                     </div>
                 </div>
             </div>
-
-            <!-- ALERT -->
-            <!-- <div class="position-absolute top-50 start-50 translate-middle">
+        </div>
+        <!-- ALERT -->
+        <!-- <div class="position-absolute top-50 start-50 translate-middle">
                 <div class="alert alert-success" style="width : 250px" role="alert">
                     <h4 class="alert-heading">Confirmation Alert!</h4>
                     <p>Are you sure want to save this?.</p>
@@ -119,8 +119,6 @@
 
                 </div>
             </div> -->
-
-        </div>
     </div>
 
 
