@@ -49,66 +49,79 @@
 
 
     <div class="container" style="margin-top: 10px;">
+        <div class="row ">
+            <div class="col-lg-12 col-md-12">
+                <div class="cards shadow p-3 mb-5 bg-white rounded" style="min-height: 400px;">
+                    <div class="card-header card-header-text" style="background-color:#fff">
+                        <h4 class="card-title">Preview</h4>
+                        <!-- <p class="category">All Warehouse</p> -->
+                    </div>
+                    <div class="card-content table-responsive">
+                        <table id="pre" class="table table-striped table-hover">
+                            <thead class="text-primary">
+                                <tr>
+                                    <th>No</th>
+                                    <th>MI No</th>
+                                    <th>Entry Date</th>
+                                    <th>Post Date</th>
+                                    <th>Applicant</th>
+                                    <th>Dept No</th>
+                                    <th>Project No</th>
+                                    <th>Memmo</th>
+                                    <th>Item No</th>
+                                    <th>Uom Code</th>
+                                    <th>Warehouse Code</th>
+                                    <th>Transaction Qty</th>
+                                    <th>Reaseon</th>
+                                    <th>Create by</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
 
-        <div class="col-lg-12 col-md-12">
-            <div class="cards shadow p-3 mb-5 bg-white rounded" style="min-height: 400px;">
-                <div class="card-header card-header-text" style="background-color:#fff">
-                    <h4 class="card-title">Preview</h4>
-                    <!-- <p class="category">All Warehouse</p> -->
-                </div>
-                <div class="card-content table-responsive">
-                    <table id="pre" class="table table-striped table-hover">
-                        <thead class="text-primary">
-                            <tr>
-                                <th>No</th>
-                                <th>MI No</th>
-                                <th>Entry Date</th>
-                                <th>Post Date</th>
-                                <th>Applicant</th>
-                                <th>Dept No</th>
-                                <th>Project No</th>
-                                <th>Memmo</th>
-                                <th>Item No</th>
-                                <th>Uom Code</th>
-                                <th>Warehouse Code</th>
-                                <th>Transaction Qty</th>
-                                <th>Reaseon</th>
-                                <th>Create by</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
 
-
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <div class="alert alert-success" style="width : 250px" role="alert">
+                    <h4 class="alert-heading">Confirmation Alert!</h4>
+                    <p>Are you sure want to save this?.</p>
+                    <hr>
+                    <button type="button" class="btn btn-outline-success">.Save</button>
+                    <button type="button" class="btn btn-outline-danger">Cancel</button>
+
+                </div>
+            </div>
+
         </div>
+    </div>
 
 
-        <script>
-        $(document).ready(function() {
-            //$('#warehouse').DataTable();
-            $('#lending').DataTable();
+    <script>
+    $(document).ready(function() {
+        //$('#warehouse').DataTable();
+        $('#pre').DataTable();
 
-        });
-        </script>
+    });
+    </script>
 
 
 
