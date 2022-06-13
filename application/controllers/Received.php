@@ -105,7 +105,7 @@ class Received extends CI_Controller
     {
         $data['judul'] = 'Received/GR';
         $data['uom'] = $this->M_CRUD->get_data('uom')->result();
-        $data['items'] = $this->M_CRUD->get_data('items')->result();
+        $data['items'] = $this->M_CRUD->get_join('inventory', 'items', 'items.item_code = inventory.item_code')->result();
         $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
 
         $this->load->view('template/header', $data);
@@ -116,7 +116,7 @@ class Received extends CI_Controller
     {
         $data['judul'] = 'Received/WT';
         $data['uom'] = $this->M_CRUD->get_data('uom')->result();
-        $data['items'] = $this->M_CRUD->get_data('items')->result();
+        $data['items'] = $this->M_CRUD->get_join('inventory', 'items', 'items.item_code = inventory.item_code')->result();
         $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
 
         $this->load->view('template/header', $data);
@@ -127,7 +127,7 @@ class Received extends CI_Controller
     {
         $data['judul'] = 'Received/Adjusment';
         $data['uom'] = $this->M_CRUD->get_data('uom')->result();
-        $data['items'] = $this->M_CRUD->get_data('items')->result();
+        $data['items'] = $this->M_CRUD->get_join('inventory', 'items', 'items.item_code = inventory.item_code')->result();
         $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
 
         $this->load->view('template/header', $data);
@@ -143,7 +143,7 @@ class Received extends CI_Controller
 
         $data['judul'] = 'Received/Lending';
         $data['uom'] = $this->M_CRUD->get_data('uom')->result();
-        $data['items'] = $this->M_CRUD->get_data('items')->result();
+        $data['items'] = $this->M_CRUD->get_join('inventory', 'items', 'items.item_code = inventory.item_code')->result();
         $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
 
         $this->load->view('template/header', $data);
