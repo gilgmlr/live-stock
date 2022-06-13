@@ -59,6 +59,6 @@ class Login extends CI_Controller {
 	}
 
 	public function preview() {
-		$this->load->view('preview/gi_form');
+		$this->load->view('preview/print');
 	}
 }
