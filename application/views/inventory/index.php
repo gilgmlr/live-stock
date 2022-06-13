@@ -12,7 +12,7 @@
             <div class="">
                 <!--  ISI DISINI  -->
                 <div class="row">
-                    <div class="col">
+                    <div class="col table-responsive">
                         <table id="warehouse" class="table table-striped table-hover">
                             <thead class="text-primary">
                                 <tr>
