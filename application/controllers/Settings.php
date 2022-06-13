@@ -172,6 +172,7 @@ class Settings extends CI_Controller
                                     'item_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
                                     'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
                                     'specification' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
+                                    'uom' => $worksheet->getCellByColumnAndRow(2, $row)->getValue(),
                                     'image' => $worksheet->getCellByColumnAndRow(0, $row)->getValue().'.jpg',
                                 );
                             // }
