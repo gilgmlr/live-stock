@@ -163,7 +163,7 @@
                                 <th><b>No</b></th>
                                 <th><b>ID</b></th>
                                 <th><b>Name</b></th>
-                                <th><b>Action</b></th>
+                                <th><b>Total Stock</b></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -176,12 +176,9 @@
                                 <td><?= $data->warehouse_code ?></td>
                                 <td><?= $data->warehouse_name ?></td>
                                 <td>
-                                    <!-- <button type="button" class="btn btn-warning btn-sm"
-                                        style="margin:0px; height:35px; width:auto" data-bs-toggle="modal"
-                                        data-bs-target="#view-<?= $data->warehouse_code ?>">View</button> -->
-                                    <a href="" data-bs-toggle="modal"
+                                    <!-- <a href="" data-bs-toggle="modal"
                                         data-bs-target="#view-<?= $data->warehouse_code ?>"><i
-                                            class="fa-solid fa-eye"></i></a>
+                                            class="fa-solid fa-eye"></i></a> -->
                                 </td>
                             </tr>
 
