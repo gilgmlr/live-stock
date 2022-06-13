@@ -11,7 +11,12 @@
         <div style="text-align: right; color:#000">
             <img src="assets/image/icon.png " />
             <span class="ps-2">Warehouse. <br />Last update:
-                <?= date('F d, Y  H:i:s A', strtotime($last_update[0]->date)); ?></span>
+                <?php if ($last_update != null) { ?>
+                <?= date('F d, Y  H:i:s A', strtotime($last_update[0]->date)); ?>
+                <?php ;} else { ?>
+                    0 Month, 0000 00:00:00 Xx
+                    <?php ;} ?>
+            </span>
         </div>
     </div>
 
@@ -31,7 +36,7 @@
                     <div class="stats">
 
                         <i class="material-icons text-info"></i>
-                        <a href="<?= base_url()?>inventory">See details</a>
+                        <a href="<?= base_url()?>catalog">See details</a>
                     </div>
                 </div>
             </div>
