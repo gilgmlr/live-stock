@@ -36,7 +36,11 @@
                                     foreach ($stock as $data) { 
                                 ?>
 
+                            <?php if ($data->status != 'Can Use' && $data->status != 'can use' && $data->status != 'Can use' && $data->status != 'can Use') { ?>
+                                <tr style="background-color: red;" id="id-<?= $i ?>">
+                            <?php ;} else { ?>
                                 <tr id="id-<?= $i ?>">
+                            <?php ;} ?>
                                     <td> <?= $i ?></td>
                                     <td><?= $data->item_code ?></td>
                                     <td><?= $data->name ?></td>
@@ -45,12 +49,8 @@
                                     <td><?= $data->stocks ?></td>
                                     <td><?= $data->warehouse_code ?></td>
                                     <td><?= $data->location ?></td>
-                                    <td></td>
-                                    <td>
-                                        <span onclick="myFunction(<?= $i ?>)" class="material-symbols-outlined">
-                                            report
-                                        </span>
-                                    </td>
+                                    <td><?= $data->equipment ?></td>
+                                    <td><?= $data->status ?></td>
                                     <td>
                                         <!-- <button type="button" class="btn btn-warning btn-sm"
                                             style="margin:0px; height:35px;" data-bs-toggle="modal"
@@ -132,6 +132,20 @@
                                                                     required>
                                                             </div>
                                                         </div>
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-sm-6">
+                                                                <label for=""
+                                                                    class="col-sm-6 col-form-label">Equipment</label>
+                                                                <input type="text" class="form-control" id="equipment"
+                                                                    name="equipment" value="<?=$data->equipment?>">
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <label for=""
+                                                                    class="col-sm-6 col-form-label">Status ("Can Use" or "Not Use")</label>
+                                                                <input type="text" class="form-control" id="status"
+                                                                    name="status" value="<?=$data->status?>">
+                                                            </div>
+                                                        </div>
 
                                                         <div class="modal-footer">
                                                             <button id="close" type="button" class="btn btn-warning"
@@ -170,11 +184,6 @@
 $(document).ready(function() {
     $('#warehouse').DataTable();
 });
-</script>
-<script>
-function myFunction(i) {
-    document.getElementById("id-" + i).style.backgroundColor = "red";
-}
 </script>
 
 </html>

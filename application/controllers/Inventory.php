@@ -46,6 +46,8 @@ class Inventory extends CI_Controller
                 'stocks' => $res_inven['stocks'],
                 'uom_code' => $res_uom['uom_code'],
                 'warehouse_code' => $res_inven['warehouse_code'],
+                'equipment' => $this->input->post('equipment'),
+                'status' => $this->input->post('status'),
             );
             $this->M_CRUD->update_data('inventory', $inventory, ['item_code' => $res_inven['item_code'], 'warehouse_code' => $res_inven['warehouse_code']]);
 
