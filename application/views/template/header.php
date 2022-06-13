@@ -46,6 +46,11 @@
 </head>
 
 <body>
+
+<?php if ($this->session->userdata('login') != true) : 
+        redirect('login');
+    endif;?>
+
     <header>
         <div class="fixed-top">
             <nav class="navbar navbar-expand-md" style=background-color:#563d7c>
@@ -149,7 +154,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="<?= base_url(); ?>login"
+                                            <a href="<?= base_url(); ?>login/logout"
                                                 class="<?php if (uri_string() === 'login') echo 'actived' ?>">
                                                 <i class="bi bi-arrow-left-square-fill"></i>
                                                 <div class="position-absolute tooltips">
