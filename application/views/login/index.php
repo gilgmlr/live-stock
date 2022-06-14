@@ -12,6 +12,10 @@
 			integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
 			crossorigin="anonymous"
 		/> -->
+    
+    <!-- Icon  -->
+    <link href="<?=base_url()?>assets/image/icon.png" rel='shorcut icon'>
+
     <link rel="stylesheet" href="<?= base_url() ?>node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/style.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/login.css">

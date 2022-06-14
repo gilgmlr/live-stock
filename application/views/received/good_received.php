@@ -33,23 +33,17 @@
                         </div>
                         <div class="col-sm-6">
                             <label for="" class="col-sm-6 col-form-label">Item Code</label>
-                            <select class="form-select form-control" aria-label=".form-select-lg example" id="item_code"
+                            <input type="text" class="form-control" id="item_code" name="item_code" onkeyup="isi_otomatis()" required>
+                            <!-- <select class="form-select form-control" aria-label=".form-select-lg example" id="item_code"
                                 name="item_code" required>
                                 <option selected>-- Select --</option>
                                 <?php foreach ($items as $data) { ?>
                                 <option value="<?= $data->item_code ?>"><?= $data->item_code ?> | <?= $data->name ?>
                                 </option>
                                 <?php $i++; } ?>
-                            </select>
+                            </select> -->
                             <label for="" class="col-sm-6 col-form-label">UoM</label>
-                            <select class="form-select form-control" aria-label=".form-select-lg example" id="uom"
-                                name="uom" required>
-                                <option selected>-- Select --</option>
-                                <?php foreach ($uom as $data) { ?>
-                                <option value="<?= $data->uom_code ?>"><?= $data->uom_code ?> - <?= $data->uom_name ?>
-                                </option>
-                                <?php $i++; } ?>
-                            </select>
+                            <input type="text" class="form-control" id="uom" name="uom" readonly>
                             <label for="" class="col-sm-6 col-form-label">Qty</label>
                             <input type="text" class="form-control" id="qty" name="qty" required>
 
@@ -95,7 +89,7 @@
                         <a href="<?= base_url(); ?>received" class="btn btn-danger" style="padding-top:17px">
                             Batal
                         </a>
-                        <button onclick="confirmAction()" id="simpan" type="submit"
+                        <button id="simpan" type="submit"
                             class="btn btn-success">Simpan</button>
                     </center>
                 </div>
@@ -104,15 +98,18 @@
     </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript">
+            function isi_otomatis(){
+                var item_code = $("#item_code").val();
+                $.ajax({
+                    url: "<?= base_url() ?>/received/get_item?item_code="+item_code,
+                    data:"item_code="+item_code ,
+                }).success(function (data) {
+                    var json = data,
+                    obj = JSON.parse(json);
+                    $('#uom').val(obj.uom);
+                });
+            }
+        </script>
 
-<script>
-// The function below will start the confirmation dialog
-function confirmAction() {
-    let confirmAction = confirm("Are you sure to execute this action?");
-    if (confirmAction) {
-        alert("Action successfully executed");
-    } else {
-        alert("Action canceled");
-    }
-}
-</script>
