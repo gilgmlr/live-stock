@@ -30,7 +30,7 @@
                                     <div class="col-sm-6">
                                         <label for="" class="col-sm-6 col-form-label">Return Date</label>
                                         <input type="date" class="form-control" id="return_date" name="return_date"
-                                            required>
+                                           value="<?php echo date('Y-m-d'); ?>" required>
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="" class="col-sm-6 col-form-label">Status</label>

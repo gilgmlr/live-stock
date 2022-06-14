@@ -14,7 +14,7 @@
                                 <label for="" class="col-sm-6 col-form-label">Lending No</label>
                                 <input type="text" class="form-control" id="lending_no" name="lending_no" value="LEN-C02<?= substr(date('Y'),2,4) . date('m'); ?>"" required>
                                 <label for="" class="col-sm-6 col-form-label">Lending Date</label>
-                                <input type="date" class="form-control" id="lending_date" name="lending_date" required>
+                                <input type="date" class="form-control" id="lending_date" name="lending_date" value="<?php echo date('Y-m-d'); ?>" required>
                                 <label for="" class="col-sm-6 col-form-label">Borrower Name</label>
                                 <input type="text" class="form-control" id="borrower_name" name="borrower_name"
                                     required>

@@ -19,34 +19,21 @@ class Issue extends CI_Controller
         $this->load->view('Issue/index', $data);
     }
 
-    public function addMiCode()
-    {
-        $data = array(
-            'doc_no' => $this->input->post('mi_code')
-        );
-
-        $this->M_CRUD->input_data('mi_no', $data);
-        $this->session->set_flashdata('flash', 'Number '.$this->input->post('mi_code').' Saved!');
-        redirect("issue/view_material_issue");
-    }
-
     public function addMI()
     {
         $data = array(
             'doc_no' => $this->input->post('mi_code'),
             'entri_date' => $this->input->post('entri_date'),
             'posting_date' => $this->input->post('post_date'),
-            'applicant' => $this->input->post('applicant'),
             'dept_no' => $this->input->post('dept_no'),
             'project_no' => $this->input->post('project_no'),
-            'memo' => $this->input->post('memo'),
             'item_code' => $this->input->post('item_code'),
             'warehouse_code' => $this->input->post('warehouse_code'),
             'uom_code' => $this->input->post('uom_code'),
             'transaction_qty' => $this->input->post('transaction_qty'),
             'reference' => $this->input->post('reference'),
             'reason_code' => $this->input->post('reason_code'),
-            'description' => $this->input->post('description'),
+            'description' => $this->input->post('desc'),
             'created_by' => $this->input->post('create_by'),
         );
 
@@ -73,7 +60,6 @@ class Issue extends CI_Controller
     public function view_material_issue()
     {
         $data['judul'] = 'Issue/MI';
-        $data['mi_code'] = $this->M_CRUD->get_data('mi_no')->result();
         $data['items'] = $this->M_CRUD->get_join('inventory', 'items', 'items.item_code = inventory.item_code')->result();
         $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
         $data['uom'] = $this->M_CRUD->get_data('uom')->result();

@@ -12,7 +12,7 @@
                             <label for="" class="col-sm-6 col-form-label">Adjustment Number</label>
                             <input type="text" class="form-control" id="received_code" name="received_code" required>
                             <label for="" class="col-sm-6 col-form-label">Arrival Date</label>
-                            <input type="date" class="form-control" id="arrival_date" name="arrival_date" required>
+                            <input type="date" class="form-control" id="arrival_date" name="arrival_date" value="<?php echo date('Y-m-d'); ?>" required>
                             <label for="" class="col-sm-6 col-form-label">PO Number</label>
                             <input type="text" class="form-control" id="po_number" name="po_number" required>
                             <label for="" class="col-sm-6 col-form-label">Vendor Name</label>
@@ -65,6 +65,19 @@
                                     <label for="" class="col-sm-6 col-form-label">Status</label>
                                     <input type="text" class="form-control" id="status" name="status" value="Can Use"
                                         readonly>
+                                </div>
+
+                                <label for="" class="col-sm-6 col-form-label">Entered by</label>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="created_by" name="created_by"
+                                            readonly value="<?= $this->session->userdata('nip'); ?>">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id=""
+                                            name="" readonly
+                                            value="<?= $this->session->userdata('name'); ?>">
+                                    </div>
                                 </div>
                             </div>
                         </div>

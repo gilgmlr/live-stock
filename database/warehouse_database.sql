@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Jun 2022 pada 02.57
+-- Waktu pembuatan: 14 Jun 2022 pada 04.43
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.26
 
@@ -44,6 +44,13 @@ CREATE TABLE `history` (
   `doc_num` varchar(100) NOT NULL,
   `description` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `history`
+--
+
+INSERT INTO `history` (`id`, `date`, `doc_num`, `description`) VALUES
+(1, '2022-06-14 09:06:28', 'GR02-C022206', 'Good Receive');
 
 -- --------------------------------------------------------
 
@@ -411,6 +418,13 @@ CREATE TABLE `inventory` (
   `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `inventory`
+--
+
+INSERT INTO `inventory` (`item_code`, `location`, `stocks`, `uom_code`, `warehouse_code`, `equipment`, `status`) VALUES
+('0209-000305', '0101', 120, 'PC', 'BYP0-3-01', '', 'Can Use');
+
 -- --------------------------------------------------------
 
 --
@@ -480,10 +494,8 @@ CREATE TABLE `material_issue` (
   `doc_no` varchar(50) NOT NULL,
   `entri_date` date NOT NULL,
   `posting_date` date NOT NULL,
-  `applicant` varchar(50) NOT NULL,
   `dept_no` varchar(50) NOT NULL,
   `project_no` int(11) NOT NULL,
-  `memo` text NOT NULL,
   `confirmation_code` varchar(50) NOT NULL,
   `post` varchar(50) NOT NULL,
   `item_code` varchar(50) NOT NULL,
@@ -500,25 +512,9 @@ CREATE TABLE `material_issue` (
 -- Dumping data untuk tabel `material_issue`
 --
 
-INSERT INTO `material_issue` (`doc_no`, `entri_date`, `posting_date`, `applicant`, `dept_no`, `project_no`, `memo`, `confirmation_code`, `post`, `item_code`, `warehouse_code`, `uom_code`, `transaction_qty`, `reference`, `reason_code`, `description`, `created_by`) VALUES
-('MI01-0222060001', '2022-06-10', '2022-06-13', '1302194089', '0', 0, '-', '0', '0', '0', '0', '0', 0, '0', '0', '0', '0');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `mi_no`
---
-
-CREATE TABLE `mi_no` (
-  `doc_no` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `mi_no`
---
-
-INSERT INTO `mi_no` (`doc_no`) VALUES
-('MI01-0222060001');
+INSERT INTO `material_issue` (`doc_no`, `entri_date`, `posting_date`, `dept_no`, `project_no`, `confirmation_code`, `post`, `item_code`, `warehouse_code`, `uom_code`, `transaction_qty`, `reference`, `reason_code`, `description`, `created_by`) VALUES
+('MI01-C022206', '2022-06-14', '2022-06-14', '1212', 1, '', '', '0209-000305', 'BYP0-3-01', 'PC', 1, '1', '1', '212', '1302194089'),
+('MI01-C022206', '2022-06-14', '2022-06-14', '2121', 2121, '', '', '0209-000305', 'BYP0-3-01', 'PC', 2, '0', '0', '121', '1302194089');
 
 -- --------------------------------------------------------
 
@@ -543,10 +539,17 @@ CREATE TABLE `received` (
   `vendor_name` varchar(255) NOT NULL,
   `item_code` varchar(50) NOT NULL,
   `qty` int(11) NOT NULL,
-  `uom` varchar(100) NOT NULL,
+  `uom` varchar(100) DEFAULT NULL,
   `warehouse_code` varchar(100) NOT NULL,
   `location` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `received`
+--
+
+INSERT INTO `received` (`received_code`, `arrival_date`, `po_number`, `vendor_name`, `item_code`, `qty`, `uom`, `warehouse_code`, `location`) VALUES
+('GR02-C022206', '2022-06-14', '1212', '12121', '0209-000305', 123, 'PC', 'BYP0-3-01', '0101');
 
 -- --------------------------------------------------------
 
@@ -686,7 +689,7 @@ ALTER TABLE `warehouse`
 -- AUTO_INCREMENT untuk tabel `history`
 --
 ALTER TABLE `history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `history_transaction`

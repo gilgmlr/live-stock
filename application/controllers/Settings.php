@@ -175,8 +175,7 @@ class Settings extends CI_Controller
                                     'specification' => $worksheet->getCellByColumnAndRow(2, $row)->getValue(),
                                     'uom' => $worksheet->getCellByColumnAndRow(3, $row)->getValue(),
                                     'image' => $worksheet->getCellByColumnAndRow(0, $row)->getValue().'.jpg',
-                                );
-                            // }
+                                );                            
                         } else if ($table == 'history_transaction') {
                             $data[] = array(
                                 'doc_date' => date('Y-m-d', PHPExcel_Shared_Date::ExcelToPHP($worksheet->getCellByColumnAndRow(0, $row)->getValue())),
@@ -186,7 +185,7 @@ class Settings extends CI_Controller
                                 'item_code' => $worksheet->getCellByColumnAndRow(4, $row)->getValue(),
                                 'qty' => $worksheet->getCellByColumnAndRow(5, $row)->getValue(),
                                 'warehouse_code' => $worksheet->getCellByColumnAndRow(6, $row)->getValue(),
-                            );                    
+                            );       
                         }
                     }
                 } 
@@ -277,7 +276,7 @@ class Settings extends CI_Controller
             $objPHPExcel->getActiveSheet()->SetCellValue('G' . $rowCount, $list->warehouse_code);
             $rowCount++;
         }
-        $filename = "tutsmake". date("Y-m-d-H-i-s").".csv";
+        $filename = "Export History ". date("Y-m-d-H-i-s").".csv";
         header('Content-Type: application/vnd.ms-excel'); 
         header('Content-Disposition: attachment;filename="'.$filename.'"');
         header('Cache-Control: max-age=0'); 
@@ -385,7 +384,7 @@ class Settings extends CI_Controller
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         header('Content-Disposition: attachment; filename="History Transaction.xlsx"'); // Set nama file excel nya
         header('Cache-Control: max-age=0');
-        $write = PHPExcel_IOFactory::createWriter($excel, 'Excel2007');
+        $write = PHPExcel_IOFactory::createWriter($excel, 'CSV');
         $write->save('php://output');
       }
 }
