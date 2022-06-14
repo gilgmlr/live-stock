@@ -125,6 +125,7 @@ class Settings extends CI_Controller
     
     public function import()
     {
+        date_default_timezone_set('Asia/Jakarta');
         $table = $this->input->post('table_name');
         if(isset($_FILES["file"]["name"])){
               // upload
@@ -171,11 +172,21 @@ class Settings extends CI_Controller
                                 $data[] = array(
                                     'item_code' => $worksheet->getCellByColumnAndRow(0, $row)->getValue(),
                                     'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
-                                    'specification' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
-                                    'uom' => $worksheet->getCellByColumnAndRow(2, $row)->getValue(),
+                                    'specification' => $worksheet->getCellByColumnAndRow(2, $row)->getValue(),
+                                    'uom' => $worksheet->getCellByColumnAndRow(3, $row)->getValue(),
                                     'image' => $worksheet->getCellByColumnAndRow(0, $row)->getValue().'.jpg',
                                 );
                             // }
+                        } else if ($table == 'history_transaction') {
+                            $data[] = array(
+                                'doc_date' => date('Y-m-d', PHPExcel_Shared_Date::ExcelToPHP($worksheet->getCellByColumnAndRow(0, $row)->getValue())),
+                                'system_date' => date('Y-m-d', PHPExcel_Shared_Date::ExcelToPHP($worksheet->getCellByColumnAndRow(1, $row)->getValue())),
+                                'source_doc' => $worksheet->getCellByColumnAndRow(2, $row)->getValue(),
+                                'destination_doc' => $worksheet->getCellByColumnAndRow(3, $row)->getValue(),
+                                'item_code' => $worksheet->getCellByColumnAndRow(4, $row)->getValue(),
+                                'qty' => $worksheet->getCellByColumnAndRow(5, $row)->getValue(),
+                                'warehouse_code' => $worksheet->getCellByColumnAndRow(6, $row)->getValue(),
+                            );                    
                         }
                     }
                 } 
@@ -236,4 +247,145 @@ class Settings extends CI_Controller
         $name = $this->input->get('name');
 		force_download('assets/excel/'. $name . '.xlsx',NULL);
 	}	
+
+    // create xlsx
+    public function generateXls() 
+    {
+        // create file name
+        $fileName = 'data-'.time().'.xlsx';  
+        // load excel library
+        $listInfo = $this->M_CRUD->get_data('history_transaction')->result();
+        $objPHPExcel = new PHPExcel();
+        $objPHPExcel->setActiveSheetIndex(0);
+        // set Header
+        $objPHPExcel->getActiveSheet()->SetCellValue('A1', 'Document Date');
+        $objPHPExcel->getActiveSheet()->SetCellValue('B1', 'System Date');
+        $objPHPExcel->getActiveSheet()->SetCellValue('C1', 'Source Doc');
+        $objPHPExcel->getActiveSheet()->SetCellValue('D1', 'Destination Doc');
+        $objPHPExcel->getActiveSheet()->SetCellValue('E1', 'Item Code');       
+        $objPHPExcel->getActiveSheet()->SetCellValue('F1', 'QTY Transaction');       
+        $objPHPExcel->getActiveSheet()->SetCellValue('G1', 'Warehouse Code');       
+        // set Row
+        $rowCount = 2;
+        foreach ($listInfo as $list) {
+            $objPHPExcel->getActiveSheet()->SetCellValue('A' . $rowCount, $list->doc_date);
+            $objPHPExcel->getActiveSheet()->SetCellValue('B' . $rowCount, $list->system_date);
+            $objPHPExcel->getActiveSheet()->SetCellValue('C' . $rowCount, $list->source_doc);
+            $objPHPExcel->getActiveSheet()->SetCellValue('D' . $rowCount, $list->destination_doc);
+            $objPHPExcel->getActiveSheet()->SetCellValue('E' . $rowCount, $list->item_code);
+            $objPHPExcel->getActiveSheet()->SetCellValue('F' . $rowCount, $list->qty);
+            $objPHPExcel->getActiveSheet()->SetCellValue('G' . $rowCount, $list->warehouse_code);
+            $rowCount++;
+        }
+        $filename = "tutsmake". date("Y-m-d-H-i-s").".csv";
+        header('Content-Type: application/vnd.ms-excel'); 
+        header('Content-Disposition: attachment;filename="'.$filename.'"');
+        header('Cache-Control: max-age=0'); 
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');  
+        $objWriter->save('php://output'); 
+ 
+    }
+
+    public function export(){
+        // Load plugin PHPExcel nya
+        include APPPATH.'libraries/PHPExcel/PHPExcel.php';
+        
+        // Panggil class PHPExcel nya
+        $excel = new PHPExcel();
+        // Settingan awal fil excel
+        // $excel->getProperties()->setCreator($this->session->userdata['name'])
+        //              ->setLastModifiedBy($this->session->userdata['name'])
+        //              ->setTitle("History Transaction")
+        //              ->setSubject("Warehouse")
+        //              ->setDescription("History Transaction")
+        //              ->setKeywords("History Transaction");
+        // Buat sebuah variabel untuk menampung pengaturan style dari header tabel
+        $style_col = array(
+          'font' => array('bold' => true), // Set font nya jadi bold
+          'alignment' => array(
+            'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER, // Set text jadi ditengah secara horizontal (center)
+            'vertical' => PHPExcel_Style_Alignment::VERTICAL_CENTER // Set text jadi di tengah secara vertical (middle)
+          ),
+          'borders' => array(
+            'top' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border top dengan garis tipis
+            'right' => array('style'  => PHPExcel_Style_Border::BORDER_THIN),  // Set border right dengan garis tipis
+            'bottom' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border bottom dengan garis tipis
+            'left' => array('style'  => PHPExcel_Style_Border::BORDER_THIN) // Set border left dengan garis tipis
+          )
+        );
+        // Buat sebuah variabel untuk menampung pengaturan style dari isi tabel
+        $style_row = array(
+          'alignment' => array(
+            'vertical' => PHPExcel_Style_Alignment::VERTICAL_CENTER // Set text jadi di tengah secara vertical (middle)
+          ),
+          'borders' => array(
+            'top' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border top dengan garis tipis
+            'right' => array('style'  => PHPExcel_Style_Border::BORDER_THIN),  // Set border right dengan garis tipis
+            'bottom' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border bottom dengan garis tipis
+            'left' => array('style'  => PHPExcel_Style_Border::BORDER_THIN) // Set border left dengan garis tipis
+          )
+        );
+        $excel->setActiveSheetIndex(0)->setCellValue('A1', "Document Date"); // Set kolom A1 dengan tulisan "DATA SISWA"
+        $excel->setActiveSheetIndex(0)->setCellValue('B1', "System Date"); // Set kolom A1 dengan tulisan "DATA SISWA"
+        $excel->setActiveSheetIndex(0)->setCellValue('C1', "Source Doc"); // Set kolom A3 dengan tulisan "NO"
+        $excel->setActiveSheetIndex(0)->setCellValue('D1', "Destination Doc"); // Set kolom A3 dengan tulisan "NO"
+        $excel->setActiveSheetIndex(0)->setCellValue('E1', "Item Code"); // Set kolom A3 dengan tulisan "NO"
+        $excel->setActiveSheetIndex(0)->setCellValue('F1', "QTY"); // Set kolom A3 dengan tulisan "NO"
+        $excel->setActiveSheetIndex(0)->setCellValue('G1', "Warehouse Code"); // Set kolom B3 dengan tulisan "NIS"
+        // Apply style header yang telah kita buat tadi ke masing-masing kolom header
+        $excel->getActiveSheet()->getStyle('A1')->applyFromArray($style_col);
+        $excel->getActiveSheet()->getStyle('B1')->applyFromArray($style_col);
+        $excel->getActiveSheet()->getStyle('C1')->applyFromArray($style_col);
+        $excel->getActiveSheet()->getStyle('D1')->applyFromArray($style_col);
+        $excel->getActiveSheet()->getStyle('E1')->applyFromArray($style_col);
+        $excel->getActiveSheet()->getStyle('F1')->applyFromArray($style_col);
+        $excel->getActiveSheet()->getStyle('G1')->applyFromArray($style_col);
+        // Panggil function view yang ada di SiswaModel untuk menampilkan semua data siswanya
+        $siswa = $this->M_CRUD->get_data('history_transaction')->result();
+        // $no = 1; // Untuk penomoran tabel, di awal set dengan 1
+        $numrow = 2; // Set baris pertama untuk isi tabel adalah baris ke 4
+        foreach($siswa as $data){ // Lakukan looping pada variabel siswa
+          $excel->setActiveSheetIndex(0)->setCellValue('A'.$numrow, $data->doc_date);
+          $excel->setActiveSheetIndex(0)->setCellValue('B'.$numrow, $data->system_date);
+          $excel->setActiveSheetIndex(0)->setCellValue('C'.$numrow, $data->source_doc);
+          $excel->setActiveSheetIndex(0)->setCellValue('D'.$numrow, $data->destination_doc);
+          $excel->setActiveSheetIndex(0)->setCellValue('E'.$numrow, $data->item_code);
+          $excel->setActiveSheetIndex(0)->setCellValue('F'.$numrow, $data->qty);
+          $excel->setActiveSheetIndex(0)->setCellValue('G'.$numrow, $data->warehouse_code);
+          
+          // Apply style row yang telah kita buat tadi ke masing-masing baris (isi tabel)
+          $excel->getActiveSheet()->getStyle('A'.$numrow)->applyFromArray($style_row);
+          $excel->getActiveSheet()->getStyle('B'.$numrow)->applyFromArray($style_row);
+          $excel->getActiveSheet()->getStyle('C'.$numrow)->applyFromArray($style_row);
+          $excel->getActiveSheet()->getStyle('D'.$numrow)->applyFromArray($style_row);
+          $excel->getActiveSheet()->getStyle('E'.$numrow)->applyFromArray($style_row);
+          $excel->getActiveSheet()->getStyle('F'.$numrow)->applyFromArray($style_row);
+          $excel->getActiveSheet()->getStyle('G'.$numrow)->applyFromArray($style_row);
+          
+        //   $no++; // Tambah 1 setiap kali looping
+          $numrow++; // Tambah 1 setiap kali looping
+        }
+        // Set width kolom
+        $excel->getActiveSheet()->getColumnDimension('A')->setWidth(15); // Set width kolom A
+        $excel->getActiveSheet()->getColumnDimension('B')->setWidth(15); // Set width kolom B
+        $excel->getActiveSheet()->getColumnDimension('C')->setWidth(25); // Set width kolom C
+        $excel->getActiveSheet()->getColumnDimension('D')->setWidth(20); // Set width kolom D
+        $excel->getActiveSheet()->getColumnDimension('E')->setWidth(20); // Set width kolom E
+        $excel->getActiveSheet()->getColumnDimension('F')->setWidth(10); // Set width kolom E
+        $excel->getActiveSheet()->getColumnDimension('G')->setWidth(20); // Set width kolom E
+        
+        // Set height semua kolom menjadi auto (mengikuti height isi dari kolommnya, jadi otomatis)
+        $excel->getActiveSheet()->getDefaultRowDimension()->setRowHeight(-1);
+        // Set orientasi kertas jadi LANDSCAPE
+        $excel->getActiveSheet()->getPageSetup()->setOrientation(PHPExcel_Worksheet_PageSetup::ORIENTATION_LANDSCAPE);
+        // Set judul file excel nya
+        $excel->getActiveSheet(0)->setTitle("History Transaction");
+        $excel->setActiveSheetIndex(0);
+        // Proses file excel
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment; filename="History Transaction.xlsx"'); // Set nama file excel nya
+        header('Cache-Control: max-age=0');
+        $write = PHPExcel_IOFactory::createWriter($excel, 'Excel2007');
+        $write->save('php://output');
+      }
 }

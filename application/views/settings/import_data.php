@@ -115,6 +115,18 @@
                 </div>
             </a>
         </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="" data-bs-toggle="modal" data-bs-target="#ImpHis">
+                <div class="card shadow p-2 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <center>
+                            <img src="<?= base_url().'assets/image/History.png'?>" style="width:100px" />
+                            <h5>Import Data History</h5>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
         <?php ;} ?>
 
 
@@ -356,6 +368,36 @@
             </div>
         </div>
         <!-- End Modal -->
+
+        <!-- MODAL History -->
+        <div class="modal fade" id="ImpHis" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:30%>
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #563d7c">
+                        <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Import Data Department
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
+                        <div class="modal-body">
+                            <div class="col">
+                                <a href="<?= base_url() ?>settings/download?name=History_Template"
+                                    class="link-primary">Download Template</a>
+                            </div>
+                            <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
+                            <input type="text" name="table_name" value="history_transaction" hidden>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button id="submit" type="submit" name="submit" class="btn btn-success">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal -->
+
 
     </div>
 </div>

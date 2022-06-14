@@ -12,7 +12,7 @@ class History extends CI_Controller
     public function index()
     {
         // $data['jumlahWarehouse'] = $this->M_Dashboard->countRowsWarehouse();
-        $data['history'] = $this->M_CRUD->get_data_sort('history', 'id', 'desc')->result();
+        $data['history'] = $this->M_CRUD->get_data_sort('history_transaction', 'id', 'desc')->result();
         $data['judul'] = 'History';
 
         $this->load->view('template/header', $data);

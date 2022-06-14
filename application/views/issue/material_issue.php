@@ -14,18 +14,20 @@
             <button type="button" class="btn btn-warning btn-sm" style="margin:0px; height:35px;" data-bs-toggle="modal"
                 data-bs-target="#addMI">Add MI No</button>
             <form action="<?= base_url() ?>issue/addMI" method="POST">
-
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-sm-6">
                             <label for="" class="col-sm-6 col-form-label">MI No</label>
-                            <select class="form-select form-control" aria-label=".form-select-lg example" id="mi_code"
+                            <input type="text" class="form-control" id="mi_code" name="mi_code" value="MI01-C02<?= substr(date('Y'),2,4) . date('m') ?>" required>
+                            <!-- <select class="form-select form-control" aria-label=".form-select-lg example" id="mi_code"
                                 name="mi_code" required>
                                 <option selected>-- Select --</option>
                                 <?php foreach ($mi_code as $data) { ?>
                                 <option value="<?= $data->doc_no ?>"><?= $data->doc_no ?></option>
                                 <?php $i++; } ?>
-                            </select> <label for="" class="col-sm-6 col-form-label">Entry Date</label>
+                            </select>  -->
+
+                            <label for="" class="col-sm-6 col-form-label">Entry Date</label>
                             <input type="date" class="form-control" id="entri_date" name="entri_date" required>
                             </select> <label for="" class="col-sm-6 col-form-label">Posting Date</label>
                             <input type="date" class="form-control" id="post_date" name="post_date" required>

@@ -10,7 +10,7 @@
                     <div class="row justify-content-center">
                         <div class="col-sm-6">
                             <label for="" class="col-sm-6 col-form-label">GR Number</label>
-                            <input type="text" class="form-control" id="received_code" name="received_code" required>
+                            <input type="text" class="form-control" id="received_code" name="received_code" value="GR" required>
                             <label for="" class="col-sm-6 col-form-label">Arrival Date</label>
                             <input type="date" class="form-control" id="arrival_date" name="arrival_date" required>
                             <label for="" class="col-sm-6 col-form-label">PO Number</label>

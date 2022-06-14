@@ -12,7 +12,7 @@
                         <div class="row justify-content-center">
                             <div class="col-sm-6">
                                 <label for="" class="col-sm-6 col-form-label">Lending No</label>
-                                <input type="text" class="form-control" id="lending_no" name="lending_no" required>
+                                <input type="text" class="form-control" id="lending_no" name="lending_no" value="LEN-C02<?= substr(date('Y'),2,4) . date('m'); ?>"" required>
                                 <label for="" class="col-sm-6 col-form-label">Lending Date</label>
                                 <input type="date" class="form-control" id="lending_date" name="lending_date" required>
                                 <label for="" class="col-sm-6 col-form-label">Borrower Name</label>
