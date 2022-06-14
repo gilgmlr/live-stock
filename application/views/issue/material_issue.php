@@ -18,7 +18,8 @@
                     <div class="row justify-content-center">
                         <div class="col-sm-6">
                             <label for="" class="col-sm-6 col-form-label">MI No</label>
-                            <input type="text" class="form-control" id="mi_code" name="mi_code" value="MI01-C02<?= substr(date('Y'),2,4) . date('m') ?>" required>
+                            <input type="text" class="form-control" id="mi_code" name="mi_code"
+                                value="MI01-C02<?= substr(date('Y'),2,4) . date('m') ?>" required>
                             <!-- <select class="form-select form-control" aria-label=".form-select-lg example" id="mi_code"
                                 name="mi_code" required>
                                 <option selected>-- Select --</option>
@@ -91,7 +92,10 @@
                     <center>
                         <a href="<?= base_url(); ?>issue" class="btn btn-danger" style="padding:17px">
                             Batal
-                        </a> <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
+                        </a> <button onclick="confirmAction()" id="simpan" type="submit"
+                            class="btn btn-success">Simpan</button>
+                        <!-- <button onclick="confirmAction()">Delete</button> -->
+
                     </center>
                 </div>
             </form>
@@ -119,6 +123,59 @@
                 </div>
             </div>
             <!-- End Modal -->
+
+            <!-- ALERT -->
+            <!-- <div class="position-absolute top-50 start-50 translate-middle">
+                <div class="alert alert-success" style="width : 250px" role="alert">
+                    <h4 class="alert-heading">Confirmation Alert!</h4>
+                    <p>Are you sure want to save this?.</p>
+                    <hr>
+                    <button type="button" class="btn btn-outline-success">Save</button>
+                    <button type="button" class="btn btn-outline-danger">Cancel</button>
+
+                </div>
+            </div> -->
+
+            <!-- Modal -->
+            <div class="modal fade modal-dialog-scrollable" id="simpan" tabindex="-1"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered " style=max-width:30%>
+                    <div class="cards-body">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: #563d7c">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="cards shadow p-3 mb-5 bg-white rounded">
+                                            ..
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Add Item</button>
+                                <button type="button" class="btn btn-succes" data-bs-dismiss="modal">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Modal  -->
         </div>
     </div>
 </div>
+
+<script>
+// The function below will start the confirmation dialog
+function confirmAction() {
+    let confirmAction = confirm("Are you sure to execute this action?");
+    if (confirmAction) {
+        alert("Action successfully executed");
+    } else {
+        alert("Action canceled");
+    }
+}
+</script>

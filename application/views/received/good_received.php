@@ -10,7 +10,8 @@
                     <div class="row justify-content-center">
                         <div class="col-sm-6">
                             <label for="" class="col-sm-6 col-form-label">GR Number</label>
-                            <input type="text" class="form-control" id="received_code" name="received_code" value="GR" required>
+                            <input type="text" class="form-control" id="received_code" name="received_code" value="GR"
+                                required>
                             <label for="" class="col-sm-6 col-form-label">Arrival Date</label>
                             <input type="date" class="form-control" id="arrival_date" name="arrival_date" required>
                             <label for="" class="col-sm-6 col-form-label">PO Number</label>
@@ -78,10 +79,24 @@
                         <a href="<?= base_url(); ?>received" class="btn btn-danger" style="padding-top:17px">
                             Batal
                         </a>
-                        <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
+                        <button onclick="confirmAction()" id="simpan" type="submit"
+                            class="btn btn-success">Simpan</button>
                     </center>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+
+<script>
+// The function below will start the confirmation dialog
+function confirmAction() {
+    let confirmAction = confirm("Are you sure to execute this action?");
+    if (confirmAction) {
+        alert("Action successfully executed");
+    } else {
+        alert("Action canceled");
+    }
+}
+</script>

@@ -1,7 +1,7 @@
 <div class="container" style="margin-top: 120px;">
     <div class="cards shadow p-3 mb-5 bg-white rounded">
         <h4 class="card-title">History</h4>
-        <a class="btn btn-primary" href="settings/export" style="height: 35px;">Export Data</a>
+        <a class="btn btn-primary" href="settings/generateXls" style="height: 35px;">Export Data</a>
         <div class="card-body">
             <div class="container">
                 <!--  ISI DISINI  -->
