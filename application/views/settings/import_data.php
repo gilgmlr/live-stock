@@ -47,7 +47,7 @@
         </div>
         <?php ;} ?>
 
-        <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "3") { ?>
+        <!-- <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "3") { ?>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal" data-bs-target="#ImpIssue">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
@@ -102,7 +102,7 @@
                     </div>
                 </div>
             </a>
-        </div>
+        </div> -->
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal" data-bs-target="#ImpDept">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
