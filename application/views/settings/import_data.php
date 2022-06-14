@@ -374,7 +374,7 @@
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:30%>
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: #563d7c">
-                        <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Import Data Department
+                        <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Import Data History
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>

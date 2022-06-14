@@ -29,7 +29,6 @@ class Issue extends CI_Controller
             'project_no' => $this->input->post('project_no'),
             'item_code' => $this->input->post('item_code'),
             'warehouse_code' => $this->input->post('warehouse_code'),
-            'uom_code' => $this->input->post('uom_code'),
             'transaction_qty' => $this->input->post('transaction_qty'),
             'reference' => $this->input->post('reference'),
             'reason_code' => $this->input->post('reason_code'),

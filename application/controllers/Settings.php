@@ -185,13 +185,101 @@ class Settings extends CI_Controller
                                 'item_code' => $worksheet->getCellByColumnAndRow(4, $row)->getValue(),
                                 'qty' => $worksheet->getCellByColumnAndRow(5, $row)->getValue(),
                                 'warehouse_code' => $worksheet->getCellByColumnAndRow(6, $row)->getValue(),
-                            );       
+                            );   
+
+                            // if (substr($worksheet->getCellByColumnAndRow(2, $row)->getValue(),0,1) == "MI") {
+                            //     $mi = array(
+                            //         'doc_no' => $worksheet->getCellByColumnAndRow(2, $row)->getValue(),
+                            //         'entri_date' => date('Y-m-d', PHPExcel_Shared_Date::ExcelToPHP($worksheet->getCellByColumnAndRow(0, $row)->getValue())),
+                            //         'posting_date' => date('Y-m-d', PHPExcel_Shared_Date::ExcelToPHP($worksheet->getCellByColumnAndRow(1, $row)->getValue())),
+                            //         'dept_no' => '',
+                            //         'project_no' => '',
+                            //         'item_code' => $worksheet->getCellByColumnAndRow(4, $row)->getValue(),
+                            //         'warehouse_code' => $worksheet->getCellByColumnAndRow(6, $row)->getValue(),
+                            //         'transaction_qty' => $worksheet->getCellByColumnAndRow(5, $row)->getValue(),
+                            //         'reference' => '',
+                            //         'reason_code' => '',
+                            //         'description' => '',
+                            //         'created_by' => "Import Data",
+                            //     );
+
+                            //     $this->M_CRUD->input_data('material_issue', $mi);
+                            // }
                         }
                     }
                 } 
             }
  
             $this->db->insert_batch($table, $data);
+            // $this->db->insert_batch("material_issue", $mi);
+            $this->session->set_flashdata('flash', 'Import File Excel Saved in database ' . $table);
+            redirect('settings/view_import_data');
+        } else {
+            $this->session->set_flashdata('flash', 'Import File is Failed, Please Try Again!');
+            redirect('settings/view_import_data');
+        }
+    }
+
+    public function import_history()
+    {
+        date_default_timezone_set('Asia/Jakarta');
+        $table = $this->input->post('table_name');
+        if(isset($_FILES["file"]["name"])){
+              // upload
+            $file_tmp = $_FILES['file']['tmp_name'];
+            $file_name = $_FILES['file']['name'];
+            $file_size =$_FILES['file']['size'];
+            $file_type=$_FILES['file']['type'];
+            // move_uploaded_file($file_tmp,"uploads/".$file_name); // simpan filenya di folder uploads
+              
+            $object = PHPExcel_IOFactory::load($file_tmp);            
+        
+            foreach($object->getWorksheetIterator() as $worksheet){
+                $highestRow = $worksheet->getHighestRow();
+                $highestColumn = $worksheet->getHighestColumn();
+        
+                for($row=3; $row<=$highestRow; $row++){
+                    if ($worksheet->getCellByColumnAndRow(0, $row)->getValue() != null) {
+                        $doc_date = date('Y-m-d', PHPExcel_Shared_Date::ExcelToPHP($worksheet->getCellByColumnAndRow(0, $row)->getValue()));
+                        $system_date = date('Y-m-d', PHPExcel_Shared_Date::ExcelToPHP($worksheet->getCellByColumnAndRow(1, $row)->getValue()));
+                        $source_doc = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
+                        $dest = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
+                        $item_code = $worksheet->getCellByColumnAndRow(4, $row)->getValue();
+                        $qty = $worksheet->getCellByColumnAndRow(5, $row)->getValue();
+                        $warehouse = $worksheet->getCellByColumnAndRow(6, $row)->getValue();
+
+                        $data[] = array(
+                            'doc_date' => $doc_date,
+                            'system_date' => $system_date,
+                            'source_doc' => $source_doc,
+                            'destination_doc' => $dest,
+                            'item_code' => $item_code,
+                            'qty' => $qty,
+                            'warehouse_code' => $warehouse,
+                        ); 
+
+                        if (substr($source_doc, 0,1) == "MI") {
+                            $mi[] = array(
+                                'doc_no' => $worksheet->getCellByColumnAndRow(2, $row)->getValue(),
+                                'entri_date' => date('Y-m-d', PHPExcel_Shared_Date::ExcelToPHP($worksheet->getCellByColumnAndRow(0, $row)->getValue())),
+                                'posting_date' => date('Y-m-d', PHPExcel_Shared_Date::ExcelToPHP($worksheet->getCellByColumnAndRow(1, $row)->getValue())),
+                                'dept_no' => '',
+                                'project_no' => '',
+                                'item_code' => $worksheet->getCellByColumnAndRow(4, $row)->getValue(),
+                                'warehouse_code' => $worksheet->getCellByColumnAndRow(6, $row)->getValue(),
+                                'transaction_qty' => $worksheet->getCellByColumnAndRow(5, $row)->getValue(),
+                                'reference' => '',
+                                'reason_code' => '',
+                                'description' => '',
+                                'created_by' => "Import Data",
+                            );
+                        }
+                    }
+                } 
+            }
+ 
+            $this->db->insert_batch($table, $data);
+            $this->db->insert_batch("material_issue", $mi);
             $this->session->set_flashdata('flash', 'Import File Excel Saved in database ' . $table);
             redirect('settings/view_import_data');
         } else {
