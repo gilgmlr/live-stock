@@ -355,6 +355,25 @@ class Settings extends CI_Controller
         }
     }
 
+    public function reset_password()
+    {
+        $nip = $this->input->get('nip');
+
+        $user = $this->db->get_where('user', ['nip' => $nip])->row_array();
+        
+        $data = array(
+            'nip' => $nip,
+            'name' => $user['name'],
+            'password' => password_hash($nip, PASSWORD_DEFAULT),
+            'warehouse_code' => $user['warehouse_code'],
+            'role' => $user['role']
+        );
+
+		$this->M_CRUD->update_data('user', $data, ['nip' => $nip]);
+        $this->session->set_flashdata('flash', 'Password Account ' . $nip . ' Reset Successs!');
+		redirect('settings/view_table_user');
+    }
+
     public function delete_account()
     {
         $nip = $this->input->get('nip');
