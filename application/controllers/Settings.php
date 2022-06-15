@@ -56,7 +56,7 @@ class Settings extends CI_Controller
     public function view_all_items()
     {
         $data['judul'] = 'Settings/view_all_items';
-        $data['users'] = $this->M_CRUD->get_data('user')->result();
+        $data['item'] = $this->M_CRUD->get_data('items')->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('settings/all_items');
@@ -330,6 +330,31 @@ class Settings extends CI_Controller
         }
     }
 
+    public function update_item()
+    {
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('spec', 'Spec', 'required');
+        $this->form_validation->set_rules('uom', 'uom', 'required');
+        
+        if($this->form_validation->run() == false) {
+            $this->session->set_flashdata('flash', 'Change item '. $this->input->post('item_code') . ' Failed!');
+			redirect('settings/view_all_items');
+		} else {
+            $item = $this->db->get_where('items', ['item_code' => $this->input->post('item_code')])->row_array();
+                $data = array(
+                    'item_code' => $item['item_code'],
+                    'name' => $this->input->post('name'),
+                    'specification' => $this->input->post('spec'),
+                    'uom' => $this->input->post('uom'),
+                    'image' => $item['image'],
+                );
+
+                $this->M_CRUD->update_data('items', $data, ['item_code' => $this->input->post('item_code')]);
+                $this->session->set_flashdata('flash', 'Change item '.$item['item_code'] . ' Success!');
+                redirect('settings/view_all_items');
+        }
+    }
+
     public function delete_account()
     {
         $nip = $this->input->get('nip');
@@ -339,6 +364,15 @@ class Settings extends CI_Controller
 		redirect('settings/view_table_user');
     }
 
+    public function delete_item()
+    {
+        $item_code = $this->input->get('item_code');
+
+		$this->M_CRUD->delete_data('items', ['item_code' => $item_code]);
+        $this->session->set_flashdata('flash', 'Item ' . $item_code . ' Deleted!');
+		redirect('settings/view_all_items');
+    }
+    
     public function download()
     {	
         $name = $this->input->get('name');

@@ -66,7 +66,9 @@
                     <footer>
                         <!-- Copyright -->
                         <div class="text-center p-4" style="color: #000">
-                            © 2022 Copyright: Kerja Praktik - Telkom University
+                        <a href="#" style="text-decoration: none; color: inherit;">
+                            <small>© 2022 Cemindo Gemilang - Telkom University</small>
+                        </a>
                         </div>
                         <!-- Copyright -->
                     </footer>

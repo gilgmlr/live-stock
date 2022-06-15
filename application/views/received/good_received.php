@@ -59,7 +59,7 @@
                                 <div class="col-sm-5">
                                     <label for="" class="col-sm-6 col-form-label">Warehouse</label>
                                     <input type="text" class="form-control" id="warehouse_code" name="warehouse_code"
-                                        value="<?= $this->session->userdata('warehouse') ?>" readonly>
+                                        value="<?= $this->session->userdata('warehouse') ?>" required>
                                 </div>
                             </div>
 

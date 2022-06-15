@@ -59,6 +59,7 @@
                                                     Code : <?= $data->item_code ?><br>
                                                     Name : <?= $data->name ?><br>
                                                     Specification: <?= $data->specification ?><br>
+                                                    UoM  : <?= $data->uom ?><br>
                                                     <!-- location: <?= $data->name ?><br> -->
                                                 </div>
                                             </div>

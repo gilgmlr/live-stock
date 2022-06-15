@@ -12,8 +12,8 @@ class Inventory extends CI_Controller
 
     public function index()
     {
-        $data['stock'] = $this->M_CRUD->get_join3('inventory', 'items', 'items.item_code = inventory.item_code',
-        'uom', 'uom.uom_code = inventory.uom_code', 'warehouse', 'warehouse.warehouse_code = inventory.warehouse_code')->result();
+        $data['stock'] = $this->M_CRUD->get_join('inventory', 'items', 'items.item_code = inventory.item_code',
+        'warehouse', 'warehouse.warehouse_code = inventory.warehouse_code')->result();
         $data['judul'] = 'Inventory';
 
         $this->load->view('template/header', $data);
@@ -27,7 +27,6 @@ class Inventory extends CI_Controller
         $this->form_validation->set_rules('item_code', 'Item_Code', 'required');
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('spec', 'Spec', 'required');
-        $this->form_validation->set_rules('uom_name', 'Uom_Name', 'required');
         $this->form_validation->set_rules('stocks', 'Stocks', 'required');
         $this->form_validation->set_rules('warehouse_code', 'Warehouse_Code', 'required');
         $this->form_validation->set_rules('location', 'Location', 'required');
@@ -44,7 +43,6 @@ class Inventory extends CI_Controller
                 'item_code' => $res_inven['item_code'],
                 'location' => $this->input->post('location'),
                 'stocks' => $res_inven['stocks'],
-                'uom_code' => $res_uom['uom_code'],
                 'warehouse_code' => $res_inven['warehouse_code'],
                 'equipment' => $this->input->post('equipment'),
                 'status' => $this->input->post('status'),
@@ -55,6 +53,7 @@ class Inventory extends CI_Controller
                 'item_code' => $res_item['item_code'],
                 'name' => $this->input->post('name'),
                 'specification' => $this->input->post('spec'),
+                'uom' => $res_uom['uom'],
                 'image' => $res_item['image'],
             );
             $this->M_CRUD->update_data('items', $item, ['item_code' => $res_item['item_code']]);

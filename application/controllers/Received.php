@@ -6,8 +6,6 @@ class Received extends CI_Controller
     {
         parent::__construct();
 
-        // $this->load->model('M_Received');
-        // $this->load->model('M_History');
         $this->load->model('M_CRUD');
         $this->load->library('form_validation');
     }
@@ -37,7 +35,6 @@ class Received extends CI_Controller
         $this->form_validation->set_rules('vendor_name', 'Vendor_Name', 'required');
         $this->form_validation->set_rules('item_code', 'Item_Code', 'required');
         $this->form_validation->set_rules('qty', 'Qty', 'required');
-        $this->form_validation->set_rules('uom', 'UoM', 'required');
         $this->form_validation->set_rules('warehouse_code', 'Warehouse_Code', 'required');
         $this->form_validation->set_rules('location', 'Location', 'required');
         // $this->form_validation->set_rules('desc', 'Desc', 'required');
@@ -53,7 +50,6 @@ class Received extends CI_Controller
                 'vendor_name' => $this->input->post('vendor_name'),
                 'item_code' => $this->input->post('item_code'),
                 'qty' => $this->input->post('qty'),
-                'uom' => $this->input->post('uom'),
                 'warehouse_code' => $this->input->post('warehouse_code'),
                 'location' => $this->input->post('location'),
             );
@@ -76,7 +72,6 @@ class Received extends CI_Controller
                     'item_code' => $item['item_code'],
                     'location' => $item['location'],
                     'stocks' => $item['stocks'] + $this->input->post('qty'),
-                    'uom_code' => $item['uom_code'],
                     'warehouse_code' => $item['warehouse_code'],
                     'equipment' => $this->input->post('equipment'),
                     'status' => $this->input->post('status'),
@@ -87,7 +82,6 @@ class Received extends CI_Controller
                     'item_code' => $this->input->post('item_code'),
                     'location' => $this->input->post('location'),
                     'stocks' => $this->input->post('qty'),
-                    'uom_code' => $this->input->post('uom'),
                     'warehouse_code' => $this->input->post('warehouse_code'),
                     'equipment' => $this->input->post('equipment'),
                     'status' => $this->input->post('status'),

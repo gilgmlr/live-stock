@@ -26,7 +26,9 @@
                                     <th>Location</th>
                                     <th>Equipment</th>
                                     <th>Status</th>
+                                <?php if($this->session->userdata('role') == "1") { ?>
                                     <th>Action</th>
+                                <?php ;} ?>
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,20 +47,20 @@
                                     <td><?= $data->item_code ?></td>
                                     <td><?= $data->name ?></td>
                                     <td><?= $data->specification ?></td>
-                                    <td><?= $data->uom_name ?></td>
+                                    <td><?= $data->uom ?></td>
                                     <td><?= $data->stocks ?></td>
                                     <td><?= $data->warehouse_code ?></td>
                                     <td><?= $data->location ?></td>
                                     <td><?= $data->equipment ?></td>
                                     <td><?= $data->status ?></td>
+
+                                <?php if($this->session->userdata('role') == "1") { ?>
                                     <td>
-                                        <!-- <button type="button" class="btn btn-warning btn-sm"
-                                            style="margin:0px; height:35px;" data-bs-toggle="modal"
-                                            data-bs-target="#edit<?= $data->item_code ?>">Edit</button> -->
                                         <a href="" data-bs-toggle="modal"
                                             data-bs-target="#edit<?= $data->item_code ?>"><i
                                                 class="fa-solid fa-pencil"></i></a>
                                     </td>
+                                <?php ;} ?>
                                 </tr>
 
                                 <!-- Modal -->
@@ -120,8 +122,8 @@
                                                             <div class="col-sm-6">
                                                                 <label for=""
                                                                     class="col-sm-6 col-form-label">UoM</label>
-                                                                <input type="text" class="form-control" id="uom_name"
-                                                                    name="uom_name" value="<?=$data->uom_name?>"
+                                                                <input type="text" class="form-control" id="uom"
+                                                                    name="uom" value="<?=$data->uom?>"
                                                                     readonly>
                                                             </div>
                                                             <div class="col-sm-6">

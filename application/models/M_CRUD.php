@@ -7,7 +7,7 @@ class M_CRUD extends CI_Model
 	}
 
 	function get_data_limit($table, $limit, $start, $keyword = null)
-	{
+	{ //khusus catalog
 		if ($keyword) {
 			$this->db->like('name', $keyword)->or_like('item_code', $keyword)->or_like('specification', $keyword);
 		}
@@ -26,41 +26,20 @@ class M_CRUD extends CI_Model
 		return $this->db->get($table);
 	}
 
-	function get_or_like($table, $col1, $col2, $match){
-		$this->db->select('*');
-		$this->db->from('items');
-		$this->db->like('item_code','0100-');
-		$query = $this->db->get();
-	}
-
-	public function get_join($table, $join, $matching)
+	public function get_join($table, $join, $matching, $join2 = null, $matching2 = null, $join3 = null, $matching3 = null)
 	{
 		$this->db->select('*');
 		$this->db->from($table);
 		$this->db->join($join, $matching);
-		$query = $this->db->get();
 
-		return $query;
-	}
+		if($join2) {
+			$this->db->join($join2, $matching2);
+		}
 
-	public function get_join2($table, $join1, $matching1, $join2, $matching2)
-	{
-		$this->db->select('*');
-		$this->db->from($table);
-		$this->db->join($join1, $matching1);
-		$this->db->join($join2, $matching2);
-		$query = $this->db->get();
+		if($join3) {
+			$this->db->join($join3, $matching3);
+		}
 
-		return $query;
-	}
-
-	public function get_join3($table, $join1, $matching1, $join2, $matching2, $join3, $matching3)
-	{
-		$this->db->select('*');
-		$this->db->from($table);
-		$this->db->join($join1, $matching1);
-		$this->db->join($join2, $matching2);
-		$this->db->join($join3, $matching3);
 		$query = $this->db->get();
 
 		return $query;
