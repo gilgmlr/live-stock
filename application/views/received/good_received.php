@@ -19,17 +19,6 @@
                             <input type="text" class="form-control" id="po_number" name="po_number" required>
                             <label for="" class="col-sm-6 col-form-label">Vendor Name</label>
                             <input type="text" class="form-control" id="vendor_name" name="vendor_name" required>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <label for="" class="col-sm-6 col-form-label">Equipment</label>
-                                    <input type="text" class="form-control" id="equipment" name="equipment">
-                                </div>
-                                <div class="col-sm-6">
-                                    <label for="" class="col-sm-6 col-form-label">Status</label>
-                                    <input type="text" class="form-control" id="status" name="status" value="Can Use"
-                                        readonly>
-                                </div>
-                            </div>
                         </div>
 
                         <div class="col-sm-6">
@@ -58,20 +47,30 @@
                             </div>
 
 
-                            <label for="" class="col-sm-6 col-form-label">Qty</label>
-                            <input type="text" class="form-control" id="qty" name="qty" required>
-
                             <div class="row">
-                                <div class="col-sm-6">
-                                    <label for="" class="col-sm-6 col-form-label">WH</label>
-                                    <input type="text" class="form-control" id="warehouse_code" name="warehouse_code" value="<?= $this->session->userdata('warehouse') ?>" readonly>
+                                <div class="col-sm-2">
+                                    <label for="" class="col-sm-6 col-form-label">Qty</label>
+                                    <input type="text" class="form-control" id="qty" name="qty" required>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-5">
                                     <label for="" class="col-sm-6 col-form-label">Location</label>
                                     <input type="text" class="form-control" id="location" name="location" required>
                                 </div>
+                                <div class="col-sm-5">
+                                    <label for="" class="col-sm-6 col-form-label">Warehouse</label>
+                                    <input type="text" class="form-control" id="warehouse_code" name="warehouse_code"
+                                        value="<?= $this->session->userdata('warehouse') ?>" readonly>
+                                </div>
+                            </div>
 
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label for="" class="col-sm-6 col-form-label">Equipment</label>
+                                    <input type="text" class="form-control" id="equipment" name="equipment">
+                                </div>
+                                <div class="col-sm-6">
 
+                                </div>
                                 <label for="" class="col-sm-12 col-form-label">Entered by</label>
 
                                 <div class="col-sm-6">
@@ -88,7 +87,7 @@
                     </div>
                 </div>
                 <input type="text" class="form-control" id="desc" name="desc" value="Good Receive" hidden>
-
+                <input type="text" class="form-control" id="status" name="status" value="Can Use" hidden readonly>
                 <div class="cards-footer">
                     <center>
                         <a href="<?= base_url(); ?>received" class="btn btn-danger" style="padding-top:17px">
