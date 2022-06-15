@@ -60,7 +60,7 @@ class Received extends CI_Controller
 
             date_default_timezone_set('Asia/Jakarta');
             $history = array(
-                'date' => date("Y-m-d h:m:s A"),
+                'date' => date("Y-m-d h:i:s A"),
                 'doc_num' => $this->input->post('received_code'),
                 'description' => $this->input->post('desc'),
             );
