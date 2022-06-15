@@ -12,7 +12,7 @@
 			integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
 			crossorigin="anonymous"
 		/> -->
-    
+
     <!-- Icon  -->
     <link href="<?=base_url()?>assets/image/icon.png" rel='shorcut icon'>
 
@@ -37,28 +37,39 @@
                                 </div>
                                 <div class="card-body">
                                     <center>
-                                    <?php if ($this->session->flashdata('flash')) : ?>
-                                        <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <?php if ($this->session->flashdata('flash')) : ?>
+                                        <div id="alert" class="alert alert-warning alert-dismissible fade show"
+                                            role="alert">
                                             <?= $this->session->flashdata('flash') ?>
                                         </div>
                                         <?php $this->session->unset_userdata('flash');
                                     endif; ?>
                                         <form action="login/login" method="POST">
                                             <div class="input-container">
-                                                <input type="text" id="nip" class="text-input" name="nip" autocomplete="off" placeholder="Enter your NIP" required />
+                                                <input type="text" id="nip" class="text-input" name="nip"
+                                                    autocomplete="off" placeholder="Enter your NIP" required />
                                             </div>
                                             <div class="input-container">
-                                                <input type="password" id="password" name="password" class="text-input" autocomplete="off" placeholder="Enter your Password" required />
+                                                <input type="password" id="password" name="password" class="text-input"
+                                                    autocomplete="off" placeholder="Enter your Password" required />
                                             </div>
-                                            <input type="submit" class="btn btn-warning btn-sm" value="Login" id="login">
+                                            <input type="submit" class="btn btn-warning btn-sm" value="Login"
+                                                id="login">
                                         </form>
 
-                                        <a href="<?= base_url().'login/preview' ?>" >cek</a>
+                                        <a href="<?= base_url().'login/preview' ?>">cek</a>
                                     </center>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <footer>
+                        <!-- Copyright -->
+                        <div class="text-center p-4" style="color: #000">
+                            © 2022 Copyright: Kerja Praktik - Telkom University
+                        </div>
+                        <!-- Copyright -->
+                    </footer>
                 </center>
             </div>
         </div>
