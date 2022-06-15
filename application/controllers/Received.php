@@ -60,7 +60,7 @@ class Received extends CI_Controller
 
             date_default_timezone_set('Asia/Jakarta');
             $history = array(
-                'date' => date("Y-m-d h:m:s A"),
+                'date' => date("Y-m-d h:i:s A"),
                 'doc_num' => $this->input->post('received_code'),
                 'description' => $this->input->post('desc'),
             );
@@ -185,13 +185,6 @@ class Received extends CI_Controller
         $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
         
         redirect('lending');
-    }
-
-    function get_item()
-    {
-        $kode=$this->input->post('item_code');
-        $data=$this->db->get_where('items', ['item_code' => $kode])->row_array();
-		echo json_encode($data);
     }
 
 }
