@@ -41,30 +41,14 @@
                         </div>
                         <div class="col-sm-6">
                             <label for="" class="col-sm-6 col-form-label">Item No</label>
-                            <select class="form-select form-control" aria-label=".form-select-lg example" id="item_code"
-                                name="item_code" required>
-                                <option selected>-- Select --</option>
-                                <?php foreach ($items as $data) { ?>
-                                <option value="<?= $data->item_code ?>"><?= $data->item_code ?> - <?= $data->name ?>
-                                </option>
-                                <?php $i++; } ?>
-                            </select>
+                            <input type="text" class="form-control" id="item_code" name="item_code" required
+                                autocomplete="off">
                             <label for="" class="col-sm-6 col-form-label">UoM Code</label>
-                            <select class="form-select form-control" aria-label=".form-select-lg example" id="uom_code"
-                                name="uom_code" required>
-                                <option selected>-- Select --</option>
-                                <?php foreach ($uom as $data) { ?>
-                                <option value="<?= $data->uom_code ?>"><?= $data->uom_name ?></option>
-                                <?php $i++; } ?>
-                            </select>
+                            <input type="text" class="form-control" id="uom" name="uom" readonly
+                                autocomplete="off">
                             <label for="" class="col-sm-6 col-form-label">Warehouse Code</label>
-                            <select class="form-select form-control" aria-label=".form-select-lg example"
-                                id="warehouse_code" name="warehouse_code" required>
-                                <option selected>-- Select --</option>
-                                <?php foreach ($warehouse as $data) { ?>
-                                <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?></option>
-                                <?php $i++; } ?>
-                            </select>
+                            <input type="text" class="form-control" id="warehouse_code" name="warehouse_code" value="<?= $this->session->userdata('warehouse') ?>" readonly
+                                autocomplete="off">
                             <label for="" class="col-sm-6 col-form-label">Transaction Qty</label>
                             <input type="text" class="form-control" id="transaction_qty" name="transaction_qty" required
                                 autocomplete="off">
@@ -148,15 +132,31 @@
     </div>
 </div>
 
-<script>
-// The function below will start the confirmation dialog
-function confirmAction() {
-    let confirmAction = confirm("Are you sure to execute this action?");
-    if (confirmAction) {
-        window.location = url+"user/deleteuser/"+id;
-        alert("Action successfully executed");
-    } else {
-        alert("Action canceled");
-    }
-}
+<script src="<?= base_url() ?>node_modules/js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#item_code').on('input', function() {
+
+        var item_code = $(this).val();
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url().'auto/get_item'?>",
+            dataType: "JSON",
+            data: {
+                item_code: item_code
+            },
+            cache: false,
+            success: function(data) {
+                $.each(data, function(item_code, nama, specification, uom, image) {
+                    $('[name="item_name"]').val(data.name);
+                    $('[name="specification"]').val(data.specification);
+                    $('[name="uom"]').val(data.uom);
+                });
+
+            }
+        });
+        return false;
+    });
+
+});
 </script>
