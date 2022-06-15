@@ -1,5 +1,5 @@
 <div class="container " style="margin-top: 100px;">
-<?php if ($this->session->flashdata('flash')) : ?>
+    <?php if ($this->session->flashdata('flash')) : ?>
     <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
         <?= $this->session->flashdata('flash') ?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -39,6 +39,11 @@
                                                 placeholder="Enter spesification" rows="3" required></textarea>
                                         </div>
                                         <div class="col">
+                                            <label class="form-label" for="form3Example1c">UoM</label>
+                                            <input type="text" id="uom" class="text-input" name="uom" autocomplete="off"
+                                                placeholder="Enter uom" required />
+                                        </div>
+                                        <div class="col">
                                             <label for="formFileMultiple" class="form-label"
                                                 style="margin-top:8px">Upload Image</label>
                                             <input class="custom-file-input form-control" type="file" id="image"
@@ -50,6 +55,11 @@
                                 </div>
                                 <div class="d-flex justify-content-center mx-4 mb-3 mb-md-4">
                                     <button type="submit" id="save" class="btn btn-warning btn-lg">Add</button>
+                                </div>
+                                <div class="col">
+                                    <center><a href="<?= base_url()?>settings/view_all_items">See all
+                                            items?</a></center>
+
                                 </div>
                             </form>
                         </div>

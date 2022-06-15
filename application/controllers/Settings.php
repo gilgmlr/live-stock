@@ -53,6 +53,14 @@ class Settings extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('settings/table_user');
     }
+    public function view_all_items()
+    {
+        $data['judul'] = 'Settings/view_all_items';
+        $data['users'] = $this->M_CRUD->get_data('user')->result();
+
+        $this->load->view('template/header', $data);
+        $this->load->view('settings/all_items');
+    }
 
     public function add_account()
     {
@@ -87,6 +95,7 @@ class Settings extends CI_Controller
         $this->form_validation->set_rules('item_code', 'Item_Code', 'required');
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('spec', 'Spec', 'required');
+        $this->form_validation->set_rules('uom', 'Uom', 'required');
 
         if($this->form_validation->run() == false) {
             $this->session->set_flashdata('flash', 'Add Item Failed, Please Try Again!');
@@ -112,12 +121,13 @@ class Settings extends CI_Controller
                     'item_code' => $this->input->post('item_code'),
                     'name' => $this->input->post('name'),
                     'specification' => $this->input->post('spec'),
+                    'uom' => $this->input->post('uom'),
                     'image' => $image,
                 );
                 // var_dump($config);die;
     
                 $this->M_CRUD->input_data('items', $data);
-                $this->session->set_flashdata('flash', 'Add Account ' . $this->input->post('name') . ' Success!');
+                $this->session->set_flashdata('flash', 'Add item ' . $this->input->post('name') . ' Success!');
                 redirect('settings/view_add_items');
             }
         }
