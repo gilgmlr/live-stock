@@ -11,7 +11,7 @@
             <h4 style="font-weight:bold;"> Form Material Issue</h4>
         </center>
         <div class=" card-body">
-            <form action="<?= base_url() ?>issue/addMI" method="POST">
+            <form action="<?= base_url() ?>issue/addMI" method="POST" autocomplete="off">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-sm-6">
@@ -27,50 +27,90 @@
                             </select>  -->
 
                             <label for="" class="col-sm-6 col-form-label">Entry Date</label>
-                            <input type="date" class="form-control" id="entri_date" name="entri_date" value="<?php echo date('Y-m-d'); ?>" required>
+                            <input type="date" class="form-control" id="entri_date" name="entri_date"
+                                value="<?php echo date('Y-m-d'); ?>" required>
                             </select> <label for="" class="col-sm-6 col-form-label">Posting Date</label>
-                            <input type="date" class="form-control" id="post_date" name="post_date" value="<?php echo date('Y-m-d'); ?>" required>
-                            <label for="" class="col-sm-6 col-form-label">Dept No</label>
-                            <input type="text" class="form-control" id="dept_no" name="dept_no" required
-                                autocomplete="off">
-                            <label for="" class="col-sm-6 col-form-label">Project No</label>
-                            <input type="text" class="form-control" id="project_no" name="project_no" required
-                                autocomplete="off">
+                            <input type="date" class="form-control" id="post_date" name="post_date"
+                                value="<?php echo date('Y-m-d'); ?>" required>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="" class="col-sm-6 col-form-label">Dept No</label>
+                                    <input type="text" class="form-control" id="dept_no" name="dept_no" required
+                                        autocomplete="off">
+
+                                </div>
+                                <div class="col">
+                                    <label for="" class="col-sm-6 col-form-label">Project No</label>
+                                    <input type="text" class="form-control" id="project_no" name="project_no" required
+                                        autocomplete="off">
+                                </div>
+
+                            </div>
                             <label for="" class="col-sm-6 col-form-label">Description</label>
-                            <textarea class="form-control" id="desc" name="desc" rows="4"></textarea>
+                            <textarea class="form-control" id="desc" name="desc" rows="1"></textarea>
                         </div>
                         <div class="col-sm-6">
-                            <label for="" class="col-sm-6 col-form-label">Item No</label>
-                            <input type="text" class="form-control" id="item_code" name="item_code" required
-                                autocomplete="off">
-                            <label for="" class="col-sm-6 col-form-label">UoM Code</label>
-                            <input type="text" class="form-control" id="uom" name="uom" readonly
-                                autocomplete="off">
-                            <label for="" class="col-sm-6 col-form-label">Warehouse Code</label>
-                            <input type="text" class="form-control" id="warehouse_code" name="warehouse_code" value="<?= $this->session->userdata('warehouse') ?>" readonly
-                                autocomplete="off">
-                            <label for="" class="col-sm-6 col-form-label">Transaction Qty</label>
-                            <input type="text" class="form-control" id="transaction_qty" name="transaction_qty" required
-                                autocomplete="off">
-                            <label for="" class="col-sm-6 col-form-label">Reference</label>
-                            <input type="text" class="form-control" id="reference" name="reference" required
-                                autocomplete="off">
 
-                            <label for="" class="col-sm-6 col-form-label">Reason</label>
-                            <input type="text" class="form-control" id="reason_code" name="reason_code" required
-                                autocomplete="off">
-                                <label for="" class="col-sm-6 col-form-label">Entered by</label>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="created_by" name="created_by"
-                                            readonly value="<?= $this->session->userdata('nip'); ?>">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" id=""
-                                            name="" readonly
-                                            value="<?= $this->session->userdata('name'); ?>">
-                                    </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Item Code</label>
+                                    <input type="text" class="form-control" id="item_code" name="item_code" required>
+
                                 </div>
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Item Name</label>
+                                    <input type="text" class="form-control" id="item_name" name="item_name" readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <label for="" class="col-sm-6 col-form-label">Spesification</label>
+                                    <input type="text" class="form-control" id="specification" name="specification"
+                                        readonly>
+
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="" class="col-sm-6 col-form-label">UoM</label>
+                                    <input type="text" class="form-control" id="uom" name="uom" readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Transaction Qty</label>
+                                    <input type="text" class="form-control" id="transaction_qty" name="transaction_qty"
+                                        required>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Warehouse</label>
+                                    <input type="text" class="form-control" id="warehouse_code" name="warehouse_code"
+                                        value="<?= $this->session->userdata('warehouse') ?>" readonly>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <label for="" class="col-sm-6 col-form-label">Reference</label>
+                                    <input type="text" class="form-control" id="reference" name="reference" required
+                                        autocomplete="off">
+                                </div>
+                                <div class="col">
+                                    <label for="" class="col-sm-6 col-form-label">Reason</label>
+                                    <input type="text" class="form-control" id="reason_code" name="reason_code" required
+                                        autocomplete="off">
+                                </div>
+                            </div>
+                            <label for="" class="col-sm-6 col-form-label">Entered by</label>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="created_by" name="created_by" readonly
+                                        value="<?= $this->session->userdata('nip'); ?>">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="" name="" readonly
+                                        value="<?= $this->session->userdata('name'); ?>">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
