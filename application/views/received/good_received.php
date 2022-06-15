@@ -9,23 +9,24 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-sm-6">
-                            <label for="" class="col-sm-6 col-form-label">GR Number</label>
+                            <label for="" class="col-sm-6 col-form-label">GR Number*</label>
                             <input type="text" class="form-control" id="received_code" name="received_code"
                                 value="GR02-C02<?= substr(date('Y'),2,4) . date('m') ?>" required>
-                            <label for="" class="col-sm-6 col-form-label">Arrival Date</label>
+                            <label for="" class="col-sm-6 col-form-label">Arrival Date*</label>
                             <input type="date" class="form-control" id="arrival_date" name="arrival_date"
                                 value="<?php echo date('Y-m-d'); ?>" required>
-                            <label for="" class="col-sm-6 col-form-label">PO Number</label>
-                            <input type="text" class="form-control" id="po_number" name="po_number" required>
-                            <label for="" class="col-sm-6 col-form-label">Vendor Name</label>
-                            <input type="text" class="form-control" id="vendor_name" name="vendor_name" required>
+                            <label for="" class="col-sm-6 col-form-label">PO Number*</label>
+                            <input type="text" class="form-control" id="po_number" name="po_number">
+                            <label for="" class="col-sm-6 col-form-label">Vendor Name*</label>
+                            <input type="text" class="form-control" id="vendor_name" name="vendor_name" >
                         </div>
 
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <label for="" class="col-sm-6 col-form-label">Item Code</label>
-                                    <input type="text" class="form-control" id="item_code" name="item_code" required>
+                                    <label for="" class="col-sm-6 col-form-label">Item Code*</label>
+                                    <input type="text" class="form-control" id="item_code" name="item_code" >
+                                    <small class="form-text text-danger"><?= form_error('item_code') ?></small>
 
                                 </div>
                                 <div class="col-sm-6">
@@ -49,17 +50,17 @@
 
                             <div class="row">
                                 <div class="col-sm-2">
-                                    <label for="" class="col-sm-6 col-form-label">Qty</label>
-                                    <input type="text" class="form-control" id="qty" name="qty" required>
+                                    <label for="" class="col-sm-6 col-form-label">Qty*</label>
+                                    <input type="text" class="form-control" id="qty" name="qty" >
                                 </div>
                                 <div class="col-sm-5">
-                                    <label for="" class="col-sm-6 col-form-label">Location</label>
-                                    <input type="text" class="form-control" id="location" name="location" required>
+                                    <label for="" class="col-sm-6 col-form-label">Location*</label>
+                                    <input type="text" class="form-control" id="location" name="location" >
                                 </div>
                                 <div class="col-sm-5">
-                                    <label for="" class="col-sm-6 col-form-label">Warehouse</label>
+                                    <label for="" class="col-sm-6 col-form-label">Warehouse*</label>
                                     <input type="text" class="form-control" id="warehouse_code" name="warehouse_code"
-                                        value="<?= $this->session->userdata('warehouse') ?>" required>
+                                        value="<?= $this->session->userdata('warehouse') ?>" >
                                 </div>
                             </div>
 
@@ -105,7 +106,6 @@
 <script type="text/javascript">
 $(document).ready(function() {
     $('#item_code').on('input', function() {
-
         var item_code = $(this).val();
         $.ajax({
             type: "POST",
@@ -120,6 +120,28 @@ $(document).ready(function() {
                     $('[name="item_name"]').val(data.name);
                     $('[name="specification"]').val(data.specification);
                     $('[name="uom"]').val(data.uom);
+                });
+
+            }
+        });
+        return false;
+    });
+
+    $('#received_code').on('input', function() {
+        var received_code = $(this).val();
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url().'auto/get_received'?>",
+            dataType: "JSON",
+            data: {
+                received_code: received_code
+            },
+            cache: false,
+            success: function(data) {
+                $.each(data, function(received_code, arrival_date, po_number, vendor_name) {
+                    $('[name="arrival_date"]').val(data.arrival_date);
+                    $('[name="po_number"]').val(data.po_number);
+                    $('[name="vendor_name"]').val(data.vendor_name);
                 });
 
             }
