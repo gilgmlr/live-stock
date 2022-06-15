@@ -33,7 +33,7 @@ class Issue extends CI_Controller
             'reference' => $this->input->post('reference'),
             'reason_code' => $this->input->post('reason_code'),
             'description' => $this->input->post('desc'),
-            'created_by' => $this->input->post('create_by'),
+            'created_by' => $this->input->post('created_by'),
         );
 
         $this->M_CRUD->input_data('material_issue', $data);
@@ -45,7 +45,6 @@ class Issue extends CI_Controller
             'item_code' => $item['item_code'],
             'location' => $item['location'],
             'stocks' => $item['stocks'] - $this->input->post('transaction_qty'),
-            'uom_code' => $item['uom_code'],
             'warehouse_code' => $item['warehouse_code'],
         );
         $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
