@@ -1,17 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- BOOTSTRAP CSS -->
-    <!-- <link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-			integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
-			crossorigin="anonymous"
-		/> -->
 
     <!-- Icon  -->
     <link href="<?=base_url()?>assets/image/icon.png" rel='shorcut icon'>
@@ -37,27 +28,26 @@
                                 </div>
                                 <div class="card-body">
                                     <center>
-                                        <?php if ($this->session->flashdata('flash')) : ?>
-                                        <div id="alert" class="alert alert-warning alert-dismissible fade show"
-                                            role="alert">
+                                    <?php if ($this->session->flashdata('flash')) : ?>
+                                        <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
                                             <?= $this->session->flashdata('flash') ?>
                                         </div>
                                         <?php $this->session->unset_userdata('flash');
                                     endif; ?>
-                                        <form action="login/login" method="POST">
+                                    <?= validation_errors(); ?>
+                                        <form action="login/login" method="POST" autocomplete="off">
                                             <div class="input-container">
-                                                <input type="text" id="nip" class="text-input" name="nip"
-                                                    autocomplete="off" placeholder="Enter your NIP" required />
+                                                <input type="text" id="nip" class="text-input" name="nip" placeholder="Enter your NIP"/>
+                                                <small class="form-text text-danger"><?= form_error('nip') ?></small>
                                             </div>
                                             <div class="input-container">
-                                                <input type="password" id="password" name="password" class="text-input"
-                                                    autocomplete="off" placeholder="Enter your Password" required />
+                                                <input type="password" id="password" name="password" class="text-input" placeholder="Enter your Password" />
+                                                <small class="form-text text-danger"><?= form_error('password') ?></small>
                                             </div>
-                                            <input type="submit" class="btn btn-warning btn-sm" value="Login"
-                                                id="login">
+                                            <input type="submit" class="btn btn-warning btn-sm" value="Login" id="login">
                                         </form>
 
-                                        <a href="<?= base_url().'login/preview' ?>">cek</a>
+                                        <!-- <a href="<?= base_url().'login/preview' ?>">cek</a> -->
                                     </center>
                                 </div>
                             </div>
@@ -67,7 +57,7 @@
                         <!-- Copyright -->
                         <div class="text-center p-4" style="color: #000">
                         <a href="#" style="text-decoration: none; color: inherit;">
-                            <small>© 2022 Cemindo Gemilang - Telkom University</small>
+                            <small>© June 2022 <br> Cemindo Gemilang | Telkom University</small>
                         </a>
                         </div>
                         <!-- Copyright -->
