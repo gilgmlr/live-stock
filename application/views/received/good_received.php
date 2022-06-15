@@ -31,11 +31,33 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-sm-6">
-                            <label for="" class="col-sm-6 col-form-label">Item Code</label>
-                            <input type="text" class="form-control" id="item_code" name="item_code" required>
-                            <label for="" class="col-sm-6 col-form-label">UoM</label>
-                            <input type="text" class="form-control" id="uom" name="uom" readonly>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Item Code</label>
+                                    <input type="text" class="form-control" id="item_code" name="item_code" required>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Item Name</label>
+                                    <input type="text" class="form-control" id="item_name" name="item_name" readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <label for="" class="col-sm-6 col-form-label">Spesification</label>
+                                    <input type="text" class="form-control" id="specification" name="specification"
+                                        readonly>
+
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="" class="col-sm-6 col-form-label">UoM</label>
+                                    <input type="text" class="form-control" id="uom" name="uom" readonly>
+                                </div>
+                            </div>
+
+
                             <label for="" class="col-sm-6 col-form-label">Qty</label>
                             <input type="text" class="form-control" id="qty" name="qty" required>
 
@@ -80,8 +102,7 @@
                         <a href="<?= base_url(); ?>received" class="btn btn-danger" style="padding-top:17px">
                             Batal
                         </a>
-                        <button id="simpan" type="submit"
-                            class="btn btn-success">Simpan</button>
+                        <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
                     </center>
                 </div>
             </form>
@@ -90,29 +111,30 @@
 </div>
 
 <script src="<?= base_url() ?>node_modules/js/jquery.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			 $('#item_code').on('input',function(){
-                
-                var item_code=$(this).val();
-                $.ajax({
-                    type : "POST",
-                    url  : "<?php echo base_url().'received/get_item'?>",
-                    dataType : "JSON",
-                    data : {item_code: item_code},
-                    cache:false,
-                    success: function(data){
-                        $.each(data,function(item_code, nama, specification, uom, image){
-                            $('[name="item_name"]').val(data.name);
-                            $('[name="specification"]').val(data.specification);
-                            $('[name="uom"]').val(data.uom);
-                        });
-                        
-                    }
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#item_code').on('input', function() {
+
+        var item_code = $(this).val();
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url().'received/get_item'?>",
+            dataType: "JSON",
+            data: {
+                item_code: item_code
+            },
+            cache: false,
+            success: function(data) {
+                $.each(data, function(item_code, nama, specification, uom, image) {
+                    $('[name="item_name"]').val(data.name);
+                    $('[name="specification"]').val(data.specification);
+                    $('[name="uom"]').val(data.uom);
                 });
-                return false;
-           });
 
-		});
-	</script>
+            }
+        });
+        return false;
+    });
 
+});
+</script>
