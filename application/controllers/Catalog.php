@@ -5,8 +5,6 @@ class Catalog extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
-        $this->load->model('M_CRUD');
         $this->load->library('pagination');
     }
 

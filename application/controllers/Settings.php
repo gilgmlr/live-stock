@@ -6,15 +6,12 @@ class Settings extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('M_CRUD');
         $this->load->helper('download');
 		$this->load->library(array('form_validation', 'upload', 'excel'));
     }
 
     public function index()
     {
-        // $data['jumlahWarehouse'] = $this->M_Dashboard->countRowsWarehouse();
-        // $data['warehouse'] = $this->M_Dashboard->getDataWarehouse()->result();
         $data['judul'] = 'Settings';
 
         $this->load->view('template/header', $data);
@@ -64,7 +61,7 @@ class Settings extends CI_Controller
 
     public function add_account()
     {
-        $this->form_validation->set_rules('nip', 'Nip', 'required');
+        $this->form_validation->set_rules('nip', 'Nip', 'required|numeric|is_unique[user.nip]');
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('role', 'Role', 'required');
 
@@ -72,7 +69,7 @@ class Settings extends CI_Controller
 
         if($this->form_validation->run() == false) { 
             $this->session->set_flashdata('flash', 'Add Account Failed, Please Try Again!');
-			redirect('settings/view_add_account');
+			$this->view_add_account();
 		} else {
             $data = array(
                 'nip' => $this->input->post('nip'),
@@ -92,14 +89,14 @@ class Settings extends CI_Controller
 
     public function add_item()
     {
-        $this->form_validation->set_rules('item_code', 'Item_Code', 'required');
+        $this->form_validation->set_rules('item_code', 'Item_Code', 'required|numeric|is_unique[items.item_code]');
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('spec', 'Spec', 'required');
         $this->form_validation->set_rules('uom', 'Uom', 'required');
 
         if($this->form_validation->run() == false) {
             $this->session->set_flashdata('flash', 'Add Item Failed, Please Try Again!');
-			redirect('settings/view_add_items');
+			$this->view_add_items();
 		} else {
             $config = $this->upload->initialize(array(
 				"upload_path" => './assets/catalog/',
@@ -110,9 +107,6 @@ class Settings extends CI_Controller
 
 			$this->load->library('upload', $config);
             
-            if (!$this->upload->do_upload('image')) {
-                redirect('settings/view_add_items');
-            } else {
                 $data = $this->upload->data();
 
                 $image = $data['file_name'];
@@ -129,7 +123,6 @@ class Settings extends CI_Controller
                 $this->M_CRUD->input_data('items', $data);
                 $this->session->set_flashdata('flash', 'Add item ' . $this->input->post('name') . ' Success!');
                 redirect('settings/view_add_items');
-            }
         }
     }
     

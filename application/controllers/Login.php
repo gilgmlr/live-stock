@@ -4,8 +4,6 @@ class Login extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-		$this->load->library(array('form_validation', 'session'));
-		$this->load->model('M_CRUD');
     }
 
 	public function index()
@@ -15,11 +13,11 @@ class Login extends CI_Controller {
 
 	public function login()
 	{
-		$this->form_validation->set_rules('nip', 'NIP', 'required|trim');
+		$this->form_validation->set_rules('nip', 'NIP', 'required|trim|numeric');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim');
 
-		if($this->form_validation->run() == false) {
-			redirect('login');
+		if($this->form_validation->run() != true) {
+			$this->load->view('login/index');
 		} else {
 			$nip = $this->input->post('nip');
 			$password = $this->input->post('password');

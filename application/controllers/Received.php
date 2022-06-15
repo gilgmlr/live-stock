@@ -5,14 +5,10 @@ class Received extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
-        $this->load->model('M_CRUD');
-        $this->load->library('form_validation');
     }
 
     public function index()
     {
-        // $data['jumlahWarehouse'] = $this->M_Dashboard->countRowsWarehouse();
         $data['judul'] = 'Received';
 
         $this->load->view('template/header', $data);
@@ -30,14 +26,13 @@ class Received extends CI_Controller
     public function addReceived()
     {
         $this->form_validation->set_rules('received_code', 'Received_Code', 'required');
-        $this->form_validation->set_rules('arrival_date', 'Arrival_Date', 'required');
+        $this->form_validation->set_rules('arrival_date', 'Arrival_Date', 'required|date');
         $this->form_validation->set_rules('po_number', 'PO_Number', 'required');
         $this->form_validation->set_rules('vendor_name', 'Vendor_Name', 'required');
-        $this->form_validation->set_rules('item_code', 'Item_Code', 'required');
-        $this->form_validation->set_rules('qty', 'Qty', 'required');
+        $this->form_validation->set_rules('item_code', 'Item_Code', 'required|numeric');
+        $this->form_validation->set_rules('qty', 'Qty', 'required|integer|greater_than[0]');
         $this->form_validation->set_rules('warehouse_code', 'Warehouse_Code', 'required');
         $this->form_validation->set_rules('location', 'Location', 'required');
-        // $this->form_validation->set_rules('desc', 'Desc', 'required');
 
         if($this->form_validation->run() == false) {
             $this->session->set_flashdata('flash', 'Data Input Not Valid in ' . $this->input->post('desc'));
