@@ -33,15 +33,7 @@
                         </div>
                         <div class="col-sm-6">
                             <label for="" class="col-sm-6 col-form-label">Item Code</label>
-                            <input type="text" class="form-control" id="item_code" name="item_code" onkeyup="isi_otomatis()" required>
-                            <!-- <select class="form-select form-control" aria-label=".form-select-lg example" id="item_code"
-                                name="item_code" required>
-                                <option selected>-- Select --</option>
-                                <?php foreach ($items as $data) { ?>
-                                <option value="<?= $data->item_code ?>"><?= $data->item_code ?> | <?= $data->name ?>
-                                </option>
-                                <?php $i++; } ?>
-                            </select> -->
+                            <input type="text" class="form-control" id="item_code" name="item_code" required>
                             <label for="" class="col-sm-6 col-form-label">UoM</label>
                             <input type="text" class="form-control" id="uom" name="uom" readonly>
                             <label for="" class="col-sm-6 col-form-label">Qty</label>
@@ -83,7 +75,6 @@
                 </div>
                 <input type="text" class="form-control" id="desc" name="desc" value="Good Receive" hidden>
 
-
                 <div class="cards-footer">
                     <center>
                         <a href="<?= base_url(); ?>received" class="btn btn-danger" style="padding-top:17px">
@@ -98,18 +89,30 @@
     </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script type="text/javascript">
-            function isi_otomatis(){
-                var item_code = $("#item_code").val();
+<script src="<?= base_url() ?>node_modules/js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			 $('#item_code').on('input',function(){
+                
+                var item_code=$(this).val();
                 $.ajax({
-                    url: "<?= base_url() ?>/received/get_item?item_code="+item_code,
-                    data:"item_code="+item_code ,
-                }).success(function (data) {
-                    var json = data,
-                    obj = JSON.parse(json);
-                    $('#uom').val(obj.uom);
+                    type : "POST",
+                    url  : "<?php echo base_url().'received/get_item'?>",
+                    dataType : "JSON",
+                    data : {item_code: item_code},
+                    cache:false,
+                    success: function(data){
+                        $.each(data,function(item_code, nama, specification, uom, image){
+                            $('[name="item_name"]').val(data.name);
+                            $('[name="specification"]').val(data.specification);
+                            $('[name="uom"]').val(data.uom);
+                        });
+                        
+                    }
                 });
-            }
-        </script>
+                return false;
+           });
+
+		});
+	</script>
 
