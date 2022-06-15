@@ -64,15 +64,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="" class="col-sm-6 col-form-label">WH</label>
-                                    <select class="form-select form-control" aria-label=".form-select-lg example"
-                                        id="warehouse_code" name="warehouse_code" required>
-                                        <option selected>-- Select --</option>
-                                        <?php foreach ($warehouse as $data) { ?>
-                                        <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?>
-                                        </option>
-                                        <?php $i++; } ?>
-                                    </select>
-
+                                    <input type="text" class="form-control" id="warehouse_code" name="warehouse_code" value="<?= $this->session->userdata('warehouse') ?>" readonly>
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="" class="col-sm-6 col-form-label">Location</label>

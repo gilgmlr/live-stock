@@ -190,16 +190,8 @@ class Received extends CI_Controller
     function get_item()
     {
         $kode=$this->input->post('item_code');
-		// $data=$this->m_pos->get_data_barang_bykode($kode);
         $data=$this->db->get_where('items', ['item_code' => $kode])->row_array();
 		echo json_encode($data);
     }
-
-    function get_barang(){
-		$kode=$this->input->post('kode');
-		// $data=$this->m_pos->get_data_barang_bykode($kode);
-        $data=$this->db->get_where('barang', ['kode' => $kode])->row_array();
-		echo json_encode($data);
-	}
 
 }
