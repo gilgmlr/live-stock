@@ -52,7 +52,13 @@
                                     <td><?= $data->warehouse_code ?></td>
                                     <td><?= $data->location ?></td>
                                     <td><?= $data->equipment ?></td>
-                                    <td><?= $data->status ?></td>
+                                    <td>
+                                    <?php if (strtolower($data->status) == 'can use') { ?>
+                                        <span class="material-symbols-outlined">Done</span> 
+                                    <?php } else { ?>
+                                        <span class="material-symbols-outlined">Close</span>
+                                    <?php }; ?>
+                                    </td>
 
                                 <?php if($this->session->userdata('role') == "1") { ?>
                                     <td>
