@@ -17,9 +17,10 @@
                     <form action="<?= base_url() . 'settings/view_all_items' ?>" method="POST" autocomplete="off">
                         <div class="input-group">
                             <input type="text submit" class="form-control" id="keyword" name="keyword"
-                                value="<?= $this->session->userdata('keyword_item') ?>"placeholder="Search...">
+                                value="<?= $this->session->userdata('keyword_item') ?>" placeholder="Search...">
                             <input type="submit" class="btn btn-warning"
-                                style="padding-top:13px; margin:0px; height:45px; font-size:medium;" name="search" value="Search">
+                                style="padding-top:13px; margin:0px; height:45px; font-size:medium;" name="search"
+                                value="Search">
 
                         </div>
                     </form>
@@ -29,15 +30,15 @@
         </div>
         <div class="card-content table-responsive">
 
-            <table id="items" class="table table-hover">
+            <table id="items" class="table table-striped table-hover">
                 <thead class="text-primary">
                     <tr>
                         <th style="width:75px">No</th>
-                        <th>Item Code</th>
-                        <th>Name</th>
-                        <th>Specification</th>
-                        <th>UoM</th>
-                        <th>Action</th>
+                        <th style="width:170px">Item Code</th>
+                        <th style="width:400px">Name</th>
+                        <th style="width:400px">Specification</th>
+                        <th style="width:75px">UoM</th>
+                        <th style="width:100px">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,17 +53,21 @@
                         <td><?= $data->specification ?></td>
                         <td><?= $data->uom ?></td>
                         <td>
-                            <div class="container px-1">
-                                <div class="row">
-                                    <div class="row-md-2">
+                            <div class="container">
+
+                                <div class="row between">
+                                    <div class="col">
                                         <a href="" data-bs-toggle="modal"
                                             data-bs-target="#change<?= $data->item_code ?>"><i class="fa-solid fa-pen"
                                                 style="margin-left:5px"></i></a>
+                                    </div>
+                                    <div class="col">
                                         <a
                                             href="<?= base_url() ?>settings/delete_item?item_code=<?= $data->item_code ?>"><i
                                                 class="fa-solid fa-trash"></i></a>
                                     </div>
                                 </div>
+
                             </div>
                         </td>
                     </tr>
