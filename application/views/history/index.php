@@ -49,6 +49,7 @@
                         ?>
                             </tbody>
                         </table>
+                        <?= $this->pagination->create_links(); ?>
                     </div>
                 </div>
             </div>
@@ -59,29 +60,10 @@
     </div>
 </div>
 
-<!-- MODAL HISTORY -->
-<div class="modal fade" id="history" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:80%>
-        <div class="modal-content">
-            <div class="modal-header" style="background-color: #563d7c">
-                <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> DETAIL HISTORY
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Modal -->
 </body>
 <script>
 $(document).ready(function() {
-    $('#warehouse').DataTable();
+    // $('#warehouse').DataTable();
 });
 </script>
 
