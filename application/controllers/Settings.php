@@ -54,10 +54,10 @@ class Settings extends CI_Controller
     {
         // Ambil data keyword search
         if ($this->input->post('search')) {
-            $data['keyword'] = $this->input->post('keyword');
-            $this->session->set_userdata('keyword', $data['keyword']);
+            $data['keyword'] = $this->input->post('search');
+            $this->session->set_userdata('keyword_item', $data['keyword']);
         } else {
-            $data['keyword'] = $this->session->userdata('keyword');;
+            $data['keyword'] = $this->session->userdata('keyword_item');;
         }
 
         // config

@@ -13,9 +13,15 @@
             <!-- <p class="category">All Warehouse</p> -->
         </div>
         <div class="card-content table-responsive">
+            <form action="<?= base_url() . 'settings/view_all_items' ?>" method="POST">
+                <div class="input-group">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
+                    <input type="text submit" class="form-control" id="search" name="search" value="<?= $this->session->userdata('keyword_item') ?>">
+            </form>
             <table id="items" class="table table-hover">
                 <thead class="text-primary">
                     <tr>
+                        <th>No</th>
                         <th>Item Code</th>
                         <th>Name</th>
                         <th>Specification</th>
@@ -25,10 +31,11 @@
                 </thead>
                 <tbody>
                 <?php
-                        $i = 1;
+                        $i = $start+1;
                         foreach ($items as $data) { 
                     ?>
                     <tr>
+                        <td><?= $i ?></td>
                         <td><?= $data->item_code ?></td>
                         <td><?= $data->name ?></td>
                         <td><?= $data->specification ?></td>

@@ -3,7 +3,7 @@
                 <div class="row justify-content-center">
                     <div class="col-sm-8" style="margin-top: 50px;">
                         <div class="input-group sm-3">
-                            <input type="text submit" class="form-control" placeholder="search" id="keyword" name="keyword">
+                            <input type="text submit" class="form-control" placeholder="search" id="keyword" name="keyword" value="<?= $this->session->userdata('keyword_catalog') ?>">
                             <input type="submit" class="btn btn-warning" style="padding-top:17px; margin:0px; height:45px;" name="search">
                         </div>
                         <div>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- End Modal  -->
+                <!-- End Modal  --> 
 
                 <?php } ?>
                 <div class="col-12">

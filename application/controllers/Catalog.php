@@ -12,9 +12,9 @@ class Catalog extends CI_Controller
         // Ambil data keyword search
         if ($this->input->post('search')) {
             $data['keyword'] = $this->input->post('keyword');
-            $this->session->set_userdata('keyword', $data['keyword']);
+            $this->session->set_userdata('keyword_catalog', $data['keyword']);
         } else {
-            $data['keyword'] = $this->session->userdata('keyword');;
+            $data['keyword'] = $this->session->userdata('keyword_catalog');;
         }
 
         // config
