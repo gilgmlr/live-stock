@@ -95,7 +95,6 @@
                     </div>
                 </div>
                 <input type="text" class="form-control" id="desc" name="desc" value="Good Receive" hidden>
-                <input type="text" class="form-control" id="status" name="status" value="Can Use" hidden readonly>
                 <div class="cards-footer">
                     <center>
                         <a href="<?= base_url(); ?>received" class="btn btn-danger" style="padding-top:17px">
