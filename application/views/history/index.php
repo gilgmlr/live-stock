@@ -23,7 +23,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    $i = 1;
+                                    $i = $start+1;
                                     foreach ($history as $data) { 
                                 ?>
 
