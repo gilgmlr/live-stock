@@ -16,9 +16,11 @@
                 <div class="col-md-3">
                     <form action="<?= base_url() . 'settings/view_all_items' ?>" method="POST" autocomplete="off">
                         <div class="input-group">
-                            <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
-                            <input type="text submit" class="form-control" id="search" name="search"
+                            <input type="text submit" class="form-control" id="keyword" name="keyword"
                                 value="<?= $this->session->userdata('keyword_item') ?>">
+                            <input type="submit" class="btn btn-warning"
+                                style="padding-top:17px; margin:0px; height:45px;" name="search">
+
                         </div>
                     </form>
                 </div>
