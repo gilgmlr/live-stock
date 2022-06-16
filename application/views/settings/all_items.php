@@ -32,7 +32,7 @@
             <table id="items" class="table table-hover">
                 <thead class="text-primary">
                     <tr>
-                        <th>No</th>
+                        <th style="width:75px">No</th>
                         <th>Item Code</th>
                         <th>Name</th>
                         <th>Specification</th>
