@@ -6,13 +6,10 @@ class M_CRUD extends CI_Model
 		return $this->db->get($table);
 	}
 
-	function get_data_limit($table, $limit, $start, $keyword = null)
+	function get_data_limit($table, $limit, $start, $keyword = null, $col1 = null, $col2 = null, $col3 = null, $col4 = null, $col5 = null, $col6 = null, $col7 = null)
 	{ //khusus catalog
 		if ($keyword) {
-			// $this->db->select('*');
-			// $this->db->from($table);
-			// $this->db->join('inventory', 'items.item_code = inventory.item_code');
-			$this->db->like('name', $keyword)->or_like('item_code', $keyword)->or_like('specification', $keyword);
+			$this->db->like($col1, $keyword)->or_like($col2, $keyword)->or_like($col3, $keyword)->or_like($col4, $keyword);
 		}
 		return $this->db->get($table, $limit, $start);
 	}

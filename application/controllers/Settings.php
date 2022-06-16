@@ -73,7 +73,7 @@ class Settings extends CI_Controller
 
         $data['judul'] = 'Settings/view_all_items';
         $data['start'] = $this->uri->segment(3);
-        $data['items'] = $this->M_CRUD->get_data_limit('items', $config['per_page'], $data['start'], $data['keyword'])->result();
+        $data['items'] = $this->M_CRUD->get_data_limit('items', $config['per_page'], $data['start'], $data['keyword'], 'item_code', 'name', 'specification', 'uom')->result();
         // $item['item'] = $this->M_CRUD->get_data('items')->result();
 
         $this->load->view('template/header', $data);

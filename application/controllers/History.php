@@ -29,7 +29,7 @@ class History extends CI_Controller
         $this->pagination->initialize($config);
 
         $data['start'] = $this->uri->segment(3);
-        $data['history'] = $this->M_CRUD->get_data_limit('history_transaction', $config['per_page'], $data['start'], $data['keyword'])->result();
+        $data['history'] = $this->M_CRUD->get_data_limit('history_transaction', $config['per_page'], $data['start'], $data['keyword'], 'doc_date', 'system_date', 'source_doc', 'destination_doc', 'item_code', 'qty', 'warehouse_code')->result();
         // $data['history'] = $this->M_CRUD->get_data_sort('history_transaction', 'id', 'desc')->result();
         $data['judul'] = 'History';
 

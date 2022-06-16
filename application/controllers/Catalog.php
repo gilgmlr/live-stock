@@ -30,7 +30,7 @@ class Catalog extends CI_Controller
 
         $data['judul'] = 'Catalog';
         $data['start'] = $this->uri->segment(3);
-        $data['items'] = $this->M_CRUD->get_data_limit('items', $config['per_page'], $data['start'], $data['keyword'])->result();
+        $data['items'] = $this->M_CRUD->get_data_limit('items', $config['per_page'], $data['start'], $data['keyword'], 'item_code', 'name', 'specification', 'uom')->result();
 
         $this->load->view('template/header', $data);
         $this->load->view('catalog/index', $data);
