@@ -99,9 +99,10 @@
                 <div class="cards-footer">
                     <center>
                         <a href="<?= base_url(); ?>received" class="btn btn-danger" style="padding-top :17px">
-                            Batal
+                            Cancel
                         </a>
-                        <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
+                        <button id="simpan" type="submit" class="btn btn-success" "
+                                            onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                     </center>
                 </div>
             </form>

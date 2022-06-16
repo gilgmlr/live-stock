@@ -12,9 +12,11 @@
                         <div class="row justify-content-center">
                             <div class="col-sm-6">
                                 <label for="" class="col-sm-6 col-form-label">Lending No</label>
-                                <input type="text" class="form-control" id="lending_no" name="lending_no" value="LEN-C02<?= substr(date('Y'),2,4) . date('m'); ?>"" required>
-                                <label for="" class="col-sm-6 col-form-label">Lending Date</label>
-                                <input type="date" class="form-control" id="lending_date" name="lending_date" value="<?php echo date('Y-m-d'); ?>" required>
+                                <input type="text" class="form-control" id="lending_no" name="lending_no"
+                                    value="LEN-C02<?= substr(date('Y'),2,4) . date('m'); ?>"" required>
+                                <label for="" class=" col-sm-6 col-form-label">Lending Date</label>
+                                <input type="date" class="form-control" id="lending_date" name="lending_date"
+                                    value="<?php echo date('Y-m-d'); ?>" required>
                                 <label for="" class="col-sm-6 col-form-label">Borrower Name</label>
                                 <input type="text" class="form-control" id="borrower_name" name="borrower_name"
                                     required>
@@ -72,7 +74,8 @@
                             <a href="<?= base_url(); ?>issue" class="btn btn-danger" style="padding:17px">
                                 Batal
                             </a>
-                            <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
+                            <button id="simpan" type="submit" class="btn btn-success" "
+                                            onclick=" return confirm('Are You Sure Want To Save ?')">Simpan</button>
                         </center>
                     </div>
                 </form>

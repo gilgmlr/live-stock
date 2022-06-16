@@ -1,10 +1,10 @@
 <div class="container" style="margin-top: 120px;">
-<?php if ($this->session->flashdata('flash')) : ?>
-		<div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-			<?= $this->session->flashdata('flash') ?>
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		</div>
-		<?php $this->session->unset_userdata('flash');
+    <?php if ($this->session->flashdata('flash')) : ?>
+    <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= $this->session->flashdata('flash') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php $this->session->unset_userdata('flash');
 	endif; ?>
     <div class="cards shadow p-1 mb-5 bg-white rounded">
         <center>
@@ -25,14 +25,14 @@
                             <label for="" class="col-sm-6 col-form-label">PO Number*</label>
                             <input type="text" class="form-control" id="po_number" name="po_number">
                             <label for="" class="col-sm-6 col-form-label">Vendor Name*</label>
-                            <input type="text" class="form-control" id="vendor_name" name="vendor_name" >
+                            <input type="text" class="form-control" id="vendor_name" name="vendor_name">
                         </div>
 
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="" class="col-sm-6 col-form-label">Item Code*</label>
-                                    <input type="text" class="form-control" id="item_code" name="item_code" >
+                                    <input type="text" class="form-control" id="item_code" name="item_code">
                                     <small class="form-text text-danger"><?= form_error('item_code') ?></small>
 
                                 </div>
@@ -58,16 +58,16 @@
                             <div class="row">
                                 <div class="col-sm-2">
                                     <label for="" class="col-sm-6 col-form-label">Qty*</label>
-                                    <input type="text" class="form-control" id="qty" name="qty" >
+                                    <input type="text" class="form-control" id="qty" name="qty">
                                 </div>
                                 <div class="col-sm-5">
                                     <label for="" class="col-sm-6 col-form-label">Location*</label>
-                                    <input type="text" class="form-control" id="location" name="location" >
+                                    <input type="text" class="form-control" id="location" name="location">
                                 </div>
                                 <div class="col-sm-5">
                                     <label for="" class="col-sm-6 col-form-label">Warehouse*</label>
                                     <input type="text" class="form-control" id="warehouse_code" name="warehouse_code"
-                                        value="<?= $this->session->userdata('warehouse') ?>" >
+                                        value="<?= $this->session->userdata('warehouse') ?>">
                                 </div>
                             </div>
 
@@ -98,9 +98,10 @@
                 <div class="cards-footer">
                     <center>
                         <a href="<?= base_url(); ?>received" class="btn btn-danger" style="padding-top:17px">
-                            Batal
+                            Cancel
                         </a>
-                        <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
+                        <button id="simpan" type="submit" class="btn btn-success" "
+                                            onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                     </center>
                 </div>
             </form>
