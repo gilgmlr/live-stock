@@ -30,7 +30,7 @@
         </div>
         <div class="card-content table-responsive">
 
-            <table id="items" class="table table-striped">
+            <table id="items" class="table table-striped table-hover">
                 <thead class="text-primary">
                     <tr>
                         <th style="width:75px">No</th>
