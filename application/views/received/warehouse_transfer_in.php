@@ -5,7 +5,7 @@
 
         </center>
         <div class=" card-body">
-            <form action="<?= base_url() ?>received/addReceived" method="POST">
+            <form action="<?= base_url() ?>received/addReceived" method="POST" autocomplete="off">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-sm-6">
@@ -15,10 +15,25 @@
                             <label for="" class="col-sm-6 col-form-label">Arrival Date</label>
                             <input type="date" class="form-control" id="arrival_date" name="arrival_date"
                                 value="<?php echo date('Y-m-d'); ?>" required>
-                            <label for="" class="col-sm-6 col-form-label">PO Number</label>
-                            <input type="text" class="form-control" id="po_number" name="po_number" required>
-                            <label for="" class="col-sm-6 col-form-label">Vendor Name</label>
-                            <input type="text" class="form-control" id="vendor_name" name="vendor_name" required>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Sender</label>
+                                    <select class="form-select form-control" aria-label=".form-select-lg example"
+                                        id="sender" name="sender" required>
+                                        <option selected>-- Select --</option>
+                                        <?php foreach ($warehouse as $data) { ?>
+                                        <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?>
+                                        </option>
+                                        <?php $i++; } ?>
+                                    </select>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Sender Name</label>
+                                    <input type="text" class="form-control" id="sendername" name="sendername" required>
+                                </div>
+                            </div>
+
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="" class="col-sm-6 col-form-label">Equipment</label>
@@ -63,14 +78,10 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label for="" class="col-sm-6 col-form-label">WH</label>
-                                    <select class="form-select form-control" aria-label=".form-select-lg example"
-                                        id="warehouse_code" name="warehouse_code" required>
-                                        <option selected>-- Select --</option>
-                                        <?php foreach ($warehouse as $data) { ?>
-                                        <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?>
-                                        </option>
-                                        <?php $i++; } ?>
-                                    </select>
+                                    <input type="text" class="form-control" id="warehouse_code" name="warehouse_code"
+                                        value="<?= $this->session->userdata('warehouse') ?>">
+
+
 
                                 </div>
                                 <div class="col-sm-6">
