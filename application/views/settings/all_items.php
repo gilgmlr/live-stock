@@ -9,15 +9,24 @@
 
     <div class="cards shadow p-3 mb-3 bg-white rounded" style="min-height: 400px; margin-top:3px;">
         <div class=" cards-header card-header-text">
-            <h4 class="card-title">All Items</h4>
+            <div class="row">
+                <div class="col">
+                    <h4 class="card-title">All Items</h4>
+                </div>
+                <div class="col-md-3">
+                    <form action="<?= base_url() . 'settings/view_all_items' ?>" method="POST" autocomplete="off">
+                        <div class="input-group">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
+                            <input type="text submit" class="form-control" id="search" name="search"
+                                value="<?= $this->session->userdata('keyword_item') ?>">
+                        </div>
+                    </form>
+                </div>
+            </div>
             <!-- <p class="category">All Warehouse</p> -->
         </div>
         <div class="card-content table-responsive">
-            <form action="<?= base_url() . 'settings/view_all_items' ?>" method="POST">
-                <div class="input-group">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
-                    <input type="text submit" class="form-control" id="search" name="search" value="<?= $this->session->userdata('keyword_item') ?>">
-            </form>
+
             <table id="items" class="table table-hover">
                 <thead class="text-primary">
                     <tr>
@@ -30,7 +39,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php
+                    <?php
                         $i = $start+1;
                         foreach ($items as $data) { 
                     ?>
@@ -44,8 +53,12 @@
                             <div class="container px-1">
                                 <div class="row">
                                     <div class="row-md-2">
-                                        <a href="" data-bs-toggle="modal" data-bs-target="#change<?= $data->item_code ?>"><i class="fa-solid fa-pen" style="margin-left:5px"></i></a>
-                                        <a href="<?= base_url() ?>settings/delete_item?item_code=<?= $data->item_code ?>"><i class="fa-solid fa-trash"></i></a>
+                                        <a href="" data-bs-toggle="modal"
+                                            data-bs-target="#change<?= $data->item_code ?>"><i class="fa-solid fa-pen"
+                                                style="margin-left:5px"></i></a>
+                                        <a
+                                            href="<?= base_url() ?>settings/delete_item?item_code=<?= $data->item_code ?>"><i
+                                                class="fa-solid fa-trash"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -63,36 +76,36 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <form action="<?= base_url() . 'settings/update_item' ?>" method="POST" autocomplete="off">
+                                <form action="<?= base_url() . 'settings/update_item' ?>" method="POST"
+                                    autocomplete="off">
                                     <div class="modal-body">
                                         <div class="container">
-                                            
+
                                             <div class="col-sm-12">
-                                                <label class="col-sm-6 col-form-label"
-                                                    for="form3Example1c">Item Code</label>
+                                                <label class="col-sm-6 col-form-label" for="form3Example1c">Item
+                                                    Code</label>
                                                 <input type="text" id="item_code" class="form-control" name="item_code"
-                                                     placeholder="Enter item code"
-                                                    value="<?= $data->item_code ?>" readonly />
-                                            </div>                             
+                                                    placeholder="Enter item code" value="<?= $data->item_code ?>"
+                                                    readonly />
+                                            </div>
                                             <div class="col-sm-12"">
                                                 <label class=" col-sm-6 col-form-label" for="form3Example1c">
                                                 Name</label>
                                                 <input type="text" id="name" class="form-control" name="name"
-                                                     placeholder="Enter item code"
-                                                    value="<?= $data->name ?>" required />
+                                                    placeholder="Enter item code" value="<?= $data->name ?>" required />
                                             </div>
                                             <div class="col-sm-12">
                                                 <label class="col-sm-6 col-form-label"
                                                     for="form3Example1c">Specification</label>
-                                                <textarea class="form-control" name="spec" id="spec" rows="3" required><?= $data->specification ?></textarea>
+                                                <textarea class="form-control" name="spec" id="spec" rows="3"
+                                                    required><?= $data->specification ?></textarea>
                                             </div>
                                             <div class="col-sm-12">
-                                                <label class="col-sm-6 col-form-label"
-                                                    for="form3Example1c">UoM</label>
-                                                <input type="text" id="uom" class="form-control"
-                                                    name="uom" value="<?= $data->uom ?>" required />
+                                                <label class="col-sm-6 col-form-label" for="form3Example1c">UoM</label>
+                                                <input type="text" id="uom" class="form-control" name="uom"
+                                                    value="<?= $data->uom ?>" required />
                                             </div>
-            
+
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -104,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-        <!-- AKHIR MODAL  -->
+                    <!-- AKHIR MODAL  -->
 
                     <?php $i++; } ?>
                 </tbody>
