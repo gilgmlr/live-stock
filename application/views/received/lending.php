@@ -82,8 +82,8 @@
                             <a href="<?= base_url(); ?>issue" class="btn btn-danger" style="padding:17px">
                                 Cancel
                             </a>
-                            <button id="simpan" type="submit" class="btn btn-success" "
-                                            onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
+                            <button id="simpan" type="submit" class="btn btn-success"
+                                onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                         </center>
                     </div>
                 </form>
