@@ -26,7 +26,7 @@
                 <tbody>
                 <?php
                         $i = 1;
-                        foreach ($item as $data) { 
+                        foreach ($items as $data) { 
                     ?>
                     <tr>
                         <td><?= $data->item_code ?></td>
@@ -102,6 +102,7 @@
                     <?php $i++; } ?>
                 </tbody>
             </table>
+            <?= $this->pagination->create_links(); ?>
         </div>
     </div>
 </div>
@@ -111,6 +112,6 @@
 
 <script>
 $(document).ready(function() {
-    $('#items').DataTable();
+    // $('#items').DataTable();
 });
 </script>

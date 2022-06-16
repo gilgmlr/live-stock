@@ -50,13 +50,34 @@ class Settings extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('settings/table_user');
     }
-    public function view_all_items()
+    public function view_all_items() 
     {
+        // Ambil data keyword search
+        if ($this->input->post('search')) {
+            $data['keyword'] = $this->input->post('keyword');
+            $this->session->set_userdata('keyword', $data['keyword']);
+        } else {
+            $data['keyword'] = $this->session->userdata('keyword');;
+        }
+
+        // config
+        $config['base_url'] = base_url().'settings/view_all_items';
+        $this->db->like('item_code', $data['keyword'])->or_like('name', $data['keyword'])->or_like('specification', $data['keyword'])->or_like('uom', $data['keyword']);
+        $this->db->from('items');
+        $config['total_rows'] = $this->db->count_all_results();
+        $data['total_rows'] = $config['total_rows'];
+        $config['per_page'] = 10;
+
+        // Initialize
+        $this->pagination->initialize($config);
+
         $data['judul'] = 'Settings/view_all_items';
-        $item['item'] = $this->M_CRUD->get_data('items')->result();
+        $data['start'] = $this->uri->segment(3);
+        $data['items'] = $this->M_CRUD->get_data_limit('items', $config['per_page'], $data['start'], $data['keyword'])->result();
+        // $item['item'] = $this->M_CRUD->get_data('items')->result();
 
         $this->load->view('template/header', $data);
-        $this->load->view('settings/all_items', $item);
+        $this->load->view('settings/all_items', $data);
     }
 
     public function add_account()

@@ -5,7 +5,6 @@ class Catalog extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->library('pagination');
     }
 
     public function index()
@@ -19,6 +18,7 @@ class Catalog extends CI_Controller
         }
 
         // config
+        $config['base_url'] = base_url().'catalog/index';
         $this->db->like('item_code', $data['keyword'])->or_like('name', $data['keyword'])->or_like('specification', $data['keyword'])->or_like('uom', $data['keyword']);
         $this->db->from('items');
         $config['total_rows'] = $this->db->count_all_results();

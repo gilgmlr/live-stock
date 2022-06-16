@@ -1,7 +1,5 @@
 <?php
 
- $config['base_url'] = base_url().'catalog/index';
-
  // Styling
  $config['full_tag_open'] = '<nav><ul class="pagination justify-content-center">';
  $config['full_tag_close'] = '</ul></nav>';

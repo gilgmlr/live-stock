@@ -35,14 +35,9 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <label for="" class="col-sm-6 col-form-label">Equipment</label>
                                     <input type="text" class="form-control" id="equipment" name="equipment">
-                                </div>
-                                <div class="col-sm-6">
-                                    <label for="" class="col-sm-6 col-form-label">Status</label>
-                                    <input type="text" class="form-control" id="status" name="status" value="Can Use"
-                                        readonly>
                                 </div>
                             </div>
                         </div>
