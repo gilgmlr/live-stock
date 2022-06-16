@@ -26,9 +26,9 @@
                                     <th>Location</th>
                                     <th>Equipment</th>
                                     <th>Status</th>
-                                <?php if($this->session->userdata('role') == "1") { ?>
+                                    <?php if($this->session->userdata('role') == "1") { ?>
                                     <th>Action</th>
-                                <?php ;} ?>
+                                    <?php ;} ?>
                                 </tr>
                             </thead>
                             <tbody>
@@ -38,11 +38,11 @@
                                     foreach ($stock as $data) { 
                                 ?>
 
-                            <?php if ($data->status != 'Can Use' && $data->status != 'can use' && $data->status != 'Can use' && $data->status != 'can Use') { ?>
+                                <?php if ($data->status != 'Can Use' && $data->status != 'can use' && $data->status != 'Can use' && $data->status != 'can Use') { ?>
                                 <tr style="background-color: red;" id="id-<?= $i ?>">
-                            <?php ;} else { ?>
+                                    <?php ;} else { ?>
                                 <tr id="id-<?= $i ?>">
-                            <?php ;} ?>
+                                    <?php ;} ?>
                                     <td> <?= $i ?></td>
                                     <td><?= $data->item_code ?></td>
                                     <td><?= $data->name ?></td>
@@ -53,20 +53,20 @@
                                     <td><?= $data->location ?></td>
                                     <td><?= $data->equipment ?></td>
                                     <td>
-                                    <?php if (strtolower($data->status) == 'can use') { ?>
-                                        <span class="material-symbols-outlined">Done</span> 
-                                    <?php } else { ?>
+                                        <?php if (strtolower($data->status) == 'can use') { ?>
+                                        <span class="material-symbols-outlined">Done</span>
+                                        <?php } else { ?>
                                         <span class="material-symbols-outlined">Close</span>
-                                    <?php }; ?>
+                                        <?php }; ?>
                                     </td>
 
-                                <?php if($this->session->userdata('role') == "1") { ?>
+                                    <?php if($this->session->userdata('role') == "1") { ?>
                                     <td>
                                         <a href="" data-bs-toggle="modal"
                                             data-bs-target="#edit<?= $data->item_code ?>"><i
                                                 class="fa-solid fa-pencil"></i></a>
                                     </td>
-                                <?php ;} ?>
+                                    <?php ;} ?>
                                 </tr>
 
                                 <!-- Modal -->
@@ -83,7 +83,8 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="<?= base_url() ?>inventory/UpdateInventory" method="POST">
+                                                <form action="<?= base_url() ?>inventory/UpdateInventory" method="POST"
+                                                    autocomplete="off">
                                                     <div class="container">
                                                         <div class="row justify-content-center">
                                                             <div class="col-sm-6">
@@ -129,8 +130,7 @@
                                                                 <label for=""
                                                                     class="col-sm-6 col-form-label">UoM</label>
                                                                 <input type="text" class="form-control" id="uom"
-                                                                    name="uom" value="<?=$data->uom?>"
-                                                                    readonly>
+                                                                    name="uom" value="<?=$data->uom?>" readonly>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <label for=""
@@ -148,8 +148,8 @@
                                                                     name="equipment" value="<?=$data->equipment?>">
                                                             </div>
                                                             <div class="col-sm-6">
-                                                                <label for=""
-                                                                    class="col-sm-6 col-form-label">Status ("Can Use" or "Not Use")</label>
+                                                                <label for="" class="col-sm-6 col-form-label">Status
+                                                                    ("Can Use" or "Not Use")</label>
                                                                 <input type="text" class="form-control" id="status"
                                                                     name="status" value="<?=$data->status?>">
                                                             </div>
