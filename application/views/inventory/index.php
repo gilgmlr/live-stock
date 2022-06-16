@@ -150,16 +150,16 @@
                                                                         <select class="form-select form-control"
                                                                             aria-label=".form-select-lg example"
                                                                             id="status" name="status" required>
-                                                                            <option value="1">1 - Available</option>
-                                                                            <option value="0">0 - Not Available</option>
+                                                                            <option value="1">Available</option>
+                                                                            <option value="0">Not Available</option>
                                                                         </select>
                                                                         <?php } else { ?>
                                                                         <select class="form-select form-control"
                                                                             aria-label=".form-select-lg example"
                                                                             id="status" name="status" required>
 
-                                                                            <option value="0">0 - Not Available</option>
-                                                                            <option value="1">1 - Available</option>
+                                                                            <option value="0">Not Available</option>
+                                                                            <option value="1">Available</option>
                                                                         </select>
                                                                         <?php }; ?>
                                                                         <!-- <input type="text" class="form-control" id="status"
