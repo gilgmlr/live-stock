@@ -62,9 +62,11 @@
                                                 style="margin-left:5px"></i></a>
                                     </div>
                                     <div class="col">
-                                        <a
-                                            href="<?= base_url() ?>settings/delete_item?item_code=<?= $data->item_code ?>"><i
+
+                                        <a href="<?= base_url() ?>settings/delete_item?item_code=<?= $data->item_code ?>"
+                                            onclick="return confirm('Are You Sure Want Delete This Item ?')"><i
                                                 class="fa-solid fa-trash"></i></a>
+
                                     </div>
                                 </div>
 
@@ -118,7 +120,9 @@
                                     <div class="modal-footer">
                                         <button id="batal" type="submit" class="btn btn-danger"
                                             data-bs-dismiss="modal">Batal</button>
-                                        <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
+                                        <button id="simpan" type="submit" class="btn btn-success" "
+                                            onclick=" return confirm('Are You Sure Want To Save ?')">Simpan</button>
+
                                     </div>
                                 </form>
                             </div>
