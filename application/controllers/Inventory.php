@@ -34,7 +34,6 @@ class Inventory extends CI_Controller
 		} else {
             $res_inven = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
             $res_item = $this->db->get_where('items', ['item_code' => $this->input->post('item_code')])->row_array();
-            $res_uom = $this->db->get_where('uom', ['uom_name' => $this->input->post('uom_name')])->row_array();
             
             $inventory = array(
                 'item_code' => $res_inven['item_code'],
@@ -50,7 +49,7 @@ class Inventory extends CI_Controller
                 'item_code' => $res_item['item_code'],
                 'name' => $this->input->post('name'),
                 'specification' => $this->input->post('spec'),
-                'uom' => $res_uom['uom'],
+                'uom' => $res_item['uom'],
                 'image' => $res_item['image'],
             );
             $this->M_CRUD->update_data('items', $item, ['item_code' => $res_item['item_code']]);
