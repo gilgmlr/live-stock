@@ -1,7 +1,24 @@
 <div class="container" style="margin-top: 120px;">
     <div class="cards shadow p-3 mb-5 bg-white rounded">
         <h4 class="card-title">History</h4>
-        <a class="btn btn-primary" href="settings/generateXls" style="height: 35px;">Export Data</a>
+
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-primary" href="settings/generateXls" style="height: 35px;">Export Data</a>
+
+            </div>
+            <div class="col-md-4">
+                <form action="<?= base_url() . 'settings/view_all_items' ?>" method="POST" autocomplete="off">
+                    <div class="input-group">
+                        <input type="text submit" class="form-control" id="keyword" name="keyword"
+                            value="<?= $this->session->userdata('keyword_item') ?>" placeholder="Search...">
+                        <input type="submit" class="btn btn-warning"
+                            style="padding-top:13px; margin:0px; height:45px; font-size:medium;" name="search"
+                            value="Search">
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="card-body">
             <div class="container">
                 <!--  ISI DISINI  -->
@@ -54,10 +71,10 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
+
+
+</div>
 </div>
 
 </body>
