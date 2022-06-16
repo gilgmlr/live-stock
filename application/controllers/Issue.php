@@ -106,7 +106,7 @@ class Issue extends CI_Controller
             'lending_qty' => $this->input->post('lending_qty'),
             'borrower_name' => $this->input->post('borrower_name'),
             'dept_code' => $this->input->post('dept_code'),
-            'lending_note' => $this->input->post('lending_date'),
+            'lending_note' => $this->input->post('lending_note'),
             'return_note' => "",
             'return_qty' => "",
             'return_date' => "",
