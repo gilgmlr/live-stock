@@ -72,7 +72,7 @@ class Received extends CI_Controller
                     'stocks' => $item['stocks'] + $this->input->post('qty'),
                     'warehouse_code' => $item['warehouse_code'],
                     'equipment' => $this->input->post('equipment'),
-                    'status' => "1",
+                    'status' => '1',
                 );
                 $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
             } else {
@@ -82,7 +82,7 @@ class Received extends CI_Controller
                     'stocks' => $this->input->post('qty'),
                     'warehouse_code' => $this->input->post('warehouse_code'),
                     'equipment' => $this->input->post('equipment'),
-                    'status' => $this->input->post('status'),
+                    'status' => '1',
                 );
                 $this->M_CRUD->input_data('inventory', $inventory);
             }
@@ -148,7 +148,6 @@ class Received extends CI_Controller
             'lending_date' => $this->input->post('lending_date'),
             'item_code' => $this->input->post('item_code'),
             'lending_qty' => $this->input->post('lending_qty') - $this->input->post('return_qty'),
-            'uom_code' => $this->input->post('uom_code'),
             'borrower_name' => $this->input->post('borrower_name'),
             'dept_code' => $this->input->post('dept_code'),
             'lending_note' => $this->input->post('lending_date'),
@@ -168,7 +167,6 @@ class Received extends CI_Controller
             'item_code' => $item['item_code'],
             'location' => $item['location'],
             'stocks' => $item['stocks'] + $this->input->post('return_qty'),
-            'uom_code' => $item['uom_code'],
             'warehouse_code' => $item['warehouse_code'],
             'equipment' => $item['equipment'],
             'status' => $item['status'],
