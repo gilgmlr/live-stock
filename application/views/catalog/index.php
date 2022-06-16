@@ -60,6 +60,7 @@
                                                     Name : <?= $data->name ?><br>
                                                     Specification: <?= $data->specification ?><br>
                                                     UoM  : <?= $data->uom ?><br>
+                                                    Stock : <?= "-"?><br>
                                                     <!-- location: <?= $data->name ?><br> -->
                                                 </div>
                                             </div>

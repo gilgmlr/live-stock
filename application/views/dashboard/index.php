@@ -254,16 +254,8 @@
 </body>
 <script>
 $(document).ready(function() {
-    //$('#warehouse').DataTable();
     $('#lending').DataTable();
-
-});
-</script>
-<script>
-$(document).ready(function() {
-    //$('#warehouse').DataTable();
-    $('#allwh').DataTable();
-
+    // $('#warehouse').DataTable();
 });
 </script>
 

@@ -19,7 +19,7 @@ class Catalog extends CI_Controller
         }
 
         // config
-        $this->db->like('name', $data['keyword'])->or_like('item_code', $data['keyword'])->or_like('specification', $data['keyword']);
+        $this->db->like('item_code', $data['keyword'])->or_like('name', $data['keyword'])->or_like('specification', $data['keyword'])->or_like('uom', $data['keyword']);
         $this->db->from('items');
         $config['total_rows'] = $this->db->count_all_results();
         $data['total_rows'] = $config['total_rows'];

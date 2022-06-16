@@ -59,8 +59,6 @@
 
 <script>
 $(document).ready(function() {
-    //$('#warehouse').DataTable();
     $('#regisacc').DataTable();
-
 });
 </script>

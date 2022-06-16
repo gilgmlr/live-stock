@@ -53,10 +53,10 @@ class Settings extends CI_Controller
     public function view_all_items()
     {
         $data['judul'] = 'Settings/view_all_items';
-        $data['item'] = $this->M_CRUD->get_data('items')->result();
+        $item['item'] = $this->M_CRUD->get_data('items')->result();
 
         $this->load->view('template/header', $data);
-        $this->load->view('settings/all_items');
+        $this->load->view('settings/all_items', $item);
     }
 
     public function add_account()
@@ -89,7 +89,7 @@ class Settings extends CI_Controller
 
     public function add_item()
     {
-        $this->form_validation->set_rules('item_code', 'Item_Code', 'required|numeric|is_unique[items.item_code]');
+        $this->form_validation->set_rules('item_code', 'Item_Code', 'required|is_unique[items.item_code]');
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('spec', 'Spec', 'required');
         $this->form_validation->set_rules('uom', 'Uom', 'required');

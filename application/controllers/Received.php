@@ -29,14 +29,14 @@ class Received extends CI_Controller
         $this->form_validation->set_rules('arrival_date', 'Arrival_Date', 'required|date');
         $this->form_validation->set_rules('po_number', 'PO_Number', 'required');
         $this->form_validation->set_rules('vendor_name', 'Vendor_Name', 'required');
-        $this->form_validation->set_rules('item_code', 'Item_Code', 'required|numeric');
+        $this->form_validation->set_rules('item_code', 'Item_Code', 'required');
         $this->form_validation->set_rules('qty', 'Qty', 'required|integer|greater_than[0]');
         $this->form_validation->set_rules('warehouse_code', 'Warehouse_Code', 'required');
         $this->form_validation->set_rules('location', 'Location', 'required');
 
         if($this->form_validation->run() == false) {
             $this->session->set_flashdata('flash', 'Data Input Not Valid in ' . $this->input->post('desc'));
-			redirect('received');
+			$this->view_good_received();
 		} else {
             $received = array(
                 'received_code' => $this->input->post('received_code'),
@@ -60,7 +60,6 @@ class Received extends CI_Controller
             $this->M_CRUD->input_data('history', $history);
 
             $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
-            // $wh = $this->db->get_where('inventory', ['warehouse_code' => $this->input->post('warehouse_code')])->row_array();
 
             if ($item != null){ //jika sudah ada di inventory
                 $data = array(
@@ -83,7 +82,6 @@ class Received extends CI_Controller
                 );
                 $this->M_CRUD->input_data('inventory', $inventory);
             }
-
 
             $this->session->set_flashdata('flash', 'Data ' . $this->input->post('desc') . ' Saved!');
             redirect('received');

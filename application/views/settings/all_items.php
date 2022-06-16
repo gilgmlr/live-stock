@@ -13,7 +13,7 @@
             <!-- <p class="category">All Warehouse</p> -->
         </div>
         <div class="card-content table-responsive">
-            <table id="allitems" class="table table-hover">
+            <table id="items" class="table table-hover">
                 <thead class="text-primary">
                     <tr>
                         <th>Item Code</th>
@@ -60,32 +60,32 @@
                                     <div class="modal-body">
                                         <div class="container">
                                             
-                                                <div class="col-sm-12">
-                                                    <label class="col-sm-6 col-form-label"
-                                                        for="form3Example1c">Item Code</label>
-                                                    <input type="text" id="item_code" class="form-control" name="item_code"
-                                                         placeholder="Enter item code"
-                                                        value="<?= $data->item_code ?>" readonly />
-                                                </div>                             
-                                                <div class="col-sm-12"">
-                                                    <label class=" col-sm-6 col-form-label" for="form3Example1c">
-                                                    Name</label>
-                                                    <input type="text" id="name" class="form-control" name="name"
-                                                         placeholder="Enter item code"
-                                                        value="<?= $data->name ?>" required />
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <label class="col-sm-6 col-form-label"
-                                                        for="form3Example1c">Specification</label>
-                                                    <textarea class="form-control" name="spec" id="spec" rows="3" required><?= $data->specification ?></textarea>
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <label class="col-sm-6 col-form-label"
-                                                        for="form3Example1c">UoM</label>
-                                                    <input type="text" id="uom" class="form-control"
-                                                        name="uom" value="<?= $data->uom ?>" required />
-                                                </div>
-                                            
+                                            <div class="col-sm-12">
+                                                <label class="col-sm-6 col-form-label"
+                                                    for="form3Example1c">Item Code</label>
+                                                <input type="text" id="item_code" class="form-control" name="item_code"
+                                                     placeholder="Enter item code"
+                                                    value="<?= $data->item_code ?>" readonly />
+                                            </div>                             
+                                            <div class="col-sm-12"">
+                                                <label class=" col-sm-6 col-form-label" for="form3Example1c">
+                                                Name</label>
+                                                <input type="text" id="name" class="form-control" name="name"
+                                                     placeholder="Enter item code"
+                                                    value="<?= $data->name ?>" required />
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <label class="col-sm-6 col-form-label"
+                                                    for="form3Example1c">Specification</label>
+                                                <textarea class="form-control" name="spec" id="spec" rows="3" required><?= $data->specification ?></textarea>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <label class="col-sm-6 col-form-label"
+                                                    for="form3Example1c">UoM</label>
+                                                <input type="text" id="uom" class="form-control"
+                                                    name="uom" value="<?= $data->uom ?>" required />
+                                            </div>
+            
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -93,12 +93,10 @@
                                             data-bs-dismiss="modal">Batal</button>
                                         <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
                                     </div>
+                                </form>
                             </div>
-
-                            </form>
                         </div>
                     </div>
-        </div>
         <!-- AKHIR MODAL  -->
 
                     <?php $i++; } ?>
@@ -113,8 +111,6 @@
 
 <script>
 $(document).ready(function() {
-    //$('#warehouse').DataTable();
-    $('#allitems').DataTable();
-
+    $('#items').DataTable();
 });
 </script>
