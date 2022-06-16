@@ -51,13 +51,17 @@ class Received extends CI_Controller
 
             date_default_timezone_set('Asia/Jakarta');
             $history = array(
-                'date' => date("Y-m-d h:i:s A"),
-                'doc_num' => $this->input->post('received_code'),
-                'description' => $this->input->post('desc'),
+                'doc_date' => $this->input->post('arrival_date'),
+                'system_date' => date("Y-m-d h:i:s A"),
+                'source_doc' => $this->input->post('received_code'),
+                'destination_doc' => $this->input->post('received_code'),
+                'item_code' => $this->input->post('item_code'),
+                'qty' => $this->input->post('qty'),
+                'warehouse_code' => $this->input->post('warehouse_code'),
             );
     
             $this->M_CRUD->input_data('received', $received);
-            $this->M_CRUD->input_data('history', $history);
+            $this->M_CRUD->input_data('history_transaction', $history);
 
             $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
 

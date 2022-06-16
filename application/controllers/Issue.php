@@ -45,6 +45,17 @@ class Issue extends CI_Controller
         );
         $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
 
+        $history = array(
+            'doc_date' => $this->input->post('entri_date'),
+            'system_date' => $this->input->post('post_date'),
+            'source_doc' => $this->input->post('mi_code'),
+            'destination_doc' => $this->input->post('mi_code'),
+            'item_code' => $this->input->post('item_code'),
+            'qty' => $this->input->post('transaction_qty')*-1,
+            'warehouse_code' => $this->input->post('warehouse_code'),
+        );
+        $this->M_CRUD->input_data('history_transaction', $history);
+
         $this->session->set_flashdata('flash', 'Data Material Issue Saved!');
 
         // var_dump($item); die;
