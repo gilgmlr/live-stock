@@ -67,19 +67,21 @@
                             </div>
 
 
-                            <label for="" class="col-sm-6 col-form-label">Qty</label>
-                            <input type="text" class="form-control" id="qty" name="qty" required>
+
 
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-3">
+                                    <label for="" class="col-sm-6 col-form-label">Qty</label>
+                                    <input type="text" class="form-control" id="qty" name="qty" required>
+                                </div>
+
+                                <div class="col-sm-4">
                                     <label for="" class="col-sm-6 col-form-label">WH</label>
                                     <input type="text" class="form-control" id="warehouse_code" name="warehouse_code"
                                         value="<?= $this->session->userdata('warehouse') ?>">
-
-
-
                                 </div>
-                                <div class="col-sm-6">
+
+                                <div class="col-sm-5">
                                     <label for="" class="col-sm-6 col-form-label">Location</label>
                                     <input type="text" class="form-control" id="location" name="location" required>
                                 </div>
