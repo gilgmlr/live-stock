@@ -23,7 +23,7 @@ class Lending extends CI_Controller
         $this->db->from('lending');
         $config['total_rows'] = $this->db->count_all_results();
         $data['total_rows'] = $config['total_rows'];
-        $config['per_page'] = 12;
+        $config['per_page'] = 10;
 
         // Initialize
         $this->pagination->initialize($config);

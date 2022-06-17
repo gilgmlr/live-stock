@@ -40,7 +40,7 @@
                 </thead>
                 <tbody>
                     <?php
-                                    $i = 1;
+                                    $i = 1+$start;
                                     foreach ($lending as $data) { 
                                 ?>
                     <tr>

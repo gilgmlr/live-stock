@@ -33,7 +33,6 @@
                 </div>
             </a>
         </div>
-        <?php ;} ?>
 
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="<?php echo base_url() . "settings/view_import_data" ?>">
@@ -47,6 +46,8 @@
                 </div>
             </a>
         </div>
+        <?php ;} ?>
+        
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal"
                 data-bs-target="#changepassword">
