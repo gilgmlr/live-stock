@@ -5,7 +5,7 @@
 
         </center>
         <div class=" card-body">
-            <form action="<?= base_url() ?>received/addReceived" method="POST">
+            <form action="<?= base_url() ?>received/addReceived" method="POST" autocomplete="off">
 
                 <div class="container">
                     <div class="row justify-content-center">
