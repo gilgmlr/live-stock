@@ -47,10 +47,9 @@
             </a>
         </div>
         <?php ;} ?>
-        
+
         <div class="col-lg-3 col-md-6 col-sm-6">
-            <a href="" data-bs-toggle="modal"
-                data-bs-target="#changepassword">
+            <a href="" data-bs-toggle="modal" data-bs-target="#changepassword">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
@@ -99,7 +98,8 @@
                 </div>
                 <div class="modal-footer">
                     <button id="batal" type="submit" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
-                    <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
+                    <button id="simpan" type="submit" class="btn btn-success"
+                        onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                 </div>
             </form>
         </div>

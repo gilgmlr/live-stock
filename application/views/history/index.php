@@ -4,7 +4,10 @@
 
         <div class="row">
             <div class="col">
-                <a class="btn btn-primary" href="settings/generateXls" style="height: 35px;">Export Data</a>
+                <a href="settings/generateXls" style="height: 35px;"><button id="simpan" type="submit"
+                        class="btn btn-warning"
+                        onclick=" return confirm('Are You Sure Want To Download this file ?')">Export
+                        Data</button></a>
 
             </div>
             <div class="col-md-4">
