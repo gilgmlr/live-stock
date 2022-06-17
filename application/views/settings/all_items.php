@@ -80,7 +80,7 @@
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:30%>
                             <div class="modal-content">
                                 <div class="modal-header" style="background-color: #563d7c">
-                                    <h5 class="modal-title" style="color: gold;" id="exampleModalLabel">Change Password
+                                    <h5 class="modal-title" style="color: gold;" id="exampleModalLabel">Edit Items
                                     </h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
@@ -118,8 +118,8 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button id="batal" type="submit" class="btn btn-danger"
-                                            data-bs-dismiss="modal">Batal</button>
+                                        <button id="close" type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Cancel</button>
                                         <button id="simpan" type="submit" class="btn btn-success"
                                             onclick=" return confirm('Are You Sure Want To Save ?')">Simpan</button>
 

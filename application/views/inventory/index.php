@@ -170,7 +170,7 @@
 
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button id="close" type="button" class="btn btn-warning"
+                                                            <button id="close" type="button" class="btn btn-danger"
                                                                 data-bs-dismiss="modal">Cancel</button>
                                                             <button id="simpan" type="submit"
                                                                 class="btn btn-success">Simpan</button>

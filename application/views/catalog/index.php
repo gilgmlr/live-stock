@@ -3,11 +3,13 @@
                 <div class="row justify-content-center">
                     <div class="col-sm-8" style="margin-top: 50px;">
                         <div class="input-group sm-3">
-                            <input type="text submit" class="form-control" placeholder="search" id="keyword" name="keyword" value="<?= $this->session->userdata('keyword_catalog') ?>">
-                            <input type="submit" class="btn btn-warning" style="padding-top:17px; margin:0px; height:45px;" name="search">
+                            <input type="text submit" class="form-control" placeholder="search" id="keyword"
+                                name="keyword" value="<?= $this->session->userdata('keyword_catalog') ?>">
+                            <input type="submit" class="btn btn-warning"
+                                style="padding-top:17px; margin:0px; height:45px;" name="search">
                         </div>
                         <div>
-                        <b> Result: <?= $total_rows ?> Items </b>
+                            <b> Result: <?= $total_rows ?> Items </b>
                         </div>
                     </div>
                 </div>
@@ -21,13 +23,15 @@
                 <div class="col-md-2 px-2">
                     <a href="" data-bs-toggle="modal" data-bs-target="#detail<?= $data->item_code ?>">
                         <div class="card shadow p-2 mb-2 bg-white rounded">
-                            <img src="<?= base_url() . 'assets/catalog/'. $data->image?>" class="img-fluid" style="height: 170px; width:175px; object-fit: contain">
+                            <img src="<?= base_url() . 'assets/catalog/'. $data->image?>" class="img-fluid"
+                                style="height: 170px; width:175px; object-fit: contain">
                             <div class="card-body">
                                 <p class="card-text" style="font-size:16px;"><b><?= $data->item_code ?></b></p>
                                 <?php if (strlen($data->name) >= 18) { ?>
-                                <p class="card-text" style="font-size:12px;"><?= substr($data->name, 0, 16) . ' ...' ?></p>
-                                <?php ;} else { ?> 
-                                    <p class="card-text" style="font-size:12px;"><?= $data->name ?></p>
+                                <p class="card-text" style="font-size:12px;"><?= substr($data->name, 0, 16) . ' ...' ?>
+                                </p>
+                                <?php ;} else { ?>
+                                <p class="card-text" style="font-size:12px;"><?= $data->name ?></p>
                                 <?php ;}?>
                             </div>
                         </div>
@@ -59,7 +63,7 @@
                                                     Code : <?= $data->item_code ?><br>
                                                     Name : <?= $data->name ?><br>
                                                     Specification: <?= $data->specification ?><br>
-                                                    UoM  : <?= $data->uom ?><br>
+                                                    UoM : <?= $data->uom ?><br>
                                                     Stock : <?= "-"?><br>
                                                     <!-- location: <?= $data->name ?><br> -->
                                                 </div>
@@ -68,13 +72,16 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
+                                    <a href=""> <button type="button" class="btn btn-warning"
+                                            data-bs-dismiss="modal">Go</button>
+                                    </a>
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- End Modal  --> 
+                <!-- End Modal  -->
 
                 <?php } ?>
                 <div class="col-12">
