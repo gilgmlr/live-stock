@@ -72,7 +72,7 @@ class Received extends CI_Controller
                     'stocks' => $item['stocks'] + $this->input->post('qty'),
                     'warehouse_code' => $item['warehouse_code'],
                     'equipment' => $this->input->post('equipment'),
-                    'status' => "1",
+                    'status' => '1',
                 );
                 $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
             } else {
@@ -82,7 +82,7 @@ class Received extends CI_Controller
                     'stocks' => $this->input->post('qty'),
                     'warehouse_code' => $this->input->post('warehouse_code'),
                     'equipment' => $this->input->post('equipment'),
-                    'status' => $this->input->post('status'),
+                    'status' => '1',
                 );
                 $this->M_CRUD->input_data('inventory', $inventory);
             }
