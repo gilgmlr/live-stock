@@ -11,42 +11,95 @@
                     <div class="row justify-content-center">
                         <div class="col-sm-6">
                             <label for="" class="col-sm-6 col-form-label">WT Number</label>
-                            <input type="text" class="form-control" id="received_code" name="received_code" value="WT01-C02<?= substr(date('Y'),2,4) . date('m') ?>" required>
+                            <input type="text" class="form-control" id="received_code" name="received_code"
+                                value="WT01-C02<?= substr(date('Y'),2,4) . date('m') ?>" required>
                             <label for="" class="col-sm-6 col-form-label">Arrival Date</label>
-                            <input type="date" class="form-control" id="arrival_date" name="arrival_date" value="<?php echo date('Y-m-d'); ?>" required>
-                            <label for="" class="col-sm-6 col-form-label">PO Number</label>
-                            <input type="text" class="form-control" id="po_number" name="po_number" required>
-                            <label for="" class="col-sm-6 col-form-label">Vendor Name</label>
-                            <input type="text" class="form-control" id="vendor_name" name="vendor_name" required>
+                            <input type="date" class="form-control" id="arrival_date" name="arrival_date"
+                                value="<?php echo date('Y-m-d'); ?>" required>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Sender</label>
+                                    <select class="form-select form-control" aria-label=".form-select-lg example"
+                                        id="sender" name="sender" required>
+                                        <option selected>-- Select --</option>
+                                        <?php foreach ($warehouse as $data) { ?>
+                                        <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?>
+                                        </option>
+                                        <?php $i++; } ?>
+                                    </select>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Sender Name</label>
+                                    <input type="text" class="form-control" id="sendername" name="sendername" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label for="" class="col-sm-6 col-form-label">Equipment</label>
+                                    <input type="text" class="form-control" id="equipment" name="equipment">
+                                </div>
+                            </div>
                         </div>
                         <div class="col-sm-6">
-                            <label for="" class="col-sm-6 col-form-label">Item Code</label>
-                            <input type="text" class="form-control" id="item_code" name="item_code" required>
-                            <label for="" class="col-sm-6 col-form-label">UoM</label>
-                            <select class="form-select form-control" aria-label=".form-select-lg example" id="uom"
-                                name="uom" required>
-                                <option selected>-- Select --</option>
-                                <?php foreach ($uom as $data) { ?>
-                                <option value="<?= $data->uom_code ?>"><?= $data->name ?></option>
-                                <?php $i++; } ?>
-                            </select>
-                            <label for="" class="col-sm-6 col-form-label">Qty</label>
-                            <input type="text" class="form-control" id="qty" name="qty" required>
-                            <label for="" class="col-sm-6 col-form-label">Location</label>
-                            <input type="text" class="form-control" id="location" name="location" required>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Item Code</label>
+                                    <input type="text" class="form-control" id="item_code" name="item_code" required>
 
-                            <label for="" class="col-sm-6 col-form-label">Entered by</label>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="entered_nip" name="entered_nip"
-                                            readonly value="<?= $this->session->userdata('nip'); ?>">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="warehouse_code"
-                                            name="warehouse_code" readonly
-                                            value="<?= $this->session->userdata('warehouse'); ?>">
-                                    </div>
                                 </div>
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Item Name</label>
+                                    <input type="text" class="form-control" id="item_name" name="item_name" readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <label for="" class="col-sm-6 col-form-label">Spesification</label>
+                                    <input type="text" class="form-control" id="specification" name="specification"
+                                        readonly>
+
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="" class="col-sm-6 col-form-label">UoM</label>
+                                    <input type="text" class="form-control" id="uom" name="uom" readonly>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label for="" class="col-sm-6 col-form-label">Qty</label>
+                                    <input type="text" class="form-control" id="qty" name="qty" required>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label for="" class="col-sm-6 col-form-label">WH</label>
+                                    <input type="text" class="form-control" id="warehouse_code" name="warehouse_code"
+                                        value="<?= $this->session->userdata('warehouse') ?>">
+                                </div>
+
+                                <div class="col-sm-5">
+                                    <label for="" class="col-sm-6 col-form-label">Location</label>
+                                    <input type="text" class="form-control" id="location" name="location" required>
+                                </div>
+
+
+                                <label for="" class="col-sm-12 col-form-label">Entered by</label>
+
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="created_by" name="created_by" readonly
+                                        value="<?= $this->session->userdata('nip'); ?>">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="" name="" readonly
+                                        value="<?= $this->session->userdata('name'); ?>">
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
