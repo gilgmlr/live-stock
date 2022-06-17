@@ -127,7 +127,7 @@ class Settings extends CI_Controller
 			));
 
 			$this->load->library('upload', $config);
-            
+            $this->upload->do_upload('image');
                 $data = $this->upload->data();
 
                 $image = $data['file_name'];

@@ -69,7 +69,7 @@
                                         id="warehouse_code" name="warehouse_code" required>
                                         <option selected>-- Select --</option>
                                         <?php foreach ($warehouse as $data) { ?>
-                                        <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?>
+                                        <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?> - <?= $data->warehouse_name ?>
                                         </option>
                                         <?php $i++; } ?>
                                     </select>

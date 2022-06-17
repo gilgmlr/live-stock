@@ -180,16 +180,15 @@ class Issue extends CI_Controller
                 'source_doc' => $this->input->post('wt_number'),
                 'destination_doc' => $this->input->post('wt_number'),
                 'item_code' => $this->input->post('item_code'),
-                'qty' => $this->input->post('qty'),
+                'qty' => $this->input->post('qty') * -1,
                 'warehouse_code' => $this->input->post('warehouse_code'),
             );
     
             $this->M_CRUD->input_data('warehouse_transfer', $received);
             $this->M_CRUD->input_data('history_transaction', $history);
 
-            $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
+            $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('sender_code')])->row_array();
 
-            
             $data = array(
                 'item_code' => $item['item_code'],
                 'location' => $item['location'],
