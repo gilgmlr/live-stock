@@ -30,7 +30,7 @@
                         <div class="col">
                             <label class="form-label" for="form3Example1c">Spesification*</label>
                             <textarea id="spec" class="text-input" name="spec" autocomplete="off"
-                                placeholder="Enter spesification" rows="3" required></textarea>
+                                placeholder="Enter spesification" rows="2" required></textarea>
                             <small class="text-danger"><?= form_error('spec') ?></small>
                         </div>
                         <div class="col">
@@ -41,8 +41,8 @@
                         </div>
                         <div class="col">
                             <label class="form-label" for="form3Example1c">Remark*</label>
-                            <input type="text" id="remark" class="text-input" name="remark" autocomplete="off"
-                                placeholder="Enter remark" required />
+                            <textarea id="remark" class="text-input" name="remark" autocomplete="off"
+                                placeholder="Enter remark" rows="2" required></textarea>
                             <small class="text-danger"><?= form_error('remark') ?></small>
                         </div>
                         <div class="col">

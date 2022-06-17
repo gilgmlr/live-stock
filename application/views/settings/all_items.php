@@ -33,12 +33,12 @@
             <table id="items" class="table table-striped table-hover">
                 <thead class="text-primary">
                     <tr>
-                        <th style="width:75px">No</th>
-                        <th style="width:170px">Item Code</th>
-                        <th style="width:400px">Name</th>
+                        <th style="width:40px">No</th>
+                        <th style="width:130px">Item Code</th>
+                        <th style="width:350px">Name</th>
                         <th style="width:400px">Specification</th>
                         <th style="width:75px">UoM</th>
-                        <th style="width:150px">Remark</th>
+                        <th style="width:400px">Remark</th>
                         <th style="width:120px">Action</th>
                     </tr>
                 </thead>
@@ -108,7 +108,7 @@
                                             <div class="col-sm-12">
                                                 <label class="col-sm-6 col-form-label"
                                                     for="form3Example1c">Specification</label>
-                                                <textarea class="form-control" name="spec" id="spec" rows="3"
+                                                <textarea class="form-control" name="spec" id="spec" rows="2"
                                                     required><?= $data->specification ?></textarea>
                                             </div>
                                             <div class="col-sm-12">
