@@ -371,7 +371,7 @@ class Settings extends CI_Controller
                     'specification' => $this->input->post('spec'),
                     'uom' => $this->input->post('uom'),
                     'remarks' => $this->input->post('remarks'),
-                    'image' => $item['image'],
+                    'image' => $this->input->post('image'),
                 );
 
                 $this->M_CRUD->update_data('items', $data, ['item_code' => $this->input->post('item_code')]);

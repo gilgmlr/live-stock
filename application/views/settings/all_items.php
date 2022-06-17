@@ -121,7 +121,12 @@
                                                     for="form3Example1c">Remark</label>
                                                 <textarea class="form-control" name="remarks" id="remarks" rows="2"><?= $data->remarks ?></textarea>
                                             </div>
-
+                                            <div class="col-sm-12">
+                                                <label class="col-sm-6 col-form-label"
+                                                    for="form3Example1c">Image Name</label>
+                                                <input type="text" class="form-control" name="image" id="image" value="<?= $data->image ?>" required></input>
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -129,7 +134,6 @@
                                             data-bs-dismiss="modal">Cancel</button>
                                         <button id="simpan" type="submit" class="btn btn-success"
                                             onclick=" return confirm('Are You Sure Want To Save ?')">Simpan</button>
-
                                     </div>
                                 </form>
                             </div>
