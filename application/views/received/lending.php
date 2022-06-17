@@ -46,9 +46,9 @@
                                 <label for="" class="col-sm-6 col-form-label">Item Code</label>
                                 <input type="text" class="form-control" id="item_code" name="item_code"
                                     value="<?= $lending['item_code'] ?>" readonly>
-                                <label for="" class="col-sm-6 col-form-label">UoM</label>
+                                <!-- <label for="" class="col-sm-6 col-form-label">UoM</label>
                                 <input type="text" class="form-control" id="uom_code" name="uom_code"
-                                    value="<?= $lending['uom_code'] ?>" readonly>
+                                    value="" readonly> -->
                                 <label for="" class="col-sm-6 col-form-label">Lending Qty</label>
                                 <input type="text" class="form-control" id="lending_qty" name="lending_qty"
                                     value="<?= $lending['lending_qty'] ?>" readonly>
