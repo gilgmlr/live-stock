@@ -41,7 +41,7 @@
                         </div>
                         <div class="col">
                             <label for="formFileMultiple" class="form-label" style="margin-top:8px">Upload Image (jpg|jpeg|png)</label>
-                            <input class="custom-file-input form-control" type="file" id="image" accept=".jpg, .jpeg, .png" name="image">
+                            <input class="custom-file-input form-control text-input" type="file" id="image" accept=".jpg, .jpeg, .png" name="image">
                         </div>
                     </div>
                 </div>

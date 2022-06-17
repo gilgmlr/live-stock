@@ -127,16 +127,22 @@ class Settings extends CI_Controller
 			));
 
             $data = $this->upload->data();
-            if (pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == 'jpg' || pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == 'png' || pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == 'jpeg') {
+            if (pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == 'jpg' || pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == 'png' || pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == 'jpeg' || pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == '') {
 			    $this->load->library('upload', $config);
                 $this->upload->do_upload('image');
+
+                if (pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == '') {
+                    $image = $data['file_name'] . '.jpg';
+                } else {
+                    $image = $data['file_name'] . '.' . pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION);
+                }
     
                 $data = array(
                     'item_code' => $this->input->post('item_code'),
                     'name' => $this->input->post('name'),
                     'specification' => $this->input->post('spec'),
                     'uom' => $this->input->post('uom'),
-                    'image' => $data['file_name'] . '.' . pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION),
+                    'image' => $image,
                 );
                 // var_dump($config);die;
     
