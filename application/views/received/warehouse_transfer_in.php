@@ -5,32 +5,28 @@
 
         </center>
         <div class=" card-body">
-            <form action="<?= base_url() ?>received/addReceived" method="POST" autocomplete="off">
+            <form action="<?= base_url() ?>received/addWT" method="POST" autocomplete="off">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-sm-6">
                             <label for="" class="col-sm-6 col-form-label">WT Number</label>
-                            <input type="text" class="form-control" id="received_code" name="received_code"
+                            <input type="text" class="form-control" id="wt_number" name="wt_number"
                                 value="WT01-C02<?= substr(date('Y'),2,4) . date('m') ?>" required>
                             <label for="" class="col-sm-6 col-form-label">Arrival Date</label>
                             <input type="date" class="form-control" id="arrival_date" name="arrival_date"
                                 value="<?php echo date('Y-m-d'); ?>" required>
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <label for="" class="col-sm-6 col-form-label">Sender</label>
                                     <select class="form-select form-control" aria-label=".form-select-lg example"
-                                        id="sender" name="sender" required>
+                                        id="sender_code" name="sender_code" required>
                                         <option selected>-- Select --</option>
                                         <?php foreach ($warehouse as $data) { ?>
-                                        <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?>
+                                        <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?> - <?= $data->warehouse_name ?>
                                         </option>
                                         <?php $i++; } ?>
                                     </select>
 
-                                </div>
-                                <div class="col-sm-6">
-                                    <label for="" class="col-sm-6 col-form-label">Sender Name</label>
-                                    <input type="text" class="form-control" id="sendername" name="sendername" required>
                                 </div>
                             </div>
 
@@ -90,7 +86,7 @@
                                 <label for="" class="col-sm-12 col-form-label">Entered by</label>
 
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="created_by" name="created_by" readonly
+                                    <input type="text" class="form-control" id="entered" name="entered" readonly
                                         value="<?= $this->session->userdata('nip'); ?>">
                                 </div>
                                 <div class="col-sm-6">
@@ -118,3 +114,30 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#item_code').on('input', function() {
+        var item_code = $(this).val();
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url().'auto/get_item'?>",
+            dataType: "JSON",
+            data: {
+                item_code: item_code
+            },
+            cache: false,
+            success: function(data) {
+                $.each(data, function(item_code, nama, specification, uom, image) {
+                    $('[name="item_name"]').val(data.name);
+                    $('[name="specification"]').val(data.specification);
+                    $('[name="uom"]').val(data.uom);
+                });
+
+            }
+        });
+        return false;
+    });
+
+});
+</script>
