@@ -38,7 +38,8 @@
                         <th style="width:400px">Name</th>
                         <th style="width:400px">Specification</th>
                         <th style="width:75px">UoM</th>
-                        <th style="width:100px">Action</th>
+                        <th style="width:150px">Remark</th>
+                        <th style="width:120px">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,6 +53,7 @@
                         <td><?= $data->name ?></td>
                         <td><?= $data->specification ?></td>
                         <td><?= $data->uom ?></td>
+                        <td></td>
                         <td>
                             <div class="container">
 
@@ -113,6 +115,12 @@
                                                 <label class="col-sm-6 col-form-label" for="form3Example1c">UoM</label>
                                                 <input type="text" id="uom" class="form-control" name="uom"
                                                     value="<?= $data->uom ?>" required />
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <label class="col-sm-6 col-form-label"
+                                                    for="form3Example1c">Remark</label>
+                                                <textarea class="form-control" name="remark" id="remark" rows="2"
+                                                    required></textarea>
                                             </div>
 
                                         </div>

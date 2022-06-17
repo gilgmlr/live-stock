@@ -40,8 +40,16 @@
                             <small class="text-danger"><?= form_error('uom') ?></small>
                         </div>
                         <div class="col">
-                            <label for="formFileMultiple" class="form-label" style="margin-top:8px">Upload Image (jpg|jpeg|png)</label>
-                            <input class="custom-file-input form-control text-input" type="file" id="image" accept=".jpg, .jpeg, .png" name="image">
+                            <label class="form-label" for="form3Example1c">Remark*</label>
+                            <input type="text" id="remark" class="text-input" name="remark" autocomplete="off"
+                                placeholder="Enter remark" required />
+                            <small class="text-danger"><?= form_error('remark') ?></small>
+                        </div>
+                        <div class="col">
+                            <label for="formFileMultiple" class="form-label" style="margin-top:8px">Upload Image
+                                (.jpg |.jpeg |.png)</label>
+                            <input class="custom-file-input form-control text-input" type="file" id="image"
+                                accept=".jpg, .jpeg, .png" name="image">
                         </div>
                     </div>
                 </div>
