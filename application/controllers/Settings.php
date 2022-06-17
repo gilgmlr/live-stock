@@ -121,29 +121,32 @@ class Settings extends CI_Controller
 		} else {
             $config = $this->upload->initialize(array(
 				"upload_path" => './assets/catalog/',
-				"allowed_types" => 'gif|jpg|jpeg|png',
+				"allowed_types" => 'jpg|jpeg|png',
 				"remove_spaces" => TRUE,
 				"file_name" => $this->input->post('item_code')
 			));
 
-			$this->load->library('upload', $config);
-            $this->upload->do_upload('image');
-                $data = $this->upload->data();
-
-                $image = $data['file_name'];
+            $data = $this->upload->data();
+            if (pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == 'jpg' || pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == 'png' || pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == 'jpeg') {
+			    $this->load->library('upload', $config);
+                $this->upload->do_upload('image');
     
                 $data = array(
                     'item_code' => $this->input->post('item_code'),
                     'name' => $this->input->post('name'),
                     'specification' => $this->input->post('spec'),
                     'uom' => $this->input->post('uom'),
-                    'image' => $image,
+                    'image' => $data['file_name'] . '.' . pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION),
                 );
                 // var_dump($config);die;
     
                 $this->M_CRUD->input_data('items', $data);
                 $this->session->set_flashdata('flash', 'Add item ' . $this->input->post('name') . ' Success!');
                 redirect('settings/view_add_items');
+            } else {
+                $this->session->set_flashdata('flash', 'Type Image ' . $this->input->post('name') . ' Invalid!');
+                redirect('settings/view_add_items');
+            }
         }
     }
     

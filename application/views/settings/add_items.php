@@ -40,8 +40,8 @@
                             <small class="text-danger"><?= form_error('uom') ?></small>
                         </div>
                         <div class="col">
-                            <label for="formFileMultiple" class="form-label" style="margin-top:8px">Upload Image</label>
-                            <input class="custom-file-input form-control" type="file" id="image" name="image">
+                            <label for="formFileMultiple" class="form-label" style="margin-top:8px">Upload Image (jpg|jpeg|png)</label>
+                            <input class="custom-file-input form-control" type="file" id="image" accept=".jpg, .jpeg, .png" name="image">
                         </div>
                     </div>
                 </div>
