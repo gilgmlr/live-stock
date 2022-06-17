@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Jun 2022 pada 04.10
+-- Waktu pembuatan: 17 Jun 2022 pada 08.38
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.26
 
@@ -421,7 +421,9 @@ INSERT INTO `history_transaction` (`id`, `doc_date`, `system_date`, `source_doc`
 (331, '2022-06-17', '2022-06-17', 'WT01-C022206', 'WT01-C022206', '0209-000305', 99, 'BYP0-3-01'),
 (332, '2022-06-17', '2022-06-17', 'WT01-C022206', 'WT01-C022206', '0209-000305', 9, 'BYP0-3-01'),
 (333, '2022-06-17', '2022-06-17', 'WT01-C022206', 'WT01-C022206', '0209-000305', 101, 'BYP0-3-01'),
-(334, '2022-06-17', '2022-06-17', 'WT01-C022206', 'WT01-C022206', '0209-000305', 100, 'BYP0-3-01');
+(334, '2022-06-17', '2022-06-17', 'WT01-C022206', 'WT01-C022206', '0209-000305', 100, 'BYP0-3-01'),
+(335, '2022-06-17', '2022-06-17', 'WT01-C022206', 'WT01-C022206', '0209-000305	', -90, 'BYP0-3-01'),
+(336, '2022-06-17', '2022-06-17', 'WT01-C022206', 'WT01-C022206', '0209-000305', -90, 'BYP0-3-02');
 
 -- --------------------------------------------------------
 
@@ -443,7 +445,7 @@ CREATE TABLE `inventory` (
 --
 
 INSERT INTO `inventory` (`item_code`, `location`, `stocks`, `warehouse_code`, `equipment`, `status`) VALUES
-('0209-000305', '-', 91, 'BYP0-3-01', '', '1');
+('0209-000305', '-', 1, 'BYP0-3-01', '', '0');
 
 -- --------------------------------------------------------
 
@@ -469,6 +471,7 @@ CREATE TABLE `items` (
   `name` varchar(200) NOT NULL,
   `specification` varchar(200) NOT NULL,
   `uom` varchar(50) NOT NULL,
+  `remarks` text DEFAULT NULL,
   `image` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -476,10 +479,11 @@ CREATE TABLE `items` (
 -- Dumping data untuk tabel `items`
 --
 
-INSERT INTO `items` (`item_code`, `name`, `specification`, `uom`, `image`) VALUES
-('0209-000305', 'PAINT BRUSH', '3 INCH', 'PCS', '0209-000305.jpeg'),
-('0209-000318', 'ABRASIVE CUT-OFF WHEEL', 'DIA. 4 INCH, THICKNESS: 1.2 MM', '', '0209-000318.jpeg'),
-('0210-000029', 'CONTACT CLEANER ANTI CORROSION', 'WD-40; @333 ML', 'TUBE', '0210-000029.jpeg');
+INSERT INTO `items` (`item_code`, `name`, `specification`, `uom`, `remarks`, `image`) VALUES
+('0101-0101010101', 'Sendal', 'Swallow size 40', 'PCS', NULL, '0101-0101010101.png'),
+('0209-000305', 'PAINT BRUSH', '3 INCH', 'PCS', NULL, '0209-000305.jpeg'),
+('0209-000318', 'ABRASIVE CUT-OFF WHEEL', 'DIA. 4 INCH, THICKNESS: 1.2 MM', 'PCS', NULL, '0209-000318.jpeg'),
+('0210-000029', 'CONTACT CLEANER ANTI CORROSION', 'WD-40; @333 ML', 'TUBE', NULL, '0210-000029.jpeg');
 
 -- --------------------------------------------------------
 
@@ -649,7 +653,9 @@ INSERT INTO `warehouse_transfer` (`wt_number`, `arrival_date`, `sender_code`, `i
 ('WT01-C022206', '2022-06-17', 'BYP0-3-04', '0209-000305', NULL, 99, 'BYP0-3-01', '-', '1302194089'),
 ('WT01-C022206', '2022-06-17', 'BYP0-3-01', '0209-000305', NULL, 9, 'BYP0-3-01', '', '1302194089'),
 ('WT01-C022206', '2022-06-17', 'BYP0-3-03', '0209-000305', NULL, 101, 'BYP0-3-01', '-', '1302194089'),
-('WT01-C022206', '2022-06-17', 'BYP0-3-10', '0209-000305', NULL, 100, 'BYP0-3-01', '', '1302194089');
+('WT01-C022206', '2022-06-17', 'BYP0-3-10', '0209-000305', NULL, 100, 'BYP0-3-01', '', '1302194089'),
+('WT01-C022206', '2022-06-17', 'BYP0-3-01', '0209-000305	', NULL, 90, 'BYP0-3-01', '', '1302194089'),
+('WT01-C022206', '2022-06-17', 'BYP0-3-01', '0209-000305', NULL, 90, 'BYP0-3-02', '', '1302194089');
 
 --
 -- Indexes for dumped tables
@@ -717,7 +723,7 @@ ALTER TABLE `history`
 -- AUTO_INCREMENT untuk tabel `history_transaction`
 --
 ALTER TABLE `history_transaction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=335;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=337;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
