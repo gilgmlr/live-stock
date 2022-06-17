@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +20,7 @@
         <div class="row align-self-center">
             <div class="col">
                 <center>
-                    <div class="card" style="width:25rem ">
+                    <div class="card shadow p-3 mb-5 bg-white rounded" style="width:25rem ">
                         <div class="card-body">
                             <div class="col-md">
                                 <div class="text-center">
@@ -28,23 +29,28 @@
                                 </div>
                                 <div class="card-body">
                                     <center>
-                                    <?php if ($this->session->flashdata('flash')) : ?>
-                                        <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <?php if ($this->session->flashdata('flash')) : ?>
+                                        <div id="alert" class="alert alert-warning alert-dismissible fade show"
+                                            role="alert">
                                             <?= $this->session->flashdata('flash') ?>
                                         </div>
                                         <?php $this->session->unset_userdata('flash');
                                     endif; ?>
-                                    <?= validation_errors(); ?>
+                                        <?= validation_errors(); ?>
                                         <form action="login/login" method="POST" autocomplete="off">
                                             <div class="input-container">
-                                                <input type="text" id="nip" class="text-input" name="nip" placeholder="Enter your NIP"/>
+                                                <input type="text" id="nip" class="text-input" name="nip"
+                                                    placeholder="Enter your NIP" />
                                                 <small class="form-text text-danger"><?= form_error('nip') ?></small>
                                             </div>
                                             <div class="input-container">
-                                                <input type="password" id="password" name="password" class="text-input" placeholder="Enter your Password" />
-                                                <small class="form-text text-danger"><?= form_error('password') ?></small>
+                                                <input type="password" id="password" name="password" class="text-input"
+                                                    placeholder="Enter your Password" />
+                                                <small
+                                                    class="form-text text-danger"><?= form_error('password') ?></small>
                                             </div>
-                                            <input type="submit" class="btn btn-warning btn-sm" value="Login" id="login">
+                                            <input type="submit" class="btn btn-warning btn-sm" value="Login"
+                                                id="login">
                                         </form>
 
                                         <!-- <a href="<?= base_url().'login/preview' ?>">cek</a> -->
@@ -56,9 +62,13 @@
                     <footer>
                         <!-- Copyright -->
                         <div class="text-center p-4" style="color: #000">
-                        <a href="#" style="text-decoration: none; color: inherit;">
-                            <small>© June 2022 <br> Cemindo Gemilang | Telkom University</small>
-                        </a>
+                            <a href="https://semenmerahputih.com/semen-about"
+                                style="text-decoration: none; color: inherit;">
+                                <small>© June 2022 <br> Cemindo Gemilang | </small>
+                            </a>
+                            <a href="https://telkomuniversity.ac.id/"
+                                style="text-decoration: none; color: inherit;"><small>Telkom
+                                    University</small></a>
                         </div>
                         <!-- Copyright -->
                     </footer>
