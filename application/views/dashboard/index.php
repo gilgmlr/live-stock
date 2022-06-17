@@ -98,7 +98,7 @@
 
 
     <div class="row ">
-        <div class="col-lg-7 col-md-12">
+        <div class="col-lg-12 col-md-12">
             <div class="cards shadow p-3 mb-5 bg-white rounded" style="min-height: 400px;">
                 <div class="card-header card-header-text" style="background-color:#fff">
                     <h4 class="card-title">Lending Activity</h4>
@@ -150,48 +150,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="col-lg-5 col-md-12">
-            <div class="cards shadow p-3 mb-5 bg-white rounded" style="min-height: 400px">
-                <div class="card-header card-header-text" style="background-color:#fff">
-                    <h4 class="card-title">All Warehouse</h4>
-                </div>
-                <div class="card-content">
-                    <table id="warehouse" class="table table-hover">
-                        <thead class="text-primary">
-                            <tr>
-                                <th><b>No</b></th>
-                                <th><b>ID</b></th>
-                                <th><b>Name</b></th>
-                                <th><b>Total Stock</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                $i = 1;
-                                foreach ($warehouse as $data) { 
-                            ?>
-                            <tr>
-                                <td><?= $i ?></td>
-                                <td><?= $data->warehouse_code ?></td>
-                                <td><?= $data->warehouse_name ?></td>
-                                <td>
-                                    <!-- <a href="" data-bs-toggle="modal"
-                                        data-bs-target="#view-<?= $data->warehouse_code ?>"><i
-                                            class="fa-solid fa-eye"></i></a> -->
-                                </td>
-                            </tr>
-
-                            <?php 
-                                $i++; 
-                                } 
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-        </div>
     </div>
 </div>
 
@@ -201,7 +159,7 @@
                             ?>
 
 <!-- MODAL VIEW -->
-<div class="modal fade" id="view-<?= $detail->warehouse_code ?>" tabindex="-1" aria-labelledby="exampleModalLabel"
+<!-- <div class="modal fade" id="view-<?= $detail->warehouse_code ?>" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:80%>
         <div class="modal-content">
@@ -243,7 +201,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- End Modal -->
 
 <?php 
