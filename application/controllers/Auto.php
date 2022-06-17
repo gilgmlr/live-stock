@@ -20,4 +20,11 @@ class Auto extends CI_Controller
         $data=$this->db->get_where('received', ['received_code' => $kode])->row_array();
 		echo json_encode($data);
     }
+
+    function get_sender()
+    {
+        $kode=$this->input->post('sender_code');
+        $data=$this->db->get_where('warehouse', ['warehouse_code' => $kode])->row_array();
+		echo json_encode($data);
+    }
 }
