@@ -53,9 +53,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="cards">
-                                            <img src="<?= base_url() . 'assets/catalog/'. $data->image?>"
-                                                class="img-fluid"
-                                                style="height: 370px; width:375px; object-fit: contain :drop-shadow(5px, 5px. 5px);">
+                                            <img src="<?= base_url() . 'assets/catalog/'. $data->image?>" class="img-fluid" style="height: 370px; width:375px; object-fit: contain :drop-shadow(5px, 5px. 5px);">
                                         </div>
                                     </div>
                                     <div class="col">
@@ -110,7 +108,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <a href="<?=base_url().'inventory'?>"> <button type="button"
+                                <a href="<?=base_url()?>inventory?keyword=<?= $data->item_code ?>"> <button type="button"
                                         class="btn btn-success">Go</button>
                                 </a>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>

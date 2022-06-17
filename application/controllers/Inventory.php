@@ -9,6 +9,10 @@ class Inventory extends CI_Controller
 
     public function index()
     {
+        // Ambil data keyword 
+        $keyword = $this->input->get('keyword');
+
+        $this->db->like('inventory.item_code', $keyword);
         $data['stock'] = $this->M_CRUD->get_join('inventory', 'items', 'items.item_code = inventory.item_code',
         'warehouse', 'warehouse.warehouse_code = inventory.warehouse_code')->result();
         $data['judul'] = 'Inventory';
