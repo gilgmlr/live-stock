@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Jun 2022 pada 04.43
+-- Waktu pembuatan: 17 Jun 2022 pada 04.10
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.26
 
@@ -50,7 +50,21 @@ CREATE TABLE `history` (
 --
 
 INSERT INTO `history` (`id`, `date`, `doc_num`, `description`) VALUES
-(1, '2022-06-14 09:06:28', 'GR02-C022206', 'Good Receive');
+(1, '2022-06-14 09:06:28', 'GR02-C022206', 'Good Receive'),
+(2, '2022-06-14 01:06:45', 'LEN-C022206', 'Lending'),
+(3, '2022-06-15 09:06:51', 'GR02-C0222060001', 'Good Receive'),
+(4, '2022-06-15 09:06:14', 'GR02-C022206', 'Good Receive'),
+(5, '2022-06-15 09:39:45', 'GR02-C022206', 'Good Receive'),
+(6, '2022-06-15 11:52:22', 'GR02-C022206', 'Good Receive'),
+(7, '2022-06-15 01:06:26', 'LEN-C02220609', 'Lending'),
+(8, '2022-06-15 01:38:43', 'GR02-C022206', 'Good Receive'),
+(9, '2022-06-15 01:56:08', 'GR02-C022206', 'Good Receive'),
+(10, '2022-06-15 03:23:56', 'GR02-C022206', 'Good Receive'),
+(11, '2022-06-15 03:27:09', 'GR02-C022206', 'Good Receive'),
+(12, '2022-06-15 09:32:53', 'GR02-C022206', 'Good Receive'),
+(13, '2022-06-16 08:26:51', 'GR02-C02220601', 'Good Receive'),
+(14, '2022-06-16 02:06:15', 'LEN-C022206', 'Lending'),
+(15, '2022-06-16 03:06:42', 'LEN-C022206', 'Lending');
 
 -- --------------------------------------------------------
 
@@ -400,7 +414,14 @@ INSERT INTO `history_transaction` (`id`, `doc_date`, `system_date`, `source_doc`
 (324, '2022-06-07', '2022-06-07', 'MI01-C02220600213', 'MI01-C02220600213', '0210-000029', -5, 'BYP0-3-08'),
 (325, '2022-06-09', '2022-06-11', 'MI01-C02220600347', 'MI01-C02220600347', '0210-000029', -5, 'BYP0-3-08'),
 (326, '2022-06-10', '2022-06-11', 'MI01-C02220600344', 'MI01-C02220600344', '0210-000029', -2, 'BYP0-3-08'),
-(327, '2022-06-10', '2022-06-11', 'MI01-C02220600350', 'MI01-C02220600350', '0210-000029', -5, 'BYP0-3-08');
+(327, '2022-06-10', '2022-06-11', 'MI01-C02220600350', 'MI01-C02220600350', '0210-000029', -5, 'BYP0-3-08'),
+(328, '2022-06-16', '2022-06-16', 'GR02-C022206', 'GR02-C022206', '0000-000007', 9, 'BYP0-3-01'),
+(329, '2022-06-16', '2022-06-16', 'GR02-C022206', 'GR02-C022206', '0103-000721', 9, 'BYP0-3-01'),
+(330, '2022-06-16', '2022-06-16', 'GR02-C022206', 'GR02-C022206', '0103-000721', 9, 'BYP0-3-01'),
+(331, '2022-06-17', '2022-06-17', 'WT01-C022206', 'WT01-C022206', '0209-000305', 99, 'BYP0-3-01'),
+(332, '2022-06-17', '2022-06-17', 'WT01-C022206', 'WT01-C022206', '0209-000305', 9, 'BYP0-3-01'),
+(333, '2022-06-17', '2022-06-17', 'WT01-C022206', 'WT01-C022206', '0209-000305', 101, 'BYP0-3-01'),
+(334, '2022-06-17', '2022-06-17', 'WT01-C022206', 'WT01-C022206', '0209-000305', 100, 'BYP0-3-01');
 
 -- --------------------------------------------------------
 
@@ -412,7 +433,6 @@ CREATE TABLE `inventory` (
   `item_code` varchar(50) NOT NULL,
   `location` varchar(200) NOT NULL,
   `stocks` int(11) NOT NULL,
-  `uom_code` varchar(100) NOT NULL,
   `warehouse_code` varchar(50) NOT NULL,
   `equipment` varchar(200) NOT NULL,
   `status` varchar(50) NOT NULL
@@ -422,8 +442,8 @@ CREATE TABLE `inventory` (
 -- Dumping data untuk tabel `inventory`
 --
 
-INSERT INTO `inventory` (`item_code`, `location`, `stocks`, `uom_code`, `warehouse_code`, `equipment`, `status`) VALUES
-('0209-000305', '0101', 120, 'PC', 'BYP0-3-01', '', 'Can Use');
+INSERT INTO `inventory` (`item_code`, `location`, `stocks`, `warehouse_code`, `equipment`, `status`) VALUES
+('0209-000305', '-', 91, 'BYP0-3-01', '', '1');
 
 -- --------------------------------------------------------
 
@@ -457,9 +477,9 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`item_code`, `name`, `specification`, `uom`, `image`) VALUES
-('0209-000305', 'PAINT BRUSH', '3 INCH', 'PCS', '0209-000305.jpg'),
-('0209-000318', 'ABRASIVE CUT-OFF WHEEL', 'DIA. 4 INCH, THICKNESS: 1.2 MM', 'PCS', '0209-000318.jpg'),
-('0210-000029', 'CONTACT CLEANER ANTI CORROSION', 'WD-40; @333 ML', 'TUBE', '0210-000029.jpg');
+('0209-000305', 'PAINT BRUSH', '3 INCH', 'PCS', '0209-000305.jpeg'),
+('0209-000318', 'ABRASIVE CUT-OFF WHEEL', 'DIA. 4 INCH, THICKNESS: 1.2 MM', '', '0209-000318.jpeg'),
+('0210-000029', 'CONTACT CLEANER ANTI CORROSION', 'WD-40; @333 ML', 'TUBE', '0210-000029.jpeg');
 
 -- --------------------------------------------------------
 
@@ -472,7 +492,6 @@ CREATE TABLE `lending` (
   `lending_date` date NOT NULL,
   `item_code` varchar(50) NOT NULL,
   `lending_qty` int(11) NOT NULL,
-  `uom_code` varchar(50) NOT NULL,
   `borrower_name` varchar(200) NOT NULL,
   `dept_code` varchar(50) NOT NULL,
   `lending_note` text DEFAULT NULL,
@@ -496,25 +515,14 @@ CREATE TABLE `material_issue` (
   `posting_date` date NOT NULL,
   `dept_no` varchar(50) NOT NULL,
   `project_no` int(11) NOT NULL,
-  `confirmation_code` varchar(50) NOT NULL,
-  `post` varchar(50) NOT NULL,
   `item_code` varchar(50) NOT NULL,
   `warehouse_code` varchar(50) NOT NULL,
-  `uom_code` varchar(50) NOT NULL,
   `transaction_qty` int(11) NOT NULL,
   `reference` varchar(200) DEFAULT NULL,
   `reason_code` varchar(50) NOT NULL,
   `description` text NOT NULL,
-  `created_by` varchar(50) NOT NULL
+  `created_by` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `material_issue`
---
-
-INSERT INTO `material_issue` (`doc_no`, `entri_date`, `posting_date`, `dept_no`, `project_no`, `confirmation_code`, `post`, `item_code`, `warehouse_code`, `uom_code`, `transaction_qty`, `reference`, `reason_code`, `description`, `created_by`) VALUES
-('MI01-C022206', '2022-06-14', '2022-06-14', '1212', 1, '', '', '0209-000305', 'BYP0-3-01', 'PC', 1, '1', '1', '212', '1302194089'),
-('MI01-C022206', '2022-06-14', '2022-06-14', '2121', 2121, '', '', '0209-000305', 'BYP0-3-01', 'PC', 2, '0', '0', '121', '1302194089');
 
 -- --------------------------------------------------------
 
@@ -539,17 +547,9 @@ CREATE TABLE `received` (
   `vendor_name` varchar(255) NOT NULL,
   `item_code` varchar(50) NOT NULL,
   `qty` int(11) NOT NULL,
-  `uom` varchar(100) DEFAULT NULL,
   `warehouse_code` varchar(100) NOT NULL,
   `location` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `received`
---
-
-INSERT INTO `received` (`received_code`, `arrival_date`, `po_number`, `vendor_name`, `item_code`, `qty`, `uom`, `warehouse_code`, `location`) VALUES
-('GR02-C022206', '2022-06-14', '1212', '12121', '0209-000305', 123, 'PC', 'BYP0-3-01', '0101');
 
 -- --------------------------------------------------------
 
@@ -589,11 +589,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`nip`, `name`, `password`, `warehouse_code`, `role`) VALUES
-('098', '098', '$2y$10$fPLs1WehbG/uA9IDpjCETOTPWaZASpG1KOT36CtyqS5ocl4mwQfru', 'BYP0-3-07', '1'),
-('123', '123', '$2y$10$sK6gAghut3iYcihgnEKVJO5bLx7zIrM4/cYpsewmTT45ZXI5UYVei', 'BYP0-3-01', '2'),
+('000', 'Super User', '$2y$10$rlrYynrU.WcckX9qXQEbd.sLFMyOgfb1wf91rcppxFaR4Kne/2ZDa', 'BYP0-3-01', '1'),
+('123', 'Role 2', '$2y$10$HF1RjXdlUVok.ONbrZTZPO23QxxIFmXsh3I2RWZ1xsGmlO7awFTju', 'BYP0-3-01', '2'),
 ('1302190002', 'Rizal Maidan', '$2y$10$yItqT1TsXY1VQeo6iWeraOUyo5BXo3TYxjmiZJec4Ai.Vd8G/f3vu', 'BYP0-3-01', '1'),
-('1302194089', 'Gilang Gumelar', '$2y$10$Ls2YYTp.nnMtl5cMBUpoFus9q9A7DAexxuIVy5n1jWlbxAjtBzeDy', 'BYP0-3-01', '1'),
-('456', '456', '$2y$10$ul4vu4Ge6J9zmHYlgKrzou4Jh68YKgm6fLB4HbrHdASqdD3g9K61q', 'BYP0-3-01', '3');
+('1302194089', 'Gilang Gumelar', '$2y$10$c9yjX6Pz3fHv/BD8gWRK3OYKqdsMu2Q22UVyCZW66xDsXYO4qvnNm', 'BYP0-3-01', '1'),
+('456', 'Role 3', '$2y$10$QQbl/Iv.j26ytz8YVH4eL.ZpOfFCTAFbe6Bu57cBhy9fYzuOwUWHe', 'BYP0-3-01', '3');
 
 -- --------------------------------------------------------
 
@@ -622,6 +622,34 @@ INSERT INTO `warehouse` (`warehouse_code`, `warehouse_name`) VALUES
 ('BYP0-3-09', 'PROJECT WAREHOUSE'),
 ('BYP0-3-10', 'CEMENT MILL CHEMICAL WH'),
 ('BYP0-3-11', 'EX PROJECT WH');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `warehouse_transfer`
+--
+
+CREATE TABLE `warehouse_transfer` (
+  `wt_number` varchar(50) NOT NULL,
+  `arrival_date` date NOT NULL,
+  `sender_code` varchar(50) NOT NULL,
+  `item_code` varchar(50) NOT NULL,
+  `equipment` text DEFAULT NULL,
+  `qty` int(11) NOT NULL,
+  `warehouse_code` varchar(50) NOT NULL,
+  `location` varchar(50) NOT NULL,
+  `entered` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `warehouse_transfer`
+--
+
+INSERT INTO `warehouse_transfer` (`wt_number`, `arrival_date`, `sender_code`, `item_code`, `equipment`, `qty`, `warehouse_code`, `location`, `entered`) VALUES
+('WT01-C022206', '2022-06-17', 'BYP0-3-04', '0209-000305', NULL, 99, 'BYP0-3-01', '-', '1302194089'),
+('WT01-C022206', '2022-06-17', 'BYP0-3-01', '0209-000305', NULL, 9, 'BYP0-3-01', '', '1302194089'),
+('WT01-C022206', '2022-06-17', 'BYP0-3-03', '0209-000305', NULL, 101, 'BYP0-3-01', '-', '1302194089'),
+('WT01-C022206', '2022-06-17', 'BYP0-3-10', '0209-000305', NULL, 100, 'BYP0-3-01', '', '1302194089');
 
 --
 -- Indexes for dumped tables
@@ -658,12 +686,6 @@ ALTER TABLE `items`
   ADD PRIMARY KEY (`item_code`);
 
 --
--- Indeks untuk tabel `lending`
---
-ALTER TABLE `lending`
-  ADD PRIMARY KEY (`lending_no`);
-
---
 -- Indeks untuk tabel `uom`
 --
 ALTER TABLE `uom`
@@ -689,13 +711,13 @@ ALTER TABLE `warehouse`
 -- AUTO_INCREMENT untuk tabel `history`
 --
 ALTER TABLE `history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `history_transaction`
 --
 ALTER TABLE `history_transaction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=328;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=335;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

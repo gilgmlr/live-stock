@@ -129,7 +129,7 @@ class Received extends CI_Controller
                 'warehouse_code' => $this->input->post('warehouse_code'),
             );
     
-            $this->M_CRUD->input_data('warehouse_transfer_in', $received);
+            $this->M_CRUD->input_data('warehouse_transfer', $received);
             $this->M_CRUD->input_data('history_transaction', $history);
 
             $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
