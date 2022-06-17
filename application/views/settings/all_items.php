@@ -53,7 +53,7 @@
                         <td><?= $data->name ?></td>
                         <td><?= $data->specification ?></td>
                         <td><?= $data->uom ?></td>
-                        <td></td>
+                        <td><?= $data->remarks ?></td>
                         <td>
                             <div class="container">
 
@@ -119,8 +119,7 @@
                                             <div class="col-sm-12">
                                                 <label class="col-sm-6 col-form-label"
                                                     for="form3Example1c">Remark</label>
-                                                <textarea class="form-control" name="remark" id="remark" rows="2"
-                                                    required></textarea>
+                                                <textarea class="form-control" name="remarks" id="remarks" rows="2"><?= $data->remarks ?></textarea>
                                             </div>
 
                                         </div>

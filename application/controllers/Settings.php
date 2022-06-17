@@ -370,6 +370,7 @@ class Settings extends CI_Controller
                     'name' => $this->input->post('name'),
                     'specification' => $this->input->post('spec'),
                     'uom' => $this->input->post('uom'),
+                    'remarks' => $this->input->post('remarks'),
                     'image' => $item['image'],
                 );
 
