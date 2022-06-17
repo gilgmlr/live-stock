@@ -5,7 +5,7 @@
 
         </center>
         <div class=" card-body">
-            <form action="<?= base_url() ?>received/addReceived" method="POST">
+            <form action="<?= base_url() ?>received/addReceived" method="POST" autocomplete="off">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-sm-6">
@@ -101,8 +101,8 @@
                         <a href="<?= base_url(); ?>received" class="btn btn-danger" style="padding-top :17px">
                             Cancel
                         </a>
-                        <button id="simpan" type="submit" class="btn btn-success" "
-                                            onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
+                        <button id="simpan" type="submit" class="btn btn-success"
+                            onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                     </center>
                 </div>
             </form>
