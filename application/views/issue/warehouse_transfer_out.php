@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 120px;">
-<?php if ($this->session->flashdata('flash')) : ?>
+    <?php if ($this->session->flashdata('flash')) : ?>
     <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
         <?= $this->session->flashdata('flash') ?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -69,7 +69,8 @@
                                         id="warehouse_code" name="warehouse_code" required>
                                         <option selected>-- Select --</option>
                                         <?php foreach ($warehouse as $data) { ?>
-                                        <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?> - <?= $data->warehouse_name ?>
+                                        <option value="<?= $data->warehouse_code ?>"><?= $data->warehouse_code ?> -
+                                            <?= $data->warehouse_name ?>
                                         </option>
                                         <?php $i++; } ?>
                                     </select>
@@ -96,8 +97,10 @@
                 <div class="cards-footer">
                     <center>
                         <a href="<?= base_url(); ?>issue" class="btn btn-danger" style="padding:17px">
-                            Batal
-                        </a> <button id="simpan" type="submit" class="btn btn-success">Simpan</button>
+                            Cancel
+                        </a>
+                        <button id="simpan" type="submit" class="btn btn-success"
+                            onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                     </center>
                 </div>
             </form>
