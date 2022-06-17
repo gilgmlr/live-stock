@@ -39,74 +39,80 @@
                 </div>
 
                 <!-- Modal -->
-                <div class="modal fade" id="view<?= $data->item_code ?>" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="view<?= $data->item_code ?>" tabindex="-1"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:50%>
                         <div class="modal-content">
                             <div class="modal-header" style="background-color: #563d7c">
                                 <h5 class="modal-title" style="color: gold" id="exampleModalLabel">DETAIL
                                 </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                            <div class="row">
-                                        <div class="col">
-                                            <div class="cards">
-                                            <img src="<?= base_url() . 'assets/catalog/'. $data->image?>" class="img-fluid" style="height: 370px; width:375px; object-fit: contain">
-                                            </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="cards">
+                                            <img src="<?= base_url() . 'assets/catalog/'. $data->image?>"
+                                                class="img-fluid"
+                                                style="height: 370px; width:375px; object-fit: contain :drop-shadow(5px, 5px. 5px);">
                                         </div>
-                                        <div class="col">
-                                            <div class="cards">
-                                                <div class="card-body">
-                                                    <table>
-                                                        <tr>
-                                                            <th style="width: 100px;"></th>
-                                                            <th style="width: 10px;"></th>
-                                                            <th style="width: 500px;"></th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Code</td>
-                                                            <td> : </td>
-                                                            <td><?= $data->item_code ?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td> : </td>
-                                                            <td><?= $data->name ?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Specification </td>
-                                                            <td> : </td>
-                                                            <td><?= $data->specification ?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>UoM</td>
-                                                            <td> : </td>
-                                                            <td><?= $data->uom ?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Remarks</td>
-                                                            <td> : </td>
-                                                            <td><?= $data->remarks ?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Stocks</td>
-                                                            <td> : </td>
-                                                            <td> </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Location</td>
-                                                            <td> : </td>
-                                                            <td> </td>
-                                                        </tr>
+                                    </div>
+                                    <div class="col">
+                                        <div class="cards">
+                                            <div class="card-body">
+                                                <table>
+                                                    <tr>
+                                                        <th style="width: 100px;"></th>
+                                                        <th style="width: 10px;"></th>
+                                                        <th style="width: 500px;"></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Code</b></td>
+                                                        <td> : </td>
+                                                        <td><?= $data->item_code ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Name</b></td>
+                                                        <td> : </td>
+                                                        <td><?= $data->name ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Specification</b> </td>
+                                                        <td> : </td>
+                                                        <td><?= $data->specification ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>UoM</b></td>
+                                                        <td> : </td>
+                                                        <td><?= $data->uom ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Remarks</b></td>
+                                                        <td> : </td>
+                                                        <td><?= $data->remarks ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Stocks</b></td>
+                                                        <td> : </td>
+                                                        <td> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><b>Location</b></td>
+                                                        <td> : </td>
+                                                        <td> </td>
+                                                    </tr>
 
-                                                    </table>
-                                                </div>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                             </div>
                             <div class="modal-footer">
+                                <a href="<?=base_url().'inventory'?>"> <button type="button"
+                                        class="btn btn-success">Go</button>
+                                </a>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
@@ -115,7 +121,7 @@
                 <!-- End Modal  -->
 
                 <?php } ?>
-                <div class="col-12">
+                <div class=" col-12">
                     <?= $this->pagination->create_links(); ?>
                 </div>
             </div>
