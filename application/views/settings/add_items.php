@@ -59,7 +59,6 @@
                     </center>
                 </div>
 
-
         </div>
         <div class="d-flex justify-content-center mx-4 mb-3 mb-md-4">
             <button id="simpan" type="submit" class="btn btn-success"

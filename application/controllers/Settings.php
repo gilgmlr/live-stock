@@ -365,13 +365,37 @@ class Settings extends CI_Controller
 			redirect('settings/view_all_items');
 		} else {
             $item = $this->db->get_where('items', ['item_code' => $this->input->post('item_code')])->row_array();
+
+            if (pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == '') {
+                $image = $item['image'];
+            } else {
+                $config = $this->upload->initialize(array(
+                    "upload_path" => './assets/catalog/',
+                    "allowed_types" => 'jpg|jpeg|png',
+                    "remove_spaces" => TRUE,
+                    "overwrite" => TRUE,
+                    "file_name" => $this->input->post('item_code')
+                ));
+    
+                $data = $this->upload->data();
+
+                if (pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == 'jpg' || pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == 'png' || pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == 'jpeg' || pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == '') {
+                    $this->load->library('upload', $config);
+                    $this->upload->do_upload('image');
+
+                    $image = $data['file_name'] . '.' . pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION);
+                } else {
+                    $this->session->set_flashdata('flash', 'Type Image ' . $this->input->post('name') . ' Invalid!');
+                    redirect('settings/view_all_items');
+                }
+            }
                 $data = array(
                     'item_code' => $item['item_code'],
                     'name' => $this->input->post('name'),
                     'specification' => $this->input->post('spec'),
                     'uom' => $this->input->post('uom'),
                     'remarks' => $this->input->post('remarks'),
-                    'image' => $this->input->post('image'),
+                    'image' => $image,
                 );
 
                 $this->M_CRUD->update_data('items', $data, ['item_code' => $this->input->post('item_code')]);

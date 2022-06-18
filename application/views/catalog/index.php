@@ -53,7 +53,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="cards">
-                                            <img src="<?= base_url() . 'assets/catalog/'. $data->image?>" class="img-fluid" style="height: 370px; width:375px; object-fit: contain :drop-shadow(5px, 5px. 5px);">
+                                            <img src="<?= base_url() . 'assets/catalog/'. $data->image?>" class="img-fluid" style="height: 370px; width:375px; object-fit: contain;">
                                         </div>
                                     </div>
                                     <div class="col">

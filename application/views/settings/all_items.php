@@ -88,7 +88,7 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <form action="<?= base_url() . 'settings/update_item' ?>" method="POST"
-                                    autocomplete="off">
+                                    enctype="multipart/form-data">
                                     <div class="modal-body">
                                         <div class="container">
 
@@ -123,8 +123,8 @@
                                             </div>
                                             <div class="col-sm-12">
                                                 <label class="col-sm-6 col-form-label"
-                                                    for="form3Example1c">Image Name</label>
-                                                <input type="text" class="form-control" name="image" id="image" value="<?= $data->image ?>" required></input>
+                                                    for="form3Example1c">Image <small>(.jpg |.jpeg |.png)</small></label>
+                                                <input class="custom-file-input form-control" type="file" id="image" accept=".jpg, .jpeg, .png" name="image">
                                             </div>
                                             
                                         </div>
