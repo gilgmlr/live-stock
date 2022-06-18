@@ -48,8 +48,8 @@
                                                     placeholder="Enter your Password" />
                                                 <small
                                                     class="form-text text-danger"><?= form_error('password') ?></small>
-                                            </div>
-                                            <input type="submit" class="btn btn-warning btn-sm" value="Login"
+                                            </div><br>
+                                            <input type="submit" class="btn btn-primary btn-sm" value="Login"
                                                 id="login">
                                         </form>
 

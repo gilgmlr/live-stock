@@ -41,7 +41,7 @@
                 <!-- Modal -->
                 <div class="modal fade" id="view<?= $data->item_code ?>" tabindex="-1"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:50%>
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:40%>
                         <div class="modal-content">
                             <div class="modal-header" style="background-color: #563d7c">
                                 <h5 class="modal-title" style="color: gold" id="exampleModalLabel">DETAIL
@@ -53,7 +53,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="cards">
-                                            <img src="<?= base_url() . 'assets/catalog/'. $data->image?>" class="img-fluid" style="height: 370px; width:375px; object-fit: contain;">
+                                            <img src="<?= base_url() . 'assets/catalog/'. $data->image?>" class="img-fluid" style="height: 300px; width:300px; object-fit: contain;">
                                         </div>
                                     </div>
                                     <div class="col">
@@ -109,7 +109,7 @@
                             </div>
                             <div class="modal-footer">
                                 <a href="<?=base_url()?>inventory?keyword=<?= $data->item_code ?>"> <button type="button"
-                                        class="btn btn-success">Go</button>
+                                        class="btn btn-primary">Go</button>
                                 </a>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                             </div>
