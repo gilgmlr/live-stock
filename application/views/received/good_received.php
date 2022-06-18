@@ -127,7 +127,7 @@
                                         <label for="" class="col-sm-6 col-form-label">Item Name</label>
                                         <input type="text" class="form-control" id="item_name" name="item_name" readonly>
                                     </div>
-                                    <div class="col-sm-5">
+                                    <div class="col-sm-4">
                                         <label for="" class="col-sm-6 col-form-label">Spesification</label>
                                         <input type="text" class="form-control" id="specification" name="specification"
                                             readonly>
@@ -136,6 +136,9 @@
                                     <div class="col-sm-1">
                                         <label for="" class="col-sm-6 col-form-label">UoM</label>
                                         <input type="text" class="form-control" id="uom" name="uom" readonly>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button class="btn btn-danger remove fa-solid fa-trash" style="height:75px; width: 75px; font-size: 12px;" type="button"></button>
                                     </div>
                                 </div>
 
@@ -164,7 +167,6 @@
                         </div>
                     </div>
                     <input type="text" class="form-control" id="desc" name="desc" value="Good Receive" hidden>
-                    <button class="btn btn-danger remove" type="button">Remove</button>
                 </div>
             </div>
         </div>
