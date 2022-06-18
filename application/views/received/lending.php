@@ -79,10 +79,10 @@
 
                     <div class="cards-footer">
                         <center>
-                            <a href="<?= base_url(); ?>issue" class="btn btn-danger" style="padding:17px">
+                            <a href="<?= base_url(); ?>issue" class="btn btn-secondary" style="width: 100px;">
                                 Cancel
                             </a>
-                            <button id="simpan" type="submit" class="btn btn-success"
+                            <button id="simpan" type="submit" class="btn btn-warning" style="width: 100px;"
                                 onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                         </center>
                     </div>

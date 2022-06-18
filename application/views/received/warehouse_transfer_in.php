@@ -108,12 +108,12 @@
                 <input type="text" class="form-control" id="desc" name="desc" value="Warehouse Transfer" hidden>
 
 
-                <div class="cards-footer">
+                <div class="cards-footer"><br>
                     <center>
-                        <a href="<?= base_url(); ?>received" class="btn btn-danger" style="padding-top:17px">
+                        <a href="<?= base_url(); ?>received" class="btn btn-secondary">
                             Cancel
                         </a>
-                        <button id="simpan" type="submit" class="btn btn-success"
+                        <button id="simpan" type="submit" class="btn btn-warning"
                             onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                     </center>
                 </div>

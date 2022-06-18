@@ -6,7 +6,7 @@
                             <input type="text submit" class="form-control" placeholder="search" id="keyword"
                                 name="keyword" value="<?= $this->session->userdata('keyword_catalog') ?>">
                             <input type="submit" class="btn btn-warning"
-                                style="padding-top:17px; margin:0px; height:45px;" name="search">
+                                style="margin:0px; height:45px;" value="Search" name="search">
                         </div>
                         <div>
                             <b> Result: <?= $total_rows ?> Items </b>
