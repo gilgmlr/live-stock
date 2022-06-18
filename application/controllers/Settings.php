@@ -366,7 +366,7 @@ class Settings extends CI_Controller
 		} else {
             $item = $this->db->get_where('items', ['item_code' => $this->input->post('item_code')])->row_array();
 
-            if (pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == '') {
+            if (empty($_FILES["image"]["name"])) {
                 $image = $item['image'];
             } else {
                 $config = $this->upload->initialize(array(

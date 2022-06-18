@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 100px;">
+<div class="container" style="margin-top: 80px;">
     <?php if ($this->session->flashdata('flash')) : ?>
     <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
         <?= $this->session->flashdata('flash') ?>

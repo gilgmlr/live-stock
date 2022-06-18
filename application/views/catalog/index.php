@@ -1,7 +1,7 @@
         <div class="container" style="margin-top: 80px;">
             <form action="<?=base_url('catalog') ?>" method="POST" autocomplete="off">
                 <div class="row justify-content-center">
-                    <div class="col-sm-8" style="margin-top: 50px;">
+                    <div class="col-sm-8" style="margin-top: 0px;">
                         <div class="input-group sm-3">
                             <input type="text submit" class="form-control" placeholder="search" id="keyword"
                                 name="keyword" value="<?= $this->session->userdata('keyword_catalog') ?>">
