@@ -1,7 +1,7 @@
-<div class="container" style="margin-top: 120px;">
+<div class="container" style="margin-top: 80px;">
     <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "3") { ?>
     <a href="<?= base_url(); ?>Issue/view_lending" id="Add" type="submit" class="btn btn-success"
-        style="margin:0; padding:15px">Add</a>
+        style="margin:0; padding:15px ">Add</a>
     <?php ;} ?>
     <div class="cards shadow p-3 mb-5 bg-white rounded" style="min-height: 400px; margin-top:3px">
         <div class="cards-header card-header-text">
