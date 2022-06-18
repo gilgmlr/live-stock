@@ -57,11 +57,11 @@
                                 id="image" accept=".jpg, .jpeg, .png" name="image">
                         </div>
                     </center>
-                </div>
+                </div><br>
 
         </div>
         <div class="d-flex justify-content-center mx-4 mb-3 mb-md-4">
-            <button id="simpan" type="submit" class="btn btn-success"
+            <button id="simpan" type="submit" class="btn btn-primary"
                 onclick=" return confirm('Are You Sure Want To Add this Item ?')">Add</button>
         </div>
         <div class="col">

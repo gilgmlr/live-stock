@@ -4,8 +4,8 @@
 
         <div class="row">
             <div class="col">
-                <a href="settings/generateXls" style="height: 35px;"><button id="simpan" type="submit"
-                        class="btn btn-warning"
+                <a href="settings/generateXls" ><button id="simpan" type="submit"
+                        class="btn btn-secondary" style="width: 150px;"
                         onclick=" return confirm('Are You Sure Want To Download this file ?')">Export
                         Data</button></a>
 
@@ -16,7 +16,7 @@
                         <input type="text submit" class="form-control" id="keyword" name="keyword"
                             value="<?= $this->session->userdata('keyword_history') ?>" placeholder="Search...">
                         <input type="submit" class="btn btn-warning"
-                            style="padding-top:13px; margin:0px; height:45px; font-size:medium;" name="search"
+                            style="margin:0px; height:45px; font-size:medium;" name="search"
                             value="Search">
                     </div>
                 </form>

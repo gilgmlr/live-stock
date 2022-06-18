@@ -1,7 +1,6 @@
 <div class="container" style="margin-top: 80px;">
     <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "3") { ?>
-    <a href="<?= base_url(); ?>Issue/view_lending" id="Add" type="submit" class="btn btn-success"
-        style="margin:0; padding:15px ">Add</a>
+    <a href="<?= base_url(); ?>Issue/view_lending" id="Add" type="submit" class="btn btn-primary">Add</a>
     <?php ;} ?>
     <div class="cards shadow p-3 mb-5 bg-white rounded" style="min-height: 400px; margin-top:3px">
         <div class="cards-header card-header-text">
@@ -14,10 +13,8 @@
                         <div class="input-group">
                             <input type="text submit" class="form-control" id="keyword" name="keyword"
                                 value="<?= $this->session->userdata('keyword_item') ?>" placeholder="Search...">
-                            <input type="submit" class="btn btn-warning"
-                                style="padding-top:13px; margin:0px; height:45px; font-size:medium;" name="search"
+                            <input type="submit" class="btn btn-warning" style="height:45px; font-size:medium;" name="search"
                                 value="Search">
-
                         </div>
                     </form>
                 </div>

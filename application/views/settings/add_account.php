@@ -58,10 +58,9 @@
                             <small class="form-text text-danger"><?= form_error('role') ?></small>
                         </div>
                     </div>
-                </div>
+                </div><br>
                 <div class="d-flex justify-content-center mx-4 mb-3 mb-md-4">
-
-                    <button id="simpan" type="submit" class="btn btn-success"
+                    <button id="simpan" type="submit" class="btn btn-primary"
                         onclick=" return confirm('Are You Sure Want To registered new Account ?')">Register</button>
                 </div>
                 <center><a href="<?= base_url()?>settings/view_table_user">See registered accounts?</a></center>
