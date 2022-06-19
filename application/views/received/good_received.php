@@ -12,7 +12,7 @@
 
         </center>
         <div class=" card-body">
-            <form action="<?= base_url() ?>received/addReceived" method="POST" autocomplete="off">
+            <form action="<?= base_url() ?>received/simpan" method="POST" autocomplete="off">
                 <div class="control-group after-add-more">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -49,26 +49,25 @@
 
                             <div class="col-sm-12">
                                 <div class="row">
-                                    <div class="col-sm-3">
-                                        <label for="" class="col-sm-6 col-form-label">Item Code*</label>
-                                        <input type="text" class="form-control" id="item_code" name="item_code[]">
-                                        <small class="form-text text-danger"><?= form_error('item_code') ?></small>
-
+                                    <div class="col-sm-3 rec-element">
+                                        <label for="" class="col-sm-6 col-form-label"><b>[1]</b> Item Code*</label>
+                                        <input type="text" class="form-control" id="item_code1" name="item_code[]">
+                                        <small class="form-text text-danger"><?= form_error('item_code1') ?></small>
                                     </div>
                                     <div class="col-sm-3">
                                         <label for="" class="col-sm-6 col-form-label">Item Name</label>
-                                        <input type="text" class="form-control" id="item_name" name="item_name"
+                                        <input type="text" class="form-control" id="item_name1" name="item_name[]"
                                             readonly>
                                     </div>
                                     <div class="col-sm-5">
                                         <label for="" class="col-sm-6 col-form-label">Spesification</label>
-                                        <input type="text" class="form-control" id="specification" name="specification"
+                                        <input type="text" class="form-control" id="specification1" name="specification[]"
                                             readonly>
 
                                     </div>
                                     <div class="col-sm-1">
                                         <label for="" class="col-sm-6 col-form-label">UoM</label>
-                                        <input type="text" class="form-control" id="uom" name="uom" readonly>
+                                        <input type="text" class="form-control" id="uom1" name="uom[]" readonly>
                                     </div>
                                 </div>
 
@@ -76,21 +75,21 @@
                                 <div class="row">
                                     <div class="col-sm-2">
                                         <label for="" class="col-sm-6 col-form-label">Qty*</label>
-                                        <input type="text" class="form-control" id="qty" name="qty[]">
+                                        <input type="text" class="form-control" id="qty1" name="qty[]">
                                     </div>
                                     <div class="col-sm-4">
                                         <label for="" class="col-sm-6 col-form-label">Location*</label>
-                                        <input type="text" class="form-control" id="location" name="location[]">
+                                        <input type="text" class="form-control" id="location1" name="location[]">
                                     </div>
                                     <div class="col-sm-3">
                                         <label for="" class="col-sm-6 col-form-label">Warehouse*</label>
-                                        <input type="text" class="form-control" id="warehouse_code"
+                                        <input type="text" class="form-control" id="warehouse_code1"
                                             name="warehouse_code[]"
                                             value="<?= $this->session->userdata('warehouse') ?>">
                                     </div>
                                     <div class="col-sm-3">
                                         <label for="" class="col-sm-6 col-form-label">Equipment</label>
-                                        <input type="text" class="form-control" id="equipment" name="equipment[]">
+                                        <input type="text" class="form-control" id="equipment1" name="equipment[]">
                                     </div>
                                 </div>
                                 <hr size="12px">
@@ -99,9 +98,10 @@
                     </div>
                 </div>
                 <input type="text" class="form-control" id="desc" name="desc" value="Good Receive" hidden>
+                <div id="nextkolom" name="nextkolom"></div>
                 <div class="cards-footer">
                     <center>
-                        <button class="btn btn-primary add-more" type="button"> Add</button>
+                        <button class="btn btn-primary tambah-form" type="button"> Add</button>
                         <a href="<?= base_url(); ?>received" class="btn btn-secondary">
                             Cancel
                         </a>
@@ -109,71 +109,8 @@
                             onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                     </center>
                 </div>
+                
             </form>
-
-            <!-- class hide membuat form disembunyikan  -->
-            <!-- hide adalah fungsi bootstrap 3, klo bootstrap 4 pake invisible  -->
-            <div class="copy d-none">
-                <div class="control-group">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-sm-12">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <label for="" class="col-sm-6 col-form-label">Item Code*</label>
-                                        <input type="text" class="form-control" id="item_code" name="item_code[]">
-                                        <small class="form-text text-danger"><?= form_error('item_code') ?></small>
-
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <label for="" class="col-sm-6 col-form-label">Item Name</label>
-                                        <input type="text" class="form-control" id="item_name" name="item_name"
-                                            readonly>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <label for="" class="col-sm-6 col-form-label">Spesification</label>
-                                        <input type="text" class="form-control" id="specification" name="specification"
-                                            readonly>
-
-                                    </div>
-                                    <div class="col-sm-1">
-                                        <label for="" class="col-sm-6 col-form-label">UoM</label>
-                                        <input type="text" class="form-control" id="uom" name="uom" readonly>
-                                    </div>
-                                    <div class="col-sm-1">
-                                        <button class="btn btn-danger remove fa-solid fa-trash"
-                                            style="height:75px; width: 75px; font-size: 12px;" type="button"></button>
-                                    </div>
-                                </div>
-
-
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <label for="" class="col-sm-6 col-form-label">Qty*</label>
-                                        <input type="text" class="form-control" id="qty" name="qty[]">
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <label for="" class="col-sm-6 col-form-label">Location*</label>
-                                        <input type="text" class="form-control" id="location" name="location[]">
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <label for="" class="col-sm-6 col-form-label">Warehouse*</label>
-                                        <input type="text" class="form-control" id="warehouse_code"
-                                            name="warehouse_code[]"
-                                            value="<?= $this->session->userdata('warehouse') ?>">
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <label for="" class="col-sm-6 col-form-label">Equipment</label>
-                                        <input type="text" class="form-control" id="equipment" name="equipment[]">
-                                    </div>
-                                </div>
-                                <hr size="12px">
-                            </div>
-                        </div>
-                    </div>
-                    <input type="text" class="form-control" id="desc" name="desc" value="Good Receive" hidden>
-                </div>
-            </div>
         </div>
 
     </div>
@@ -226,15 +163,75 @@ $(document).ready(function() {
         return false;
     });
 
-    $(".add-more").click(function() {
-        var html = $(".copy").html();
-        $(".after-add-more").after(html);
+    // $(".add-more").click(function() {
+    //     var html = $(".copy").html();
+    //     $(".after-add-more").after(html);
+    // });
+
+    // // saat tombol remove dklik control group akan dihapus 
+    // $("body").on("click", ".remove", function() {
+    //     $(this).parents(".control-group").remove();
+    // });
+
+    var i=2;
+    $(".tambah-form").on('click', function(){                   
+        row = '<div class="container col-sm-12 rec-element">'+
+                                '<div class="row">'+
+                                    '<div class="col-sm-3">'+
+                                        '<label for="" class="col-sm-6 col-form-label"><b>['+i+']</b> Item Code*</label>'+
+                                        '<input type="text" class="form-control" id="item_code'+i+'" name="item_code[]">'+
+                                        '<small class="form-text text-danger"><?= form_error("item_code'+i+'") ?></small>'+
+                                    '</div>'+
+                                    '<div class="col-sm-3">'+
+                                        '<label for="" class="col-sm-6 col-form-label">Item Name</label>'+
+                                        '<input type="text" class="form-control" id="item_name'+i+'" name="item_name[]" readonly>'+
+                                    '</div>'+
+                                    '<div class="col-sm-4">'+
+                                       ' <label for="" class="col-sm-6 col-form-label">Spesification</label>'+
+                                        '<input type="text" class="form-control" id="specification'+i+'" name="specification[]" readonly>'+
+                                    '</div>'+
+                                    '<div class="col-sm-1">'+
+                                        '<label for="" class="col-sm-6 col-form-label">UoM</label>'+
+                                        '<input type="text" class="form-control" id="uom'+i+'" name="uom[]" readonly>'+
+                                    '</div>'+
+                                    '<div class="col-sm-1">'+
+                                        '<button type="button" class="btn btn-danger del-element fa-solid fa-trash" style="height:75px; width: 75px; font-size: 12px;"></button>'+
+                                    '</div>'+
+                                '</div>'+
+
+                                '<div class="row">'+
+                                    '<div class="col-sm-2">'+
+                                        '<label for="" class="col-sm-6 col-form-label">Qty*</label>'+
+                                        '<input type="text" class="form-control" id="qty'+i+'" name="qty[]">'+
+                                    '</div>'+
+                                    '<div class="col-sm-4">'+
+                                        '<label for="" class="col-sm-6 col-form-label">Location*</label>'+
+                                        '<input type="text" class="form-control" id="location'+i+'" name="location[]">'+
+                                    '</div>'+
+                                    '<div class="col-sm-3">'+
+                                        '<label for="" class="col-sm-6 col-form-label">Warehouse*</label>'+
+                                        '<input type="text" class="form-control" id="warehouse_code'+i+'" name="warehouse_code[]" value="<?= $this->session->userdata('warehouse') ?>">'+
+                                    '</div>'+
+                                    '<div class="col-sm-3">'+
+                                        '<label for="" class="col-sm-6 col-form-label">Equipment</label>'+
+                                        '<input type="text" class="form-control" id="equipment'+i+'" name="equipment[]">'+
+                                    '</div>'+
+                                '</div>'+
+                                '<hr size="12px">'+
+                            '</div>';
+
+        $(row).insertBefore("#nextkolom");
+        $('#jumlahkolom').val(i+1);
+        i++;        
     });
 
-    // saat tombol remove dklik control group akan dihapus 
-    $("body").on("click", ".remove", function() {
-        $(this).parents(".control-group").remove();
-    });
+    $(document).on('click','.del-element',function (e) {        
+        e.preventDefault()
+        i--;
+        //$(this).parents('.rec-element').fadeOut(400);
+        $(this).parents('.rec-element').remove();
+        $('#jumlahkolom').val(i-1);
+    });        
 
 });
 </script>

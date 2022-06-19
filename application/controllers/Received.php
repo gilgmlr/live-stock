@@ -23,6 +23,26 @@ class Received extends CI_Controller
         );
     }
 
+    public function simpan()
+    {
+        $jumlah = count($this->input->post('item_code'));
+        // print_r($jumlah);die();
+        for($i=0;$i<$jumlah;$i++){
+                $received = array(
+                    'received_code' => $this->input->post('received_code'),
+                    'arrival_date' => $this->input->post('arrival_date'),
+                    'po_number' => $this->input->post('po_number'),
+                    'vendor_name' => $this->input->post('vendor_name'),
+                    'item_code' => $this->input->post('item_code')[$i],
+                    'qty' => $this->input->post('qty')[$i],
+                    'warehouse_code' => $this->input->post('warehouse_code')[$i],
+                    'location' => $this->input->post('location')[$i],
+                );
+                $this->M_CRUD->input_data('received', $received);
+        }    
+        redirect('received');
+    }  
+
     public function addReceived()
     {
         $this->form_validation->set_rules('received_code', 'Received_Code', 'required');
