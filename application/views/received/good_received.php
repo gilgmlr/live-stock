@@ -33,8 +33,8 @@
                                 <label for="" class="col-sm-12 col-form-label">Entered by</label>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="created_by" name="created_by" readonly
-                                            value="<?= $this->session->userdata('nip'); ?>">
+                                        <input type="text" class="form-control" id="created_by" name="created_by"
+                                            readonly value="<?= $this->session->userdata('nip'); ?>">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control" id="" name="" readonly
@@ -57,7 +57,8 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <label for="" class="col-sm-6 col-form-label">Item Name</label>
-                                        <input type="text" class="form-control" id="item_name" name="item_name" readonly>
+                                        <input type="text" class="form-control" id="item_name" name="item_name"
+                                            readonly>
                                     </div>
                                     <div class="col-sm-5">
                                         <label for="" class="col-sm-6 col-form-label">Spesification</label>
@@ -83,7 +84,8 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <label for="" class="col-sm-6 col-form-label">Warehouse*</label>
-                                        <input type="text" class="form-control" id="warehouse_code" name="warehouse_code[]"
+                                        <input type="text" class="form-control" id="warehouse_code"
+                                            name="warehouse_code[]"
                                             value="<?= $this->session->userdata('warehouse') ?>">
                                     </div>
                                     <div class="col-sm-3">
@@ -109,9 +111,9 @@
                 </div>
             </form>
 
-        <!-- class hide membuat form disembunyikan  -->
-        <!-- hide adalah fungsi bootstrap 3, klo bootstrap 4 pake invisible  -->
-        <div class="copy d-none">
+            <!-- class hide membuat form disembunyikan  -->
+            <!-- hide adalah fungsi bootstrap 3, klo bootstrap 4 pake invisible  -->
+            <div class="copy d-none">
                 <div class="control-group">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -125,7 +127,8 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <label for="" class="col-sm-6 col-form-label">Item Name</label>
-                                        <input type="text" class="form-control" id="item_name" name="item_name" readonly>
+                                        <input type="text" class="form-control" id="item_name" name="item_name"
+                                            readonly>
                                     </div>
                                     <div class="col-sm-4">
                                         <label for="" class="col-sm-6 col-form-label">Spesification</label>
@@ -138,7 +141,8 @@
                                         <input type="text" class="form-control" id="uom" name="uom" readonly>
                                     </div>
                                     <div class="col-sm-1">
-                                        <button class="btn btn-danger remove fa-solid fa-trash" style="height:75px; width: 75px; font-size: 12px;" type="button"></button>
+                                        <button class="btn btn-danger remove fa-solid fa-trash"
+                                            style="height:75px; width: 75px; font-size: 12px;" type="button"></button>
                                     </div>
                                 </div>
 
@@ -154,7 +158,8 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <label for="" class="col-sm-6 col-form-label">Warehouse*</label>
-                                        <input type="text" class="form-control" id="warehouse_code" name="warehouse_code[]"
+                                        <input type="text" class="form-control" id="warehouse_code"
+                                            name="warehouse_code[]"
                                             value="<?= $this->session->userdata('warehouse') ?>">
                                     </div>
                                     <div class="col-sm-3">
@@ -171,7 +176,7 @@
             </div>
         </div>
 
-        </div>
+    </div>
 </div>
 
 
@@ -221,17 +226,15 @@ $(document).ready(function() {
         return false;
     });
 
-    $(".add-more").click(function(){ 
+    $(".add-more").click(function() {
         var html = $(".copy").html();
         $(".after-add-more").after(html);
     });
 
     // saat tombol remove dklik control group akan dihapus 
-    $("body").on("click",".remove",function(){ 
+    $("body").on("click", ".remove", function() {
         $(this).parents(".control-group").remove();
     });
 
 });
 </script>
-
-

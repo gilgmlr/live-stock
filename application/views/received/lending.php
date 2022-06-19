@@ -79,6 +79,8 @@
 
                     <div class="cards-footer">
                         <center>
+                            <button class="btn btn-primary add-more" type="button"> Add</button>
+
                             <a href="<?= base_url(); ?>issue" class="btn btn-secondary" style="width: 100px;">
                                 Cancel
                             </a>

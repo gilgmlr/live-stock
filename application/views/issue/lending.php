@@ -71,7 +71,9 @@
 
                     <div class="cards-footer">
                         <center>
-                            <a href="<?= base_url(); ?>issue" class="btn btn-danger" style="padding:17px">
+                            <button class="btn btn-primary add-more" type="button"> Add</button>
+
+                            <a href="<?= base_url(); ?>issue" class="btn btn-danger">
                                 Cancel
                             </a>
                             <button id="simpan" type="submit" class="btn btn-success"
