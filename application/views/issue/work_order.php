@@ -130,18 +130,16 @@
                     </div>
                 </div>
 
+                <center>
+                    <button class="btn btn-primary add-more" type="button"> Add</button>
 
-                <div class="cards-footer">
-                    <center>
-                        <button class="btn btn-primary add-more" type="button"> Add</button>
+                    <a href="<?= base_url(); ?>issue" class="btn btn-danger">
+                        Cancel
+                    </a>
+                    <button id="simpan" type="submit" class="btn btn-success"
+                        onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
+                </center>
 
-                        <a href="<?= base_url(); ?>issue" class="btn btn-danger">
-                            Cancel
-                        </a>
-                        <button id="simpan" type="submit" class="btn btn-success"
-                            onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
-                    </center>
-                </div>
             </form>
         </div>
     </div>
