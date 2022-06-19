@@ -115,19 +115,16 @@
 
         </div>
         <input type="text" class="form-control" id="desc" name="desc" value="Warehouse Transfer" hidden>
+        <center>
+            <button class="btn btn-primary add-more" type="button"> Add</button>
 
+            <a href="<?= base_url(); ?>received" class="btn btn-secondary">
+                Cancel
+            </a>
+            <button id="simpan" type="submit" class="btn btn-warning"
+                onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
+        </center>
 
-        <div class="cards-footer"><br>
-            <center>
-                <button class="btn btn-primary add-more" type="button"> Add</button>
-
-                <a href="<?= base_url(); ?>received" class="btn btn-secondary">
-                    Cancel
-                </a>
-                <button id="simpan" type="submit" class="btn btn-warning"
-                    onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
-            </center>
-        </div>
         </form>
     </div>
 </div>
