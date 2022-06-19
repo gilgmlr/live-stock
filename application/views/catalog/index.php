@@ -23,8 +23,10 @@
                 <div class="col-md-2 px-2">
                     <a href="" data-bs-toggle="modal" data-bs-target="#view<?= $data->item_code ?>">
                         <div class="card shadow p-2 mb-2 bg-white rounded">
+                            <center>
                             <img src="<?= base_url() . 'assets/catalog/'. $data->image?>" class="img-fluid"
                                 style="height: 170px; width:175px; object-fit: contain">
+                            </center>
                             <div class="card-body">
                                 <p class="card-text" style="font-size:16px;"><b><?= $data->item_code ?></b></p>
                                 <?php if (strlen($data->name) >= 18) { ?>
@@ -50,60 +52,44 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="cards">
+                                <div class="container">
+                                    <div class="card-body">
+                                        <center>
                                             <img src="<?= base_url() . 'assets/catalog/'. $data->image?>" class="img-fluid" style="height: 300px; width:300px; object-fit: contain;">
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="cards">
-                                            <div class="card-body">
-                                                <table>
-                                                    <tr>
-                                                        <th style="width: 100px;"></th>
-                                                        <th style="width: 10px;"></th>
-                                                        <th style="width: 500px;"></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b>Code</b></td>
-                                                        <td> : </td>
-                                                        <td><?= $data->item_code ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b>Name</b></td>
-                                                        <td> : </td>
-                                                        <td><?= $data->name ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b>Specification</b> </td>
-                                                        <td> : </td>
-                                                        <td><?= $data->specification ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b>UoM</b></td>
-                                                        <td> : </td>
-                                                        <td><?= $data->uom ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b>Remarks</b></td>
-                                                        <td> : </td>
-                                                        <td><?= $data->remarks ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b>Stocks</b></td>
-                                                        <td> : </td>
-                                                        <td> </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b>Location</b></td>
-                                                        <td> : </td>
-                                                        <td> </td>
-                                                    </tr>
-
-                                                </table>
-                                            </div>
-                                        </div>
+                                        </center>
+                                        <hr><hr>
+                                        <table>
+                                            <tr>
+                                                <th style="width: 100px;"></th>
+                                                <th style="width: 10px;"></th>
+                                                <th style="width: 500px;"></th>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Code</b></td>
+                                                <td> : </td>
+                                                <td><?= $data->item_code ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Name</b></td>
+                                                <td> : </td>
+                                                <td><?= $data->name ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Specification</b> </td>
+                                                <td> : </td>
+                                                <td><?= $data->specification ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>UoM</b></td>
+                                                <td> : </td>
+                                                <td><?= $data->uom ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Remarks</b></td>
+                                                <td> : </td>
+                                                <td><?= $data->remarks ?></td>
+                                            </tr>
+                                        </table>
                                     </div>
                                 </div>
                             </div>

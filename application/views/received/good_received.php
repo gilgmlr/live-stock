@@ -44,7 +44,7 @@
                             </div>
 
                             <div class="col-sm-12">
-                                <hr> <hr>
+                                <hr size="12px">
                             </div>
 
                             <div class="col-sm-12">
@@ -91,7 +91,7 @@
                                         <input type="text" class="form-control" id="equipment" name="equipment[]">
                                     </div>
                                 </div>
-                                <hr>
+                                <hr size="12px">
                             </div>
                         </div>
                     </div>
@@ -162,7 +162,7 @@
                                         <input type="text" class="form-control" id="equipment" name="equipment[]">
                                     </div>
                                 </div>
-                                <hr>
+                                <hr size="12px">
                             </div>
                         </div>
                     </div>
