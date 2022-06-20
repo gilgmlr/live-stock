@@ -65,57 +65,57 @@
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-3">
-                            <label for="" class="col-sm-6 col-form-label">Item Code</label>
-                            <input type="text" class="form-control" id="item_code" name="item_code" required>
+                            <label for="" class="col-sm-6 col-form-label rec-element">Item Code</label>
+                            <input type="text" class="form-control" id="item_code1" name="item_code[]" required>
 
                         </div>
                         <div class="col-sm-3">
                             <label for="" class="col-sm-6 col-form-label">Item Name</label>
-                            <input type="text" class="form-control" id="item_name" name="item_name" readonly>
+                            <input type="text" class="form-control" id="item_name1" name="item_name[]" readonly>
                         </div>
 
 
                         <div class="col-sm-5">
                             <label for="" class="col-sm-6 col-form-label">Spesification</label>
-                            <input type="text" class="form-control" id="specification" name="specification" readonly>
+                            <input type="text" class="form-control" id="specification1" name="specification[]" readonly>
 
                         </div>
                         <div class="col-sm-1">
                             <label for="" class="col-sm-6 col-form-label">UoM</label>
-                            <input type="text" class="form-control" id="uom" name="uom" readonly>
+                            <input type="text" class="form-control" id="uom1" name="uom[]" readonly>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-sm-2">
                             <label for="" class="col-sm-6 col-form-label">Qty</label>
-                            <input type="text" class="form-control" id="qty" name="qty" required>
+                            <input type="text" class="form-control" id="qty1" name="qty[]" required>
                         </div>
                         <div class="col-sm-4">
                             <label for="" class="col-sm-6 col-form-label">Location</label>
-                            <input type="text" class="form-control" id="location" name="location" required>
+                            <input type="text" class="form-control" id="location1" name="location[]" required>
                         </div>
                         <div class="col-sm-3">
                             <label for="" class="col-sm-6 col-form-label">Warehouse</label>
-                            <input type="text" class="form-control" id="warehouse_code" name="warehouse_code"
+                            <input type="text" class="form-control" id="warehouse_code1" name="warehouse_code[]"
                                 value="<?= $this->session->userdata('warehouse') ?>">
                         </div>
                         <div class="col-sm-3">
                             <label for="" class="col-sm-6 col-form-label">Equipment</label>
-                            <input type="text" class="form-control" id="equipment" name="equipment">
+                            <input type="text" class="form-control" id="equipment1" name="equipment[]">
                         </div>
-
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <hr size="12px">
                 </div>
+                <div id="nextkolom" name="nextkolom"></div>
         </div>
 
     </div>
     <input type="text" class="form-control" id="desc" name="desc" value="Warehouse Transfer" hidden>
     <center>
-        <button class="btn btn-primary add-more" type="button"> Add</button>
+        <button class="btn btn-primary tambah-form" type="button"> Add</button>
 
         <a href="<?= base_url(); ?>received" class="btn btn-danger">
             Cancel
@@ -131,7 +131,7 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#item_code').on('input', function() {
+    $('#item_code1').on('input', function() {
         var item_code = $(this).val();
         $.ajax({
             type: "POST",
@@ -143,15 +143,75 @@ $(document).ready(function() {
             cache: false,
             success: function(data) {
                 $.each(data, function(item_code, nama, specification, uom, image) {
-                    $('[name="item_name"]').val(data.name);
-                    $('[name="specification"]').val(data.specification);
-                    $('[name="uom"]').val(data.uom);
+                    $('[name="item_name[]"]').val(data.name);
+                    $('[name="specification[]"]').val(data.specification);
+                    $('[name="uom[]"]').val(data.uom);
                 });
 
             }
         });
         return false;
     });
+
+    var i=2;
+    $(".tambah-form").on('click', function(){                   
+        row = '<div class="container col-sm-12 rec-element">'+
+                                '<div class="row">'+
+                                    '<div class="col-sm-3">'+
+                                        '<label for="" class="col-sm-6 col-form-label"><b>['+i+']</b> Item Code*</label>'+
+                                        '<input type="text" class="form-control" id="item_code'+i+'" name="item_code[]">'+
+                                        '<small class="form-text text-danger"><?= form_error("item_code'+i+'") ?></small>'+
+                                    '</div>'+
+                                    '<div class="col-sm-3">'+
+                                        '<label for="" class="col-sm-6 col-form-label">Item Name</label>'+
+                                        '<input type="text" class="form-control" id="item_name'+i+'" name="item_name[]" readonly>'+
+                                    '</div>'+
+                                    '<div class="col-sm-4">'+
+                                       ' <label for="" class="col-sm-6 col-form-label">Spesification</label>'+
+                                        '<input type="text" class="form-control" id="specification'+i+'" name="specification[]" readonly>'+
+                                    '</div>'+
+                                    '<div class="col-sm-1">'+
+                                        '<label for="" class="col-sm-6 col-form-label">UoM</label>'+
+                                        '<input type="text" class="form-control" id="uom'+i+'" name="uom[]" readonly>'+
+                                    '</div>'+
+                                    '<div class="col-sm-1">'+
+                                        '<button type="button" class="btn btn-danger del-element fa-solid fa-trash" style="height:75px; width: 75px; font-size: 12px;"></button>'+
+                                    '</div>'+
+                                '</div>'+
+
+                                '<div class="row">'+
+                                    '<div class="col-sm-2">'+
+                                        '<label for="" class="col-sm-6 col-form-label">Qty*</label>'+
+                                        '<input type="text" class="form-control" id="qty'+i+'" name="qty[]">'+
+                                    '</div>'+
+                                    '<div class="col-sm-4">'+
+                                        '<label for="" class="col-sm-6 col-form-label">Location*</label>'+
+                                        '<input type="text" class="form-control" id="location'+i+'" name="location[]">'+
+                                    '</div>'+
+                                    '<div class="col-sm-3">'+
+                                        '<label for="" class="col-sm-6 col-form-label">Warehouse*</label>'+
+                                        '<input type="text" class="form-control" id="warehouse_code'+i+'" name="warehouse_code[]" value="<?= $this->session->userdata('warehouse') ?>">'+
+                                    '</div>'+
+                                    '<div class="col-sm-3">'+
+                                        '<label for="" class="col-sm-6 col-form-label">Equipment</label>'+
+                                        '<input type="text" class="form-control" id="equipment'+i+'" name="equipment[]">'+
+                                    '</div>'+
+                                '</div>'+
+                                '<hr size="12px">'+
+                            '</div>';
+
+        $(row).insertBefore("#nextkolom");
+        $('#jumlahkolom').val(i+1);
+        i++;        
+    });
+
+    $(document).on('click','.del-element',function (e) {        
+        e.preventDefault()
+        i--;
+        //$(this).parents('.rec-element').fadeOut(400);
+        $(this).parents('.rec-element').remove();
+        $('#jumlahkolom').val(i-1);
+    });        
 
 });
 </script>

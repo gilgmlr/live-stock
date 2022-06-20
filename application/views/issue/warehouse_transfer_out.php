@@ -20,7 +20,7 @@
                     <div class="col-sm-6">
                         <label for="" class="col-sm-6 col-form-label">WT Number</label>
                         <input type="text" class="form-control" id="wt_number" name="wt_number"
-                            value="WT01-C02<?= substr(date('Y'),2,4) . date('m') ?>" required>
+                            value="WT02-C02<?= substr(date('Y'),2,4) . date('m') ?>" required>
                     </div>
                     <div class="col-sm-6">
                         <label for="" class="col-sm-6 col-form-label">Arrival Date</label>

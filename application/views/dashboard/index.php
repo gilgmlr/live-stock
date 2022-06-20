@@ -12,7 +12,7 @@
             <img src="assets/image/icon.png " />
             <span class="ps-2">Warehouse. <br />Last update:
                 <?php if ($last_update != null) { ?>
-                <?= date('F d, Y  H:i:s A', strtotime($last_update[0]->date)); ?>
+                <?= date('F d, Y  H:i:s A', strtotime($last_update[0]->system_date)); ?>
                 <?php ;} else { ?>
                 0 Month, 0000 00:00:00 Xx
                 <?php ;} ?>
