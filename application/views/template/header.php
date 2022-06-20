@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"> 
+<html lang="en">
 
 <head>
     <!-- Required meta tags -->
@@ -29,8 +29,9 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <!-- Data Tables -->
-    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
-        
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+
     <script src="<?= base_url() ?>node_modules/js/jquery.js"></script>
     <script src="<?= base_url() ?>node_modules/js/jquery.dataTables.min.js"></script>
     <script src="<?= base_url() ?>node_modules/js/bootstrap.min.js"></script>
@@ -48,9 +49,7 @@
 
 <body>
 
-<?php if ($this->session->userdata('login') != true) : 
-        redirect('login');
-    endif;?>
+
 
     <header>
         <div class="fixed-top">
@@ -104,28 +103,30 @@
                                         </li>
                                         <li>
                                             <?php if($this->session->userdata('role') == "3") { ?>
-                                                <a href="#">
-                                            <?php ;} else { ?>
-                                                <a href="<?= base_url(); ?>received" class="<?php if (uri_string() === 'received') echo 'actived' ?>">
-                                            <?php ;} ?>
+                                            <a href="#">
+                                                <?php ;} else { ?>
+                                                <a href="<?= base_url(); ?>received"
+                                                    class="<?php if (uri_string() === 'received') echo 'actived' ?>">
+                                                    <?php ;} ?>
 
-                                                <i class="bi bi-layer-backward"></i>
-                                                <div class="position-absolute tooltips">
-                                                    <h5>Received</h5>
-                                                </div>
-                                            </a>
+                                                    <i class="bi bi-layer-backward"></i>
+                                                    <div class="position-absolute tooltips">
+                                                        <h5>Received</h5>
+                                                    </div>
+                                                </a>
                                         </li>
                                         <li>
                                             <?php if($this->session->userdata('role') == "2") { ?>
-                                                <a href="#">
-                                            <?php ;} else { ?>
-                                            <a href="<?= base_url(); ?>issue" class="<?php if (uri_string() === 'issue') echo 'actived' ?>">
-                                            <?php ;} ?>
-                                                <i class="bi bi-layer-forward"></i>
-                                                <div class="position-absolute tooltips">
-                                                    <h5>Issue</h5>
-                                                </div>
-                                            </a>
+                                            <a href="#">
+                                                <?php ;} else { ?>
+                                                <a href="<?= base_url(); ?>issue"
+                                                    class="<?php if (uri_string() === 'issue') echo 'actived' ?>">
+                                                    <?php ;} ?>
+                                                    <i class="bi bi-layer-forward"></i>
+                                                    <div class="position-absolute tooltips">
+                                                        <h5>Issue</h5>
+                                                    </div>
+                                                </a>
                                         </li>
                                         <li>
                                             <a href="<?= base_url(); ?>lending"
