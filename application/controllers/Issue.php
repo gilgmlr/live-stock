@@ -100,52 +100,65 @@ class Issue extends CI_Controller
 
     public function addLending()
     {
-        $data = array(
-            'lending_no' => $this->input->post('lending_no'),
-            'lending_date' => $this->input->post('lending_date'),
-            'item_code' => $this->input->post('item_code'),
-            'lending_qty' => $this->input->post('lending_qty'),
-            'borrower_name' => $this->input->post('borrower_name'),
-            'dept_code' => $this->input->post('dept_code'),
-            'lending_note' => $this->input->post('lending_note'),
-            'return_note' => "",
-            'return_qty' => "",
-            'return_date' => "",
-            'entered_nip' => $this->input->post('entered_nip'),
-            'warehouse_code' => $this->input->post('warehouse_code'),
-            'status' => 'open',
-            
-        );
+        $this->form_validation->set_rules('lending_no', 'Lending_No', 'required');
+        $this->form_validation->set_rules('lending_date', 'lending_date', 'required|date');
+        $this->form_validation->set_rules('borrower_name', 'borrower_name', 'required');
+        $this->form_validation->set_rules('dept_code', 'dept_code', 'required');
+        $this->form_validation->set_rules('item_code[]', 'Item_Code', 'required');
+        $this->form_validation->set_rules('lending_qty[]', 'Lending_Qty', 'required|integer|greater_than[0]');
+        $this->form_validation->set_rules('warehouse_code', 'Warehouse_Code', 'required');
+        $this->form_validation->set_rules('entered', 'Entered', 'required');
 
-        $this->M_CRUD->input_data('lending', $data);
-
-
-        //cari items
-        $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
-        $data = array(
-            'item_code' => $item['item_code'],
-            'location' => $item['location'],
-            'stocks' => $item['stocks'] - $this->input->post('lending_qty'),
-            'warehouse_code' => $item['warehouse_code'],
-            'equipment' => $item['equipment'],
-            'status' => $item['status'],
-        );
-        $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
-
-        //add history
         date_default_timezone_set('Asia/Jakarta');
-        $history = array(
-            'date' => date("Y-m-d h:m:s A"),
-            'doc_num' => $this->input->post('lending_no'),
-            'description' => $this->input->post('desc'),
-        );
+        $jumlah = count($this->input->post('item_code'));
 
-        $this->M_CRUD->input_data('history', $history);
+        if($this->form_validation->run() == false) {
+            $this->session->set_flashdata('flash', 'Data Input Not Valid in ' . $this->input->post('desc'));
+		} else {
+            for($i=0;$i<$jumlah;$i++){
+                $data = array(
+                    'lending_no' => $this->input->post('lending_no'),
+                    'lending_date' => $this->input->post('lending_date'),
+                    'item_code' => $this->input->post('item_code')[$i],
+                    'lending_qty' => $this->input->post('lending_qty')[$i],
+                    'borrower_name' => $this->input->post('borrower_name'),
+                    'dept_code' => $this->input->post('dept_code'),
+                    'lending_note' => $this->input->post('lending_note'),
+                    'return_note' => "",
+                    'return_qty' => "",
+                    'return_date' => "",
+                    'entered_nip' => $this->input->post('entered'),
+                    'warehouse_code' => $this->input->post('warehouse_code'),
+                    'status' => 'open',
+                );
 
-        $this->session->set_flashdata('flash', 'Data Lending Saved!');
+                $this->M_CRUD->input_data('lending', $data);
 
-        // var_dump($item); die;
-        redirect("issue");
+
+                //cari items
+                $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code')[$i], 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
+                $data = array(
+                    'item_code' => $item['item_code'],
+                    'location' => $item['location'],
+                    'stocks' => $item['stocks'] - $this->input->post('lending_qty')[$i],
+                    'warehouse_code' => $item['warehouse_code'],
+                    'equipment' => $item['equipment'],
+                    'status' => $item['status'],
+                );
+                $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
+
+                $history = array(
+                    'date' => date("Y-m-d h:m:s A"),
+                    'doc_num' => $this->input->post('lending_no'),
+                    'description' => $this->input->post('desc'),
+                );
+
+                $this->M_CRUD->input_data('history', $history);
+
+                $this->session->set_flashdata('flash', 'Data Lending Saved!');
+            }
+        }
+        $this->view_lending();
     }
 
     public function addWT()

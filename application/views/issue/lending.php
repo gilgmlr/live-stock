@@ -27,9 +27,32 @@
                                 value="<?php echo date('Y-m-d'); ?>" required>
                         </div>
                     </div>
-                    <div class=" col">
-                        <label for="" class=" col-sm-6 col-form-label">Lending Note</label>
-                        <textarea class="form-control" id="lending_note" name="lending_note" rows="2"></textarea>
+                    <div class="col-sm-6">
+                            <div class="col-sm-6">
+                                <label for="" class="col-sm-12 col-form-label">Dept Code</label>
+                                <input type="text" class="form-control" id="dept_code" name="dept_code"
+                                    required>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="" class="col-sm-12 col-form-label">Dept Name</label>
+                                <input type="text" class="form-control" id="" name="" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <label for="" class="col-sm-12 col-form-label">Entered by</label>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="entered" name="entered"
+                                    readonly value="<?= $this->session->userdata('nip'); ?>">
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="" name="" readonly
+                                    value="<?= $this->session->userdata('name'); ?>">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-sm-12">
@@ -39,24 +62,24 @@
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-3">
-                                <label for="" class="col-sm-6 col-form-label">Item Code*</label>
-                                <input type="text" class="form-control" id="item_code" name="item_code[]">
-                                <small class="form-text text-danger"><?= form_error('item_code') ?></small>
+                                <label for="" class="col-sm-6 col-form-label">[1] Item Code*</label>
+                                <input type="text" class="form-control" id="item_code1" name="item_code[]">
+                                <small class="form-text text-danger"><?= form_error('item_code1') ?></small>
 
                             </div>
                             <div class="col-sm-3">
                                 <label for="" class="col-sm-6 col-form-label">Item Name</label>
-                                <input type="text" class="form-control" id="item_name" name="item_name" readonly>
+                                <input type="text" class="form-control" id="item_name1" name="item_name[]" readonly>
                             </div>
                             <div class="col-sm-5">
                                 <label for="" class="col-sm-6 col-form-label">Spesification</label>
-                                <input type="text" class="form-control" id="specification" name="specification"
+                                <input type="text" class="form-control" id="specification1" name="specification[]"
                                     readonly>
 
                             </div>
                             <div class="col-sm-1">
                                 <label for="" class="col-sm-6 col-form-label">UoM</label>
-                                <input type="text" class="form-control" id="uom" name="uom" readonly>
+                                <input type="text" class="form-control" id="uom1" name="uom[]" readonly>
                             </div>
                         </div>
 
@@ -64,21 +87,13 @@
                         <div class="row">
                             <div class="col-sm-2">
                                 <label for="" class="col-sm-6 col-form-label">Qty*</label>
-                                <input type="text" class="form-control" id="qty" name="qty[]">
+                                <input type="text" class="form-control" id="lending_qty1" name="lending_qty[]">
                             </div>
-                            <div class="col-sm-4">
-                                <label for="" class="col-sm-6 col-form-label">Location*</label>
-                                <input type="text" class="form-control" id="location" name="location[]">
+                            <div class=" col">
+                                <label for="" class=" col-sm-6 col-form-label">Lending Note</label>
+                                <textarea class="form-control" id="lending_note" name="lending_note" rows="1"></textarea>
                             </div>
-                            <div class="col-sm-3">
-                                <label for="" class="col-sm-6 col-form-label">Warehouse*</label>
-                                <input type="text" class="form-control" id="warehouse_code" name="warehouse_code[]"
-                                    value="<?= $this->session->userdata('warehouse') ?>">
-                            </div>
-                            <div class="col-sm-3">
-                                <label for="" class="col-sm-6 col-form-label">Equipment</label>
-                                <input type="text" class="form-control" id="equipment" name="equipment[]">
-                            </div>
+
                         </div>
                         <hr size="12px">
                     </div>
