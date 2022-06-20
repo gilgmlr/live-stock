@@ -23,11 +23,24 @@ class Received extends CI_Controller
         );
     }
 
-    public function simpan()
+    public function add_GR()
     {
+        $this->form_validation->set_rules('received_code', 'Received_Code', 'required');
+        $this->form_validation->set_rules('arrival_date', 'Arrival_Date', 'required|date');
+        $this->form_validation->set_rules('po_number', 'PO_Number', 'required');
+        $this->form_validation->set_rules('vendor_name', 'Vendor_Name', 'required');
+        $this->form_validation->set_rules('item_code[]', 'Item_Code', 'required');
+        $this->form_validation->set_rules('qty[]', 'Qty', 'required|integer|greater_than[0]');
+        $this->form_validation->set_rules('warehouse_code[]', 'Warehouse_Code', 'required');
+        $this->form_validation->set_rules('location[]', 'Location', 'required');
+
         $jumlah = count($this->input->post('item_code'));
         // print_r($jumlah);die();
-        for($i=0;$i<$jumlah;$i++){
+
+        if($this->form_validation->run() == false) {
+            $this->session->set_flashdata('flash', 'Data Input Not Valid in ' . $this->input->post('desc'));
+		} else {
+            for($i=0;$i<$jumlah;$i++){
                 $received = array(
                     'received_code' => $this->input->post('received_code'),
                     'arrival_date' => $this->input->post('arrival_date'),
@@ -38,79 +51,50 @@ class Received extends CI_Controller
                     'warehouse_code' => $this->input->post('warehouse_code')[$i],
                     'location' => $this->input->post('location')[$i],
                 );
+                
+                date_default_timezone_set('Asia/Jakarta');
+                $history = array(
+                    'doc_date' => $this->input->post('arrival_date'),
+                    'system_date' => date("Y-m-d h:i:s A"),
+                    'source_doc' => $this->input->post('received_code'),
+                    'destination_doc' => $this->input->post('received_code'),
+                    'item_code' => $this->input->post('item_code')[$i],
+                    'qty' => $this->input->post('qty')[$i],
+                    'warehouse_code' => $this->input->post('warehouse_code')[$i],
+                );
+        
                 $this->M_CRUD->input_data('received', $received);
-        }    
-        redirect('received');
+                $this->M_CRUD->input_data('history_transaction', $history);
+
+                $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code')[$i], 'warehouse_code' => $this->input->post('warehouse_code')[$i]])->row_array();
+
+                if ($item != null){ //jika sudah ada di inventory
+                    $data = array(
+                        'item_code' => $item['item_code'],
+                        'location' => $item['location'],
+                        'stocks' => $item['stocks'] + $this->input->post('qty')[$i],
+                        'warehouse_code' => $item['warehouse_code'],
+                        'equipment' => $this->input->post('equipment')[$i],
+                        'status' => '1',
+                    );
+                    $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
+                } else {
+                    $inventory = array(
+                        'item_code' => $this->input->post('item_code')[$i],
+                        'location' => $this->input->post('location')[$i],
+                        'stocks' => $this->input->post('qty')[$i],
+                        'warehouse_code' => $this->input->post('warehouse_code')[$i],
+                        'equipment' => $this->input->post('equipment')[$i],
+                        'status' => '1',
+                    );
+                    $this->M_CRUD->input_data('inventory', $inventory);
+                }
+
+                $this->session->set_flashdata('flash', 'Data ' . $this->input->post('desc') . ' Saved!');
+            }    
+        }
+        $this->view_good_received();
     }  
-
-    public function addReceived()
-    {
-        $this->form_validation->set_rules('received_code', 'Received_Code', 'required');
-        $this->form_validation->set_rules('arrival_date', 'Arrival_Date', 'required|date');
-        $this->form_validation->set_rules('po_number', 'PO_Number', 'required');
-        $this->form_validation->set_rules('vendor_name', 'Vendor_Name', 'required');
-        $this->form_validation->set_rules('item_code', 'Item_Code', 'required');
-        $this->form_validation->set_rules('qty', 'Qty', 'required|integer|greater_than[0]');
-        $this->form_validation->set_rules('warehouse_code', 'Warehouse_Code', 'required');
-        $this->form_validation->set_rules('location', 'Location', 'required');
-
-        if($this->form_validation->run() == false) {
-            $this->session->set_flashdata('flash', 'Data Input Not Valid in ' . $this->input->post('desc'));
-			$this->view_good_received();
-		} else {
-            $received = array(
-                'received_code' => $this->input->post('received_code'),
-                'arrival_date' => $this->input->post('arrival_date'),
-                'po_number' => $this->input->post('po_number'),
-                'vendor_name' => $this->input->post('vendor_name'),
-                'item_code' => $this->input->post('item_code'),
-                'qty' => $this->input->post('qty'),
-                'warehouse_code' => $this->input->post('warehouse_code'),
-                'location' => $this->input->post('location'),
-            );
-
-            date_default_timezone_set('Asia/Jakarta');
-            $history = array(
-                'doc_date' => $this->input->post('arrival_date'),
-                'system_date' => date("Y-m-d h:i:s A"),
-                'source_doc' => $this->input->post('received_code'),
-                'destination_doc' => $this->input->post('received_code'),
-                'item_code' => $this->input->post('item_code'),
-                'qty' => $this->input->post('qty'),
-                'warehouse_code' => $this->input->post('warehouse_code'),
-            );
-    
-            $this->M_CRUD->input_data('received', $received);
-            $this->M_CRUD->input_data('history_transaction', $history);
-
-            $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
-
-            if ($item != null){ //jika sudah ada di inventory
-                $data = array(
-                    'item_code' => $item['item_code'],
-                    'location' => $item['location'],
-                    'stocks' => $item['stocks'] + $this->input->post('qty'),
-                    'warehouse_code' => $item['warehouse_code'],
-                    'equipment' => $this->input->post('equipment'),
-                    'status' => '1',
-                );
-                $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
-            } else {
-                $inventory = array(
-                    'item_code' => $this->input->post('item_code'),
-                    'location' => $this->input->post('location'),
-                    'stocks' => $this->input->post('qty'),
-                    'warehouse_code' => $this->input->post('warehouse_code'),
-                    'equipment' => $this->input->post('equipment'),
-                    'status' => '1',
-                );
-                $this->M_CRUD->input_data('inventory', $inventory);
-            }
-
-            $this->session->set_flashdata('flash', 'Data ' . $this->input->post('desc') . ' Saved!');
-            redirect('received');
-        } // var_dump($data);die;
-    }
 
     public function addWT()
     {

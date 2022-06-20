@@ -12,7 +12,7 @@
 
         </center>
         <div class=" card-body">
-            <form action="<?= base_url() ?>received/simpan" method="POST" autocomplete="off">
+            <form action="<?= base_url() ?>received/add_GR" method="POST" autocomplete="off">
                 <div class="control-group after-add-more">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -119,7 +119,7 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#item_code').on('input', function() {
+    $('#item_code1').on('input', function() {
         var item_code = $(this).val();
         $.ajax({
             type: "POST",
@@ -131,9 +131,9 @@ $(document).ready(function() {
             cache: false,
             success: function(data) {
                 $.each(data, function(item_code, nama, specification, uom, image) {
-                    $('[name="item_name"]').val(data.name);
-                    $('[name="specification"]').val(data.specification);
-                    $('[name="uom"]').val(data.uom);
+                    $('[name="item_name[]"]').val(data.name);
+                    $('[name="specification[]"]').val(data.specification);
+                    $('[name="uom[]"]').val(data.uom);
                 });
 
             }
@@ -162,16 +162,6 @@ $(document).ready(function() {
         });
         return false;
     });
-
-    // $(".add-more").click(function() {
-    //     var html = $(".copy").html();
-    //     $(".after-add-more").after(html);
-    // });
-
-    // // saat tombol remove dklik control group akan dihapus 
-    // $("body").on("click", ".remove", function() {
-    //     $(this).parents(".control-group").remove();
-    // });
 
     var i=2;
     $(".tambah-form").on('click', function(){                   
