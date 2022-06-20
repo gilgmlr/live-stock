@@ -106,7 +106,7 @@ class Issue extends CI_Controller
         $this->form_validation->set_rules('dept_code', 'dept_code', 'required');
         $this->form_validation->set_rules('item_code[]', 'Item_Code', 'required');
         $this->form_validation->set_rules('lending_qty[]', 'Lending_Qty', 'required|integer|greater_than[0]');
-        $this->form_validation->set_rules('warehouse_code', 'Warehouse_Code', 'required');
+        $this->form_validation->set_rules('warehouse_code[]', 'Warehouse_Code', 'required');
         $this->form_validation->set_rules('entered', 'Entered', 'required');
 
         date_default_timezone_set('Asia/Jakarta');
@@ -123,12 +123,12 @@ class Issue extends CI_Controller
                     'lending_qty' => $this->input->post('lending_qty')[$i],
                     'borrower_name' => $this->input->post('borrower_name'),
                     'dept_code' => $this->input->post('dept_code'),
-                    'lending_note' => $this->input->post('lending_note'),
+                    'lending_note' => $this->input->post('lending_note')[$i],
                     'return_note' => "",
                     'return_qty' => "",
                     'return_date' => "",
                     'entered_nip' => $this->input->post('entered'),
-                    'warehouse_code' => $this->input->post('warehouse_code'),
+                    'warehouse_code' => $this->input->post('warehouse_code')[$i],
                     'status' => 'open',
                 );
 
@@ -136,7 +136,7 @@ class Issue extends CI_Controller
 
 
                 //cari items
-                $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code')[$i], 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
+                $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code')[$i], 'warehouse_code' => $this->input->post('warehouse_code')[$i]])->row_array();
                 $data = array(
                     'item_code' => $item['item_code'],
                     'location' => $item['location'],
@@ -148,12 +148,16 @@ class Issue extends CI_Controller
                 $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
 
                 $history = array(
-                    'date' => date("Y-m-d h:m:s A"),
-                    'doc_num' => $this->input->post('lending_no'),
-                    'description' => $this->input->post('desc'),
+                    'doc_date' => $this->input->post('lending_date'),
+                    'system_date' => date("Y-m-d h:i:s A"),
+                    'source_doc' => $this->input->post('lending_no'),
+                    'destination_doc' => $this->input->post('lending_no'),
+                    'item_code' => $this->input->post('item_code')[$i],
+                    'qty' => $this->input->post('lending_qty')[$i] * -1,
+                    'warehouse_code' => $this->input->post('warehouse_code')[$i],
                 );
 
-                $this->M_CRUD->input_data('history', $history);
+                $this->M_CRUD->input_data('history_transaction', $history);
 
                 $this->session->set_flashdata('flash', 'Data Lending Saved!');
             }
