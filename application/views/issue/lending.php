@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 100px;">
-<?php if ($this->session->flashdata('flash')) : ?>
+    <?php if ($this->session->flashdata('flash')) : ?>
     <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
         <?= $this->session->flashdata('flash') ?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -16,7 +16,8 @@
             <?php echo validation_errors(); ?>
 
             <div class=" card-body">
-                <form action="<?= base_url() ?>issue/addLending" method="POST" autocomplete="off" style="font-weight:bold;">
+                <form action="<?= base_url() ?>issue/addLending" method="POST" autocomplete="off"
+                    style="font-weight:bold;">
                     <div class=" container">
                         <div class=" row">
                             <div class="col-sm-6">
@@ -27,7 +28,8 @@
                                 
                                     <div class=" col-sm-3">
                                 <label for="" class="col-sm-6 col-form-label">Borrower Name</label>
-                                <input type="text" class="form-control" id="borrower_name" name="borrower_name" required>
+                                <input type="text" class="form-control" id="borrower_name" name="borrower_name"
+                                    required>
                             </div>
 
                             <div class="col-sm-3">
@@ -46,15 +48,19 @@
                                     <label for="" class="col-sm-6 col-form-label">Dept Name</label>
                                     <input type="text" class="form-control" id="" name="" readonly>
                                 </div>
-                                <div class="col-sm-3">
-                                    <label for="" class="col-sm-12 col-form-label">Entered by</label>
-                                    <input type="text" class="form-control" id="entered" name="entered" readonly
-                                        value="<?= $this->session->userdata('nip'); ?>">
-                                </div>
-                                <div class="col-sm-3">
-                                    <label for=""></label>
-                                    <input type="text" class="form-control" id="" name="" readonly
-                                        value="<?= $this->session->userdata('name'); ?>">
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-4 col-form-label">Entered by</label>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="created_by" name="created_by"
+                                                readonly value="<?= $this->session->userdata('nip'); ?>">
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="" name="" readonly
+                                                value="<?= $this->session->userdata('name'); ?>">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +83,8 @@
                                 </div>
                                 <div class="col-sm-5">
                                     <label for="" class="col-sm-6 col-form-label">Spesification</label>
-                                    <input type="text" class="form-control" id="specification1" name="specification[]" readonly>
+                                    <input type="text" class="form-control" id="specification1" name="specification[]"
+                                        readonly>
 
                                 </div>
                                 <div class="col-sm-1">
@@ -90,15 +97,18 @@
                             <div class="row">
                                 <div class="col-sm-2">
                                     <label for="" class="col-sm-6 col-form-label">Qty*</label>
-                                    <input type="text" class="form-control" id="lending_qty1" name="lending_qty[]" required>
+                                    <input type="text" class="form-control" id="lending_qty1" name="lending_qty[]"
+                                        required>
                                 </div>
                                 <div class=" col-sm-8">
                                     <label for="" class=" col-sm-6 col-form-label">Lending Note</label>
-                                    <textarea class="form-control" id="lending_note" name="lending_note[]" rows="1"></textarea>
+                                    <textarea class="form-control" id="lending_note" name="lending_note[]"
+                                        rows="1"></textarea>
                                 </div>
                                 <div class="col-sm-2">
                                     <label for="" class="col-sm-6 col-form-label">Warehouse*</label>
-                                    <input type="text" class="form-control" id="warehouse_code1" name="warehouse_code[]" value="<?= $this->session->userdata('warehouse') ?>">
+                                    <input type="text" class="form-control" id="warehouse_code1" name="warehouse_code[]"
+                                        value="<?= $this->session->userdata('warehouse') ?>">
                                 </div>
                             </div>
                             <hr size="12px">
@@ -178,14 +188,16 @@ $(document).ready(function() {
             '<label for="" class="col-sm-6 col-form-label">Qty*</label>' +
             '<input type="text" class="form-control" id="lending_qty' + i + '" name="lending_qty[]">' +
             '</div>' +
-            '<div class=" col-sm-8">'+
-            '<label for="" class=" col-sm-6 col-form-label">Lending Note</label>'+
-            '<textarea class="form-control" id="lending_note' + i + '" name="lending_note[]" rows="1"></textarea>'+
-            '</div>'+
-            '<div class="col-sm-2">'+
-                                    '<label for="" class="col-sm-6 col-form-label">Warehouse*</label>'+
-                                    '<input type="text" class="form-control" id="warehouse_code' + i + '" name="warehouse_code[]" value="<?= $this->session->userdata('warehouse') ?>">'+
-                                '</div>'+
+            '<div class=" col-sm-8">' +
+            '<label for="" class=" col-sm-6 col-form-label">Lending Note</label>' +
+            '<textarea class="form-control" id="lending_note' + i +
+            '" name="lending_note[]" rows="1"></textarea>' +
+            '</div>' +
+            '<div class="col-sm-2">' +
+            '<label for="" class="col-sm-6 col-form-label">Warehouse*</label>' +
+            '<input type="text" class="form-control" id="warehouse_code' + i +
+            '" name="warehouse_code[]" value="<?= $this->session->userdata('warehouse') ?>">' +
+            '</div>' +
             '</div>' +
             '<hr size="12px">' +
             '</div>';
