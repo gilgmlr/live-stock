@@ -23,7 +23,7 @@ class Received extends CI_Controller
         );
     }
 
-    public function add_GR()
+    public function add_Received()
     {
         $this->form_validation->set_rules('received_code', 'Received_Code', 'required');
         $this->form_validation->set_rules('arrival_date', 'Arrival_Date', 'required|date');

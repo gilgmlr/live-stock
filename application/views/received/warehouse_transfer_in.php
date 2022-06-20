@@ -135,7 +135,7 @@ $(document).ready(function() {
         var item_code = $(this).val();
         $.ajax({
             type: "POST",
-            url: "<?php echo base_url().'auto/get_item'?>",
+            url: "<?php echo base_url().'auto/get_WT'?>",
             dataType: "JSON",
             data: {
                 item_code: item_code

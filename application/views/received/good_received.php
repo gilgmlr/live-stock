@@ -12,7 +12,7 @@
 
         </center>
         <div class=" card-body">
-            <form action="<?= base_url() ?>received/add_GR" method="POST" autocomplete="off" style="font-weight:bold" ;>
+            <form action="<?= base_url() ?>received/add_Received" method="POST" autocomplete="off" style="font-weight:bold" ;>
                 <div class="control-group after-add-more">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -145,7 +145,7 @@ $(document).ready(function() {
         var received_code = $(this).val();
         $.ajax({
             type: "POST",
-            url: "<?php echo base_url().'auto/get_received'?>",
+            url: "<?php echo base_url().'auto/get_Adjusment'?>",
             dataType: "JSON",
             data: {
                 received_code: received_code

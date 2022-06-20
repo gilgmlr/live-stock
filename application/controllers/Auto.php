@@ -20,6 +20,20 @@ class Auto extends CI_Controller
         $data=$this->db->get_where('received', ['received_code' => $kode])->row_array();
 		echo json_encode($data);
     }
+    
+    function get_WT()
+    {
+        $kode=$this->input->post('received_code');
+        $data=$this->db->get_where('warehouse_transfer', ['wt_number' => $kode])->row_array();
+		echo json_encode($data);
+    }
+
+    function get_Adjusment()
+    {
+        $kode=$this->input->post('received_code');
+        $data=$this->db->get_where('received', ['received_code' => $kode])->row_array();
+		echo json_encode($data);
+    }
 
     function get_sender()
     {
