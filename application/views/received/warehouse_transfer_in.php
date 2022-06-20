@@ -133,7 +133,7 @@ $(document).ready(function() {
         var item_code = $(this).val();
         $.ajax({
             type: "POST",
-            url: "<?php echo base_url().'auto/get_WT'?>",
+            url: "<?php echo base_url().'auto/get_item'?>",
             dataType: "JSON",
             data: {
                 item_code: item_code
@@ -141,9 +141,9 @@ $(document).ready(function() {
             cache: false,
             success: function(data) {
                 $.each(data, function(item_code, nama, specification, uom, image) {
-                    $('[name="item_name[]"]').val(data.name);
-                    $('[name="specification[]"]').val(data.specification);
-                    $('[name="uom[]"]').val(data.uom);
+                    $('[id="item_name1"]').val(data.name);
+                    $('[id="specification1"]').val(data.specification);
+                    $('[id="uom1"]').val(data.uom);
                 });
 
             }
