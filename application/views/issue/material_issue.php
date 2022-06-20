@@ -131,20 +131,21 @@
                     </div>
                     <hr size="12px">
                 </div>
+                <center>
+                    <button class="btn btn-primary add-more" type="button"> Add</button>
+
+                    <a href="<?= base_url(); ?>issue" class="btn btn-danger">
+                        Cancel
+                    </a>
+                    <button id="simpan" type="submit" class="btn btn-success"
+                        onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
+
+                    <!-- <button onclick="confirmAction()">Delete</button> -->
+
+                </center>
         </div>
     </div>
-    <center>
-        <button class="btn btn-primary add-more" type="button"> Add</button>
 
-        <a href="<?= base_url(); ?>issue" class="btn btn-danger">
-            Cancel
-        </a>
-        <button id="simpan" type="submit" class="btn btn-success"
-            onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
-
-        <!-- <button onclick="confirmAction()">Delete</button> -->
-
-    </center>
 
     </form>
 
