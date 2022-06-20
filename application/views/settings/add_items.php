@@ -51,8 +51,10 @@
                     </div>
                     <center>
                         <div class="col-sm-8 mt-4">
-                            <label for="formFileMultiple" class="form-label" style="margin-top:8px"><b>Upload Image</b>
+                            <label for="formFileMultiple" class="form-label" style="margin:0px"><b>Upload Image</b>
                                 (.jpg |.jpeg |.png)</label>
+                            <br>
+                            <small style="color : red; font-weight:bold;">Max size upload 150kb</small>
                             <input style="border-color: black;" class="custom-file-input form-control" type="file"
                                 id="image" accept=".jpg, .jpeg, .png" name="image">
                         </div>
