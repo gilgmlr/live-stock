@@ -1,4 +1,11 @@
-<div class="container" style="margin-top: 120px;">
+<div class="container" style="margin-top: 100px;">
+<?php if ($this->session->flashdata('flash')) : ?>
+    <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= $this->session->flashdata('flash') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php $this->session->unset_userdata('flash');
+	endif; ?>
     <div class="cards shadow p-3 mb-5 bg-white rounded" style="min-height: 400px">
 
         <div class="card-content">
@@ -79,7 +86,7 @@
                 <center>
                     <button class="btn btn-primary add-more" type="button"> Add</button>
 
-                    <a href="<?= base_url(); ?>issue" class="btn btn-danger" style="width: 100px;">
+                    <a href="<?= base_url(); ?>lending" class="btn btn-danger" style="width: 100px;">
                         Cancel
                     </a>
                     <button id="simpan" type="submit" class="btn btn-success" style="width: 100px;"

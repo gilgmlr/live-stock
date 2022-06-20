@@ -223,37 +223,54 @@ class Received extends CI_Controller
 
     public function returnLending()
     {        
-        $lending = array(
-            'lending_no' => $this->input->post('lending_no'),
-            'lending_date' => $this->input->post('lending_date'),
-            'item_code' => $this->input->post('item_code'),
-            'lending_qty' => $this->input->post('lending_qty') - $this->input->post('return_qty'),
-            'borrower_name' => $this->input->post('borrower_name'),
-            'dept_code' => $this->input->post('dept_code'),
-            'lending_note' => $this->input->post('lending_date'),
-            'return_note' => $this->input->post('return_note'),
-            'return_qty' => $this->input->post('return_qty'),
-            'return_date' => $this->input->post('return_date'),
-            'entered' => $this->input->post('entered_nip'),
-            'warehouse_code' => $this->input->post('warehouse_code'),
-            'status' => $this->input->post('status'),
-        );
+        $this->form_validation->set_rules('return_qty', 'Return_Qty', 'required|integer|greater_than[0]|less_than_equal_to['.$this->input->post("lending_qty").']');
 
-        $this->M_CRUD->update_data('lending', $lending, ['lending_date' => $this->input->post('lending_date'), 'lending_no' => $this->input->post('lending_no'), 'item_code' => $this->input->post('item_code')]);
+        if($this->form_validation->run() == false) {
+            $this->session->set_flashdata('flash', 'Data Input Not Valid, Return QTY must lest than equal to '.$this->input->post('lending_qty'));
+		} else {
+            $lending = array(
+                'lending_no' => $this->input->post('lending_no'),
+                'lending_date' => $this->input->post('lending_date'),
+                'item_code' => $this->input->post('item_code'),
+                'lending_qty' => $this->input->post('lending_qty') - $this->input->post('return_qty'),
+                'borrower_name' => $this->input->post('borrower_name'),
+                'dept_code' => $this->input->post('dept_code'),
+                'lending_note' => $this->input->post('lending_date'),
+                'return_note' => $this->input->post('return_note'),
+                'return_qty' => $this->input->post('return_qty'),
+                'return_date' => $this->input->post('return_date'),
+                'entered' => $this->input->post('entered_nip'),
+                'warehouse_code' => $this->input->post('warehouse_code'),
+                'status' => $this->input->post('status'),
+            );
 
-        //update inventory
-        $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
-        $data = array(
-            'item_code' => $item['item_code'],
-            'location' => $item['location'],
-            'stocks' => $item['stocks'] + $this->input->post('return_qty'),
-            'warehouse_code' => $item['warehouse_code'],
-            'equipment' => $item['equipment'],
-            'status' => $item['status'],
-        );
-        $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
+            $this->M_CRUD->update_data('lending', $lending, ['lending_date' => $this->input->post('lending_date'), 'lending_no' => $this->input->post('lending_no'), 'item_code' => $this->input->post('item_code')]);
+
+            //update inventory
+            $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
+            $data = array(
+                'item_code' => $item['item_code'],
+                'location' => $item['location'],
+                'stocks' => $item['stocks'] + $this->input->post('return_qty'),
+                'warehouse_code' => $item['warehouse_code'],
+                'equipment' => $item['equipment'],
+                'status' => $item['status'],
+            );
+            $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
+
+            $history = array(
+                'doc_date' => $this->input->post('return_date'),
+                'system_date' => date("Y-m-d h:i:s A"),
+                'source_doc' => $this->input->post('lending_no'),
+                'destination_doc' => $this->input->post('lending_no'),
+                'item_code' => $this->input->post('item_code'),
+                'qty' => $this->input->post('return_qty'),
+                'warehouse_code' => $this->input->post('warehouse_code'),
+            );
+            $this->M_CRUD->input_data('history_transaction', $history);
+        }
         
-        redirect('lending');
+        redirect(base_url().'received/view_lending?info='.$this->input->post('lending_date').';'.$this->input->post('lending_no').';'.$this->input->post('item_code'));
     }
 
 }
