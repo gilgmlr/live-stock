@@ -55,7 +55,7 @@
                                 <div class="container">
                                     <div class="card-body">
                                         <center>
-                                            <img src="<?= base_url() . 'assets/catalog/'. $data->image?>" class="img-fluid" style="height: 300px; width:300px; object-fit: contain;">
+                                            <img src="<?= base_url() . 'assets/catalog/'. $data->image?>" class="img-fluid" style="height: 300px; width:600px; object-fit: contain;">
                                         </center>
                                         <hr><hr>
                                         <table>
