@@ -10,6 +10,7 @@
         <center>
             <h4 style="font-weight:bold;"> Form Material Issue</h4>
         </center>
+        <?= validation_errors()?>
         <div class=" card-body">
             <form action="<?= base_url() ?>issue/addMI" method="POST" autocomplete="off" style="font-weight:bold;>
                 <div class=" container">
@@ -26,21 +27,15 @@
                     </div>
                     <div class="col">
                         <label for="" class="col-sm-4 col-form-label">Dept Name</label>
-                        <input type="text" class="form-control" id="dept_name" name="dept_name" required
-                            autocomplete="off">
+                        <input type="text" class="form-control" id="dept_name" name="dept_name" autocomplete="off">
                     </div>
 
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-6">
                         <label for="" class="col-sm-6 col-form-label">Entry Date</label>
                         <input type="date" class="form-control" id="entri_date" name="entri_date"
-                            value="<?php echo date('Y-m-d'); ?>" required>
-                    </div>
-                    <div class="col-sm-3">
-                        <label for="" class="col-sm-6 col-form-label">Posting Date</label>
-                        <input type="date" class="form-control" id="post_date" name="post_date"
                             value="<?php echo date('Y-m-d'); ?>" required>
                     </div>
                     <div class="col">
@@ -51,7 +46,7 @@
                 </div>
 
                 <label for="" class="col-sm-6 col-form-label">Description</label>
-                <textarea class="form-control" id="desc" name="desc" rows="1"></textarea>
+                <textarea class="form-control" id="desc" name="desc" rows="2"></textarea>
 
                 <div class="row">
                     <div class="col-sm-3">
@@ -69,7 +64,7 @@
                         <label for="" class="col-sm-4 col-form-label">Entered by</label>
                         <div class="row">
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="created_by" name="created_by" readonly
+                                <input type="text" class="form-control" id="entered" name="entered" readonly
                                     value="<?= $this->session->userdata('nip'); ?>">
                             </div>
 
@@ -88,51 +83,44 @@
 
                 <div class="col-sm-12">
                     <div class="row">
-                        <div class="col-sm-3">
-                            <label for="" class="col-sm-6 col-form-label">Item Code*</label>
-                            <input type="text" class="form-control" id="item_code" name="item_code[]">
+                        <div class="col-sm-4 rec-element">
+                            <label for="" class="col-sm-6 col-form-label">[1] Item Code*</label>
+                            <input type="text" class="form-control" id="item_code1" name="item_code[]">
                             <small class="form-text text-danger"><?= form_error('item_code') ?></small>
 
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-6">
                             <label for="" class="col-sm-6 col-form-label">Item Name</label>
-                            <input type="text" class="form-control" id="item_name" name="item_name" readonly>
+                            <input type="text" class="form-control" id="item_name1" name="item_name[]" readonly>
                         </div>
-                        <div class="col-sm-5">
-                            <label for="" class="col-sm-6 col-form-label">Spesification</label>
-                            <input type="text" class="form-control" id="specification" name="specification" readonly>
-
-                        </div>
-                        <div class="col-sm-1">
+                        <div class="col-sm-2">
                             <label for="" class="col-sm-6 col-form-label">UoM</label>
-                            <input type="text" class="form-control" id="uom" name="uom" readonly>
+                            <input type="text" class="form-control" id="uom1" name="uom[]" readonly>
                         </div>
                     </div>
 
 
                     <div class="row">
+                        <div class="col-sm-7">
+                            <label for="" class="col-sm-6 col-form-label">Spesification</label>
+                            <input type="text" class="form-control" id="specification1" name="specification[]" readonly>
+
+                        </div>
                         <div class="col-sm-2">
                             <label for="" class="col-sm-6 col-form-label">Qty*</label>
-                            <input type="text" class="form-control" id="qty" name="qty[]">
-                        </div>
-                        <div class="col-sm-4">
-                            <label for="" class="col-sm-6 col-form-label">Location*</label>
-                            <input type="text" class="form-control" id="location" name="location[]">
+                            <input type="text" class="form-control" id="qty1" name="qty[]">
                         </div>
                         <div class="col-sm-3">
                             <label for="" class="col-sm-6 col-form-label">Warehouse*</label>
-                            <input type="text" class="form-control" id="warehouse_code" name="warehouse_code[]"
+                            <input type="text" class="form-control" id="warehouse_code1" name="warehouse_code[]"
                                 value="<?= $this->session->userdata('warehouse') ?>">
-                        </div>
-                        <div class="col-sm-3">
-                            <label for="" class="col-sm-6 col-form-label">Equipment</label>
-                            <input type="text" class="form-control" id="equipment" name="equipment[]">
                         </div>
                     </div>
                     <hr size="12px">
+                    <div id="nextkolom" name="nextkolom"></div>
                 </div>
                 <center>
-                    <button class="btn btn-primary add-more" type="button"> Add</button>
+                    <button class="btn btn-primary tambah-form" type="button"> Add</button>
 
                     <a href="<?= base_url(); ?>issue" class="btn btn-danger">
                         Cancel
@@ -149,45 +137,6 @@
 
     </form>
 
-    <!-- ALERT -->
-    <!-- <div class="position-absolute top-50 start-50 translate-middle">
-                <div class="alert alert-success" style="width : 250px" role="alert">
-                    <h4 class="alert-heading">Confirmation Alert!</h4>
-                    <p>Are you sure want to save this?.</p>
-                    <hr>
-                    <button type="button" class="btn btn-outline-success">Save</button>
-                    <button type="button" class="btn btn-outline-danger">Cancel</button>
-
-                </div>
-            </div> -->
-
-    <!-- Modal -->
-    <div class="modal fade modal-dialog-scrollable" id="simpan" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered " style=max-width:30%>
-            <div class="cards-body">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: #563d7c">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col">
-                                <div class="cards shadow p-3 mb-5 bg-white rounded">
-                                    ..
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Add Item</button>
-                        <button type="button" class="btn btn-succes" data-bs-dismiss="modal">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Modal  -->
 </div>
 </div>
 </div>
@@ -195,8 +144,7 @@
 <script src="<?= base_url() ?>node_modules/js/jquery.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#item_code').on('input', function() {
-
+    $('#item_code1').on('input', function() {
         var item_code = $(this).val();
         $.ajax({
             type: "POST",
@@ -208,14 +156,66 @@ $(document).ready(function() {
             cache: false,
             success: function(data) {
                 $.each(data, function(item_code, nama, specification, uom, image) {
-                    $('[name="item_name"]').val(data.name);
-                    $('[name="specification"]').val(data.specification);
-                    $('[name="uom"]').val(data.uom);
+                    $('[id="item_name1"]').val(data.name);
+                    $('[id="specification1"]').val(data.specification);
+                    $('[id="uom1"]').val(data.uom);
                 });
 
             }
         });
         return false;
+    });
+
+    var i = 2;
+    $(".tambah-form").on('click', function() {
+        row = '<div class="col-sm-12  rec-element">'+
+                    '<div class="row">'+
+                        '<div class="col-sm-4">'+
+                           '<label for="" class="col-sm-6 col-form-label">[' + i + '] Item Code*</label>'+
+                            '<input type="text" class="form-control" id="item_code' + i + '" name="item_code[]">'+
+                            '<small class="form-text text-danger"><?= form_error('item_code') ?></small>'+
+                        '</div>'+
+                        '<div class="col-sm-6">'+
+                            '<label for="" class="col-sm-6 col-form-label">Item Name</label>'+
+                            '<input type="text" class="form-control" id="item_name' + i + '" name="item_name[]" readonly>'+
+                        '</div>'+
+                        '<div class="col-sm-1">'+
+                            '<label for="" class="col-sm-6 col-form-label">UoM</label>'+
+                            '<input type="text" class="form-control" id="uom' + i + '" name="uom[]" readonly>'+
+                        '</div>'+
+                        '<div class="col-sm-1">' +
+                            '<button type="button" class="btn btn-danger del-element fa-solid fa-trash" style="height:75px; width: 75px; font-size: 12px;"></button>' +
+                        '</div>' +
+                    '</div>'+
+
+                    '<div class="row">'+
+                        '<div class="col-sm-7">'+
+                            '<label for="" class="col-sm-6 col-form-label">Spesification</label>'+
+                            '<input type="text" class="form-control" id="specification' + i + '" name="specification[]" readonly>'+
+                        '</div>'+
+                        '<div class="col-sm-2">'+
+                            '<label for="" class="col-sm-6 col-form-label">Qty*</label>'+
+                            '<input type="text" class="form-control" id="qty' + i + '" name="qty[]">'+
+                        '</div>'+
+                        '<div class="col-sm-3">'+
+                            '<label for="" class="col-sm-6 col-form-label">Warehouse*</label>'+
+                            '<input type="text" class="form-control" id="warehouse_code' + i + '" name="warehouse_code[]" value="<?= $this->session->userdata('warehouse') ?>">'+
+                        '</div>'+
+                    '</div>'+
+                    '<hr size="12px">'+
+                '</div>';
+
+        $(row).insertBefore("#nextkolom");
+        $('#jumlahkolom').val(i + 1);
+        i++;
+    });
+
+    $(document).on('click', '.del-element', function(e) {
+        e.preventDefault()
+        i--;
+        //$(this).parents('.rec-element').fadeOut(400);
+        $(this).parents('.rec-element').remove();
+        $('#jumlahkolom').val(i - 1);
     });
 
 });

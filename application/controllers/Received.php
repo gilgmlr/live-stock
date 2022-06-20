@@ -51,6 +51,7 @@ class Received extends CI_Controller
                     'qty' => $this->input->post('qty')[$i],
                     'warehouse_code' => $this->input->post('warehouse_code')[$i],
                     'location' => $this->input->post('location')[$i],
+                    'entered' => $this->input->post('entered'),
                 );
                 
                 $history = array(
@@ -105,7 +106,6 @@ class Received extends CI_Controller
         $this->form_validation->set_rules('qty[]', 'Qty', 'required|integer|greater_than[0]');
         $this->form_validation->set_rules('warehouse_code[]', 'Warehouse_Code', 'required');
         $this->form_validation->set_rules('location[]', 'Location', 'required');
-        $this->form_validation->set_rules('entered', 'Entered', 'required');
 
         date_default_timezone_set('Asia/Jakarta');
         $jumlah = count($this->input->post('item_code'));
@@ -234,12 +234,12 @@ class Received extends CI_Controller
             'return_note' => $this->input->post('return_note'),
             'return_qty' => $this->input->post('return_qty'),
             'return_date' => $this->input->post('return_date'),
-            'entered_nip' => $this->input->post('entered_nip'),
+            'entered' => $this->input->post('entered_nip'),
             'warehouse_code' => $this->input->post('warehouse_code'),
             'status' => $this->input->post('status'),
         );
 
-        $this->M_CRUD->update_data('lending', $lending, ['lending_no' => $this->input->post('lending_no')]);
+        $this->M_CRUD->update_data('lending', $lending, ['lending_date' => $this->input->post('lending_date'), 'lending_no' => $this->input->post('lending_no'), 'item_code' => $this->input->post('item_code')]);
 
         //update inventory
         $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();

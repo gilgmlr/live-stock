@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="col-sm-3">
                                     <label for="" class="col-sm-6 col-form-label">Dept Name</label>
-                                    <input type="text" class="form-control" id="" name="" readonly>
+                                    <input type="text" class="form-control" id="" name="">
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="" class="col-sm-4 col-form-label">Entered by</label>
