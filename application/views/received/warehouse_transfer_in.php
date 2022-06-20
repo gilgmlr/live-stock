@@ -20,8 +20,8 @@
                                 value="WT01-C02<?= substr(date('Y'),2,4) . date('m') ?>" required>
                         </div>
                         <div class="col-sm-6">
-                            <label for="" class="col-sm-6 col-form-label">Arrival Date</label>
-                            <input type="date" class="form-control" id="arrival_date" name="arrival_date"
+                            <label for="" class="col-sm-6 col-form-label">Date</label>
+                            <input type="date" class="form-control" id="date" name="date"
                                 value="<?php echo date('Y-m-d'); ?>" required>
                         </div>
 

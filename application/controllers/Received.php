@@ -100,7 +100,7 @@ class Received extends CI_Controller
     public function addWT()
     {
         $this->form_validation->set_rules('wt_number', 'WT_Number', 'required');
-        $this->form_validation->set_rules('arrival_date', 'Arrival_Date', 'required|date');
+        $this->form_validation->set_rules('date', 'Date', 'required|date');
         $this->form_validation->set_rules('sender_code', 'Sender_Code', 'required');
         $this->form_validation->set_rules('item_code[]', 'Item_Code', 'required');
         $this->form_validation->set_rules('qty[]', 'Qty', 'required|integer|greater_than[0]');
@@ -116,7 +116,7 @@ class Received extends CI_Controller
             for($i=0;$i<$jumlah;$i++){
                 $received = array(
                     'wt_number' => $this->input->post('wt_number'),
-                    'arrival_date' => $this->input->post('arrival_date'),
+                    'date' => $this->input->post('date'),
                     'sender_code' => $this->input->post('sender_code'),
                     'item_code' => $this->input->post('item_code')[$i],
                     'qty' => $this->input->post('qty')[$i],
@@ -126,7 +126,7 @@ class Received extends CI_Controller
                 );
 
                 $history = array(
-                    'doc_date' => $this->input->post('arrival_date'),
+                    'doc_date' => $this->input->post('date'),
                     'system_date' => date("Y-m-d h:i:s A"),
                     'source_doc' => $this->input->post('wt_number'),
                     'destination_doc' => $this->input->post('wt_number'),
@@ -223,10 +223,11 @@ class Received extends CI_Controller
 
     public function returnLending()
     {        
-        $this->form_validation->set_rules('return_qty', 'Return_Qty', 'required|integer|greater_than[0]|less_than_equal_to['.$this->input->post("lending_qty").']');
+        $this->form_validation->set_rules('return_qty', 'Return_Qty', 'required|integer|greater_than_equal_to[0]|less_than_equal_to['.$this->input->post("lending_qty").']');
 
         if($this->form_validation->run() == false) {
             $this->session->set_flashdata('flash', 'Data Input Not Valid, Return QTY must lest than equal to '.$this->input->post('lending_qty'));
+            redirect(base_url().'received/view_lending?info='.$this->input->post('lending_date').';'.$this->input->post('lending_no').';'.$this->input->post('item_code'));
 		} else {
             $lending = array(
                 'lending_no' => $this->input->post('lending_no'),
@@ -269,8 +270,6 @@ class Received extends CI_Controller
             );
             $this->M_CRUD->input_data('history_transaction', $history);
         }
-        
-        redirect(base_url().'received/view_lending?info='.$this->input->post('lending_date').';'.$this->input->post('lending_no').';'.$this->input->post('item_code'));
+        redirect('lending');
     }
-
 }
