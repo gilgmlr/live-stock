@@ -26,6 +26,7 @@
                 <thead class="text-primary">
                     <tr>
                         <th>No</th>
+                        <th>Date</th>
                         <th>Lending No</th>
                         <th>Item Code</th>
                         <th>Qty</th>
@@ -42,6 +43,7 @@
                                 ?>
                     <tr>
                         <td><?= $i ?></td>
+                        <td><?= $data->lending_date ?></td>
                         <td><?= $data->lending_no ?></td>
                         <td><?= $data->item_code ?></td>
                         <td><?= $data->lending_qty ?></td>
@@ -50,13 +52,12 @@
                         <td><?= $data->status ?></td>
                         <td>
                             <?php if (strtolower($data->status) == "open") { ?>
-                            <a href="<?= base_url() ?>received/view_lending?lending_no=<?= $data->lending_no ?>">
+                            <a href="<?= base_url() ?>received/view_lending?info=<?= $data->lending_date .';'. $data->lending_no .';'. $data->item_code ?>">
                                 <button type="submit" class="btn btn-warning btn-sm"
                                     style="margin:0px; height:35px;">Closed</button>
                             </a>
-                            <?php ;} else { ?>
-                            -
-                            <?php ;} ?>
+                            <?php ;} else {
+                                echo 'Return '.$data->return_date; } ?>
                         </td>
                     </tr>
                     <?php

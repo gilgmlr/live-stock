@@ -204,10 +204,13 @@ class Received extends CI_Controller
 
     public function view_lending()
     {
-        $lending_no = $this->input->get('lending_no');
+        $info = explode(';', $this->input->get('info'));
+        $lending_date = $info[0];
+        $lending_no = $info[1];
+        $item_code = $info[2];
         
         //cari lending
-        $data['lending'] = $this->db->get_where('lending', ['lending_no' => $lending_no])->row_array();
+        $data['lending'] = $this->db->get_where('lending', ['lending_date' => $lending_date, 'lending_no' => $lending_no, 'item_code' => $item_code])->row_array();
 
         $data['judul'] = 'Received/Lending';
         $data['uom'] = $this->M_CRUD->get_data('uom')->result();
