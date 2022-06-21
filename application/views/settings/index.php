@@ -98,7 +98,7 @@
                 </div>
                 <div class="modal-footer">
                     <button id="batal" type="submit" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
-                    <button id="simpan" type="submit" class="btn btn-warning"
+                    <button id="simpan" type="submit" class="btn btn-success"
                         onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                 </div>
             </form>

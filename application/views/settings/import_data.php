@@ -157,7 +157,7 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            <button id="simpan" type="submit" class="btn btn-warning"
+                            <button id="simpan" type="submit" class="btn btn-success"
                                 onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                         </div>
                     </form>
@@ -188,7 +188,7 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            <button id="simpan" type="submit" class="btn btn-warning"
+                            <button id="simpan" type="submit" class="btn btn-success"
                                 onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                         </div>
                     </form>
@@ -218,7 +218,7 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            <button id="simpan" type="submit" class="btn btn-warning"
+                            <button id="simpan" type="submit" class="btn btn-success"
                                 onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                         </div>
                     </form>
@@ -248,7 +248,7 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            <button id="simpan" type="submit" class="btn btn-warning"
+                            <button id="simpan" type="submit" class="btn btn-success"
                                 onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                         </div>
                     </form>
@@ -278,7 +278,7 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            <button id="simpan" type="submit" class="btn btn-warning"
+                            <button id="simpan" type="submit" class="btn btn-success"
                                 onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                         </div>
                     </form>
@@ -308,7 +308,7 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            <button id="simpan" type="submit" class="btn btn-warning"
+                            <button id="simpan" type="submit" class="btn btn-success"
                                 onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                         </div>
                     </form>
@@ -338,7 +338,7 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            <button id="simpan" type="submit" class="btn btn-warning"
+                            <button id="simpan" type="submit" class="btn btn-success"
                                 onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                         </div>
                     </form>
@@ -368,7 +368,7 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            <button id="simpan" type="submit" class="btn btn-warning"
+                            <button id="simpan" type="submit" class="btn btn-success"
                                 onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                         </div>
                     </form>
@@ -398,7 +398,7 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            <button id="simpan" type="submit" class="btn btn-warning"
+                            <button id="simpan" type="submit" class="btn btn-success"
                                 onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
                         </div>
                     </form>
