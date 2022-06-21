@@ -8,7 +8,7 @@
 	endif; ?>
     <div class="cards shadow p-1 mb-5 bg-white rounded">
         <center>
-            <h4 style="font-weight:bold;"> Form Material Issue</h4>
+            <h4 style="font-weight:bold;"> Form Work Order</h4>
         </center>
         <?= validation_errors()?>
         <div class=" card-body">
@@ -168,42 +168,45 @@ $(document).ready(function() {
 
     var i = 2;
     $(".tambah-form").on('click', function() {
-        row = '<div class="col-sm-12  rec-element">'+
-                    '<div class="row">'+
-                        '<div class="col-sm-4">'+
-                           '<label for="" class="col-sm-6 col-form-label">[' + i + '] Item Code*</label>'+
-                            '<input type="text" class="form-control" id="item_code' + i + '" name="item_code[]">'+
-                            '<small class="form-text text-danger"><?= form_error('item_code') ?></small>'+
-                        '</div>'+
-                        '<div class="col-sm-6">'+
-                            '<label for="" class="col-sm-6 col-form-label">Item Name</label>'+
-                            '<input type="text" class="form-control" id="item_name' + i + '" name="item_name[]" readonly>'+
-                        '</div>'+
-                        '<div class="col-sm-1">'+
-                            '<label for="" class="col-sm-6 col-form-label">UoM</label>'+
-                            '<input type="text" class="form-control" id="uom' + i + '" name="uom[]" readonly>'+
-                        '</div>'+
-                        '<div class="col-sm-1">' +
-                            '<button type="button" class="btn btn-danger del-element fa-solid fa-trash" style="height:75px; width: 75px; font-size: 12px;"></button>' +
-                        '</div>' +
-                    '</div>'+
+        row = '<div class="col-sm-12  rec-element">' +
+            '<div class="row">' +
+            '<div class="col-sm-4">' +
+            '<label for="" class="col-sm-6 col-form-label">[' + i + '] Item Code*</label>' +
+            '<input type="text" class="form-control" id="item_code' + i + '" name="item_code[]">' +
+            '<small class="form-text text-danger"><?= form_error('item_code') ?></small>' +
+            '</div>' +
+            '<div class="col-sm-6">' +
+            '<label for="" class="col-sm-6 col-form-label">Item Name</label>' +
+            '<input type="text" class="form-control" id="item_name' + i +
+            '" name="item_name[]" readonly>' +
+            '</div>' +
+            '<div class="col-sm-1">' +
+            '<label for="" class="col-sm-6 col-form-label">UoM</label>' +
+            '<input type="text" class="form-control" id="uom' + i + '" name="uom[]" readonly>' +
+            '</div>' +
+            '<div class="col-sm-1">' +
+            '<button type="button" class="btn btn-danger del-element fa-solid fa-trash" style="height:75px; width: 75px; font-size: 12px;"></button>' +
+            '</div>' +
+            '</div>' +
 
-                    '<div class="row">'+
-                        '<div class="col-sm-7">'+
-                            '<label for="" class="col-sm-6 col-form-label">Spesification</label>'+
-                            '<input type="text" class="form-control" id="specification' + i + '" name="specification[]" readonly>'+
-                        '</div>'+
-                        '<div class="col-sm-2">'+
-                            '<label for="" class="col-sm-6 col-form-label">Qty*</label>'+
-                            '<input type="text" class="form-control" id="qty' + i + '" name="qty[]">'+
-                        '</div>'+
-                        '<div class="col-sm-3">'+
-                            '<label for="" class="col-sm-6 col-form-label">Warehouse*</label>'+
-                            '<input type="text" class="form-control" id="warehouse_code' + i + '" name="warehouse_code[]" value="<?= $this->session->userdata('warehouse') ?>">'+
-                        '</div>'+
-                    '</div>'+
-                    '<hr size="12px">'+
-                '</div>';
+            '<div class="row">' +
+            '<div class="col-sm-7">' +
+            '<label for="" class="col-sm-6 col-form-label">Spesification</label>' +
+            '<input type="text" class="form-control" id="specification' + i +
+            '" name="specification[]" readonly>' +
+            '</div>' +
+            '<div class="col-sm-2">' +
+            '<label for="" class="col-sm-6 col-form-label">Qty*</label>' +
+            '<input type="text" class="form-control" id="qty' + i + '" name="qty[]">' +
+            '</div>' +
+            '<div class="col-sm-3">' +
+            '<label for="" class="col-sm-6 col-form-label">Warehouse*</label>' +
+            '<input type="text" class="form-control" id="warehouse_code' + i +
+            '" name="warehouse_code[]" value="<?= $this->session->userdata('warehouse') ?>">' +
+            '</div>' +
+            '</div>' +
+            '<hr size="12px">' +
+            '</div>';
 
         $(row).insertBefore("#nextkolom");
         $('#jumlahkolom').val(i + 1);
