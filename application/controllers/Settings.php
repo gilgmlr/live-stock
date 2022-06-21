@@ -62,7 +62,7 @@ class Settings extends CI_Controller
 
         // config
         $config['base_url'] = base_url().'settings/view_all_items';
-        $this->db->like('item_code', $data['keyword'])->or_like('name', $data['keyword'])->or_like('specification', $data['keyword'])->or_like('uom', $data['keyword']);
+        $this->db->like('item_code', $data['keyword'])->or_like('name', $data['keyword'])->or_like('specification', $data['keyword'])->or_like('uom', $data['keyword'])->or_like('remarks', $data['keyword']);
         $this->db->from('items');
         $config['total_rows'] = $this->db->count_all_results();
         $data['total_rows'] = $config['total_rows'];
@@ -73,7 +73,10 @@ class Settings extends CI_Controller
 
         $data['judul'] = 'Settings/view_all_items';
         $data['start'] = $this->uri->segment(3);
-        $data['items'] = $this->M_CRUD->get_data_limit('items', $config['per_page'], $data['start'], $data['keyword'], 'item_code', 'name', 'specification', 'uom')->result();
+
+        $this->db->like('item_code', $data['keyword'])->or_like('name', $data['keyword'])->or_like('specification', $data['keyword'])->or_like('uom', $data['keyword'])->or_like('remarks', $data['keyword']);
+        $this->db->from('items');
+        $data['items'] = $this->db->get()->result();
         // $item['item'] = $this->M_CRUD->get_data('items')->result();
 
         $this->load->view('template/header', $data);

@@ -19,7 +19,8 @@ class History extends CI_Controller
 
         // config
         $config['base_url'] = base_url().'history/index';
-        $this->db->like('doc_date', $data['keyword'])->or_like('system_date', $data['keyword'])->or_like('source_doc', $data['keyword'])->or_like('destination_doc', $data['keyword'])->or_like('item_code', $data['keyword'])->or_like('qty', $data['keyword'])->or_like('warehouse_code', $data['keyword']);
+        $this->db->like('doc_date', $data['keyword'])->or_like('system_date', $data['keyword'])->or_like('source_doc', $data['keyword'])->or_like('destination_doc', $data['keyword'])
+        ->or_like('item_code', $data['keyword'])->or_like('qty', $data['keyword'])->or_like('warehouse_code', $data['keyword']);
         $this->db->from('history_transaction');
         $config['total_rows'] = $this->db->count_all_results();
         $data['total_rows'] = $config['total_rows'];
@@ -28,13 +29,16 @@ class History extends CI_Controller
         // Initialize
         $this->pagination->initialize($config);
 
+        $data['judul'] = 'History';
         $data['start'] = $this->uri->segment(3);
         
         $this->db->order_by("doc_date", "desc");
         $this->db->order_by("system_date", "desc");
-        $data['history'] = $this->M_CRUD->get_data_limit('history_transaction', $config['per_page'], $data['start'], $data['keyword'], 'doc_date', 'system_date', 'source_doc', 'destination_doc', 'item_code', 'qty', 'warehouse_code')->result();
-        // $data['history'] = $this->M_CRUD->get_data_sort('history_transaction', 'id', 'desc')->result();
-        $data['judul'] = 'History';
+        $this->db->like('doc_date', $data['keyword'])->or_like('system_date', $data['keyword'])->or_like('source_doc', $data['keyword'])->or_like('destination_doc', $data['keyword'])
+        ->or_like('item_code', $data['keyword'])->or_like('qty', $data['keyword'])->or_like('warehouse_code', $data['keyword']);
+        $this->db->from('history_transaction');
+        $this->db->limit($config['per_page'], $data['start']);
+        $data['history'] = $this->db->get()->result();
 
         $this->load->view('template/header', $data); 
         $this->load->view('history/index', $data);
