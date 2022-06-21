@@ -12,12 +12,12 @@
         </center>
         <?= validation_errors()?>
         <div class=" card-body">
-            <form action="<?= base_url() ?>issue/addMI" method="POST" autocomplete="off" style="font-weight:bold;>
+            <form action="<?= base_url() ?>issue/addWO" method="POST" autocomplete="off" style="font-weight:bold;>
                 <div class=" container">
                 <div class="row">
                     <div class="col-sm-6">
                         <label for="" class="col-sm-6 col-form-label">WO No</label>
-                        <input type="text" class="form-control" id="mi_code" name="mi_code"
+                        <input type="text" class="form-control" id="wo_code" name="wo_code"
                             value="EQWO-C02<?= substr(date('Y'),2,4) . date('m') ?>" required>
                     </div>
 

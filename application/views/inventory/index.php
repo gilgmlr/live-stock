@@ -103,6 +103,7 @@
                                                     <div class="container">
                                                         <div class="row justify-content-center">
                                                             <div class="col-sm-6">
+                                                            <input type="text" id="id" name="id" value="<?= $data->id ?>" hidden>
                                                                 <label for="" class="col-sm-6 col-form-label">Item
                                                                     Code</label>
                                                                 <input type="text" class="form-control" id="item_code"

@@ -56,7 +56,7 @@ class Inventory extends CI_Controller
         // var_dump($data['stock']);die;
     }
     
-    public function UpdateInventory()
+    public function UpdateInventory() 
     {
         $this->form_validation->set_rules('item_code', 'Item_Code', 'required');
         $this->form_validation->set_rules('name', 'Name', 'required');
@@ -69,7 +69,7 @@ class Inventory extends CI_Controller
             $this->session->set_flashdata('flash', 'Failed Update!');
 			redirect('inventory');
 		} else {
-            $res_inven = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
+            $res_inven = $this->db->get_where('inventory', ['id' => $this->input->post('id')])->row_array();
             $res_item = $this->db->get_where('items', ['item_code' => $this->input->post('item_code')])->row_array();
             
             $inventory = array(

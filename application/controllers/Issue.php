@@ -49,7 +49,7 @@ class Issue extends CI_Controller
                     'entered' => $this->input->post('entered'),
                 );
 
-                $this->M_CRUD->input_data('material_issue', $data);
+                $this->M_CRUD->input_data('issued', $data);
 
                 //cari items
                 $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code')[$i], 'warehouse_code' => $this->input->post('warehouse_code')[$i]])->row_array();
@@ -77,6 +77,70 @@ class Issue extends CI_Controller
             }
         }
         $this->view_material_issue();
+    }
+
+    public function addWO()
+    {
+        $this->form_validation->set_rules('wo_code', 'Wo_Code', 'required');
+        $this->form_validation->set_rules('entri_date', 'Entri_Date', 'required|date');
+        $this->form_validation->set_rules('project_no', 'Project_No', 'required');
+        $this->form_validation->set_rules('qty[]', 'Qty', 'required|integer|greater_than[0]');
+        $this->form_validation->set_rules('warehouse_code[]', 'Warehouse_Code', 'required');
+        $this->form_validation->set_rules('dept_no', 'Dept_No', 'required');
+        $this->form_validation->set_rules('item_code[]', 'item_code', 'required');
+        $this->form_validation->set_rules('reference', 'Reference', 'required');
+        $this->form_validation->set_rules('reason_code', 'Reason_Code', 'required');
+
+        date_default_timezone_set('Asia/Jakarta');
+        $jumlah = count($this->input->post('item_code'));
+
+        if($this->form_validation->run() == false) {
+            $this->session->set_flashdata('flash', 'Data Input Not Valid');
+		} else {
+            for($i=0;$i<$jumlah;$i++){
+                $data = array(
+                    'doc_no' => $this->input->post('wo_code'),
+                    'entri_date' => $this->input->post('entri_date'),
+                    'posting_date' => date("Y-m-d h:i:s A"),
+                    'dept_no' => $this->input->post('dept_no'),
+                    'project_no' => $this->input->post('project_no'),
+                    'item_code' => $this->input->post('item_code')[$i],
+                    'warehouse_code' => $this->input->post('warehouse_code')[$i],
+                    'transaction_qty' => $this->input->post('qty')[$i],
+                    'reference' => $this->input->post('reference'),
+                    'reason_code' => $this->input->post('reason_code'),
+                    'description' => $this->input->post('desc'),
+                    'entered' => $this->input->post('entered'),
+                );
+
+                $this->M_CRUD->input_data('issued', $data);
+
+                //cari items
+                $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code')[$i], 'warehouse_code' => $this->input->post('warehouse_code')[$i]])->row_array();
+                $data = array(
+                    'item_code' => $item['item_code'],
+                    'location' => $item['location'],
+                    'stocks' => $item['stocks'] - $this->input->post('qty')[$i],
+                    'warehouse_code' => $item['warehouse_code'],
+                );
+                $this->M_CRUD->update_data('inventory', $data, ['item_code' => $item['item_code'], 'warehouse_code' => $item['warehouse_code']]);
+
+                $history = array(
+                    'doc_date' => $this->input->post('entri_date'),
+                    'system_date' => date("Y-m-d h:i:s A"),
+                    'source_doc' => $this->input->post('wo_code'),
+                    'destination_doc' => $this->input->post('wo_code'),
+                    'item_code' => $this->input->post('item_code')[$i],
+                    'qty' => $this->input->post('qty')[$i]*-1,
+                    'warehouse_code' => $this->input->post('warehouse_code')[$i],
+                );
+                $this->M_CRUD->input_data('history_transaction', $history);
+
+                $this->session->set_flashdata('flash', 'Data Work Order Saved!');
+
+            }
+        }
+        $this->view_work_order();
     }
 
     public function view_material_issue()
