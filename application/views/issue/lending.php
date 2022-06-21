@@ -195,7 +195,7 @@ $(document).ready(function() {
             '</div>' +
             '<div class="col-sm-2">' +
             '<label for="" class="col-sm-6 col-form-label">Warehouse*</label>' +
-            '<input type="text" class="form-control" id="warehouse_code' + i +
+            '<input type="text" class="form-control" readonly id="warehouse_code' + i +
             '" name="warehouse_code[]" value="<?= $this->session->userdata('warehouse') ?>">' +
             '</div>' +
             '</div>' +

@@ -224,7 +224,7 @@ class Received extends CI_Controller
 
         if($this->form_validation->run() == false) {
             $this->session->set_flashdata('flash', 'Data Input Not Valid, Return QTY must lest than equal to '.$this->input->post('lending_qty'));
-            redirect(base_url().'received/view_lending?info='.$this->input->post('lending_date').';'.$this->input->post('lending_no').';'.$this->input->post('item_code'));
+            redirect(base_url().'received/view_lending?id='.$this->input->post('id'));
 		} else {
             $len_qty = $this->input->post('lending_qty') - $this->input->post('return_qty');
             $status = $this->input->post('status');

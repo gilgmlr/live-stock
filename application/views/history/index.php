@@ -13,7 +13,7 @@
             <div class="col-md-4">
                 <form action="<?= base_url('history') ?>" method="POST" autocomplete="off">
                     <div class="input-group">
-                        <input type="search submit" class="form-control" id="keyword" name="keyword"
+                        <input type="textsubmit" class="form-control" id="keyword" name="keyword"
                             value="<?= $this->session->userdata('keyword_history') ?>" placeholder="Search...">
                         <input type="submit" class="btn btn-warning" style="margin:0px; height:45px; font-size:medium;"
                             name="search" value="Search">
