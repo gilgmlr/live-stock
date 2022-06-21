@@ -2,9 +2,10 @@
 
     <div class="cards shadow p-3 mb-5 bg-white rounded" style="min-height: 400px; margin-top:3px">
         <div class="cards-header card-header-text">
+            <h4 class="card-title">Lending Activity</h4>
             <div class="row">
                 <div class="col">
-                    <h4 class="card-title">Lending Activity</h4>
+
                     <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "3") { ?>
                     <a href="<?= base_url(); ?>Issue/view_lending" id="Add" type="submit" class="btn btn-primary"
                         style="width: 150px;">Add</a>

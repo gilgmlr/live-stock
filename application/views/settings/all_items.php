@@ -9,9 +9,10 @@
 
     <div class="cards shadow p-3 mb-3 bg-white rounded" style="min-height: 400px; margin-top:3px;">
         <div class=" cards-header card-header-text">
+            <h4 class="card-title">All Items</h4>
             <div class="row">
                 <div class="col">
-                    <h4 class="card-title">All Items</h4>
+
                 </div>
                 <div class="col-md-4">
                     <form action="<?= base_url() . 'settings/view_all_items' ?>" method="POST" autocomplete="off">
@@ -19,8 +20,7 @@
                             <input type="text submit" class="form-control" id="keyword" name="keyword"
                                 value="<?= $this->session->userdata('keyword_item') ?>" placeholder="Search...">
                             <input type="submit" class="btn btn-warning"
-                                style="margin:0px; height:45px; font-size:medium;" name="search"
-                                value="Search">
+                                style="margin:0px; height:45px; font-size:medium;" name="search" value="Search">
 
                         </div>
                     </form>
@@ -119,14 +119,16 @@
                                             <div class="col-sm-12">
                                                 <label class="col-sm-6 col-form-label"
                                                     for="form3Example1c">Remark</label>
-                                                <textarea class="form-control" name="remarks" id="remarks" rows="2"><?= $data->remarks ?></textarea>
+                                                <textarea class="form-control" name="remarks" id="remarks"
+                                                    rows="2"><?= $data->remarks ?></textarea>
                                             </div>
                                             <div class="col-sm-12">
-                                                <label class="col-sm-6 col-form-label"
-                                                    for="form3Example1c">Image <small>(.jpg |.jpeg |.png)</small></label>
-                                                <input class="custom-file-input form-control" type="file" id="image" accept=".jpg, .jpeg, .png" name="image">
+                                                <label class="col-sm-6 col-form-label" for="form3Example1c">Image
+                                                    <small>(.jpg |.jpeg |.png)</small></label>
+                                                <input class="custom-file-input form-control" type="file" id="image"
+                                                    accept=".jpg, .jpeg, .png" name="image">
                                             </div>
-                                            
+
                                         </div>
                                     </div>
                                     <div class="modal-footer">
