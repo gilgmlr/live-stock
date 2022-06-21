@@ -208,9 +208,12 @@ class Received extends CI_Controller
         $lending_date = $info[0];
         $lending_no = $info[1];
         $item_code = $info[2];
+        $warehouse = $info[3];
+        $borrower = $info[4];
+        $dept = $info[5];
         
         //cari lending
-        $data['lending'] = $this->db->get_where('lending', ['lending_date' => $lending_date, 'lending_no' => $lending_no, 'item_code' => $item_code])->row_array();
+        $data['lending'] = $this->db->get_where('lending', ['lending_date' => $lending_date, 'lending_no' => $lending_no, 'item_code' => $item_code, 'warehouse_code' => $warehouse, 'borrower_name' => $borrower, 'dept_code' => $dept])->row_array();
 
         $data['judul'] = 'Received/Lending';
         $data['uom'] = $this->M_CRUD->get_data('uom')->result();
@@ -269,6 +272,7 @@ class Received extends CI_Controller
                 'warehouse_code' => $this->input->post('warehouse_code'),
             );
             $this->M_CRUD->input_data('history_transaction', $history);
+            $this->session->set_flashdata('flash', 'Data Update Success!');
         }
         redirect('lending');
     }
