@@ -211,6 +211,7 @@ class Settings extends CI_Controller
                                     'name' => $worksheet->getCellByColumnAndRow(1, $row)->getValue(),
                                     'specification' => $worksheet->getCellByColumnAndRow(2, $row)->getValue(),
                                     'uom' => $worksheet->getCellByColumnAndRow(3, $row)->getValue(),
+                                    'remarks' => $worksheet->getCellByColumnAndRow(4, $row)->getValue(),
                                     'image' => $worksheet->getCellByColumnAndRow(0, $row)->getValue().'.jpg',
                                 );                            
                         } else if ($table == 'history_transaction') {

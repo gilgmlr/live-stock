@@ -9,8 +9,13 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
+        $this->db->where(['status' => 'open']);
+        $this->db->order_by('lending_date', 'asc');
+        $this->db->limit(1000, 0);
+        $this->db->from('lending');
+        $data['lending'] = $this->db->get()->result();
+        
         $data['warehouse'] = $this->M_CRUD->get_data('warehouse')->result();
-        $data['lending'] = $this->M_CRUD->get_data_where('lending', ['status' => 'open'], 'lending_date', 'asc')->result();
         $data['total_items'] = $this->M_CRUD->count_row('items');
         $data['total_received'] = $this->M_CRUD->count_row('received');
         $data['total_issue'] = $this->M_CRUD->count_row('material_issue');
