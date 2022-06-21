@@ -9,7 +9,7 @@
                     <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "3") { ?>
                     <a href="<?= base_url(); ?>Issue/view_lending" id="Add" type="submit" class="btn btn-primary"
                         style="width: 150px;">Add</a>
-                    <?php ;} ?>
+                    <?php ;} ?> 
                 </div>
                 <div class="col-md-4">
                     <form action="<?= base_url() . 'lending' ?>" method="POST" autocomplete="off">
@@ -33,6 +33,7 @@
                         <th>Lending No</th>
                         <th>Item Code</th>
                         <th>Qty</th>
+                        <th>Warehouse</th>
                         <th>Borrower</th>
                         <th>Dept</th>
                         <th>Status</th>
@@ -50,6 +51,7 @@
                         <td><?= $data->lending_no ?></td>
                         <td><?= $data->item_code ?></td>
                         <td><?= $data->lending_qty ?></td>
+                        <td><?= $data->warehouse_code ?></td>
                         <td><?= $data->borrower_name ?></td>
                         <td><?= $data->dept_code ?></td>
                         <td><?= $data->status ?></td>

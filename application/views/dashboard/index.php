@@ -109,10 +109,12 @@
                         <thead class="text-primary">
                             <tr>
                                 <th>No</th>
-                                <th>Lending No</th>
                                 <th>Date</th>
+                                <th>Lending No</th>
                                 <th>Item Code</th>
                                 <th>Qty</th>
+                                <th>Warehouse</th>
+                                <th>Borrower</th>
                                 <th>Dept</th>
                                 <th>Action</th>
                             </tr>
@@ -124,10 +126,12 @@
                             ?>
                             <tr>
                                 <td><?= $i ?></td>
-                                <td><?= $data->lending_no ?></td>
                                 <td><?= $data->lending_date ?></td>
+                                <td><?= $data->lending_no ?></td>
                                 <td><?= $data->item_code ?></td>
                                 <td><?= $data->lending_qty ?></td>
+                                <td><?= $data->warehouse_code ?></td>
+                                <td><?= $data->borrower_name ?></td>
                                 <td><?= $data->dept_code ?></td>
                                 <td>
                                     <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "2") { ?>
