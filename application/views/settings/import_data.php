@@ -34,6 +34,18 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="" data-bs-toggle="modal" data-bs-target="#ImpInventory">
+                <div class="card shadow p-2 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <center>
+                            <img src="<?= base_url().'assets/image/box.png'?>" style="width:100px" />
+                            <h5>Import Data Inventory</h5>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal" data-bs-target="#ImpWarehouse">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
@@ -77,19 +89,6 @@
         </div>
         <?php ;} ?>
 
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <a href="" data-bs-toggle="modal" data-bs-target="#ImpInventory">
-                <div class="card shadow p-2 mb-5 bg-white rounded">
-                    <div class="card-body">
-                        <center>
-                            <img src="<?= base_url().'assets/image/box.png'?>" style="width:100px" />
-                            <h5>Import Data Inventory</h5>
-                        </center>
-                    </div>
-                </div>
-            </a>
-        </div>
-
         <?php if($this->session->userdata('role') == "1") { ?>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal" data-bs-target="#ImpUom">
@@ -102,7 +101,7 @@
                     </div>
                 </div>
             </a>
-        </div> -->
+        </div> 
         <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal" data-bs-target="#ImpDept">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
@@ -126,8 +125,8 @@
                     </div>
                 </div>
             </a>
-        </div>
-        <?php ;} ?>
+        </div> 
+        <?php ;} ?> -->
 
 
         <!-- MODAL Accounts -->
@@ -139,7 +138,7 @@
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
+                    <form action="<?= base_url()?>import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
 
                             <div class="col">
@@ -176,7 +175,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
-                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
+                    <form action="<?= base_url()?>import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
                                 <a href="<?= base_url() ?>settings/download?name=Items_Template"
@@ -206,7 +205,7 @@
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
+                    <form action="<?= base_url()?>import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
                                 <a href="<?= base_url() ?>settings/download?name=Warehouse_Template"
@@ -236,7 +235,7 @@
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
+                    <form action="<?= base_url()?>import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
                                 <a href="<?= base_url() ?>settings/download?name=Issue_Template"
@@ -266,7 +265,7 @@
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
+                    <form action="<?= base_url()?>import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
                                 <a href="<?= base_url() ?>settings/download?name=Receive_Template"
@@ -296,7 +295,7 @@
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
+                    <form action="<?= base_url()?>import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
                                 <a href="<?= base_url() ?>settings/download?name=Inventory_Template"
@@ -326,7 +325,7 @@
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
+                    <form action="<?= base_url()?>import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
                                 <a href="<?= base_url() ?>settings/download?name=UoM_Template"
@@ -356,7 +355,7 @@
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
+                    <form action="<?= base_url()?>import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
                                 <a href="<?= base_url() ?>settings/download?name=Department_Template"
@@ -386,7 +385,7 @@
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url()?>settings/import" method="POST" enctype="multipart/form-data">
+                    <form action="<?= base_url()?>import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col">
                                 <a href="<?= base_url() ?>settings/download?name=History_Template"

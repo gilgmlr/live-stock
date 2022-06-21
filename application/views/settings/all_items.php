@@ -21,12 +21,11 @@
                                 value="<?= $this->session->userdata('keyword_item') ?>" placeholder="Search...">
                             <input type="submit" class="btn btn-warning"
                                 style="margin:0px; height:45px; font-size:medium;" name="search" value="Search">
-
                         </div>
                     </form>
                 </div>
             </div>
-            <!-- <p class="category">All Warehouse</p> -->
+            
         </div>
         <div class="card-content table-responsive">
 
