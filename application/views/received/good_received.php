@@ -120,7 +120,7 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#item_code1').on('input', function() {
+    $('#item_code2').on('input', function() {
         var item_code = $(this).val();
         $.ajax({
             type: "POST",
@@ -132,9 +132,9 @@ $(document).ready(function() {
             cache: false,
             success: function(data) {
                 $.each(data, function(item_code, nama, specification, uom, image) {
-                    $('[id="item_name1"]').val(data.name);
-                    $('[id="specification1"]').val(data.specification);
-                    $('[id="uom1"]').val(data.uom);
+                    $('[id="item_name2"]').val(data.name);
+                    $('[id="specification2"]').val(data.specification);
+                    $('[id="uom2"]').val(data.uom);
                 });
 
             }

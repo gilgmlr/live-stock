@@ -4,7 +4,7 @@
 
         <div class="row">
             <div class="col">
-                <a href="settings/generateXls"><button id="simpan" type="submit" class="btn btn-primary"
+                <a href="export/history"><button id="simpan" type="submit" class="btn btn-primary"
                         style="width: 150px;"
                         onclick=" return confirm('Are You Sure Want To Download this file ?')">Export
                         Data</button></a>

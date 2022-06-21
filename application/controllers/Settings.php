@@ -456,42 +456,4 @@ class Settings extends CI_Controller
 		force_download('assets/excel/'. $name . '.xlsx',NULL);
 	}	
 
-    // create xlsx
-    public function generateXls() 
-    {
-        // create file name
-        $fileName = 'data-'.time().'.xlsx';  
-        // load excel library
-        $listInfo = $this->M_CRUD->get_data('history_transaction')->result();
-        $objPHPExcel = new PHPExcel();
-        $objPHPExcel->setActiveSheetIndex(0);
-        // set Header
-        $objPHPExcel->getActiveSheet()->SetCellValue('A1', 'Document Date');
-        $objPHPExcel->getActiveSheet()->SetCellValue('B1', 'System Date');
-        $objPHPExcel->getActiveSheet()->SetCellValue('C1', 'Source Doc');
-        $objPHPExcel->getActiveSheet()->SetCellValue('D1', 'Destination Doc');
-        $objPHPExcel->getActiveSheet()->SetCellValue('E1', 'Item Code');       
-        $objPHPExcel->getActiveSheet()->SetCellValue('F1', 'QTY Transaction');       
-        $objPHPExcel->getActiveSheet()->SetCellValue('G1', 'Warehouse Code');       
-        // set Row
-        $rowCount = 2;
-        foreach ($listInfo as $list) {
-            $objPHPExcel->getActiveSheet()->SetCellValue('A' . $rowCount, $list->doc_date);
-            $objPHPExcel->getActiveSheet()->SetCellValue('B' . $rowCount, $list->system_date);
-            $objPHPExcel->getActiveSheet()->SetCellValue('C' . $rowCount, $list->source_doc);
-            $objPHPExcel->getActiveSheet()->SetCellValue('D' . $rowCount, $list->destination_doc);
-            $objPHPExcel->getActiveSheet()->SetCellValue('E' . $rowCount, $list->item_code);
-            $objPHPExcel->getActiveSheet()->SetCellValue('F' . $rowCount, $list->qty);
-            $objPHPExcel->getActiveSheet()->SetCellValue('G' . $rowCount, $list->warehouse_code);
-            $rowCount++;
-        }
-        $filename = "Export History ". date("Y-m-d-H-i-s").".csv";
-        header('Content-Type: application/vnd.ms-excel'); 
-        header('Content-Disposition: attachment;filename="'.$filename.'"');
-        header('Cache-Control: max-age=0'); 
-        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');  
-        $objWriter->save('php://output'); 
- 
-    }
-
 }
