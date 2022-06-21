@@ -12,7 +12,8 @@
 
         </center>
         <div class=" card-body">
-            <form action="<?= base_url() ?>received/add_Received" method="POST" autocomplete="off" style="font-weight:bold" ;>
+            <form action="<?= base_url() ?>received/add_Received" method="POST" autocomplete="off"
+                style="font-weight:bold" ;>
                 <div class="control-group after-add-more">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -33,8 +34,8 @@
                                 <label for="" class="col-sm-12 col-form-label">Entered by</label>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="entered" name="entered"
-                                            readonly value="<?= $this->session->userdata('nip'); ?>">
+                                        <input type="text" class="form-control" id="entered" name="entered" readonly
+                                            value="<?= $this->session->userdata('nip'); ?>">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control" id="" name="" readonly
@@ -102,7 +103,7 @@
                 <div class="cards-footer">
                     <center>
                         <button class="btn btn-primary tambah-form" type="button"> Add</button>
-                        <a href="<?= base_url(); ?>received" class="btn btn-secondary">
+                        <a href="<?= base_url(); ?>received" class="btn btn-danger">
                             Cancel
                         </a>
                         <button id="simpan" type="submit" class="btn btn-warning"
