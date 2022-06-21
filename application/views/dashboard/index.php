@@ -135,8 +135,7 @@
                                 <td><?= $data->dept_code ?></td>
                                 <td>
                                     <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "2") { ?>
-                                    <a
-                                        href="<?= base_url() ?>received/view_lending?info=<?= $data->lending_date .';'. $data->lending_no .';'. $data->item_code .';'. $data->warehouse_code .';'. $data->borrower_name .';'. $data->dept_code ?>">
+                                    <a href="<?= base_url() ?>received/view_lending?id=<?= $data->id ?>">
                                         <button type="submit" class="btn btn-warning btn-sm"
                                             style="margin:0px; height:35px;">Closed</button>
                                     </a>

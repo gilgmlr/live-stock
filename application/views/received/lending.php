@@ -18,6 +18,7 @@
                     <div class=" container">
                     <div class="row justify-content-center">
                         <div class="col-sm-6">
+                        <input type="text" id="id" name="id" value="<?= $lending['id'] ?>" hidden>
                             <label for="" class="col-sm-6 col-form-label">Lending No</label>
                             <input type="text" class="form-control" id="lending_no" name="lending_no"
                                 value="<?= $lending['lending_no'] ?>" readonly>

@@ -63,8 +63,7 @@
                         <td><?= $data->status ?></td>
                         <td>
                             <?php if (strtolower($data->status) == "open") { ?>
-                            <a
-                                href="<?= base_url() ?>received/view_lending?info=<?= $data->lending_date .';'. $data->lending_no .';'. $data->item_code .';'. $data->warehouse_code .';'. $data->borrower_name .';'. $data->dept_code ?>">
+                            <a href="<?= base_url() ?>received/view_lending?id=<?= $data->id ?>">
                                 <button type="submit" class="btn btn-warning btn-sm"
                                     style="margin:0px; height:35px;">Closed</button>
                             </a>

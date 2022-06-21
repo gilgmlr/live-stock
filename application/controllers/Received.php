@@ -204,16 +204,10 @@ class Received extends CI_Controller
 
     public function view_lending()
     {
-        $info = explode(';', $this->input->get('info'));
-        $lending_date = $info[0];
-        $lending_no = $info[1];
-        $item_code = $info[2];
-        $warehouse = $info[3];
-        $borrower = $info[4];
-        $dept = $info[5];
+        $id = $this->input->get('id');
         
         //cari lending
-        $data['lending'] = $this->db->get_where('lending', ['lending_date' => $lending_date, 'lending_no' => $lending_no, 'item_code' => $item_code, 'warehouse_code' => $warehouse, 'borrower_name' => $borrower, 'dept_code' => $dept])->row_array();
+        $data['lending'] = $this->db->get_where('lending', ['id' => $id])->row_array();
 
         $data['judul'] = 'Received/Lending';
         $data['uom'] = $this->M_CRUD->get_data('uom')->result();
@@ -226,12 +220,18 @@ class Received extends CI_Controller
 
     public function returnLending()
     {        
-        $this->form_validation->set_rules('return_qty', 'Return_Qty', 'required|integer|greater_than_equal_to[0]|less_than_equal_to['.$this->input->post("lending_qty").']');
+        $this->form_validation->set_rules('return_qty', 'Return_Qty', 'required|integer|less_than_equal_to['.$this->input->post("lending_qty").']');
 
         if($this->form_validation->run() == false) {
             $this->session->set_flashdata('flash', 'Data Input Not Valid, Return QTY must lest than equal to '.$this->input->post('lending_qty'));
             redirect(base_url().'received/view_lending?info='.$this->input->post('lending_date').';'.$this->input->post('lending_no').';'.$this->input->post('item_code'));
 		} else {
+            $len_qty = $this->input->post('lending_qty') - $this->input->post('return_qty');
+            $status = $this->input->post('status');
+            if ($len_qty == 0) {
+                $status = 'close';
+            }
+
             $lending = array(
                 'lending_no' => $this->input->post('lending_no'),
                 'lending_date' => $this->input->post('lending_date'),
@@ -245,10 +245,10 @@ class Received extends CI_Controller
                 'return_date' => $this->input->post('return_date'),
                 'entered' => $this->input->post('entered_nip'),
                 'warehouse_code' => $this->input->post('warehouse_code'),
-                'status' => $this->input->post('status'),
+                'status' => $status,
             );
 
-            $this->M_CRUD->update_data('lending', $lending, ['lending_date' => $this->input->post('lending_date'), 'lending_no' => $this->input->post('lending_no'), 'item_code' => $this->input->post('item_code')]);
+            $this->M_CRUD->update_data('lending', $lending, ['id' => $this->input->post('id')]);
 
             //update inventory
             $item = $this->db->get_where('inventory', ['item_code' => $this->input->post('item_code'), 'warehouse_code' => $this->input->post('warehouse_code')])->row_array();
