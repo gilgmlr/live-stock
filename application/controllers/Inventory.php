@@ -10,15 +10,43 @@ class Inventory extends CI_Controller
     public function index()
     {
         // Ambil data keyword 
-        $keyword = $this->input->get('keyword');
+        // $keyword = $this->input->get('keyword');
+        // Ambil data keyword search
+        if ($this->input->post('search')) {
+            $data['keyword'] = $this->input->post('keyword');
+            $this->session->set_userdata('keyword_inventory', $data['keyword']);
+        } else {
+            $data['keyword'] = $this->session->userdata('keyword_inventory');;
+        }
 
-        $this->db->like('inventory.item_code', $keyword);
-        $data['stock'] = $this->M_CRUD->get_join('inventory', 'items', 'items.item_code = inventory.item_code',
-        'warehouse', 'warehouse.warehouse_code = inventory.warehouse_code')->result();
+        // config
+        $config['base_url'] = base_url().'inventory/index';
+        $this->db->select('*');
+        $this->db->from('inventory');
+        $this->db->join('items', 'inventory.item_code = items.item_code');
+        $this->db->join('warehouse', 'inventory.warehouse_code = warehouse.warehouse_code');
+        $this->db->like('inventory.item_code', $data['keyword'])->or_like('warehouse.warehouse_code', $data['keyword'])->or_like('items.name', $data['keyword'])->or_like('items.specification', $data['keyword']);
+
+        $config['total_rows'] = $this->db->count_all_results();
+        $data['total_rows'] = $config['total_rows'];
+        $config['per_page'] = 10;
+
+        // Initialize
+        $this->pagination->initialize($config);
+
         $data['judul'] = 'Inventory';
+        $data['start'] = $this->uri->segment(3);
+
+        $this->db->select('*');
+        $this->db->from('inventory');
+        $this->db->join('items', 'inventory.item_code = items.item_code');
+        $this->db->join('warehouse', 'inventory.warehouse_code = warehouse.warehouse_code');
+        $this->db->like('inventory.item_code', $data['keyword'])->or_like('warehouse.warehouse_code', $data['keyword'])->or_like('items.name', $data['keyword'])->or_like('items.specification', $data['keyword']);
+        $this->db->limit($config['per_page'], $data['start']);
+        $data['stock'] = $this->db->get()->result();
 
         $this->load->view('template/header', $data);
-        $this->load->view('inventory/index', $data);
+        $this->load->view('inventory/index', $data); 
 
         // var_dump($data['stock']);die;
     }

@@ -7,7 +7,21 @@
     <?php $this->session->unset_userdata('flash');
 	endif; ?>
     <div class="cards shadow p-3 mb-5 bg-white rounded" style="max-width:100%">
-        <h4 class="card-title">Inventory</h4>
+        <div class="row">
+            <div class="col">
+                <h4 class="card-title">Inventory</h4>
+            </div>
+                <div class="col-md-4">
+                    <form action="<?= base_url() . 'inventory' ?>" method="POST" autocomplete="off">
+                        <div class="input-group">
+                            <input type="text submit" class="form-control" id="keyword" name="keyword"
+                                value="<?= $this->session->userdata('keyword_inventory') ?>" placeholder="Search...">
+                            <input type="submit" class="btn btn-warning" style="height:45px; font-size:medium;" name="search"
+                                value="Search">
+                        </div>
+                    </form>
+                </div>
+        </div>
         <div class="card-body">
             <div class="">
                 <!--  ISI DISINI  -->
@@ -191,12 +205,11 @@
                         ?>
                 </tbody>
                 </table>
+                <?= $this->pagination->create_links(); ?>
             </div>
         </div>
     </div>
 </div>
-
-
 
 </div>
 </div>
@@ -204,7 +217,7 @@
 </body>
 <script>
 $(document).ready(function() {
-    $('#warehouse').DataTable();
+    // $('#warehouse').DataTable();
 });
 </script>
 

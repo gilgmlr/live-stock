@@ -38,7 +38,6 @@
                                     <th>Item Code</th>
                                     <th>QTY</th>
                                     <th>Warehouse</th>
-                                    <!-- <th>Action</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,11 +55,6 @@
                                     <td><?= $data->item_code ?></td>
                                     <td><?= $data->qty ?></td>
                                     <td><?= $data->warehouse_code ?></td>
-                                    <!-- <td>
-                                    
-                                        <a href="" data-bs-toggle="modal" data-bs-target="#history"><i
-                                                class="fa-solid fa-eye"></i></a>
-                                    </td> -->
                                 </tr>
 
                                 <?php

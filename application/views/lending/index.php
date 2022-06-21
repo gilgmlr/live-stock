@@ -9,10 +9,10 @@
                     <h4 class="card-title">Lending Activity</h4>
                 </div>
                 <div class="col-md-4">
-                    <form action="<?= base_url() . 'settings/view_all_items' ?>" method="POST" autocomplete="off">
+                    <form action="<?= base_url() . 'lending' ?>" method="POST" autocomplete="off">
                         <div class="input-group">
                             <input type="text submit" class="form-control" id="keyword" name="keyword"
-                                value="<?= $this->session->userdata('keyword_item') ?>" placeholder="Search...">
+                                value="<?= $this->session->userdata('keyword_lending') ?>" placeholder="Search...">
                             <input type="submit" class="btn btn-warning" style="height:45px; font-size:medium;" name="search"
                                 value="Search">
                         </div>
