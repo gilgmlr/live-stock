@@ -699,3 +699,24 @@ footer .copyright {
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
+@media screen and (min-width: 550px) {
+	.card {
+		grid-column: span 4;
+	}
+
+	@media screen and (min-width: 788px) {
+		.card {
+			width: 350px;
+			margin: 0 10px;
+			grid-column: span 4;
+		}
+
+		@media screen and (min-width: 960px) {
+			.card {
+				width: 400px;
+				margin: 0 10px;
+				grid-column: span 3;
+			}
+		}
+	}
+}
