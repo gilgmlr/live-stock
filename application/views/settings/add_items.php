@@ -67,7 +67,7 @@
                 onclick=" return confirm('Are You Sure Want To Add this Item ?')">Add</button>
         </div>
         <div class="col">
-            <center><a href="<?= base_url()?>settings/view_all_items"><b>See all
+            <center><a href="<?= base_url()?>settings/view_all_items?reset=true"><b>See all
                         items?</b></a></center>
         </div>
         </form>

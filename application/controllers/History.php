@@ -9,6 +9,11 @@ class History extends CI_Controller
 
     public function index()
     {
+        // hapus session keyword
+        if ($this->input->get('reset')) {
+            $this->session->unset_userdata('keyword_history');
+        }
+
         // Ambil data keyword search
         if ($this->input->post('search')) {
             $data['keyword'] = $this->input->post('keyword');

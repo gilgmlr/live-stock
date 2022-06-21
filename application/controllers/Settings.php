@@ -52,6 +52,11 @@ class Settings extends CI_Controller
     }
     public function view_all_items() 
     {
+        // hapus session keyword
+        if ($this->input->get('reset')) {
+            $this->session->unset_userdata('keyword_item');
+        }
+
         // Ambil data keyword search
         if ($this->input->post('search')) {
             $data['keyword'] = $this->input->post('keyword');

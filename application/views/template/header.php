@@ -84,7 +84,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="<?= base_url(); ?>catalog"
+                                            <a href="<?= base_url(); ?>catalog?reset=true"
                                                 class="<?php if (uri_string() === 'catalog') echo 'actived' ?>">
                                                 <i class="bi bi-microsoft"></i>
                                                 <div class="position-absolute tooltips">
@@ -93,7 +93,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="<?= base_url(); ?>inventory"
+                                            <a href="<?= base_url(); ?>inventory?reset=true"
                                                 class="<?php if (uri_string() === 'inventory') echo 'actived' ?>">
                                                 <i class="bi bi-stack"></i>
                                                 <div class="position-absolute tooltips">
@@ -129,7 +129,7 @@
                                                 </a>
                                         </li>
                                         <li>
-                                            <a href="<?= base_url(); ?>lending"
+                                            <a href="<?= base_url(); ?>lending?reset=true"
                                                 class="<?php if (uri_string() === 'lending') echo 'actived' ?>">
                                                 <i class="bi bi-arrow-left-right"></i>
                                                 <div class="position-absolute tooltips">
@@ -138,7 +138,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="<?= base_url(); ?>history"
+                                            <a href="<?= base_url(); ?>history?reset=true"
                                                 class="<?php if (uri_string() === 'history') echo 'actived' ?>">
                                                 <i class="bi bi-arrow-counterclockwise"></i>
                                                 <div class="position-absolute tooltips">

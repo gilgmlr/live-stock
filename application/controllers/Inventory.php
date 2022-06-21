@@ -9,8 +9,11 @@ class Inventory extends CI_Controller
 
     public function index()
     {
-        // Ambil data keyword 
-        // $keyword = $this->input->get('keyword');
+        // hapus session keyword
+        if ($this->input->get('reset')) {
+            $this->session->unset_userdata('keyword_inventory');
+        }
+
         // Ambil data keyword search
         if ($this->input->post('search')) {
             $data['keyword'] = $this->input->post('keyword');
