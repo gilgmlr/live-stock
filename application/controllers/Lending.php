@@ -19,7 +19,8 @@ class Lending extends CI_Controller
 
         // config
         $config['base_url'] = base_url().'lending/index';
-        $this->db->like('lending_no', $data['keyword'])->or_like('item_code', $data['keyword'])->or_like('dept_code', $data['keyword'])->or_like('warehouse_code', $data['keyword'])->or_like('status', $data['keyword']);
+        $this->db->like('lending_no', $data['keyword'])->or_like('lending_date', $data['keyword'])->or_like('item_code', $data['keyword'])->or_like('dept_code', $data['keyword'])
+        ->or_like('warehouse_code', $data['keyword'])->or_like('status', $data['keyword'])->or_like('lending_qty', $data['keyword'])->or_like('item_code', $data['keyword'])->or_like('borrower_name', $data['keyword']);
         $this->db->from('lending');
         $config['total_rows'] = $this->db->count_all_results();
         $data['total_rows'] = $config['total_rows'];
@@ -30,7 +31,12 @@ class Lending extends CI_Controller
 
         $data['judul'] = 'Lending';
         $data['start'] = $this->uri->segment(3);
-        $data['lending'] = $this->M_CRUD->get_data_limit('lending', $config['per_page'], $data['start'], $data['keyword'], 'lending_no', 'item_code', 'dept_code', 'warehouse_code', 'status')->result();
+        
+        $this->db->like('lending_no', $data['keyword'])->or_like('lending_date', $data['keyword'])->or_like('item_code', $data['keyword'])->or_like('dept_code', $data['keyword'])
+        ->or_like('warehouse_code', $data['keyword'])->or_like('status', $data['keyword'])->or_like('lending_qty', $data['keyword'])->or_like('item_code', $data['keyword'])->or_like('borrower_name', $data['keyword']);
+        $this->db->from('lending');
+        $this->db->limit($config['per_page'], $data['start']);
+        $data['lending'] = $this->db->get()->result();
 
         // $data['lending'] = $this->M_CRUD->get_data('lending')->result();
 

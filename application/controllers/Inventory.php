@@ -25,7 +25,8 @@ class Inventory extends CI_Controller
         $this->db->from('inventory');
         $this->db->join('items', 'inventory.item_code = items.item_code');
         $this->db->join('warehouse', 'inventory.warehouse_code = warehouse.warehouse_code');
-        $this->db->like('inventory.item_code', $data['keyword'])->or_like('warehouse.warehouse_code', $data['keyword'])->or_like('items.name', $data['keyword'])->or_like('items.specification', $data['keyword']);
+        $this->db->like('inventory.item_code', $data['keyword'])->or_like('warehouse.warehouse_code', $data['keyword'])->or_like('items.name', $data['keyword'])->or_like('items.specification', $data['keyword'])
+        ->or_like('items.uom', $data['keyword'])->or_like('inventory.location', $data['keyword'])->or_like('inventory.equipment', $data['keyword']);;
 
         $config['total_rows'] = $this->db->count_all_results();
         $data['total_rows'] = $config['total_rows'];
@@ -41,7 +42,8 @@ class Inventory extends CI_Controller
         $this->db->from('inventory');
         $this->db->join('items', 'inventory.item_code = items.item_code');
         $this->db->join('warehouse', 'inventory.warehouse_code = warehouse.warehouse_code');
-        $this->db->like('inventory.item_code', $data['keyword'])->or_like('warehouse.warehouse_code', $data['keyword'])->or_like('items.name', $data['keyword'])->or_like('items.specification', $data['keyword']);
+        $this->db->like('inventory.item_code', $data['keyword'])->or_like('warehouse.warehouse_code', $data['keyword'])->or_like('items.name', $data['keyword'])->or_like('items.specification', $data['keyword'])
+        ->or_like('items.uom', $data['keyword'])->or_like('inventory.location', $data['keyword'])->or_like('inventory.equipment', $data['keyword']);;
         $this->db->limit($config['per_page'], $data['start']);
         $data['stock'] = $this->db->get()->result();
 
