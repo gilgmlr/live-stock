@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 100px;">
-<?php if ($this->session->flashdata('flash')) : ?>
+    <?php if ($this->session->flashdata('flash')) : ?>
     <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
         <?= $this->session->flashdata('flash') ?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -33,21 +33,7 @@
                             <label for="" class="col-sm-6 col-form-label">Return Note</label>
                             <textarea class="form-control" id="return_tote" name="return_note" rows="1"></textarea>
 
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <label for="" class="col-sm-6 col-form-label">Return Date</label>
-                                    <input type="date" class="form-control" id="return_date" name="return_date"
-                                        value="<?php echo date('Y-m-d'); ?>" required>
-                                </div>
-                                <div class="col-sm-6">
-                                    <label for="" class="col-sm-6 col-form-label">Status</label>
-                                    <select class="form-select form-control" aria-label=".form-select-lg example"
-                                        id="status" name="status" required>
-                                        <option value="open">Open</option>
-                                        <option value="close">Close</option>
-                                    </select>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="col-sm-6">
                             <label for="" class="col-sm-6 col-form-label">Item Code</label>
@@ -65,11 +51,26 @@
                             <label for="" class="col-sm-6 col-form-label">Return Qty</label>
                             <input type="text" class="form-control" id="return_qty" name="return_qty" required>
 
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Return Date</label>
+                                    <input type="date" class="form-control" id="return_date" name="return_date"
+                                        value="<?php echo date('Y-m-d'); ?>" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="" class="col-sm-6 col-form-label">Status</label>
+                                    <select class="form-select form-control" aria-label=".form-select-lg example"
+                                        id="status" name="status" required>
+                                        <option value="open">Open</option>
+                                        <option value="close">Close</option>
+                                    </select>
+                                </div>
+                            </div>
                             <label for="" class="col-sm-6 col-form-label">Entered by</label>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="entered" name="entered"
-                                        readonly value="<?= $this->session->userdata('nip'); ?>">
+                                    <input type="text" class="form-control" id="entered" name="entered" readonly
+                                        value="<?= $this->session->userdata('nip'); ?>">
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" id="warehouse_code" name="warehouse_code"
@@ -84,7 +85,6 @@
 
             <div class="cards-footer">
                 <center>
-                    <button class="btn btn-primary add-more" type="button"> Add</button>
 
                     <a href="<?= base_url(); ?>lending" class="btn btn-danger" style="width: 100px;">
                         Cancel

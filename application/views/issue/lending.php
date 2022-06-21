@@ -52,8 +52,8 @@
                                     <label for="" class="col-sm-4 col-form-label">Entered by</label>
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control" id="entered" name="entered"
-                                                readonly value="<?= $this->session->userdata('nip'); ?>">
+                                            <input type="text" class="form-control" id="entered" name="entered" readonly
+                                                value="<?= $this->session->userdata('nip'); ?>">
                                         </div>
 
                                         <div class="col-sm-6">
