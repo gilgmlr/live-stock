@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Jun 2022 pada 09.15
+-- Waktu pembuatan: 21 Jun 2022 pada 13.56
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.26
 
@@ -64,7 +64,10 @@ CREATE TABLE `history_transaction` (
 INSERT INTO `history_transaction` (`id`, `doc_date`, `system_date`, `source_doc`, `destination_doc`, `item_code`, `qty`, `warehouse_code`) VALUES
 (1, '2022-01-21', '2022-06-21 02:00:24', 'EQWO-C022206', 'EQWO-C022206', '123', -10, 'BYP0-3-01'),
 (2, '0012-12-21', '2022-06-21 02:06:25', 'MI01-C022206', 'MI01-C022206', '123', -1, 'BYP0-3-01'),
-(3, '2022-06-21', '2022-06-21 02:09:02', 'EQWO-C022206', 'EQWO-C022206', '123', -2, 'BYP0-3-01');
+(3, '2022-06-21', '2022-06-21 02:09:02', 'EQWO-C022206', 'EQWO-C022206', '123', -2, 'BYP0-3-01'),
+(4, '2022-06-21', '2022-06-21 03:37:11', 'MI01-C022206', 'MI01-C022206', '123', -2, 'BYP0-3-01'),
+(5, '2022-06-21', '2022-06-21 04:01:11', 'GR02-C022206', 'GR02-C022206', '0103-000788', 10, 'BYP0-3-01'),
+(6, '2022-01-21', '2022-06-21 04:01:38', 'GR02-C022206', 'GR02-C022206', '0103-000788', 20, 'BYP0-3-08');
 
 -- --------------------------------------------------------
 
@@ -87,8 +90,10 @@ CREATE TABLE `inventory` (
 --
 
 INSERT INTO `inventory` (`id`, `item_code`, `location`, `stocks`, `warehouse_code`, `equipment`, `status`) VALUES
-(1, '123', '1', 16, 'BYP0-3-01', '', '1'),
-(2, '0101-010101', '1', 113, 'BYP0-3-01', '', '1');
+(1, '123', '1', 14, 'BYP0-3-01', '', '1'),
+(2, '0101-010101', '1', 113, 'BYP0-3-01', '', '1'),
+(3, '0103-000788', 'R012', 10, 'BYP0-3-01', '', '1'),
+(4, '0103-000788', '-', 20, 'BYP0-3-08', '', '1');
 
 -- --------------------------------------------------------
 
@@ -120,7 +125,8 @@ INSERT INTO `issued` (`doc_no`, `entri_date`, `posting_date`, `dept_no`, `projec
 ('MI01-C022206', '0012-12-21', '2022-06-21', '12', 12, '123', 'BYP0-3-01', 1, '12', '12', '12', '1302194089'),
 ('EQWO-C022206', '2022-06-21', '2022-06-21', '12', 12, '123', 'BYP0-3-01', 2, '12', '12', '12', '1302194089'),
 ('EQWO-C022206', '2022-06-21', '2022-06-21', '12', 1, '123', 'BYP0-3-01', 2, '12', '12', '12', '1302194089'),
-('EQWO-C022206', '2022-06-21', '2022-06-21', '12', 1, '123', 'BYP0-3-01', 2, '12', '12', '12', '1302194089');
+('EQWO-C022206', '2022-06-21', '2022-06-21', '12', 1, '123', 'BYP0-3-01', 2, '12', '12', '12', '1302194089'),
+('MI01-C022206', '2022-06-21', '2022-06-21', '012', 0, '123', 'BYP0-3-01', 2, '12', '12', '12', '1302194089');
 
 -- --------------------------------------------------------
 
@@ -144,6 +150,7 @@ CREATE TABLE `items` (
 INSERT INTO `items` (`item_code`, `name`, `specification`, `uom`, `remarks`, `image`) VALUES
 ('0101-010101', 'Sendal', 'Swallow size 38', 'PCS', '', '0101-010101.png'),
 ('0103-000788', 'OIL ', 'AX7 10W-40, 1 LITER, SHELL ADVANCED', 'CAN', 'MOQ : BOX 12 CAN \r\nPEMBELIAN HARUS KE KOPERASI', '0103-000788.jpeg'),
+('0202-020202', 'Contoh', 'contoh', 'PCS', '', '0202-020202.jpeg'),
 ('0209-000305', 'PAINT BRUSH', '3 INCH', 'PCS', '', '0209-000305.jpeg'),
 ('0209-000318', 'ABRASIVE CUT-OFF WHEEL', 'DIA. 4 INCH, THICKNESS: 1.2 MM', 'PCS', '', '0209-000318.jpeg'),
 ('0210-000029', 'CONTACT CLEANER ANTI CORROSION', 'WD-40; @333 ML', 'TUBE', '', '0210-000029.jpeg'),
@@ -230,7 +237,9 @@ INSERT INTO `received` (`received_code`, `arrival_date`, `po_number`, `vendor_na
 ('GR02-C022206', '2022-01-21', '000', '0', '123', 200, 'BYP0-3-01', '0', '1302194089'),
 ('GR02-C022206', '2022-06-21', '0', '0', '123', 100, 'BYP0-3-01', '1', '1302194089'),
 ('GR02-C022206', '2022-06-21', '0', '0', '0101-010101', 101, 'BYP0-3-01', '1', '1302194089'),
-('GR02-C022206', '2022-09-07', '097', '889', '123', 23, 'BYP0-3-01', '0', '1302194089');
+('GR02-C022206', '2022-09-07', '097', '889', '123', 23, 'BYP0-3-01', '0', '1302194089'),
+('GR02-C022206', '2022-06-21', '0', '0', '0103-000788', 10, 'BYP0-3-01', '-', '1302194089'),
+('GR02-C022206', '2022-01-21', '0', '0', '0103-000788', 20, 'BYP0-3-08', '-', '1302194089');
 
 -- --------------------------------------------------------
 
@@ -382,13 +391,13 @@ ALTER TABLE `warehouse`
 -- AUTO_INCREMENT untuk tabel `history_transaction`
 --
 ALTER TABLE `history_transaction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `lending`
