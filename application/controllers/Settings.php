@@ -198,7 +198,7 @@ class Settings extends CI_Controller
         }
     }
 
-    public function update_item()
+    public function update_item() 
     {
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('spec', 'Spec', 'required');

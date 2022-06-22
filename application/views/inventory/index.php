@@ -10,7 +10,7 @@
         <h4 class="card-title">Inventory</h4>
         <div class="row">
             <div class="col">
-                <a href="export/inventory?key=<?= $this->session->userdata('keyword_inventory') ?>"><button id="simpan" type="submit" class="btn btn-primary"
+                <a href="<?=base_url() ?>export/inventory?key=<?= $this->session->userdata('keyword_inventory') ?>"><button id="simpan" type="submit" class="btn btn-primary"
                         style="width: 150px;"
                         onclick=" return confirm('Are You Sure Want To Download this file ?')">Export
                         Data</button></a>
@@ -25,6 +25,7 @@
                             name="search" value="Search">
                     </div>
                 </form>
+                <b> Result: <?= $total_rows ?> Items </b>
             </div>
         </div>
         <div class="card-body">
@@ -36,7 +37,7 @@
                             <thead class="text-primary">
                                 <tr>
                                     <th>No</th>
-                                    <th>Item Code</th>
+                                    <th style="width:130px">Item Code</th>
                                     <th>Item Name</th>
                                     <th>Item Spec</th>
                                     <th>Stocks</th>
