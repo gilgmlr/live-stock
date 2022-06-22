@@ -70,7 +70,6 @@
                                         <label for="" class="col-sm-6 col-form-label">Stocks</label>
                                         <input type="text" class="form-control" id="stocks1"
                                             name="stocks[]" readonly>
-
                                     </div>
                                     <div class="col-sm-1">
                                         <label for="" class="col-sm-6 col-form-label">UoM</label>

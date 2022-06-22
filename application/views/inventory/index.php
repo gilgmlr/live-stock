@@ -82,14 +82,14 @@
                                     <?php if($this->session->userdata('role') == "1") { ?>
                                     <td>
                                         <a href="" data-bs-toggle="modal"
-                                            data-bs-target="#edit<?= $data->item_code ?>"><i
+                                            data-bs-target="#edit<?= $data->item_code.'-'.$data->warehouse_code ?>"><i
                                                 class="fa-solid fa-pencil"></i></a>
                                     </td>
                                     <?php ;} ?>
                                 </tr>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="edit<?= $data->item_code ?>" tabindex="-1"
+                                <div class="modal fade" id="edit<?= $data->item_code.'-'.$data->warehouse_code ?>" tabindex="-1"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
                                         style=max-width:60%>
