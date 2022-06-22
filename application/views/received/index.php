@@ -12,7 +12,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= 'assets/image/GR.png'?>" />
+                            <img src="<?=base_url(). 'assets/image/GR.png'?>" />
                             <h5>Good Recived</h5>
                         </center>
                     </div>
@@ -24,7 +24,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= 'assets/image/WT.png'?>" />
+                            <img src="<?=base_url(). 'assets/image/WT.png'?>" />
                             <h5>Warehouse Transfer (Input)</h5>
                         </center>
                     </div>
@@ -36,7 +36,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= 'assets/image/Adjustment.png'?>" />
+                            <img src="<?=base_url(). 'assets/image/Adjustment.png'?>" />
                             <h5>Adjusment In Material</h5>
                         </center>
                     </div>
@@ -48,7 +48,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= 'assets/image/Lending.png'?>" />
+                            <img src="<?=base_url(). 'assets/image/Lending.png'?>" />
                             <h5>Lending (Return)</h5>
                         </center>
                     </div>

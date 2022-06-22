@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/live-stock/';
-// $config['base_url'] = 'http://192.168.57.242/live-stock/';
+// $config['base_url'] = 'http://localhost/live-stock/';
+$config['base_url'] = 'http://192.168.27.242/live-stock/';
 
 /*
 |--------------------------------------------------------------------------

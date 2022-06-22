@@ -14,7 +14,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= 'assets/image/account.png'?>" style="width:100px" />
+                            <img src="<?= base_url().'assets/image/account.png'?>" style="width:100px" />
                             <h5>Add More Account</h5>
                         </center>
                     </div>
@@ -26,7 +26,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= 'assets/image/add_data.png'?>" style="width:100px" />
+                            <img src="<?= base_url().'assets/image/add_data.png'?>" style="width:100px" />
                             <h5>Add Items</h5>
                         </center>
                     </div>
@@ -39,7 +39,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= 'assets/image/importdata.png'?>" style="width:100px" />
+                            <img src="<?=base_url(). 'assets/image/importdata.png'?>" style="width:100px" />
                             <h5>Import data</h5>
                         </center>
                     </div>
@@ -53,7 +53,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= 'assets/image/pass.png'?>" style="width:100px" />
+                            <img src="<?=base_url(). 'assets/image/pass.png'?>" style="width:100px" />
                             <h5>Change Password</h5>
                         </center>
                     </div>
@@ -99,7 +99,7 @@
                 <div class="modal-footer">
                     <button id="batal" type="submit" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
                     <button id="simpan" type="submit" class="btn btn-success"
-                        onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
+                        onclick=" return confirm('Are You Sure Want To chage password ?')">Save</button>
                 </div>
             </form>
         </div>

@@ -9,7 +9,7 @@
 
     <div class="logo">
         <div style="text-align: right; color:#000">
-            <img src="assets/image/icon.png " />
+            <img src="<?=base_url() ?>assets/image/icon.png " />
             <span class="ps-2">Warehouse. <br />Last update:
                 <?php if ($last_update != null) { ?>
                 <?= date('F d, Y  H:i:s A', strtotime($last_update[0]->system_date)); ?>
@@ -26,7 +26,7 @@
 
                 <div class="card-content ">
                     <div class="card-header">
-                        <img src="<?= 'assets/image/stock.png'?>" />
+                        <img src="<?= base_url(). 'assets/image/stock.png'?>" />
                     </div>
                     <p class="category"><strong>Total Items</strong></p>
                     <h3 class="card-title"><?= $total_items ?></h3>
@@ -46,7 +46,7 @@
 
                 <div class="card-content">
                     <div class="card-header">
-                        <img src="<?= 'assets/image/recieve.png'?>" style="width:60px" />
+                        <img src="<?= base_url().'assets/image/recieve.png'?>" style="width:60px" />
                     </div>
                     <p class="category"><strong>Received</strong></p>
                     <h3 class="card-title"><?= $total_received ?></h3>
@@ -64,7 +64,7 @@
 
                 <div class="card-content">
                     <div class="card-header">
-                        <img src="<?= 'assets/image/WTO.png'?>" style="width:60px" />
+                        <img src="<?= base_url(). 'assets/image/WTO.png'?>" style="width:60px" />
                     </div>
                     <p class="category"><strong>Issue</strong></p>
                     <h3 class="card-title"><?= $total_issue ?></h3>
@@ -72,7 +72,6 @@
                 <div class="card-footer">
                     <div class="stats">
                         <i class="material-icons text-info"> </i>
-                        <!-- <a href="#pablo">See detailed report</a> -->
                     </div>
                 </div>
             </div>
@@ -82,7 +81,7 @@
 
                 <div class="card-content">
                     <div class="card-header">
-                        <img src="<?= 'assets/image/loan.png'?>" style="width:60px" />
+                        <img src="<?= base_url(). 'assets/image/loan.png'?>" style="width:60px" />
                     </div>
                     <p class="category"><strong>Lending</strong></p>
                     <h3 class="card-title"><?= $total_lending ?></h3>

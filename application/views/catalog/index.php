@@ -100,9 +100,6 @@
                                         <input type="submit" class="btn btn-primary" style="width: 150px; border-radius:5px;" name="search" value="Go Inventory">
                                     </div>
                                 </form>
-                                <!-- <a href="<?=base_url()?>inventory?keyword=<?= $data->item_code ?>"> <button type="button"
-                                        class="btn btn-primary">Go</button>
-                                </a> -->
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>

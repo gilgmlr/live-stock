@@ -132,9 +132,6 @@
                     </a>
                     <button id="simpan" type="submit" class="btn btn-success"
                         onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
-
-                    <!-- <button onclick="confirmAction()">Delete</button> -->
-
                 </center>
         </div>
     </div>

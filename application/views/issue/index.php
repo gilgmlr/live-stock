@@ -12,7 +12,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= 'assets/image/GR.png'?>" />
+                            <img src="<?=base_url(). 'assets/image/GR.png'?>" />
                             <h5>Material Issue</h5>
                         </center>
                     </div>
@@ -24,7 +24,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= 'assets/image/WTO.png'?>" />
+                            <img src="<?=base_url(). 'assets/image/WTO.png'?>" />
                             <h5>Warehouse Transfer (Out)</h5>
                         </center>
                     </div>
@@ -36,7 +36,7 @@
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
                         <center>
-                            <img src="<?= 'assets/image/Adjustment.png'?>" />
+                            <img src="<?=base_url(). 'assets/image/Adjustment.png'?>" />
                             <h5>Work Order</h5>
                         </center>
                     </div>
