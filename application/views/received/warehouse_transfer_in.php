@@ -74,11 +74,16 @@
                             </div>
 
 
-                            <div class="col-sm-5">
+                            <div class="col-sm-4">
                                 <label for="" class="col-sm-6 col-form-label">Spesification</label>
                                 <input type="text" class="form-control" id="specification1" name="specification[]" readonly>
 
                             </div>
+                            <div class="col-sm-1">
+                                        <label for="" class="col-sm-6 col-form-label">Stocks</label>
+                                        <input type="text" class="form-control" id="stocks1"
+                                            name="stocks[]" readonly>
+                                    </div>
                             <div class="col-sm-1">
                                 <label for="" class="col-sm-6 col-form-label">UoM</label>
                                 <input type="text" class="form-control" id="uom1" name="uom[]" readonly>
@@ -141,9 +146,10 @@ $(document).ready(function() {
             cache: false,
             success: function(data) {
                 $.each(data, function(item_code, nama, specification, uom, image) {
-                    $('[id="item_name1"]').val(data.name);
-                    $('[id="specification1"]').val(data.specification);
-                    $('[id="uom1"]').val(data.uom);
+                    $('[id="item_name1"]').val(data[0].name);
+                    $('[id="specification1"]').val(data[0].specification);
+                    $('[id="stocks1"]').val(data[0].stocks);
+                    $('[id="uom1"]').val(data[0].uom);
                 });
 
             }

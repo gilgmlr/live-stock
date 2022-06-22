@@ -78,7 +78,6 @@
                                     </div>
                                 </div>
 
-
                                 <div class="row">
                                     <div class="col-sm-1">
                                         <label for="" class="col-sm-6 col-form-label">Qty*</label>

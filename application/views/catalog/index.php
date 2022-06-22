@@ -97,7 +97,7 @@
                                 <form action="<?= base_url() . 'inventory' ?>" method="POST" autocomplete="off">
                                     <div class="input-group">
                                         <input type="text submit" class="form-control" id="keyword" name="keyword" value="<?= $data->item_code ?>" hidden ">
-                                        <input type="submit" class="btn btn-primary" name="search" value="Go">
+                                        <input type="submit" class="btn btn-primary" style="width: 150px; border-radius:5px;" name="search" value="Go Inventory">
                                     </div>
                                 </form>
                                 <!-- <a href="<?=base_url()?>inventory?keyword=<?= $data->item_code ?>"> <button type="button"

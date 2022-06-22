@@ -1,6 +1,6 @@
 <div class="container" style="margin-top: 80px;">
     <?php if ($this->session->flashdata('flash')) : ?>
-    <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
         <?= $this->session->flashdata('flash') ?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
@@ -39,8 +39,8 @@
                                     <th>Item Code</th>
                                     <th>Item Name</th>
                                     <th>Item Spec</th>
-                                    <th>UoM</th>
                                     <th>Stocks</th>
+                                    <th>UoM</th>
                                     <th>Warehouse</th>
                                     <th>Location</th>
                                     <th>Equipment</th>
@@ -66,8 +66,8 @@
                                     <td><?= $data->item_code ?></td>
                                     <td><?= $data->name ?></td>
                                     <td><?= $data->specification ?></td>
-                                    <td><?= $data->uom ?></td>
                                     <td><?= $data->stocks ?></td>
+                                    <td><?= $data->uom ?></td>
                                     <td><?= $data->warehouse_code ?></td>
                                     <td><?= $data->location ?></td>
                                     <td><?= $data->equipment ?></td>
@@ -101,7 +101,6 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
-                                            <div class="cards">cek</div>
                                             <div class="modal-body">
                                                 <form action="<?= base_url() ?>inventory/UpdateInventory" method="POST"
                                                     autocommplete="off">
