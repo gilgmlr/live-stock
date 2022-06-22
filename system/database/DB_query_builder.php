@@ -1539,7 +1539,8 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 */
 	protected function _insert_batch($table, $keys, $values)
 	{
-		return 'INSERT INTO '.$table.' ('.implode(', ', $keys).') VALUES '.implode(', ', $values);
+		// return 'INSERT INTO '.$table.' ('.implode(', ', $keys).') VALUES '.implode(', ', $values);
+		return 'INSERT IGNORE INTO '.$table.' ('.implode(', ', $keys).') VALUES '.implode(', ', $values);
 	}
 
 	// --------------------------------------------------------------------

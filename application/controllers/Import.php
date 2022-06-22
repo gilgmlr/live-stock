@@ -13,7 +13,8 @@ class Import extends CI_Controller
     {
         date_default_timezone_set('Asia/Jakarta');
         $table = $this->input->post('table_name');
-        if(isset($_FILES["file"]["name"])){
+			
+        if(isset($_FILES["file"]["name"]) && (pathinfo($_FILES["file"]["name"],PATHINFO_EXTENSION) == 'xls' || pathinfo($_FILES["file"]["name"],PATHINFO_EXTENSION) == 'xlsx')){
               // upload
             $file_tmp = $_FILES['file']['tmp_name'];
             $file_name = $_FILES['file']['name'];
@@ -90,7 +91,7 @@ class Import extends CI_Controller
             $this->session->set_flashdata('flash', 'Import File Excel Saved in database ' . $table);
             redirect('settings/view_import_data');
         } else {
-            $this->session->set_flashdata('flash', 'Import File is Failed, Please Try Again!');
+            $this->session->set_flashdata('flash', 'Import File is Failed, Your file type not excel!');
             redirect('settings/view_import_data');
         }
     }
