@@ -10,7 +10,10 @@ class Auto extends CI_Controller
     function get_item()
     {
         $kode=$this->input->post('item_code');
-        $data=$this->db->get_where('items', ['item_code' => $kode])->row_array();
+        $this->db->from('items');
+        $this->db->join('inventory', 'inventory.item_code = items.item_code');
+        $this->db->where(['items.item_code' => $kode]);
+        $data=$this->db->get()->result();
 		echo json_encode($data);
     }
 

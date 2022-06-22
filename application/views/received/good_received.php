@@ -60,10 +60,16 @@
                                         <input type="text" class="form-control" id="item_name1" name="item_name[]"
                                             readonly>
                                     </div>
-                                    <div class="col-sm-5">
+                                    <div class="col-sm-4">
                                         <label for="" class="col-sm-6 col-form-label">Spesification</label>
                                         <input type="text" class="form-control" id="specification1"
                                             name="specification[]" readonly>
+
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label for="" class="col-sm-6 col-form-label">Stocks</label>
+                                        <input type="text" class="form-control" id="stocks1"
+                                            name="stocks[]" readonly>
 
                                     </div>
                                     <div class="col-sm-1">
@@ -74,7 +80,7 @@
 
 
                                 <div class="row">
-                                    <div class="col-sm-2">
+                                    <div class="col-sm-1">
                                         <label for="" class="col-sm-6 col-form-label">Qty*</label>
                                         <input type="text" class="form-control" id="qty1" name="qty[]">
                                     </div>
@@ -88,7 +94,7 @@
                                             name="warehouse_code[]"
                                             value="<?= $this->session->userdata('warehouse') ?>">
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-4">
                                         <label for="" class="col-sm-6 col-form-label">Equipment</label>
                                         <input type="text" class="form-control" id="equipment1" name="equipment[]">
                                     </div>
@@ -132,9 +138,10 @@ $(document).ready(function() {
             cache: false,
             success: function(data) {
                 $.each(data, function(item_code, nama, specification, uom, image) {
-                    $('[id="item_name1"]').val(data.name);
-                    $('[id="specification1"]').val(data.specification);
-                    $('[id="uom1"]').val(data.uom);
+                    $('[id="item_name1"]').val(data[0].name);
+                    $('[id="specification1"]').val(data[0].specification);
+                    $('[id="stocks1"]').val(data[0].stocks);
+                    $('[id="uom1"]').val(data[0].uom);
                 });
 
             }
@@ -193,20 +200,20 @@ $(document).ready(function() {
             '</div>' +
 
             '<div class="row">' +
-            '<div class="col-sm-2">' +
+            '<div class="col-sm-1">' +
             '<label for="" class="col-sm-6 col-form-label">Qty*</label>' +
             '<input type="text" class="form-control" id="qty' + i + '" name="qty[]">' +
             '</div>' +
-            '<div class="col-sm-4">' +
+            '<div class="col-sm-3">' +
             '<label for="" class="col-sm-6 col-form-label">Location*</label>' +
             '<input type="text" class="form-control" id="location' + i + '" name="location[]">' +
             '</div>' +
-            '<div class="col-sm-3">' +
+            '<div class="col-sm-2">' +
             '<label for="" class="col-sm-6 col-form-label">Warehouse*</label>' +
             '<input type="text" class="form-control" id="warehouse_code' + i +
             '" name="warehouse_code[]" value="<?= $this->session->userdata('warehouse') ?>">' +
             '</div>' +
-            '<div class="col-sm-3">' +
+            '<div class="col-sm-4">' +
             '<label for="" class="col-sm-6 col-form-label">Equipment</label>' +
             '<input type="text" class="form-control" id="equipment' + i + '" name="equipment[]">' +
             '</div>' +

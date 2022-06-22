@@ -53,7 +53,7 @@
                             <tbody>
                                 <!-- ISI KONFIG BACKEND DISINI -->
                                 <?php
-                                    $i = 1;
+                                    $i = $start+1;
                                     foreach ($stock as $data) { 
                                 ?>
 
