@@ -140,10 +140,22 @@
                     </div>
                     <form action="<?= base_url()?>import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
-
                             <div class="col">
+                                <h4 style="font-weight:bold ;color:red">NOTE !</h4>
+                            <div class="cards">- Pastikan urutan kolom dan baris sama dengan template.
+                            <br>- Baris yang masuk ke database dimulai dari baris 3.
+                            <br>- Kolom dimulai dari A sampai D.
+                        </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-8">
+
+                                </div>
+                                <div class="col">
                                 <a href="<?= base_url() ?>settings/download?name=User_Template"
                                     class="link-primary">Download Template</a>
+                                </div>
                             </div>
                             <div class="col">
                                 <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
@@ -177,9 +189,22 @@
 
                     <form action="<?= base_url()?>import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
-                            <div class="col">
+                        <div class="col">
+                                <h4 style="font-weight:bold ;color:red">NOTE !</h4>
+                            <div class="cards">- Pastikan urutan kolom dan baris sama dengan template.
+                            <br>- Baris yang masuk ke database dimulai dari baris 3.
+                            <br>- Kolom dimulai dari A sampai E.
+                        </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-8">
+
+                                </div>
+                                <div class="col">
                                 <a href="<?= base_url() ?>settings/download?name=Items_Template"
                                     class="link-primary">Download Template</a>
+                                </div>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="items" hidden>
@@ -207,9 +232,22 @@
                     </div>
                     <form action="<?= base_url()?>import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
-                            <div class="col">
+                        <div class="col">
+                                <h4 style="font-weight:bold ;color:red">NOTE !</h4>
+                            <div class="cards">- Pastikan urutan kolom dan baris sama dengan template.
+                            <br>- Baris yang masuk ke database dimulai dari baris 3.
+                            <br>- Kolom dimulai dari A sampai B.
+                        </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-8">
+
+                                </div>
+                                <div class="col">
                                 <a href="<?= base_url() ?>settings/download?name=Warehouse_Template"
                                     class="link-primary">Download Template</a>
+                                </div>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="warehouse" hidden>
@@ -297,9 +335,22 @@
                     </div>
                     <form action="<?= base_url()?>import" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
-                            <div class="col">
+                        <div class="col">
+                                <h4 style="font-weight:bold ;color:red">NOTE !</h4>
+                            <div class="cards">- Pastikan urutan kolom dan baris sama dengan template.
+                            <br>- Baris yang masuk ke database dimulai dari baris 3.
+                            <br>- Kolom dimulai dari A sampai E.
+                        </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-8">
+
+                                </div>
+                                <div class="col">
                                 <a href="<?= base_url() ?>settings/download?name=Inventory_Template"
                                     class="link-primary">Download Template</a>
+                                </div>
                             </div>
                             <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
                             <input type="text" name="table_name" value="inventory" hidden>
