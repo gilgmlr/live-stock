@@ -40,7 +40,7 @@ class Login extends CI_Controller {
 					$this->session->set_flashdata('flash', 'Welcome ' . $user['name']);
 					redirect('dashboard');
 				} else {
-					$this->session->set_flashdata('flash', 'NIP or Password not correct!');
+					$this->session->set_flashdata('flash', 'Password Incorrect!');
 					redirect('login');
 				}
 			} else {

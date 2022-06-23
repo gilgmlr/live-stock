@@ -60,7 +60,8 @@ class Import extends CI_Controller
                                 'specification' => $worksheet->getCellByColumnAndRow(2, $row)->getValue(),
                                 'uom' => $worksheet->getCellByColumnAndRow(3, $row)->getValue(),
                                 'remarks' => $worksheet->getCellByColumnAndRow(4, $row)->getValue(),
-                                'image' => $worksheet->getCellByColumnAndRow(0, $row)->getValue().'.jpg',
+                                // 'image' => $worksheet->getCellByColumnAndRow(0, $row)->getValue().'.jpg',
+                                'image' => 'default.jpg',
                             );                            
                         } else if ($table == 'inventory') {
                             $data[] = array(
