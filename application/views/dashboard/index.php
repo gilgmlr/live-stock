@@ -133,15 +133,10 @@
                                 <td><?= $data->borrower_name ?></td>
                                 <td><?= $data->dept_code ?></td>
                                 <td>
-                                    <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "2") { ?>
                                     <a href="<?= base_url() ?>received/view_lending?id=<?= $data->id ?>">
                                         <button type="submit" class="btn btn-warning btn-sm"
                                             style="margin:0px; height:35px;">Closed</button>
                                     </a>
-                                    <?php ;} else { ?>
-                                    <a href="#" type="button" class="btn btn-danger"
-                                        style="margin:0px; height:35px; width:55px" aria-disabled="true">Return</a>
-                                    <?php ;} ?>
 
                                 </td>
                             </tr>

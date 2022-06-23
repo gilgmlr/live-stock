@@ -11,11 +11,8 @@
             <h4 class="card-title">Lending Activity</h4>
             <div class="row">
                 <div class="col">
-
-                    <?php if($this->session->userdata('role') == "1" || $this->session->userdata('role') == "3") { ?>
                     <a href="<?= base_url(); ?>Issue/view_lending" id="Add" type="submit" class="btn btn-primary"
                         style="width: 150px;">Add</a>
-                    <?php ;} ?> 
                 </div>
                 <div class="col-md-4">
                     <form action="<?= base_url() . 'lending' ?>" method="POST" autocomplete="off">

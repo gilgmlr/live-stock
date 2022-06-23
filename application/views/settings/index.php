@@ -63,8 +63,6 @@
     </div>
 </div>
 
-
-
 <!-- Modal Change Password -->
 <div class="modal fade" id="changepassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:40%>

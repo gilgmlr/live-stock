@@ -108,12 +108,8 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <?php if($this->session->userdata('role') == "3") { ?>
-                                            <a href="#">
-                                                <?php ;} else { ?>
                                                 <a href="<?= base_url(); ?>received"
                                                     class="<?php if (uri_string() === 'received') echo 'actived' ?>">
-                                                    <?php ;} ?>
 
                                                     <i class="bi bi-layer-backward"></i>
                                                     <div class="position-absolute tooltips">
@@ -122,12 +118,8 @@
                                                 </a>
                                         </li>
                                         <li>
-                                            <?php if($this->session->userdata('role') == "2") { ?>
-                                            <a href="#">
-                                                <?php ;} else { ?>
                                                 <a href="<?= base_url(); ?>issue"
                                                     class="<?php if (uri_string() === 'issue') echo 'actived' ?>">
-                                                    <?php ;} ?>
                                                     <i class="bi bi-layer-forward"></i>
                                                     <div class="position-absolute tooltips">
                                                         <h5>Issue</h5>
