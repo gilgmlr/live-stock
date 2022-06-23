@@ -59,7 +59,13 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         </ul>
-                        <h5 style="color:gold">Welcome Admin, <?= $this->session->userdata('name') ?></h5>
+                        <h5 style="color:gold">Welcome 
+                        <?php if($this->session->userdata('role') == "1") { ?>
+                            Admin, 
+                        <?php ;} else { ?>
+                            User, 
+                        <?php ;} ?>
+                            <?= $this->session->userdata('name') ?></h5>
                     </div>
                 </div>
             </nav>

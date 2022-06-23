@@ -67,7 +67,6 @@
                                         <a href="<?= base_url() ?>settings/delete_item?item_code=<?= $data->item_code ?>"
                                             onclick="return confirm('Are You Sure Want Delete This Item ?')"><i
                                                 class="fa-solid fa-trash"></i></a>
-
                                     </div>
                                 </div>
 

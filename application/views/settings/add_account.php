@@ -51,9 +51,8 @@
                             <select class="form-select form-control text-input" aria-label=".form-select-lg example"
                                 id="role" name="role" required>
                                 <option selected>-- select --</option>
-                                <option value="1">1 - All Access</option>
-                                <option value="2">2 - Admin Received</option>
-                                <option value="3">3 - Admin Issued</option>
+                                <option value="1">1 - Admin</option>
+                                <option value="2">2 - User</option>
                             </select>
                             <small class="form-text text-danger"><?= form_error('role') ?></small>
                         </div>

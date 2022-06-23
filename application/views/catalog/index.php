@@ -1,4 +1,11 @@
         <div class="container" style="margin-top: 80px;">
+        <?php if ($this->session->flashdata('flash')) : ?>
+            <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <?= $this->session->flashdata('flash') ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php $this->session->unset_userdata('flash');
+            endif; ?>
             <form action="<?=base_url('catalog') ?>" method="POST" autocomplete="off">
                 <div class="row justify-content-center">
                     <div class="col-sm-8" style="margin-top: 0px;">
@@ -94,6 +101,9 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
+                            <?php if($this->session->userdata('role') == "1") { ?>
+                                <a href="" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#change<?= $data->item_code ?>"> Edit</a>
+                            <?php ;} ?>
                                 <form action="<?= base_url() . 'inventory' ?>" method="POST" autocomplete="off">
                                     <div class="input-group">
                                         <input type="text submit" class="form-control" id="keyword" name="keyword" value="<?= $data->item_code ?>" hidden ">
@@ -106,6 +116,73 @@
                     </div>
                 </div>
                 <!-- End Modal  -->
+
+                 <!-- Modal Change -->
+                 <div class="modal fade" id="change<?= $data->item_code ?>" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:30%>
+                            <div class="modal-content">
+                                <div class="modal-header" style="background-color: #563d7c">
+                                    <h5 class="modal-title" style="color: gold;" id="exampleModalLabel">Edit Items
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <form action="<?= base_url() . 'catalog/update_item' ?>" method="POST"
+                                    enctype="multipart/form-data">
+                                    <div class="modal-body">
+                                        <div class="container">
+
+                                            <div class="col-sm-12">
+                                                <label class="col-sm-6 col-form-label" for="form3Example1c">Item
+                                                    Code</label>
+                                                <input type="text" id="item_code" class="form-control" name="item_code"
+                                                    placeholder="Enter item code" value="<?= $data->item_code ?>"
+                                                    readonly />
+                                            </div>
+                                            <div class="col-sm-12"">
+                                                <label class=" col-sm-6 col-form-label" for="form3Example1c">
+                                                Name</label>
+                                                <input type="text" id="name" class="form-control" name="name"
+                                                    placeholder="Enter item code" value="<?= $data->name ?>" required />
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <label class="col-sm-6 col-form-label"
+                                                    for="form3Example1c">Specification</label>
+                                                <textarea class="form-control" name="spec" id="spec" rows="2"
+                                                    required><?= $data->specification ?></textarea>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <label class="col-sm-6 col-form-label" for="form3Example1c">UoM</label>
+                                                <input type="text" id="uom" class="form-control" name="uom"
+                                                    value="<?= $data->uom ?>" required />
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <label class="col-sm-6 col-form-label"
+                                                    for="form3Example1c">Remark</label>
+                                                <textarea class="form-control" name="remarks" id="remarks"
+                                                    rows="2"><?= $data->remarks ?></textarea>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <label class="col-sm-6 col-form-label" for="form3Example1c">Image
+                                                    <small>(.jpg |.jpeg |.png)</small></label>
+                                                <input class="custom-file-input form-control" type="file" id="image"
+                                                    accept=".jpg, .jpeg, .png" name="image">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="close" type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                        <button id="simpan" type="submit" class="btn btn-success"
+                                            onclick=" return confirm('Are You Sure Want To Save ?')">Simpan</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- AKHIR MODAL  -->
 
                 <?php } ?>
                 <div class=" col-12">
