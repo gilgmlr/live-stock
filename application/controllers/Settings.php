@@ -141,7 +141,7 @@ class Settings extends CI_Controller
                 $this->upload->do_upload('image');
 
                 if (pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION) == '') {
-                    $image = $data['file_name'] . '.jpg';
+                    $image = 'default.jpg';
                 } else {
                     $image = $data['file_name'] . '.' . pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION);
                 }

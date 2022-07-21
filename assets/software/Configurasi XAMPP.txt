@@ -1,0 +1,29 @@
+1. Install Xampp yang ada pada folder ../assets/software/
+2. Download File Project live-stock pada: https://github.com/gilgmlr/live-stock/
+3. 'Extract Here' hasil download pada C:\xampp\htdocs
+
+4. Configurasi XAMPP Agar bisa diakses oleh client:
+   = buka XAMPP control panel
+   - start Apache dan MySQL
+
+   = pada config Apache, klik Apache (httpd.conf)
+   - cari LoadModule vhost_alias_modul
+   - hapus '#'
+   - cari httpd-vhosts.conf
+   - hapus '#'
+   - save
+
+   = pada config Apache, klik Apache (httpd-xampp.conf)
+   - cari/scroll kebawah 'Require local', dibawahnya tambahkan 'Allow from all'
+   - save
+
+   = Close semua
+   - restart XAMPP
+   - jalankan lagi XAMPP
+   - start Apache dan MySQL
+
+   = cek IP pada cmd (ipconfig)
+   - copy IP (IPv4)
+   - gantikan pada localhost
+
+   = akses aplikasi dengan [IP]/live-stock

@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
-
+<?php if($this->session->userdata('login') == false) {
+    redirect('login');
+} ?>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -48,9 +50,6 @@
 </head>
 
 <body>
-
-
-
     <header>
         <div class="fixed-top">
             <nav class="navbar navbar-expand-md" style=background-color:#563d7c>
@@ -70,10 +69,7 @@
                 </div>
             </nav>
 
-
             <div class="d-flex">
-
-
                 <div class="position-fixed">
                     <nav class="nav-bar" style=background-color:#563d7c>
                         <div class="menu-bar">
