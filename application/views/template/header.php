@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <?php if($this->session->userdata('login') == false) {
-    redirect('login');
+    redirect(base_url().'login');
 } ?>
 <head>
     <!-- Required meta tags -->
