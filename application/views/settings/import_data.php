@@ -50,7 +50,7 @@
                     <div class="card-body">
                         <center>
                             <img src="<?= base_url().'assets/image/update.png'?>" style="width:100px" />
-                            <h5>Import Update Data Inventory</h5>
+                            <h5>Update Data Inventory</h5>
                         </center>
                     </div>
                 </div>
