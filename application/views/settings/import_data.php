@@ -45,6 +45,18 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="" data-bs-toggle="modal" data-bs-target="#ImpUpInventory">
+                <div class="card shadow p-2 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <center>
+                            <img src="<?= base_url().'assets/image/update.png'?>" style="width:100px" />
+                            <h5>Import Update Data Inventory</h5>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
             <a href="" data-bs-toggle="modal" data-bs-target="#ImpWarehouse">
                 <div class="card shadow p-2 mb-5 bg-white rounded">
                     <div class="card-body">
@@ -324,6 +336,48 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form action="<?= base_url()?>import" method="POST" enctype="multipart/form-data">
+                        <div class="modal-body">
+                        <div class="col">
+                                <h4 style="font-weight:bold ;color:red">NOTE !</h4>
+                            <div class="cards">- Pastikan urutan kolom dan baris sama dengan template.
+                            <br>- Baris yang masuk ke database dimulai dari baris 3.
+                            <br>- Kolom dimulai dari A sampai E.
+                        </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-8">
+
+                                </div>
+                                <div class="col">
+                                <a href="<?= base_url() ?>settings/download?name=Inventory_Template"
+                                    class="link-primary">Download Template</a>
+                                </div>
+                            </div>
+                            <input type="file" class="form-control" name="file" accept=".xls, .xlsx" required>
+                            <input type="text" name="table_name" value="inventory" hidden>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button id="simpan" type="submit" class="btn btn-success"
+                                onclick=" return confirm('Are You Sure Want To Save ?')">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal -->
+        <!-- MODAL Update Inventory -->
+        <div class="modal fade" id="ImpUpInventory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style=max-width:30%>
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #563d7c">
+                        <h5 class="modal-title" style="color: gold" id="exampleModalLabel"> Import Update Data Inventory
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="<?= base_url()?>import/update_stock" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                         <div class="col">
                                 <h4 style="font-weight:bold ;color:red">NOTE !</h4>
